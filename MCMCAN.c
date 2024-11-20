@@ -63,7 +63,9 @@ void canIsrTxHandler(void)
     IfxCan_Node_clearInterruptFlag(g_mcmcan.canSrcNode.node, IfxCan_Interrupt_transmissionCompleted);
 
     /* Just to indicate that the CAN message has been transmitted by turning on LED1 */
-    IfxPort_setPinLow(g_led1.port, g_led1.pinIndex);
+//    if(IfxPort_se)
+//    IfxPort_setPinLow(g_led1.port, g_led1.pinIndex);
+    IfxPort_setPinState(g_led1.port, g_led1.pinIndex,  IfxPort_State_toggled);
 }
 
 /* Interrupt Service Routine (ISR) called once the RX interrupt has been generated.
@@ -98,7 +100,13 @@ void initMcmcan(void)
      *  - initialize CAN module with the default configuration
      * ==========================================================================================
      */
+
+
+
     IfxCan_Can_initModuleConfig(&g_mcmcan.canConfig, &MODULE_CAN0);
+
+    IfxCan_Node_initTxPin (&IfxCan_TXD00_P02_0_OUT,0,0);
+    IfxCan_Node_initRxPin(&g_mcmcan.canDstNode.node,&IfxCan_RXD00A_P02_1_IN,3,0);
 
     IfxCan_Can_initModule(&g_mcmcan.canModule, &g_mcmcan.canConfig);
 
@@ -122,10 +130,15 @@ void initMcmcan(void)
      */
     IfxCan_Can_initNodeConfig(&g_mcmcan.canNodeConfig, &g_mcmcan.canModule);
 
-    g_mcmcan.canNodeConfig.busLoopbackEnabled = TRUE;
+
+
+
+
+    g_mcmcan.canNodeConfig.busLoopbackEnabled = TRUE;               //修改1
     g_mcmcan.canNodeConfig.nodeId = IfxCan_NodeId_0;
 
     g_mcmcan.canNodeConfig.frame.type = IfxCan_FrameType_transmit;
+
 
     g_mcmcan.canNodeConfig.interruptConfig.transmissionCompletedEnabled = TRUE;
     g_mcmcan.canNodeConfig.interruptConfig.traco.priority = ISR_PRIORITY_CAN_TX;
@@ -153,8 +166,11 @@ void initMcmcan(void)
      * ==========================================================================================
      */
     IfxCan_Can_initNodeConfig(&g_mcmcan.canNodeConfig, &g_mcmcan.canModule);
+//
+//
 
-    g_mcmcan.canNodeConfig.busLoopbackEnabled = TRUE;
+
+    g_mcmcan.canNodeConfig.busLoopbackEnabled = TRUE;            //修改2
     g_mcmcan.canNodeConfig.nodeId = IfxCan_NodeId_1;
 
     g_mcmcan.canNodeConfig.frame.type = IfxCan_FrameType_receive;
@@ -225,8 +241,8 @@ void initLeds(void)
      *  - define the pad driver strength
      * ======================================================================
      */
-    g_led1.port      = &MODULE_P13;
-    g_led1.pinIndex  = PIN0;
+    g_led1.port      = &MODULE_P21;
+    g_led1.pinIndex  = 4;
     g_led1.mode      = IfxPort_OutputIdx_general;
     g_led1.padDriver = IfxPort_PadDriver_cmosAutomotiveSpeed1;
 

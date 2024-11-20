@@ -46,6 +46,12 @@
 #include "IfxScuWdt.h"
 #include "MCMCAN.h"
 
+void nopDelay(uint32 cycles) {
+    for (uint32 i = 0; i < cycles; i++) {
+        __nop();
+    }
+}
+
 IFX_ALIGN(4) IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
 void core0_main(void)
@@ -69,6 +75,9 @@ void core0_main(void)
 
     while(1)
     {
+        transmitCanMessage();
+        nopDelay(3000000);
+
     }
 }
 

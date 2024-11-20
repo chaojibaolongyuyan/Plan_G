@@ -29,11 +29,11 @@
         </__.1>
         <__.2>
          <BookmarkList></BookmarkList>
-         <CaretPos>3492</CaretPos>
+         <CaretPos>3591</CaretPos>
          <Encoding>6</Encoding>
          <FileName>H:\Plan_G\Cpu0_Main.c</FileName>
          <FileType>1</FileType>
-         <ScrollPos>0</ScrollPos>
+         <ScrollPos>8</ScrollPos>
         </__.2>
         <__.3>
          <BookmarkList></BookmarkList>
@@ -448,6 +448,10 @@
       </FindInFilesDialogData>
      </GlobalData>
      <History>
+      <ComboBox>
+       <ComboBoxes>
+       </ComboBoxes>
+      </ComboBox>
      </History>
      <Options>
       <CallstackWindow>
