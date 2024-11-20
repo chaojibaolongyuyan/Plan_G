@@ -27,8 +27,11 @@ SUBDIRS := \
 Configurations/Debug \
 Configurations \
 . \
+Libraries/GIAST_DRIVER \
 Libraries/Infra/Platform/Tricore/Compilers \
 Libraries/Infra/Ssw/TC38A/Tricore \
+Libraries/iLLD/TC38A/Tricore/Can/Can \
+Libraries/iLLD/TC38A/Tricore/Can/Std \
 Libraries/iLLD/TC38A/Tricore/Cpu/Irq \
 Libraries/iLLD/TC38A/Tricore/Cpu/Std \
 Libraries/iLLD/TC38A/Tricore/Cpu/Trap \

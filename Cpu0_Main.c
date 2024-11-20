@@ -24,9 +24,27 @@
  * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
  * IN THE SOFTWARE.
  *********************************************************************************************************************/
+ /*\title MCMCAN data transmission
+ * \abstract MCMCAN is used to exchange data between two nodes, implemented in the same device using Loop-Back mode.
+ * \description A CAN message is sent from CAN node 0 to CAN node 1 using Loop-Back mode. After the CAN message
+ *              transmission, an interrupt is generated and an LED is turned on to confirm successful message
+ *              transmission. Once the CAN message is successfully received by the CAN node 1, an interrupt is
+ *              generated. Inside the interrupt service routine the content of the received CAN message is compared to
+ *              the content of the transmitted CAN message. In case of a success, another LED is turned on to confirm
+ *              successful message reception.
+ *
+ * \name MCMCAN_1_KIT_TC397_TFT
+ * \version V1.0.2
+ * \board APPLICATION KIT TC3X7 V2.0, KIT_A2G_TC397_5V_TFT, TC39xXX_B-Step
+ * \keywords CAN, MCMCAN, AURIX, INTERRUPT, LOOP-BACK, MCMCAN_1
+ * \documents https://www.infineon.com/aurix-expert-training/Infineon-AURIX_MCMCAN_1_KIT_TC397_TFT-TR-v01_00_02-EN.pdf
+ * \documents https://www.infineon.com/aurix-expert-training/TC39B_iLLD_UM_1_0_1_12_1.chm
+ * \lastUpdated 2021-03-22
+ *********************************************************************************************************************/
 #include "Ifx_Types.h"
 #include "IfxCpu.h"
 #include "IfxScuWdt.h"
+#include "MCMCAN.h"
 
 IFX_ALIGN(4) IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
@@ -44,8 +62,13 @@ void core0_main(void)
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
     
-    
+    /* Application code: initialization of MCMCAN module, LEDs and the transmission of the CAN message */
+    initMcmcan();
+    initLeds();
+    transmitCanMessage();
+
     while(1)
     {
     }
 }
+
