@@ -36,6 +36,8 @@
 McmcanType                  g_mcmcan;                       /* Global MCMCAN configuration and control structure    */
 IfxPort_Pin_Config          g_led1;                         /* Global LED1 configuration and control structure      */
 IfxPort_Pin_Config          g_led2;                         /* Global LED2 configuration and control structure      */
+IfxPort_Pin_Config          g_led3;                         /* Global LED3 configuration and control structure      */
+IfxPort_Pin_Config          g_led4;                         /* Global LED4 configuration and control structure      */
 
 /*********************************************************************************************************************/
 /*---------------------------------------------Function Implementations----------------------------------------------*/
@@ -101,12 +103,14 @@ void initMcmcan(void)
      * ==========================================================================================
      */
 
-
+    //IfxPort_setPinState(g_led2.port, g_led2.pinIndex,  IfxPort_State_low);
 
     IfxCan_Can_initModuleConfig(&g_mcmcan.canConfig, &MODULE_CAN0);
 
-    IfxCan_Node_initTxPin (&IfxCan_TXD00_P02_0_OUT,0,0);
-    IfxCan_Node_initRxPin(&g_mcmcan.canDstNode.node,&IfxCan_RXD00A_P02_1_IN,3,0);
+    while(!IfxCan_Node_initRxPin(&g_mcmcan.canDstNode.node,&IfxCan_RXD00A_P02_1_IN,IfxPort_InputMode_pullUp,0)) IfxPort_setPinState(g_led3.port, g_led3.pinIndex,  IfxPort_State_toggled);
+    while(!IfxCan_Node_initTxPin (&IfxCan_TXD00_P02_0_OUT,IfxPort_OutputMode_pushPull,0)) IfxPort_setPinState(g_led4.port, g_led4.pinIndex,  IfxPort_State_toggled);
+
+
 
     IfxCan_Can_initModule(&g_mcmcan.canModule, &g_mcmcan.canConfig);
 
@@ -131,10 +135,16 @@ void initMcmcan(void)
     IfxCan_Can_initNodeConfig(&g_mcmcan.canNodeConfig, &g_mcmcan.canModule);
 
 
+//    IFX_CONST IfxCan_Can_Pins Can0PortInfo = {
+//                    .txPin = &IfxCan_TXD00_P02_0_OUT,
+//                    .txPinMode = IfxPort_OutputMode_pushPull,
+//                    .rxPin = &IfxCan_RXD00A_P02_1_IN,
+//                    .rxPinMode = IfxPort_InputMode_pullUp,
+//                    .padDriver = IfxPort_PadDriver_cmosAutomotiveSpeed1
+//        };
 
-
-
-    g_mcmcan.canNodeConfig.busLoopbackEnabled = TRUE;               //修改1
+    //g_mcmcan.canNodeConfig.pins = &Can0PortInfo;
+    //g_mcmcan.canNodeConfig.busLoopbackEnabled = TRUE;               //修改1
     g_mcmcan.canNodeConfig.nodeId = IfxCan_NodeId_0;
 
     g_mcmcan.canNodeConfig.frame.type = IfxCan_FrameType_transmit;
@@ -170,7 +180,7 @@ void initMcmcan(void)
 //
 
 
-    g_mcmcan.canNodeConfig.busLoopbackEnabled = TRUE;            //修改2
+    //g_mcmcan.canNodeConfig.busLoopbackEnabled = TRUE;            //修改2
     g_mcmcan.canNodeConfig.nodeId = IfxCan_NodeId_1;
 
     g_mcmcan.canNodeConfig.frame.type = IfxCan_FrameType_receive;
@@ -199,6 +209,7 @@ void initMcmcan(void)
     g_mcmcan.canFilter.rxBufferOffset = IfxCan_RxBufferId_0;
 
     IfxCan_Can_setStandardFilter(&g_mcmcan.canDstNode, &g_mcmcan.canFilter);
+    IfxPort_setPinState(g_led1.port, g_led1.pinIndex,  IfxPort_State_low);
 }
 
 /* Function to initialize both TX and RX messages with the default data values.
@@ -226,7 +237,9 @@ void transmitCanMessage(void)
     while( IfxCan_Status_notSentBusy ==
            IfxCan_Can_sendMessage(&g_mcmcan.canSrcNode, &g_mcmcan.txMsg, &g_mcmcan.txData[0]) )
     {
+        IfxPort_setPinState(g_led2.port, g_led2.pinIndex,  IfxPort_State_toggled);
     }
+
 }
 
 /* Function to initialize the LEDs */
@@ -246,20 +259,36 @@ void initLeds(void)
     g_led1.mode      = IfxPort_OutputIdx_general;
     g_led1.padDriver = IfxPort_PadDriver_cmosAutomotiveSpeed1;
 
-    g_led2.port      = &MODULE_P13;
-    g_led2.pinIndex  = PIN1;
+    g_led2.port      = &MODULE_P21;
+    g_led2.pinIndex  = 5;
     g_led2.mode      = IfxPort_OutputIdx_general;
     g_led2.padDriver = IfxPort_PadDriver_cmosAutomotiveSpeed1;
+
+    g_led3.port      = &MODULE_P20;
+    g_led3.pinIndex  = 8;
+    g_led3.mode      = IfxPort_OutputIdx_general;
+    g_led3.padDriver = IfxPort_PadDriver_cmosAutomotiveSpeed1;
+
+    g_led4.port      = &MODULE_P20;
+    g_led4.pinIndex  = 9;
+    g_led4.mode      = IfxPort_OutputIdx_general;
+    g_led4.padDriver = IfxPort_PadDriver_cmosAutomotiveSpeed1;
 
     /* Initialize the pins connected to LEDs to level "HIGH", which keep the LEDs turned off as default state */
     IfxPort_setPinHigh(g_led1.port, g_led1.pinIndex);
     IfxPort_setPinHigh(g_led2.port, g_led2.pinIndex);
+    IfxPort_setPinHigh(g_led3.port, g_led3.pinIndex);
+    IfxPort_setPinHigh(g_led4.port, g_led4.pinIndex);
 
     /* Set the pin input/output mode for both pins connected to the LEDs */
     IfxPort_setPinModeOutput(g_led1.port, g_led1.pinIndex, IfxPort_OutputMode_pushPull, g_led1.mode);
     IfxPort_setPinModeOutput(g_led2.port, g_led2.pinIndex, IfxPort_OutputMode_pushPull, g_led2.mode);
+    IfxPort_setPinModeOutput(g_led3.port, g_led3.pinIndex, IfxPort_OutputMode_pushPull, g_led3.mode);
+    IfxPort_setPinModeOutput(g_led4.port, g_led4.pinIndex, IfxPort_OutputMode_pushPull, g_led4.mode);
 
     /* Set the pad driver mode for both pins connected to the LEDs */
     IfxPort_setPinPadDriver(g_led1.port, g_led1.pinIndex, g_led1.padDriver);
     IfxPort_setPinPadDriver(g_led2.port, g_led2.pinIndex, g_led2.padDriver);
+    IfxPort_setPinPadDriver(g_led3.port, g_led3.pinIndex, g_led3.padDriver);
+    IfxPort_setPinPadDriver(g_led4.port, g_led4.pinIndex, g_led4.padDriver);
 }

@@ -13,7 +13,7 @@
        <EditorPersist>
         <__.0>
          <BookmarkList></BookmarkList>
-         <CaretPos>534</CaretPos>
+         <CaretPos>499</CaretPos>
          <Encoding>6</Encoding>
          <FileName>H:\Plan_G\Libraries\GIAST_DRIVER\CAN_Main.c</FileName>
          <FileType>1</FileType>
@@ -33,7 +33,7 @@
          <Encoding>6</Encoding>
          <FileName>H:\Plan_G\Cpu0_Main.c</FileName>
          <FileType>1</FileType>
-         <ScrollPos>8</ScrollPos>
+         <ScrollPos>22</ScrollPos>
         </__.2>
         <__.3>
          <BookmarkList></BookmarkList>
@@ -51,6 +51,14 @@
          <FileType>1</FileType>
          <ScrollPos>28</ScrollPos>
         </__.4>
+        <__.5>
+         <BookmarkList></BookmarkList>
+         <CaretPos>6595</CaretPos>
+         <Encoding>6</Encoding>
+         <FileName>H:\Plan_G\MCMCAN.c</FileName>
+         <FileType>1</FileType>
+         <ScrollPos>56</ScrollPos>
+        </__.5>
        </EditorPersist>
       </EditorPersist>
      </REG_ROOT>
@@ -129,13 +137,17 @@
         <ViewType>Document</ViewType>
        </__.6>
        <__.7>
-        <ViewId>1</ViewId>
-        <ViewType>Output_Progress</ViewType>
+        <ViewId>9</ViewId>
+        <ViewType>Document</ViewType>
        </__.7>
        <__.8>
+        <ViewId>1</ViewId>
+        <ViewType>Output_Progress</ViewType>
+       </__.8>
+       <__.9>
         <ViewId>0</ViewId>
         <ViewType>Symbols</ViewType>
-       </__.8>
+       </__.9>
       </AllViewBaseData>
       <DocumentViews>
        <__.0>
@@ -163,6 +175,11 @@
         <ViewId>8</ViewId>
         <ViewType>Document</ViewType>
        </__.4>
+       <__.5>
+        <RelativePath>..\..\..\MCMCAN.c</RelativePath>
+        <ViewId>9</ViewId>
+        <ViewType>Document</ViewType>
+       </__.5>
       </DocumentViews>
       <OtherViews>
        <__.0>
@@ -383,6 +400,16 @@
                <TopTabViewId>-1</TopTabViewId>
                <ViewId>8</ViewId>
               </__.4>
+              <__.5>
+               <DockType>Document</DockType>
+               <Extent>1</Extent>
+               <IsDocumentPane>false</IsDocumentPane>
+               <IsPinned>false</IsPinned>
+               <IsTabbed>false</IsTabbed>
+               <Orientation>None</Orientation>
+               <TopTabViewId>-1</TopTabViewId>
+               <ViewId>9</ViewId>
+              </__.5>
              </Children>
             </__.1>
            </Children>
@@ -448,10 +475,6 @@
       </FindInFilesDialogData>
      </GlobalData>
      <History>
-      <ComboBox>
-       <ComboBoxes>
-       </ComboBoxes>
-      </ComboBox>
      </History>
      <Options>
       <CallstackWindow>
