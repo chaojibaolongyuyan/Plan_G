@@ -71,7 +71,7 @@ void core0_main(void)
     initLeds();
     /* Application code: initialization of MCMCAN module, LEDs and the transmission of the CAN message */
     initMcmcan();
-
+    initLeds();
     transmitCanMessage();
 
     while(1)

@@ -33,7 +33,11 @@
          <Encoding>6</Encoding>
          <FileName>H:\Plan_G\Cpu0_Main.c</FileName>
          <FileType>1</FileType>
+<<<<<<< HEAD
+         <ScrollPos>8</ScrollPos>
+=======
          <ScrollPos>22</ScrollPos>
+>>>>>>> origin/main
         </__.2>
         <__.3>
          <BookmarkList></BookmarkList>
@@ -475,6 +479,10 @@
       </FindInFilesDialogData>
      </GlobalData>
      <History>
+      <ComboBox>
+       <ComboBoxes>
+       </ComboBoxes>
+      </ComboBox>
      </History>
      <Options>
       <CallstackWindow>

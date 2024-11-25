@@ -103,6 +103,14 @@ void initMcmcan(void)
      * ==========================================================================================
      */
 
+<<<<<<< HEAD
+
+
+    IfxCan_Can_initModuleConfig(&g_mcmcan.canConfig, &MODULE_CAN0);
+
+    IfxCan_Node_initTxPin (&IfxCan_TXD00_P02_0_OUT,0,0);
+    IfxCan_Node_initRxPin(&g_mcmcan.canDstNode.node,&IfxCan_RXD00A_P02_1_IN,3,0);
+=======
     //IfxPort_setPinState(g_led2.port, g_led2.pinIndex,  IfxPort_State_low);
 
     IfxCan_Can_initModuleConfig(&g_mcmcan.canConfig, &MODULE_CAN0);
@@ -111,6 +119,7 @@ void initMcmcan(void)
     while(!IfxCan_Node_initTxPin (&IfxCan_TXD00_P02_0_OUT,IfxPort_OutputMode_pushPull,0)) IfxPort_setPinState(g_led4.port, g_led4.pinIndex,  IfxPort_State_toggled);
 
 
+>>>>>>> origin/main
 
     IfxCan_Can_initModule(&g_mcmcan.canModule, &g_mcmcan.canConfig);
 
@@ -135,6 +144,12 @@ void initMcmcan(void)
     IfxCan_Can_initNodeConfig(&g_mcmcan.canNodeConfig, &g_mcmcan.canModule);
 
 
+<<<<<<< HEAD
+
+
+
+    g_mcmcan.canNodeConfig.busLoopbackEnabled = TRUE;               //修改1
+=======
 //    IFX_CONST IfxCan_Can_Pins Can0PortInfo = {
 //                    .txPin = &IfxCan_TXD00_P02_0_OUT,
 //                    .txPinMode = IfxPort_OutputMode_pushPull,
@@ -145,6 +160,7 @@ void initMcmcan(void)
 
     //g_mcmcan.canNodeConfig.pins = &Can0PortInfo;
     //g_mcmcan.canNodeConfig.busLoopbackEnabled = TRUE;               //修改1
+>>>>>>> origin/main
     g_mcmcan.canNodeConfig.nodeId = IfxCan_NodeId_0;
 
     g_mcmcan.canNodeConfig.frame.type = IfxCan_FrameType_transmit;
@@ -180,7 +196,11 @@ void initMcmcan(void)
 //
 
 
+<<<<<<< HEAD
+    g_mcmcan.canNodeConfig.busLoopbackEnabled = TRUE;            //修改2
+=======
     //g_mcmcan.canNodeConfig.busLoopbackEnabled = TRUE;            //修改2
+>>>>>>> origin/main
     g_mcmcan.canNodeConfig.nodeId = IfxCan_NodeId_1;
 
     g_mcmcan.canNodeConfig.frame.type = IfxCan_FrameType_receive;
