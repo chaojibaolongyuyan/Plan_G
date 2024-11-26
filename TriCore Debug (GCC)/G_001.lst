@@ -2183,21 +2183,21 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
 1089 .debug_aranges 00000ab8  00000000  00000000  00006980  2**3
                   CONTENTS, READONLY, DEBUGGING
-1090 .debug_info   000c6220  00000000  00000000  00007438  2**0
+1090 .debug_info   000c6239  00000000  00000000  00007438  2**0
                   CONTENTS, READONLY, DEBUGGING
-1091 .debug_abbrev 00005431  00000000  00000000  000cd658  2**0
+1091 .debug_abbrev 00005431  00000000  00000000  000cd671  2**0
                   CONTENTS, READONLY, DEBUGGING
-1092 .debug_line   00011b8e  00000000  00000000  000d2a89  2**0
+1092 .debug_line   00011b92  00000000  00000000  000d2aa2  2**0
                   CONTENTS, READONLY, DEBUGGING
-1093 .debug_frame  000016c8  00000000  00000000  000e4618  2**2
+1093 .debug_frame  000016c8  00000000  00000000  000e4634  2**2
                   CONTENTS, READONLY, DEBUGGING
-1094 .debug_str    0000269c  00000000  00000000  000e5ce0  2**0
+1094 .debug_str    0000269c  00000000  00000000  000e5cfc  2**0
                   CONTENTS, READONLY, DEBUGGING
-1095 .debug_loc    00009b16  00000000  00000000  000e837c  2**0
+1095 .debug_loc    00009b16  00000000  00000000  000e8398  2**0
                   CONTENTS, READONLY, DEBUGGING
-1096 .debug_ranges 00000e90  00000000  00000000  000f1e98  2**3
+1096 .debug_ranges 00000e90  00000000  00000000  000f1eb0  2**3
                   CONTENTS, READONLY, DEBUGGING
-1097 .debug_macro  0003c553  00000000  00000000  000f2d28  2**0
+1097 .debug_macro  0003c5f4  00000000  00000000  000f2d40  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .start_tc0:
@@ -11189,10 +11189,10 @@ void initMcmcan(void)
      *  - initialize CAN module with the default configuration
      * ==========================================================================================
      */
-    IfxCan_Can_initModuleConfig(&g_mcmcan.canConfig, &MODULE_CAN0);
+    IfxCan_Can_initModuleConfig(&g_mcmcan.canConfig, &MODULE_CAN2);
 80004020:	91 00 00 c7 	movh.a %a12,28672
 80004024:	d9 cc 14 10 	lea %a12,[%a12]84 <70000054 <g_mcmcan>>
-80004028:	91 00 02 5f 	movh.a %a5,61472
+80004028:	91 20 02 5f 	movh.a %a5,61474
 8000402c:	40 c4       	mov.aa %a4,%a12
 8000402e:	6d ff 16 f3 	call 8000265a <IfxCan_Can_initModuleConfig>
 
@@ -11202,12 +11202,12 @@ void initMcmcan(void)
 80004038:	40 c5       	mov.aa %a5,%a12
 8000403a:	60 84       	mov.a %a4,%d8
 8000403c:	6d ff fe f2 	call 80002638 <IfxCan_Can_initModule>
-     *  - transmission complete interrupt service routine should be serviced by the CPU0
-     *
-     *  - initialize the source CAN node with the modified configuration
-     * ==========================================================================================
-     */
-    IFX_CONST IfxCan_Can_Pins Can0PortInf0 = {
+                .rxPinMode = IfxPort_InputMode_pullUp,
+                .txPin = &IfxCan_TXD10_P13_0_OUT,
+                .txPinMode = IfxPort_OutputMode_pushPull
+        };
+
+    IFX_CONST IfxCan_Can_Pins Can2PortInf0 = {
 80004040:	d9 ed ec ff 	lea %a13,[%a14]-20
 80004044:	91 00 00 27 	movh.a %a2,28672
 80004048:	d9 22 10 00 	lea %a2,[%a2]16 <70000010 <LCF_DSPR0_START+0x10>>
@@ -11218,9 +11218,9 @@ void initMcmcan(void)
 8000405a:	89 34 48 01 	st.d [%a3+]8 <70000008 <LCF_DSPR0_START+0x8>>,%e4
 8000405e:	44 24       	ld.w %d4,[%a2+]
 80004060:	64 34       	st.w [%a3+],%d4
-       &IfxCan_RXD00B_P20_7_IN,   IfxPort_InputMode_pullUp,    // CAN00_RX
-       IfxPort_PadDriver_cmosAutomotiveSpeed4
-    };
+//       &IfxCan_RXD00B_P20_7_IN,   IfxPort_InputMode_pullUp,    // CAN00_RX
+//       IfxPort_PadDriver_cmosAutomotiveSpeed4
+//    };
 
 
     IfxCan_Can_initNodeConfig(&g_mcmcan.canNodeConfig, &g_mcmcan.canModule);
@@ -11260,7 +11260,7 @@ void initMcmcan(void)
 800040a2:	3b a0 00 20 	mov %d2,10
 800040a6:	e9 c2 27 10 	st.b [%a12]103 <70000067 <g_mcmcan+0x13>>,%d2
     //PIN
-    g_mcmcan.canNodeConfig.pins = &Can0PortInf0;
+    g_mcmcan.canNodeConfig.pins = &Can2PortInf0;
 800040aa:	b5 cd 24 60 	st.a [%a12]420 <700001a4 <g_mcmcan+0x150>>,%a13
 
     //�����������ж�

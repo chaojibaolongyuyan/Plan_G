@@ -13,4 +13,4 @@ SoC	Detected device: TC380 series, rev. AE
 EMULATION	STARTED
 PROGRAMMING 	26826 bytes
 PROGRAMMING	Infineon TC38x_PFLASH_10MB (6 sectors)
-EMULATION	END - Without cleanup
+SoC	Detected device: TC380 series, rev. AE
