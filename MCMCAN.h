@@ -43,12 +43,12 @@
 /*------------------------------------------------------Macros-------------------------------------------------------*/
 /*********************************************************************************************************************/
 #define CAN_MESSAGE_ID              (uint32)0x777           /* Message ID that will be used in arbitration phase    */
-#define PIN0                        0                       /* LED1 used in TX ISR is connected to this pin         */
-#define PIN1                        1                       /* LED2 used in RX ISR is connected to this pin         */
+#define PIN5                        5                       /* LED1 used in TX ISR is connected to this pin         */
+#define PIN6                        6                       /* LED2 used in RX ISR is connected to this pin         */
 #define INVALID_RX_DATA_VALUE       0xA5                    /* Used to invalidate RX message data content           */
 #define INVALID_ID_VALUE            (uint32)0xFFFFFFFF      /* Used to invalidate RX message ID value               */
 #define ISR_PRIORITY_CAN_TX         2                       /* Define the CAN TX interrupt priority                 */
-#define ISR_PRIORITY_CAN_RX         1                       /* Define the CAN RX interrupt priority                 */
+#define ISR_PRIORITY_CAN_RX         3                       /* Define the CAN RX interrupt priority                 */
 #define TX_DATA_LOW_WORD            (uint32)0xC0CAC01A      /* Define CAN data lower word to be transmitted         */
 #define TX_DATA_HIGH_WORD           (uint32)0xBA5EBA11      /* Define CAN data higher word to be transmitted        */
 #define MAXIMUM_CAN_DATA_PAYLOAD    2                       /* Define maximum classical CAN payload in 4-byte words */
@@ -76,5 +76,7 @@ typedef struct
 void initMcmcan(void);
 void transmitCanMessage(void);
 void initLeds(void);
+void intPortCan(void);
+
 
 #endif /* MCMCAN_H_ */
