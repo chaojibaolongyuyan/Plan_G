@@ -8,14 +8,20 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include bsw/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/_PinMap/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/_Impl/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/Src/Std/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/Scu/Std/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/Port/Std/subdir.mk
+-include Libraries/iLLD/TC38A/Tricore/Port/Io/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/Pms/Std/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/Mtu/Std/subdir.mk
+-include Libraries/iLLD/TC38A/Tricore/Gtm/Tom/Pwm/subdir.mk
+-include Libraries/iLLD/TC38A/Tricore/Gtm/Tim/In/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/Gtm/Std/subdir.mk
+-include Libraries/iLLD/TC38A/Tricore/Evadc/Std/subdir.mk
+-include Libraries/iLLD/TC38A/Tricore/Evadc/Adc/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/Cpu/Trap/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/Cpu/Std/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/Cpu/Irq/subdir.mk
