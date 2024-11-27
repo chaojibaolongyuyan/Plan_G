@@ -48,7 +48,12 @@
 #define INVALID_RX_DATA_VALUE       0xA5                    /* Used to invalidate RX message data content           */
 #define INVALID_ID_VALUE            (uint32)0xFFFFFFFF      /* Used to invalidate RX message ID value               */
 #define ISR_PRIORITY_CAN_TX         2                       /* Define the CAN TX interrupt priority                 */
-#define ISR_PRIORITY_CAN_FIFO0_RX         3                       /* Define the CAN RX interrupt priority                 */
+#define ISR_PRIORITY_CAN_FIFO0_RX   3                       /* Define the CAN RX interrupt priority                 */
+#define ISR_PRIORITY_CAN1_TX        4                       /* Define the CAN TX interrupt priority                 */
+#define ISR_PRIORITY_CAN1_FIFO0_RX  5                       /* Define the CAN RX interrupt priority                 */
+#define ISR_PRIORITY_CAN2_TX        6                       /* Define the CAN TX interrupt priority                 */
+#define ISR_PRIORITY_CAN2_FIFO0_RX  7                       /* Define the CAN RX interrupt priority                 */
+
 #define TX_DATA_LOW_WORD            (uint32)0xC0CAC01A      /* Define CAN data lower word to be transmitted         */
 #define TX_DATA_HIGH_WORD           (uint32)0xBA5EBA11      /* Define CAN data higher word to be transmitted        */
 #define MAXIMUM_CAN_DATA_PAYLOAD    2                       /* Define maximum classical CAN payload in 4-byte words */
@@ -74,7 +79,11 @@ typedef struct
 /*-----------------------------------------------Function Prototypes-------------------------------------------------*/
 /*********************************************************************************************************************/
 void initMcmcan(void);
+void initMcmcan1(void);
+void initMcmcan2(void);
 void transmitCanMessage(void);
+void transmitCanMessage1(void);
+void transmitCanMessage2(void);
 void initLeds(void);
 void intPortCan(void);
 

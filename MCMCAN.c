@@ -34,7 +34,8 @@
 /*-------------------------------------------------Global variables--------------------------------------------------*/
 /*********************************************************************************************************************/
 McmcanType                  g_mcmcan;                       /* Global MCMCAN configuration and control structure    */
-McmcanType                  g_mcmcan1;                      /* Global MCMCAN1 configuration and control structure    */
+McmcanType                  g_mcmcan1;                      /* Global MCMCAN1 configuration and control structure   */
+McmcanType                  g_mcmcan2;                      /* Global MCMCAN2 configuration and control structure   */
 IfxPort_Pin_Config          g_led1;                         /* Global LED1 configuration and control structure      */
 IfxPort_Pin_Config          g_led2;                         /* Global LED2 configuration and control structure      */
 IfxPort_Pin_Config          g_led3;                         /* Global LED3 configuration and control structure      */
@@ -77,6 +78,10 @@ IFX_CONST IfxCan_Can_Pins Can2PortInf0 = {
  */
 IFX_INTERRUPT(canIsrTxHandler, 0, ISR_PRIORITY_CAN_TX);
 IFX_INTERRUPT(canIsrRxHandler, 0, ISR_PRIORITY_CAN_FIFO0_RX);
+IFX_INTERRUPT(canIsrTxHandler1, 0, ISR_PRIORITY_CAN1_TX);
+IFX_INTERRUPT(canIsrRxHandler1, 0, ISR_PRIORITY_CAN1_FIFO0_RX);
+IFX_INTERRUPT(canIsrTxHandler2, 0, ISR_PRIORITY_CAN2_TX);
+IFX_INTERRUPT(canIsrRxHandler2, 0, ISR_PRIORITY_CAN2_FIFO0_RX);
 //IFX_INTERRUPT(canIsrTxHandler1, 0, ISR_PRIORITY_CAN1_TX);
 //IFX_INTERRUPT(canIsrRxHandler1, 0, ISR_PRIORITY_CAN1_RX);
 
@@ -106,6 +111,52 @@ void canIsrTxHandler(void)
 
 }
 
+void canIsrTxHandler1(void)
+{
+    /* Clear the "Transmission Completed" interrupt flag */
+    //����
+    IfxCan_Node_clearInterruptFlag(g_mcmcan1.canSrcNode.node, IfxCan_Interrupt_transmissionCompleted);
+    /* Just to indicate that the CAN message has been transmitted by turning on LED1 */
+    IfxPort_setPinLow(g_led3.port, g_led3.pinIndex);
+
+    //����
+//    IfxCan_Node_clearInterruptFlag(g_mcmcan.canDstNode.node,IfxCan_Interrupt_messageStoredToDedicatedRxBuffer);
+//    /* Read the received CAN message */
+//    IfxCan_Can_readMessage(&g_mcmcan.canDstNode, &g_mcmcan.rxMsg, g_mcmcan.rxData);
+    /* Check if the received data matches with the transmitted one */
+//    if( ( g_mcmcan.rxData[0] == g_mcmcan.txData[0] ) &&
+//        ( g_mcmcan.rxData[1] == g_mcmcan.txData[1] ) &&
+//        ( g_mcmcan.rxMsg.messageId == g_mcmcan.txMsg.messageId ) )
+//    {
+//        /* Turn on the LED2 to indicate correctness of the received message */
+//        IfxPort_setPinLow(g_led2.port, g_led2.pinIndex);
+//    }
+
+}
+
+void canIsrTxHandler2(void)
+{
+    /* Clear the "Transmission Completed" interrupt flag */
+    //����
+    IfxCan_Node_clearInterruptFlag(g_mcmcan2.canSrcNode.node, IfxCan_Interrupt_transmissionCompleted);
+    /* Just to indicate that the CAN message has been transmitted by turning on LED1 */
+    IfxPort_setPinLow(g_led3.port, g_led3.pinIndex);
+
+    //����
+//    IfxCan_Node_clearInterruptFlag(g_mcmcan.canDstNode.node,IfxCan_Interrupt_messageStoredToDedicatedRxBuffer);
+//    /* Read the received CAN message */
+//    IfxCan_Can_readMessage(&g_mcmcan.canDstNode, &g_mcmcan.rxMsg, g_mcmcan.rxData);
+    /* Check if the received data matches with the transmitted one */
+//    if( ( g_mcmcan.rxData[0] == g_mcmcan.txData[0] ) &&
+//        ( g_mcmcan.rxData[1] == g_mcmcan.txData[1] ) &&
+//        ( g_mcmcan.rxMsg.messageId == g_mcmcan.txMsg.messageId ) )
+//    {
+//        /* Turn on the LED2 to indicate correctness of the received message */
+//        IfxPort_setPinLow(g_led2.port, g_led2.pinIndex);
+//    }
+
+}
+
 /* Interrupt Service Routine (ISR) called once the RX interrupt has been generated.
  * Compares the content of the received CAN message with the content of the transmitted CAN message
  * and in case of success, turns on the LED2 to indicate successful CAN message reception.
@@ -117,7 +168,7 @@ void canIsrRxHandler(void)
 
     /* Read the received CAN message */
     g_mcmcan.rxMsg.readFromRxFifo0 = TRUE;
-    g_mcmcan.rxMsg.readFromRxFifo1 = FALSE;
+    //g_mcmcan.rxMsg.readFromRxFifo1 = FALSE;
 
     IfxCan_Can_readMessage(&g_mcmcan.canDstNode, &g_mcmcan.rxMsg, g_mcmcan.rxData);
     IfxPort_setPinState(g_led2.port, g_led2.pinIndex,  IfxPort_State_toggled);
@@ -132,6 +183,50 @@ void canIsrRxHandler(void)
 //    }
 }
 
+void canIsrRxHandler1(void)
+{
+    /* Clear the "Message stored to Dedicated RX Buffer" interrupt flag */
+    IfxCan_Node_clearInterruptFlag(g_mcmcan1.canDstNode.node, IfxCan_Interrupt_rxFifo0NewMessage);
+
+    /* Read the received CAN message */
+    g_mcmcan1.rxMsg.readFromRxFifo0 = TRUE;
+    //g_mcmcan1.rxMsg.readFromRxFifo1 = FALSE;
+
+    IfxCan_Can_readMessage(&g_mcmcan1.canDstNode, &g_mcmcan1.rxMsg, g_mcmcan1.rxData);
+    IfxPort_setPinState(g_led2.port, g_led2.pinIndex,  IfxPort_State_toggled);
+
+    /* Check if the received data matches with the transmitted one */
+//    if( ( g_mcmcan.rxData[0] == g_mcmcan.txData[0] ) &&
+//        ( g_mcmcan.rxData[1] == g_mcmcan.txData[1] ) &&
+//        ( g_mcmcan.rxMsg.messageId == g_mcmcan.txMsg.messageId ) )
+//    {
+//        /* Turn on the LED2 to indicate correctness of the received message */
+//        IfxPort_setPinLow(g_led2.port, g_led2.pinIndex);
+//    }
+}
+
+
+void canIsrRxHandler2(void)
+{
+    /* Clear the "Message stored to Dedicated RX Buffer" interrupt flag */
+    IfxCan_Node_clearInterruptFlag(g_mcmcan2.canDstNode.node, IfxCan_Interrupt_rxFifo0NewMessage);
+
+    /* Read the received CAN message */
+    g_mcmcan2.rxMsg.readFromRxFifo0 = TRUE;
+    //g_mcmcan1.rxMsg.readFromRxFifo1 = FALSE;
+
+    IfxCan_Can_readMessage(&g_mcmcan2.canDstNode, &g_mcmcan2.rxMsg, g_mcmcan2.rxData);
+    IfxPort_setPinState(g_led2.port, g_led2.pinIndex,  IfxPort_State_toggled);
+
+    /* Check if the received data matches with the transmitted one */
+//    if( ( g_mcmcan.rxData[0] == g_mcmcan.txData[0] ) &&
+//        ( g_mcmcan.rxData[1] == g_mcmcan.txData[1] ) &&
+//        ( g_mcmcan.rxMsg.messageId == g_mcmcan.txMsg.messageId ) )
+//    {
+//        /* Turn on the LED2 to indicate correctness of the received message */
+//        IfxPort_setPinLow(g_led2.port, g_led2.pinIndex);
+//    }
+}
 
 
 
@@ -181,17 +276,17 @@ void initMcmcan(void)
     g_mcmcan.canNodeConfig.rxConfig.rxFifo0DataFieldSize = IfxCan_DataFieldSize_8;
     g_mcmcan.canNodeConfig.rxConfig.rxFifo0Size = 15;
 
+    g_mcmcan.canNodeConfig.filterConfig.messageIdLength = IfxCan_MessageIdLength_both;
+    g_mcmcan.canNodeConfig.filterConfig.standardListSize = 1;
+    g_mcmcan.canNodeConfig.filterConfig.extendedListSize = 0;
+    g_mcmcan.canNodeConfig.filterConfig.standardFilterForNonMatchingFrames = IfxCan_NonMatchingFrame_reject;
+    g_mcmcan.canNodeConfig.filterConfig.extendedFilterForNonMatchingFrames = IfxCan_NonMatchingFrame_reject;
+    g_mcmcan.canNodeConfig.filterConfig.rejectRemoteFramesWithStandardId = TRUE;
+    g_mcmcan.canNodeConfig.filterConfig.rejectRemoteFramesWithExtendedId = TRUE;
+
     IfxCan_Can_initNode(&g_mcmcan.canSrcNode, &g_mcmcan.canNodeConfig);
 
     IfxCan_Can_initNode(&g_mcmcan.canDstNode, &g_mcmcan.canNodeConfig);
-
-//    g_mcmcan.canFilter.number = 0;
-//    g_mcmcan.canFilter.type = IfxCan_FilterType_range;
-//    g_mcmcan.canFilter.elementConfiguration = IfxCan_FilterElementConfiguration_storeInRxBuffer;
-//    g_mcmcan.canFilter.id1 = 0x0;
-//    g_mcmcan.canFilter.id2 = 1911;
-//    g_mcmcan.canFilter.rxBufferOffset = IfxCan_RxBufferId_0;
-//    IfxCan_Can_setStandardFilter(&g_mcmcan.canDstNode, &g_mcmcan.canFilter);
 
     IfxCan_Filter filter;
 
@@ -203,28 +298,156 @@ void initMcmcan(void)
     //filter.rxBufferOffset = IfxCan_RxBufferId_0;
     IfxCan_Can_setStandardFilter(&g_mcmcan.canDstNode, &filter);
 
-//    filter.number = 1;
-//    filter.type = IfxCan_FilterType_classic;
-//    filter.elementConfiguration = IfxCan_FilterElementConfiguration_storeInRxBuffer;
-//    filter.id1 = 1;
-//    filter.rxBufferOffset = IfxCan_RxBufferId_0;
-//    IfxCan_Can_setStandardFilter(&g_mcmcan.canDstNode, &filter);
-
-
-
-//    filter.number = 1;
-//    filter.elementConfiguration = IfxCan_FilterElementConfiguration_storeInRxBuffer;
-//    filter.id1 = 0x7ff;
-//    filter.rxBufferOffset = IfxCan_RxBufferId_1;
-//
-//    IfxCan_Can_setStandardFilter(&g_mcmcan.canDstNode, &filter);
-
-
-
 
     IfxCan_Can_initMessage(&g_mcmcan.rxMsg);
     g_mcmcan.rxMsg.readFromRxFifo0=TRUE;
     memset((void *)(&g_mcmcan.rxData[0]), INVALID_RX_DATA_VALUE, MAXIMUM_CAN_DATA_PAYLOAD * sizeof(uint32));
+}
+
+void initMcmcan1(void)
+{
+    IfxCan_Can_initModuleConfig(&g_mcmcan1.canConfig, &MODULE_CAN1);
+
+    IfxCan_Can_initModule(&g_mcmcan1.canModule, &g_mcmcan1.canConfig);
+
+
+    IfxCan_Can_initNodeConfig(&g_mcmcan1.canNodeConfig, &g_mcmcan1.canModule);
+
+
+    g_mcmcan1.canNodeConfig.nodeId = IfxCan_NodeId_0;
+
+
+    g_mcmcan1.canNodeConfig.frame.type = IfxCan_FrameType_transmitAndReceive;
+
+
+    g_mcmcan1.canNodeConfig.baudRate.baudrate = 500000;
+    g_mcmcan1.canNodeConfig.baudRate.prescaler = 0;
+    g_mcmcan1.canNodeConfig.baudRate.samplePoint = 8000;
+    g_mcmcan1.canNodeConfig.baudRate.syncJumpWidth = 2000;
+    g_mcmcan1.canNodeConfig.baudRate.timeSegment1 = 3;
+    g_mcmcan1.canNodeConfig.baudRate.timeSegment2 = 10;
+
+    g_mcmcan1.canNodeConfig.pins = &Can1PortInf0;
+
+
+    g_mcmcan1.canNodeConfig.interruptConfig.transmissionCompletedEnabled = TRUE;
+
+    g_mcmcan1.canNodeConfig.interruptConfig.rxFifo0NewMessageEnabled = TRUE;
+
+
+    g_mcmcan1.canNodeConfig.interruptConfig.traco.priority = ISR_PRIORITY_CAN1_TX;
+    g_mcmcan1.canNodeConfig.interruptConfig.traco.interruptLine = IfxCan_InterruptLine_2;
+    g_mcmcan1.canNodeConfig.interruptConfig.traco.typeOfService = IfxSrc_Tos_cpu0;
+
+
+
+    g_mcmcan1.canNodeConfig.interruptConfig.rxf0n.priority = ISR_PRIORITY_CAN1_FIFO0_RX;
+    g_mcmcan1.canNodeConfig.interruptConfig.rxf0n.interruptLine = IfxCan_InterruptLine_3;
+    g_mcmcan1.canNodeConfig.interruptConfig.rxf0n.typeOfService = IfxSrc_Tos_cpu0;
+
+    g_mcmcan1.canNodeConfig.rxConfig.rxMode = IfxCan_RxMode_fifo0;
+    g_mcmcan1.canNodeConfig.rxConfig.rxFifo0DataFieldSize = IfxCan_DataFieldSize_8;
+    g_mcmcan1.canNodeConfig.rxConfig.rxFifo0Size = 15;
+
+//    g_mcmcan1.canNodeConfig.filterConfig.messageIdLength = IfxCan_MessageIdLength_both;
+//    g_mcmcan1.canNodeConfig.filterConfig.standardListSize = 1;
+//    g_mcmcan1.canNodeConfig.filterConfig.extendedListSize = 0;
+    g_mcmcan1.canNodeConfig.filterConfig.standardFilterForNonMatchingFrames = IfxCan_NonMatchingFrame_reject;
+//    g_mcmcan1.canNodeConfig.filterConfig.extendedFilterForNonMatchingFrames = IfxCan_NonMatchingFrame_reject;
+//    g_mcmcan1.canNodeConfig.filterConfig.rejectRemoteFramesWithStandardId = TRUE;
+//    g_mcmcan1.canNodeConfig.filterConfig.rejectRemoteFramesWithExtendedId = TRUE;
+
+    IfxCan_Can_initNode(&g_mcmcan1.canSrcNode, &g_mcmcan1.canNodeConfig);
+
+    IfxCan_Can_initNode(&g_mcmcan1.canDstNode, &g_mcmcan1.canNodeConfig);
+
+    IfxCan_Filter filter;
+
+    filter.number = 0;
+    filter.type = IfxCan_FilterType_range;
+    filter.elementConfiguration = IfxCan_FilterElementConfiguration_storeInRxFifo0;
+    filter.id1 = 11;
+    filter.id2 = 20;
+    //filter.rxBufferOffset = IfxCan_RxBufferId_0;
+    IfxCan_Can_setStandardFilter(&g_mcmcan1.canDstNode, &filter);
+
+
+    IfxCan_Can_initMessage(&g_mcmcan1.rxMsg);
+    g_mcmcan1.rxMsg.readFromRxFifo0=TRUE;
+    memset((void *)(&g_mcmcan1.rxData[0]), INVALID_RX_DATA_VALUE, MAXIMUM_CAN_DATA_PAYLOAD * sizeof(uint32));
+}
+
+void initMcmcan2(void)
+{
+    IfxCan_Can_initModuleConfig(&g_mcmcan2.canConfig, &MODULE_CAN2);
+
+    IfxCan_Can_initModule(&g_mcmcan2.canModule, &g_mcmcan2.canConfig);
+
+
+    IfxCan_Can_initNodeConfig(&g_mcmcan2.canNodeConfig, &g_mcmcan2.canModule);
+
+
+    g_mcmcan2.canNodeConfig.nodeId = IfxCan_NodeId_0;
+
+
+    g_mcmcan2.canNodeConfig.frame.type = IfxCan_FrameType_transmitAndReceive;
+
+
+    g_mcmcan2.canNodeConfig.baudRate.baudrate = 500000;
+    g_mcmcan2.canNodeConfig.baudRate.prescaler = 0;
+    g_mcmcan2.canNodeConfig.baudRate.samplePoint = 8000;
+    g_mcmcan2.canNodeConfig.baudRate.syncJumpWidth = 2000;
+    g_mcmcan2.canNodeConfig.baudRate.timeSegment1 = 3;
+    g_mcmcan2.canNodeConfig.baudRate.timeSegment2 = 10;
+
+    g_mcmcan2.canNodeConfig.pins = &Can2PortInf0;
+
+
+    g_mcmcan2.canNodeConfig.interruptConfig.transmissionCompletedEnabled = TRUE;
+
+    g_mcmcan2.canNodeConfig.interruptConfig.rxFifo0NewMessageEnabled = TRUE;
+
+
+    g_mcmcan2.canNodeConfig.interruptConfig.traco.priority = ISR_PRIORITY_CAN2_TX;
+    g_mcmcan2.canNodeConfig.interruptConfig.traco.interruptLine = IfxCan_InterruptLine_4;
+    g_mcmcan2.canNodeConfig.interruptConfig.traco.typeOfService = IfxSrc_Tos_cpu0;
+
+
+
+    g_mcmcan2.canNodeConfig.interruptConfig.rxf0n.priority = ISR_PRIORITY_CAN2_FIFO0_RX;
+    g_mcmcan2.canNodeConfig.interruptConfig.rxf0n.interruptLine = IfxCan_InterruptLine_5;
+    g_mcmcan2.canNodeConfig.interruptConfig.rxf0n.typeOfService = IfxSrc_Tos_cpu0;
+
+    g_mcmcan2.canNodeConfig.rxConfig.rxMode = IfxCan_RxMode_fifo0;
+    g_mcmcan2.canNodeConfig.rxConfig.rxFifo0DataFieldSize = IfxCan_DataFieldSize_8;
+    g_mcmcan2.canNodeConfig.rxConfig.rxFifo0Size = 15;
+
+//    g_mcmcan2.canNodeConfig.filterConfig.messageIdLength = IfxCan_MessageIdLength_both;
+//    g_mcmcan2.canNodeConfig.filterConfig.standardListSize = 1;
+//    g_mcmcan2.canNodeConfig.filterConfig.extendedListSize = 0;
+    g_mcmcan2.canNodeConfig.filterConfig.standardFilterForNonMatchingFrames = IfxCan_NonMatchingFrame_reject;
+//    g_mcmcan2.canNodeConfig.filterConfig.extendedFilterForNonMatchingFrames = IfxCan_NonMatchingFrame_reject;
+//    g_mcmcan2.canNodeConfig.filterConfig.rejectRemoteFramesWithStandardId = TRUE;
+//    g_mcmcan2.canNodeConfig.filterConfig.rejectRemoteFramesWithExtendedId = TRUE;
+
+    IfxCan_Can_initNode(&g_mcmcan2.canSrcNode, &g_mcmcan2.canNodeConfig);
+
+    IfxCan_Can_initNode(&g_mcmcan2.canDstNode, &g_mcmcan2.canNodeConfig);
+
+    IfxCan_Filter filter;
+
+    filter.number = 0;
+    filter.type = IfxCan_FilterType_range;
+    filter.elementConfiguration = IfxCan_FilterElementConfiguration_storeInRxFifo0;
+    filter.id1 = 21;
+    filter.id2 = 30;
+    //filter.rxBufferOffset = IfxCan_RxBufferId_0;
+    IfxCan_Can_setStandardFilter(&g_mcmcan2.canDstNode, &filter);
+
+
+    IfxCan_Can_initMessage(&g_mcmcan2.rxMsg);
+    g_mcmcan2.rxMsg.readFromRxFifo0=TRUE;
+    memset((void *)(&g_mcmcan2.rxData[0]), INVALID_RX_DATA_VALUE, MAXIMUM_CAN_DATA_PAYLOAD * sizeof(uint32));
 }
 
 /* Function to initialize both TX and RX messages with the default data values.
@@ -251,6 +474,56 @@ void transmitCanMessage(void)
     /* Send the CAN message with the previously defined TX message content */
     while( IfxCan_Status_notSentBusy ==
            IfxCan_Can_sendMessage(&g_mcmcan.canSrcNode, &g_mcmcan.txMsg, &g_mcmcan.txData[0]) )
+    {
+    }
+}
+
+void transmitCanMessage1(void)
+{
+    /* Initialization of the RX message with the default configuration */
+    IfxCan_Can_initMessage(&g_mcmcan1.rxMsg);
+
+    /* Invalidation of the RX message data content */
+    memset((void *)(&g_mcmcan1.rxData[0]), INVALID_RX_DATA_VALUE, MAXIMUM_CAN_DATA_PAYLOAD * sizeof(uint32));
+
+    /* Initialization of the TX message with the default configuration */
+    IfxCan_Can_initMessage(&g_mcmcan1.txMsg);
+
+    /* Define the content of the data to be transmitted */
+    g_mcmcan1.txData[0] = TX_DATA_LOW_WORD;
+    g_mcmcan1.txData[1] = TX_DATA_HIGH_WORD;
+
+    /* Set the message ID that is used during the receive acceptance phase */
+    g_mcmcan1.txMsg.messageId = CAN_MESSAGE_ID;
+
+    /* Send the CAN message with the previously defined TX message content */
+    while( IfxCan_Status_notSentBusy ==
+           IfxCan_Can_sendMessage(&g_mcmcan1.canSrcNode, &g_mcmcan1.txMsg, &g_mcmcan1.txData[0]) )
+    {
+    }
+}
+
+void transmitCanMessage2(void)
+{
+    /* Initialization of the RX message with the default configuration */
+    IfxCan_Can_initMessage(&g_mcmcan2.rxMsg);
+
+    /* Invalidation of the RX message data content */
+    memset((void *)(&g_mcmcan2.rxData[0]), INVALID_RX_DATA_VALUE, MAXIMUM_CAN_DATA_PAYLOAD * sizeof(uint32));
+
+    /* Initialization of the TX message with the default configuration */
+    IfxCan_Can_initMessage(&g_mcmcan2.txMsg);
+
+    /* Define the content of the data to be transmitted */
+    g_mcmcan2.txData[0] = TX_DATA_LOW_WORD;
+    g_mcmcan2.txData[1] = TX_DATA_HIGH_WORD;
+
+    /* Set the message ID that is used during the receive acceptance phase */
+    g_mcmcan2.txMsg.messageId = CAN_MESSAGE_ID;
+
+    /* Send the CAN message with the previously defined TX message content */
+    while( IfxCan_Status_notSentBusy ==
+           IfxCan_Can_sendMessage(&g_mcmcan2.canSrcNode, &g_mcmcan2.txMsg, &g_mcmcan2.txData[0]) )
     {
     }
 }
