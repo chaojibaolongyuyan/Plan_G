@@ -3,33 +3,33 @@ G_001.elf:     file format elf32-tricore
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .CPU3.ustack  00000800  40014e00  40014e00  000004f4  2**0
+  0 .CPU3.ustack  00000800  40014e00  40014e00  000004d4  2**0
                   ALLOC
-  1 .CPU3.istack  00000400  40015700  40015700  000004f4  2**0
+  1 .CPU3.istack  00000400  40015700  40015700  000004d4  2**0
                   ALLOC
-  2 .CPU3.csa     00002000  40015c00  40015c00  000004f4  2**0
+  2 .CPU3.csa     00002000  40015c00  40015c00  000004d4  2**0
                   ALLOC
-  3 .CPU2.ustack  00000800  50014e00  50014e00  000004f4  2**0
+  3 .CPU2.ustack  00000800  50014e00  50014e00  000004d4  2**0
                   ALLOC
-  4 .CPU2.istack  00000400  50015700  50015700  000004f4  2**0
+  4 .CPU2.istack  00000400  50015700  50015700  000004d4  2**0
                   ALLOC
-  5 .CPU2.csa     00002000  50015c00  50015c00  000004f4  2**0
+  5 .CPU2.csa     00002000  50015c00  50015c00  000004d4  2**0
                   ALLOC
-  6 .CPU1.ustack  00000800  60038e00  60038e00  000004f4  2**0
+  6 .CPU1.ustack  00000800  60038e00  60038e00  000004d4  2**0
                   ALLOC
-  7 .CPU1.istack  00000400  60039700  60039700  000004f4  2**0
+  7 .CPU1.istack  00000400  60039700  60039700  000004d4  2**0
                   ALLOC
-  8 .CPU1.csa     00002000  60039c00  60039c00  000004f4  2**0
+  8 .CPU1.csa     00002000  60039c00  60039c00  000004d4  2**0
                   ALLOC
-  9 .CPU0.ustack  00000800  70038e00  70038e00  000004f4  2**0
+  9 .CPU0.ustack  00000800  70038e00  70038e00  000004d4  2**0
                   ALLOC
- 10 .CPU0.istack  00000400  70039700  70039700  000004f4  2**0
+ 10 .CPU0.istack  00000400  70039700  70039700  000004d4  2**0
                   ALLOC
- 11 .CPU0.csa     00002000  70039c00  70039c00  000004f4  2**0
+ 11 .CPU0.csa     00002000  70039c00  70039c00  000004d4  2**0
                   ALLOC
  12 .start_tc0    0000000c  a0000000  a0000000  00005926  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 13 .traptab_tc0  00000100  80000100  80000100  00000500  2**5
+ 13 .traptab_tc0  00000100  80000100  80000100  000004e0  2**5
                   CONTENTS, ALLOC, LOAD, CODE
  14 .traptab_tc1  00000100  80300000  80300000  00005040  2**5
                   CONTENTS, ALLOC, LOAD, CODE
@@ -47,9 +47,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS
  21 .inttab_tc0_001 00000000  802fe020  802fe020  000068f8  2**0
                   CONTENTS
- 22 .inttab_tc0_002 0000000e  802fe040  802fe040  00005014  2**0
+ 22 .inttab_tc0_002 0000000e  802fe040  802fe040  00005010  2**0
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 23 .inttab_tc0_003 0000000e  802fe060  802fe060  00005022  2**0
+ 23 .inttab_tc0_003 0000000e  802fe060  802fe060  0000501e  2**0
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
  24 .inttab_tc0_004 00000000  802fe080  802fe080  000068f8  2**0
                   CONTENTS
@@ -2141,15 +2141,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS
 1068 .CPU0.lmudata 00000000  90000000  90000000  000068f8  2**0
                   CONTENTS
-1069 .data         00000028  70000000  80000200  00000600  2**3
+1069 .data         00000010  70000000  80000200  000005e0  2**3
                   CONTENTS, ALLOC, LOAD, DATA
-1070 .bss          00000240  70000028  80000228  00000628  2**3
+1070 .bss          00000240  70000010  80000210  000005f0  2**3
                   ALLOC
-1071 .heap         00001000  70000268  80000228  00000628  2**0
+1071 .heap         00001000  70000250  80000210  000005f0  2**0
                   ALLOC
 1072 .lmudata      00000000  90040000  90040000  000068f8  2**0
                   CONTENTS
-1073 .rodata       00000510  80000228  80000228  00000628  2**2
+1073 .rodata       00000520  80000210  80000210  000005f0  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
 1074 .CPU0.psram_text 00000000  70100000  70100000  000068f8  2**0
                   CONTENTS
@@ -2159,11 +2159,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS
 1077 .CPU3.psram_text 00000000  40100000  40100000  000068f8  2**0
                   CONTENTS
-1078 .CPU0.text    000003ec  80000738  80000738  00000b38  2**1
+1078 .CPU0.text    000003f0  80000730  80000730  00000b10  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-1079 .init         0000000c  80000b24  80000b24  00000f24  2**2
+1079 .init         00000010  80000b20  80000b20  00000f00  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-1080 .fini         00000008  80000b30  80000b30  00000f30  2**2
+1080 .fini         00000008  80000b30  80000b30  00000f10  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
 1081 .CPU1.text    000001f8  8030010c  8030010c  00005140  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
@@ -2171,33 +2171,33 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
 1083 .CPU3.text    000001e6  8090010c  8090010c  00005740  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-1084 .text         000040bc  80000b38  80000b38  00000f38  2**2
+1084 .text         000040d8  80000b38  80000b38  00000f18  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-1085 .eh_frame     00000004  80004bf4  80004bf4  00004ff4  2**0
-                  ALLOC
-1086 .ctors        00000010  80004bf8  80004bf8  00004ff4  2**2
+1085 .eh_frame     00000000  80004c10  80004c10  000068f8  2**0
+                  CONTENTS
+1086 .ctors        00000010  80004c10  80004c10  00004ff0  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-1087 .dtors        00000010  80004c08  80004c08  00005004  2**2
+1087 .dtors        00000010  80004c20  80004c20  00005000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
 1088 .comment      00000082  00000000  00000000  000068f8  2**0
                   CONTENTS, READONLY
 1089 .debug_aranges 00000ab8  00000000  00000000  00006980  2**3
                   CONTENTS, READONLY, DEBUGGING
-1090 .debug_info   000c6239  00000000  00000000  00007438  2**0
+1090 .debug_info   000c630a  00000000  00000000  00007438  2**0
                   CONTENTS, READONLY, DEBUGGING
-1091 .debug_abbrev 00005431  00000000  00000000  000cd671  2**0
+1091 .debug_abbrev 00005422  00000000  00000000  000cd742  2**0
                   CONTENTS, READONLY, DEBUGGING
-1092 .debug_line   00011b92  00000000  00000000  000d2aa2  2**0
+1092 .debug_line   00011bc8  00000000  00000000  000d2b64  2**0
                   CONTENTS, READONLY, DEBUGGING
-1093 .debug_frame  000016c8  00000000  00000000  000e4634  2**2
+1093 .debug_frame  000016c8  00000000  00000000  000e472c  2**2
                   CONTENTS, READONLY, DEBUGGING
-1094 .debug_str    0000269c  00000000  00000000  000e5cfc  2**0
+1094 .debug_str    0000269c  00000000  00000000  000e5df4  2**0
                   CONTENTS, READONLY, DEBUGGING
-1095 .debug_loc    00009b16  00000000  00000000  000e8398  2**0
+1095 .debug_loc    00009b32  00000000  00000000  000e8490  2**0
                   CONTENTS, READONLY, DEBUGGING
-1096 .debug_ranges 00000e90  00000000  00000000  000f1eb0  2**3
+1096 .debug_ranges 00000e90  00000000  00000000  000f1fc8  2**3
                   CONTENTS, READONLY, DEBUGGING
-1097 .debug_macro  0003c5f4  00000000  00000000  000f2d40  2**0
+1097 .debug_macro  0003c5fa  00000000  00000000  000f2e58  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .start_tc0:
@@ -2210,7 +2210,7 @@ IFX_SSW_INLINE void Ifx_Ssw_jumpToFunction(void (*fun)(void))
 {
     __asm__ volatile ("ji %0" ::"a" (fun));
 a0000000:	91 00 00 28 	movh.a %a2,32768
-a0000004:	d9 22 a0 40 	lea %a2,[%a2]2336 <80000920 <__StartUpSoftware>>
+a0000004:	d9 22 98 40 	lea %a2,[%a2]2328 <80000918 <__StartUpSoftware>>
 a0000008:	dc 02       	ji %a2
 #endif
 
@@ -2612,557 +2612,562 @@ Disassembly of section .inttab_tc0_003:
 
 Disassembly of section .CPU0.text:
 
-80000738 <__StartUpSoftware_Phase2>:
+80000730 <__StartUpSoftware_Phase2>:
 }
 
 
 IFX_SSW_INLINE void Ifx_Ssw_jumpToFunctionWithLink(void *fun)
 {
     __asm__ volatile ("jli %0" ::"a" (fun));
-80000738:	91 00 00 28 	movh.a %a2,32768
-8000073c:	d9 22 ca 83 	lea %a2,[%a2]15882 <80003e0a <Ifx_Ssw_Pms_Init>>
-80000740:	2d 02 20 00 	jli %a2
-80000744:	91 00 00 28 	movh.a %a2,32768
-80000748:	d9 22 f0 c3 	lea %a2,[%a2]16176 <80003f30 <Ifx_Ssw_Pms_InitCheck>>
-8000074c:	2d 02 20 00 	jli %a2
+80000730:	91 00 00 28 	movh.a %a2,32768
+80000734:	d9 22 ca 83 	lea %a2,[%a2]15882 <80003e0a <Ifx_Ssw_Pms_Init>>
+80000738:	2d 02 20 00 	jli %a2
+8000073c:	91 00 00 28 	movh.a %a2,32768
+80000740:	d9 22 f0 c3 	lea %a2,[%a2]16176 <80003f30 <Ifx_Ssw_Pms_InitCheck>>
+80000744:	2d 02 20 00 	jli %a2
     __asm__ volatile ("ji %0" ::"a" (fun));
-80000750:	91 00 00 28 	movh.a %a2,32768
-80000754:	d9 22 5c d0 	lea %a2,[%a2]1884 <8000075c <__StartUpSoftware_Phase3PowerOnResetPath>>
-80000758:	dc 02       	ji %a2
+80000748:	91 00 00 28 	movh.a %a2,32768
+8000074c:	d9 22 54 d0 	lea %a2,[%a2]1876 <80000754 <__StartUpSoftware_Phase3PowerOnResetPath>>
+80000750:	dc 02       	ji %a2
 }
-8000075a:	00 90       	ret 
+80000752:	00 90       	ret 
 
-8000075c <__StartUpSoftware_Phase3PowerOnResetPath>:
+80000754 <__StartUpSoftware_Phase3PowerOnResetPath>:
     IFX_SSW_INIT_CONTEXT();
-8000075c:	91 40 00 a7 	movh.a %sp,28676
-80000760:	d9 aa 40 89 	lea %sp,[%sp]-27136 <70039600 <__USTACK0>>
+80000754:	91 40 00 a7 	movh.a %sp,28676
+80000758:	d9 aa 40 89 	lea %sp,[%sp]-27136 <70039600 <__USTACK0>>
     __asm__ volatile ("dsync" : : : "memory");
-80000764:	0d 00 80 04 	dsync 
+8000075c:	0d 00 80 04 	dsync 
 {
     unsigned int  k;
     unsigned int  nxt_cxi_val = 0U;
     unsigned int *prvCsa      = csaBegin;
     unsigned int *nxtCsa      = csaBegin;
     unsigned int numOfCsa     = (((unsigned int)csaEnd - (unsigned int)csaBegin) / 64U);
-80000768:	91 40 00 37 	movh.a %a3,28676
-8000076c:	91 40 00 27 	movh.a %a2,28676
-80000770:	d9 33 c0 09 	lea %a3,[%a3]-25600 <70039c00 <__CSA0>>
-80000774:	d9 22 c0 0b 	lea %a2,[%a2]-17408 <7003bc00 <__CSA0_END>>
-80000778:	01 32 20 20 	sub.a %a2,%a2,%a3
-8000077c:	80 22       	mov.d %d2,%a2
-8000077e:	8f a2 1f 60 	sh %d6,%d2,-6
+80000760:	91 40 00 37 	movh.a %a3,28676
+80000764:	91 40 00 27 	movh.a %a2,28676
+80000768:	d9 33 c0 09 	lea %a3,[%a3]-25600 <70039c00 <__CSA0>>
+8000076c:	d9 22 c0 0b 	lea %a2,[%a2]-17408 <7003bc00 <__CSA0_END>>
+80000770:	01 32 20 20 	sub.a %a2,%a2,%a3
+80000774:	80 22       	mov.d %d2,%a2
+80000776:	8f a2 1f 60 	sh %d6,%d2,-6
     unsigned int *prvCsa      = csaBegin;
-80000782:	40 32       	mov.aa %a2,%a3
+8000077a:	40 32       	mov.aa %a2,%a3
         else
         {
             *prvCsa = nxt_cxi_val;
         }
 
         if (k == (numOfCsa - 3U))
-80000784:	1b d6 ff 0f 	addi %d0,%d6,-3
+8000077c:	1b d6 ff 0f 	addi %d0,%d6,-3
     for (k = 0U; k < numOfCsa; k++)
-80000788:	82 03       	mov %d3,0
+80000780:	82 03       	mov %d3,0
     unsigned int *nxtCsa      = csaBegin;
-8000078a:	80 32       	mov.d %d2,%a3
+80000782:	80 32       	mov.d %d2,%a3
         nxt_cxi_val = ((unsigned int)((unsigned int)nxtCsa & ((unsigned int)0XFU << 28U)) >> 12U) | \
-8000078c:	7b f0 00 70 	movh %d7,15
+80000784:	7b f0 00 70 	movh %d7,15
     for (k = 0U; k < numOfCsa; k++)
-80000790:	df 06 2d 00 	jeq %d6,0,800007ea <__StartUpSoftware_Phase3PowerOnResetPath+0x8e>
+80000788:	df 06 2d 00 	jeq %d6,0,800007e2 <__StartUpSoftware_Phase3PowerOnResetPath+0x8e>
                       ((unsigned int)((unsigned int)nxtCsa & ((unsigned int)0XFFFFU << 6U)) >> 6U);
-80000794:	37 02 70 43 	extr.u %d4,%d2,6,16
+8000078c:	37 02 70 43 	extr.u %d4,%d2,6,16
         nxt_cxi_val = ((unsigned int)((unsigned int)nxtCsa & ((unsigned int)0XFU << 28U)) >> 12U) | \
-80000798:	8f 42 1f 50 	sh %d5,%d2,-12
-8000079c:	26 75       	and %d5,%d7
-8000079e:	a6 54       	or %d4,%d5
+80000790:	8f 42 1f 50 	sh %d5,%d2,-12
+80000794:	26 75       	and %d5,%d7
+80000796:	a6 54       	or %d4,%d5
         if (k == 0U)
-800007a0:	df 03 14 00 	jeq %d3,0,800007c8 <__StartUpSoftware_Phase3PowerOnResetPath+0x6c>
+80000798:	df 03 14 00 	jeq %d3,0,800007c0 <__StartUpSoftware_Phase3PowerOnResetPath+0x6c>
             *prvCsa = nxt_cxi_val;
-800007a4:	74 24       	st.w [%a2],%d4
+8000079c:	74 24       	st.w [%a2],%d4
         if (k == (numOfCsa - 3U))
-800007a6:	5f 03 15 00 	jeq %d3,%d0,800007d0 <__StartUpSoftware_Phase3PowerOnResetPath+0x74>
+8000079e:	5f 03 15 00 	jeq %d3,%d0,800007c8 <__StartUpSoftware_Phase3PowerOnResetPath+0x74>
     for (k = 0U; k < numOfCsa; k++)
-800007aa:	c2 13       	add %d3,1
-800007ac:	60 22       	mov.a %a2,%d2
+800007a2:	c2 13       	add %d3,1
+800007a4:	60 22       	mov.a %a2,%d2
         {
             Ifx_Ssw_MTCR(CPU_LCX, nxt_cxi_val);   /* Last but 2 context save area is pointed in LCX to know if there is CSA depletion */
         }
 
         prvCsa  = (unsigned int *)nxtCsa;
         nxtCsa += IFX_SSW_CSA_SIZE; /* next CSA */
-800007ae:	1b 02 04 40 	addi %d4,%d2,64
+800007a6:	1b 02 04 40 	addi %d4,%d2,64
     for (k = 0U; k < numOfCsa; k++)
-800007b2:	5f 36 17 00 	jeq %d6,%d3,800007e0 <__StartUpSoftware_Phase3PowerOnResetPath+0x84>
+800007aa:	5f 36 17 00 	jeq %d6,%d3,800007d8 <__StartUpSoftware_Phase3PowerOnResetPath+0x84>
         nxtCsa += IFX_SSW_CSA_SIZE; /* next CSA */
-800007b6:	02 42       	mov %d2,%d4
+800007ae:	02 42       	mov %d2,%d4
                       ((unsigned int)((unsigned int)nxtCsa & ((unsigned int)0XFFFFU << 6U)) >> 6U);
-800007b8:	37 02 70 43 	extr.u %d4,%d2,6,16
+800007b0:	37 02 70 43 	extr.u %d4,%d2,6,16
         nxt_cxi_val = ((unsigned int)((unsigned int)nxtCsa & ((unsigned int)0XFU << 28U)) >> 12U) | \
-800007bc:	8f 42 1f 50 	sh %d5,%d2,-12
-800007c0:	26 75       	and %d5,%d7
-800007c2:	a6 54       	or %d4,%d5
+800007b4:	8f 42 1f 50 	sh %d5,%d2,-12
+800007b8:	26 75       	and %d5,%d7
+800007ba:	a6 54       	or %d4,%d5
         if (k == 0U)
-800007c4:	df 03 f0 ff 	jne %d3,0,800007a4 <__StartUpSoftware_Phase3PowerOnResetPath+0x48>
+800007bc:	df 03 f0 ff 	jne %d3,0,8000079c <__StartUpSoftware_Phase3PowerOnResetPath+0x48>
             Ifx_Ssw_MTCR(CPU_FCX, nxt_cxi_val);   /* store the new pcxi value to LCX */
-800007c8:	cd 84 e3 0f 	mtcr $fcx,%d4
+800007c0:	cd 84 e3 0f 	mtcr $fcx,%d4
         if (k == (numOfCsa - 3U))
-800007cc:	5f 03 ef ff 	jne %d3,%d0,800007aa <__StartUpSoftware_Phase3PowerOnResetPath+0x4e>
+800007c4:	5f 03 ef ff 	jne %d3,%d0,800007a2 <__StartUpSoftware_Phase3PowerOnResetPath+0x4e>
             Ifx_Ssw_MTCR(CPU_LCX, nxt_cxi_val);   /* Last but 2 context save area is pointed in LCX to know if there is CSA depletion */
-800007d0:	cd c4 e3 0f 	mtcr $lcx,%d4
+800007c8:	cd c4 e3 0f 	mtcr $lcx,%d4
     for (k = 0U; k < numOfCsa; k++)
-800007d4:	c2 13       	add %d3,1
-800007d6:	60 22       	mov.a %a2,%d2
+800007cc:	c2 13       	add %d3,1
+800007ce:	60 22       	mov.a %a2,%d2
         nxtCsa += IFX_SSW_CSA_SIZE; /* next CSA */
-800007d8:	1b 02 04 40 	addi %d4,%d2,64
+800007d0:	1b 02 04 40 	addi %d4,%d2,64
     for (k = 0U; k < numOfCsa; k++)
-800007dc:	5f 36 ed ff 	jne %d6,%d3,800007b6 <__StartUpSoftware_Phase3PowerOnResetPath+0x5a>
-800007e0:	1b f6 ff 2f 	addi %d2,%d6,-1
-800007e4:	06 62       	sh %d2,6
-800007e6:	01 32 00 26 	addsc.a %a2,%a3,%d2,0
+800007d4:	5f 36 ed ff 	jne %d6,%d3,800007ae <__StartUpSoftware_Phase3PowerOnResetPath+0x5a>
+800007d8:	1b f6 ff 2f 	addi %d2,%d6,-1
+800007dc:	06 62       	sh %d2,6
+800007de:	01 32 00 26 	addsc.a %a2,%a3,%d2,0
     }
 
     *prvCsa = 0U;                       /* Store null pointer in last CSA (= very first time!) */
-800007ea:	82 02       	mov %d2,0
-800007ec:	74 22       	st.w [%a2],%d2
-800007ee:	0d 00 80 04 	dsync 
+800007e2:	82 02       	mov %d2,0
+800007e4:	74 22       	st.w [%a2],%d2
+800007e6:	0d 00 80 04 	dsync 
     __asm__ volatile ("isync" : : : "memory");
-800007f2:	0d 00 c0 04 	isync 
+800007ea:	0d 00 c0 04 	isync 
     __asm__ volatile ("ji %0" ::"a" (fun));
-800007f6:	91 00 00 28 	movh.a %a2,32768
-800007fa:	d9 22 92 30 	lea %a2,[%a2]2258 <800008d2 <__StartUpSoftware_Phase4>>
-800007fe:	dc 02       	ji %a2
+800007ee:	91 00 00 28 	movh.a %a2,32768
+800007f2:	d9 22 8a 30 	lea %a2,[%a2]2250 <800008ca <__StartUpSoftware_Phase4>>
+800007f6:	dc 02       	ji %a2
 }
-80000800:	00 90       	ret 
+800007f8:	00 90       	ret 
 
-80000802 <__StartUpSoftware_Phase3ApplicationResetPath>:
+800007fa <__StartUpSoftware_Phase3ApplicationResetPath>:
     IFX_SSW_INIT_CONTEXT();
-80000802:	91 40 00 a7 	movh.a %sp,28676
-80000806:	d9 aa 40 89 	lea %sp,[%sp]-27136 <70039600 <__USTACK0>>
+800007fa:	91 40 00 a7 	movh.a %sp,28676
+800007fe:	d9 aa 40 89 	lea %sp,[%sp]-27136 <70039600 <__USTACK0>>
     __asm__ volatile ("dsync" : : : "memory");
-8000080a:	0d 00 80 04 	dsync 
+80000802:	0d 00 80 04 	dsync 
     unsigned int numOfCsa     = (((unsigned int)csaEnd - (unsigned int)csaBegin) / 64U);
-8000080e:	91 40 00 37 	movh.a %a3,28676
-80000812:	91 40 00 27 	movh.a %a2,28676
-80000816:	d9 33 c0 09 	lea %a3,[%a3]-25600 <70039c00 <__CSA0>>
-8000081a:	d9 22 c0 0b 	lea %a2,[%a2]-17408 <7003bc00 <__CSA0_END>>
-8000081e:	01 32 20 20 	sub.a %a2,%a2,%a3
-80000822:	80 22       	mov.d %d2,%a2
-80000824:	8f a2 1f 60 	sh %d6,%d2,-6
+80000806:	91 40 00 37 	movh.a %a3,28676
+8000080a:	91 40 00 27 	movh.a %a2,28676
+8000080e:	d9 33 c0 09 	lea %a3,[%a3]-25600 <70039c00 <__CSA0>>
+80000812:	d9 22 c0 0b 	lea %a2,[%a2]-17408 <7003bc00 <__CSA0_END>>
+80000816:	01 32 20 20 	sub.a %a2,%a2,%a3
+8000081a:	80 22       	mov.d %d2,%a2
+8000081c:	8f a2 1f 60 	sh %d6,%d2,-6
     unsigned int *prvCsa      = csaBegin;
-80000828:	40 32       	mov.aa %a2,%a3
+80000820:	40 32       	mov.aa %a2,%a3
         if (k == (numOfCsa - 3U))
-8000082a:	1b d6 ff 0f 	addi %d0,%d6,-3
+80000822:	1b d6 ff 0f 	addi %d0,%d6,-3
     for (k = 0U; k < numOfCsa; k++)
-8000082e:	82 03       	mov %d3,0
+80000826:	82 03       	mov %d3,0
     unsigned int *nxtCsa      = csaBegin;
-80000830:	80 32       	mov.d %d2,%a3
+80000828:	80 32       	mov.d %d2,%a3
         nxt_cxi_val = ((unsigned int)((unsigned int)nxtCsa & ((unsigned int)0XFU << 28U)) >> 12U) | \
-80000832:	7b f0 00 70 	movh %d7,15
+8000082a:	7b f0 00 70 	movh %d7,15
     for (k = 0U; k < numOfCsa; k++)
-80000836:	df 06 2d 00 	jeq %d6,0,80000890 <__StartUpSoftware_Phase3ApplicationResetPath+0x8e>
+8000082e:	df 06 2d 00 	jeq %d6,0,80000888 <__StartUpSoftware_Phase3ApplicationResetPath+0x8e>
                       ((unsigned int)((unsigned int)nxtCsa & ((unsigned int)0XFFFFU << 6U)) >> 6U);
-8000083a:	37 02 70 43 	extr.u %d4,%d2,6,16
+80000832:	37 02 70 43 	extr.u %d4,%d2,6,16
         nxt_cxi_val = ((unsigned int)((unsigned int)nxtCsa & ((unsigned int)0XFU << 28U)) >> 12U) | \
-8000083e:	8f 42 1f 50 	sh %d5,%d2,-12
-80000842:	26 75       	and %d5,%d7
-80000844:	a6 54       	or %d4,%d5
+80000836:	8f 42 1f 50 	sh %d5,%d2,-12
+8000083a:	26 75       	and %d5,%d7
+8000083c:	a6 54       	or %d4,%d5
         if (k == 0U)
-80000846:	df 03 14 00 	jeq %d3,0,8000086e <__StartUpSoftware_Phase3ApplicationResetPath+0x6c>
+8000083e:	df 03 14 00 	jeq %d3,0,80000866 <__StartUpSoftware_Phase3ApplicationResetPath+0x6c>
             *prvCsa = nxt_cxi_val;
-8000084a:	74 24       	st.w [%a2],%d4
+80000842:	74 24       	st.w [%a2],%d4
         if (k == (numOfCsa - 3U))
-8000084c:	5f 03 15 00 	jeq %d3,%d0,80000876 <__StartUpSoftware_Phase3ApplicationResetPath+0x74>
+80000844:	5f 03 15 00 	jeq %d3,%d0,8000086e <__StartUpSoftware_Phase3ApplicationResetPath+0x74>
     for (k = 0U; k < numOfCsa; k++)
-80000850:	c2 13       	add %d3,1
-80000852:	60 22       	mov.a %a2,%d2
+80000848:	c2 13       	add %d3,1
+8000084a:	60 22       	mov.a %a2,%d2
         nxtCsa += IFX_SSW_CSA_SIZE; /* next CSA */
-80000854:	1b 02 04 40 	addi %d4,%d2,64
+8000084c:	1b 02 04 40 	addi %d4,%d2,64
     for (k = 0U; k < numOfCsa; k++)
-80000858:	5f 36 17 00 	jeq %d6,%d3,80000886 <__StartUpSoftware_Phase3ApplicationResetPath+0x84>
+80000850:	5f 36 17 00 	jeq %d6,%d3,8000087e <__StartUpSoftware_Phase3ApplicationResetPath+0x84>
         nxtCsa += IFX_SSW_CSA_SIZE; /* next CSA */
-8000085c:	02 42       	mov %d2,%d4
+80000854:	02 42       	mov %d2,%d4
                       ((unsigned int)((unsigned int)nxtCsa & ((unsigned int)0XFFFFU << 6U)) >> 6U);
-8000085e:	37 02 70 43 	extr.u %d4,%d2,6,16
+80000856:	37 02 70 43 	extr.u %d4,%d2,6,16
         nxt_cxi_val = ((unsigned int)((unsigned int)nxtCsa & ((unsigned int)0XFU << 28U)) >> 12U) | \
-80000862:	8f 42 1f 50 	sh %d5,%d2,-12
-80000866:	26 75       	and %d5,%d7
-80000868:	a6 54       	or %d4,%d5
+8000085a:	8f 42 1f 50 	sh %d5,%d2,-12
+8000085e:	26 75       	and %d5,%d7
+80000860:	a6 54       	or %d4,%d5
         if (k == 0U)
-8000086a:	df 03 f0 ff 	jne %d3,0,8000084a <__StartUpSoftware_Phase3ApplicationResetPath+0x48>
+80000862:	df 03 f0 ff 	jne %d3,0,80000842 <__StartUpSoftware_Phase3ApplicationResetPath+0x48>
             Ifx_Ssw_MTCR(CPU_FCX, nxt_cxi_val);   /* store the new pcxi value to LCX */
-8000086e:	cd 84 e3 0f 	mtcr $fcx,%d4
+80000866:	cd 84 e3 0f 	mtcr $fcx,%d4
         if (k == (numOfCsa - 3U))
-80000872:	5f 03 ef ff 	jne %d3,%d0,80000850 <__StartUpSoftware_Phase3ApplicationResetPath+0x4e>
+8000086a:	5f 03 ef ff 	jne %d3,%d0,80000848 <__StartUpSoftware_Phase3ApplicationResetPath+0x4e>
             Ifx_Ssw_MTCR(CPU_LCX, nxt_cxi_val);   /* Last but 2 context save area is pointed in LCX to know if there is CSA depletion */
-80000876:	cd c4 e3 0f 	mtcr $lcx,%d4
+8000086e:	cd c4 e3 0f 	mtcr $lcx,%d4
     for (k = 0U; k < numOfCsa; k++)
-8000087a:	c2 13       	add %d3,1
-8000087c:	60 22       	mov.a %a2,%d2
+80000872:	c2 13       	add %d3,1
+80000874:	60 22       	mov.a %a2,%d2
         nxtCsa += IFX_SSW_CSA_SIZE; /* next CSA */
-8000087e:	1b 02 04 40 	addi %d4,%d2,64
+80000876:	1b 02 04 40 	addi %d4,%d2,64
     for (k = 0U; k < numOfCsa; k++)
-80000882:	5f 36 ed ff 	jne %d6,%d3,8000085c <__StartUpSoftware_Phase3ApplicationResetPath+0x5a>
-80000886:	1b f6 ff 2f 	addi %d2,%d6,-1
-8000088a:	06 62       	sh %d2,6
-8000088c:	01 32 00 26 	addsc.a %a2,%a3,%d2,0
+8000087a:	5f 36 ed ff 	jne %d6,%d3,80000854 <__StartUpSoftware_Phase3ApplicationResetPath+0x5a>
+8000087e:	1b f6 ff 2f 	addi %d2,%d6,-1
+80000882:	06 62       	sh %d2,6
+80000884:	01 32 00 26 	addsc.a %a2,%a3,%d2,0
     *prvCsa = 0U;                       /* Store null pointer in last CSA (= very first time!) */
-80000890:	82 02       	mov %d2,0
-80000892:	74 22       	st.w [%a2],%d2
-80000894:	0d 00 80 04 	dsync 
+80000888:	82 02       	mov %d2,0
+8000088a:	74 22       	st.w [%a2],%d2
+8000088c:	0d 00 80 04 	dsync 
     __asm__ volatile ("isync" : : : "memory");
-80000898:	0d 00 c0 04 	isync 
+80000890:	0d 00 c0 04 	isync 
     __asm__ volatile ("ji %0" ::"a" (fun));
-8000089c:	91 00 00 28 	movh.a %a2,32768
-800008a0:	d9 22 a8 20 	lea %a2,[%a2]2216 <800008a8 <__StartUpSoftware_Phase5>>
-800008a4:	dc 02       	ji %a2
+80000894:	91 00 00 28 	movh.a %a2,32768
+80000898:	d9 22 a0 20 	lea %a2,[%a2]2208 <800008a0 <__StartUpSoftware_Phase5>>
+8000089c:	dc 02       	ji %a2
 }
-800008a6:	00 90       	ret 
+8000089e:	00 90       	ret 
 
-800008a8 <__StartUpSoftware_Phase5>:
-800008a8:	91 00 00 28 	movh.a %a2,32768
-800008ac:	d9 22 b4 20 	lea %a2,[%a2]2228 <800008b4 <__StartUpSoftware_Phase6>>
-800008b0:	dc 02       	ji %a2
+800008a0 <__StartUpSoftware_Phase5>:
+800008a0:	91 00 00 28 	movh.a %a2,32768
+800008a4:	d9 22 ac 20 	lea %a2,[%a2]2220 <800008ac <__StartUpSoftware_Phase6>>
+800008a8:	dc 02       	ji %a2
 }
-800008b2:	00 90       	ret 
+800008aa:	00 90       	ret 
 
-800008b4 <__StartUpSoftware_Phase6>:
+800008ac <__StartUpSoftware_Phase6>:
     Ifx_Ssw_startCore(&MODULE_CPU1, (unsigned int)__START(1));           /*The status returned by function call is ignored */
-800008b4:	91 00 03 2a 	movh.a %a2,41008
-800008b8:	80 22       	mov.d %d2,%a2
-800008ba:	1b 02 10 40 	addi %d4,%d2,256
-800008be:	91 20 88 4f 	movh.a %a4,63618
-800008c2:	6d 00 93 19 	call 80003be8 <Ifx_Ssw_startCore>
-800008c6:	91 00 00 28 	movh.a %a2,32768
-800008ca:	d9 22 a4 60 	lea %a2,[%a2]2468 <800009a4 <__Core0_start>>
-800008ce:	dc 02       	ji %a2
+800008ac:	91 00 03 2a 	movh.a %a2,41008
+800008b0:	80 22       	mov.d %d2,%a2
+800008b2:	1b 02 10 40 	addi %d4,%d2,256
+800008b6:	91 20 88 4f 	movh.a %a4,63618
+800008ba:	6d 00 97 19 	call 80003be8 <Ifx_Ssw_startCore>
+800008be:	91 00 00 28 	movh.a %a2,32768
+800008c2:	d9 22 9c 60 	lea %a2,[%a2]2460 <8000099c <__Core0_start>>
+800008c6:	dc 02       	ji %a2
 }
-800008d0:	00 90       	ret 
+800008c8:	00 90       	ret 
 
-800008d2 <__StartUpSoftware_Phase4>:
+800008ca <__StartUpSoftware_Phase4>:
     password  = watchdog->CON0.B.PW;
-800008d2:	91 30 00 4f 	movh.a %a4,61443
-800008d6:	19 44 0c 96 	ld.w %d4,[%a4]25164 <f003624c <bmhd_3_copy+0x40c34c4c>>
+800008ca:	91 30 00 4f 	movh.a %a4,61443
+800008ce:	19 44 0c 96 	ld.w %d4,[%a4]25164 <f003624c <bmhd_3_copy+0x40c34c4c>>
     password  = watchdog->CON0.B.PW;
-800008da:	91 30 00 2f 	movh.a %a2,61443
-800008de:	19 28 28 a6 	ld.w %d8,[%a2]25256 <f00362a8 <bmhd_3_copy+0x40c34ca8>>
+800008d2:	91 30 00 2f 	movh.a %a2,61443
+800008d6:	19 28 28 a6 	ld.w %d8,[%a2]25256 <f00362a8 <bmhd_3_copy+0x40c34ca8>>
     password  = watchdog->CON0.B.PW;
-800008e2:	37 04 6e 41 	extr.u %d4,%d4,2,14
-800008e6:	d9 44 0c 96 	lea %a4,[%a4]25164 <f003624c <bmhd_3_copy+0x40c34c4c>>
+800008da:	37 04 6e 41 	extr.u %d4,%d4,2,14
+800008de:	d9 44 0c 96 	lea %a4,[%a4]25164 <f003624c <bmhd_3_copy+0x40c34c4c>>
     password  = watchdog->CON0.B.PW;
-800008ea:	d9 22 28 a6 	lea %a2,[%a2]25256 <f00362a8 <bmhd_3_copy+0x40c34ca8>>
+800008e2:	d9 22 28 a6 	lea %a2,[%a2]25256 <f00362a8 <bmhd_3_copy+0x40c34ca8>>
         Ifx_Ssw_serviceCpuWatchdog(&MODULE_SCU.WDTCPU[0], cpuWdtPassword);
-800008ee:	8f f4 83 41 	xor %d4,%d4,63
-800008f2:	37 08 6e 81 	extr.u %d8,%d8,2,14
-800008f6:	6d 00 dd 18 	call 80003ab0 <Ifx_Ssw_serviceCpuWatchdog>
+800008e6:	8f f4 83 41 	xor %d4,%d4,63
+800008ea:	37 08 6e 81 	extr.u %d8,%d8,2,14
+800008ee:	6d 00 e1 18 	call 80003ab0 <Ifx_Ssw_serviceCpuWatchdog>
         Ifx_Ssw_serviceSafetyWatchdog(safetyWdtPassword);
-800008fa:	8f f8 83 41 	xor %d4,%d8,63
-800008fe:	6d 00 f0 18 	call 80003ade <Ifx_Ssw_serviceSafetyWatchdog>
+800008f2:	8f f8 83 41 	xor %d4,%d8,63
+800008f6:	6d 00 f4 18 	call 80003ade <Ifx_Ssw_serviceSafetyWatchdog>
     IFX_CFG_SSW_CALLOUT_PLL_INIT();
-80000902:	91 00 00 48 	movh.a %a4,32768
-80000906:	d9 44 04 a0 	lea %a4,[%a4]644 <80000284 <IfxScuCcu_defaultClockConfig>>
-8000090a:	6d 00 61 03 	call 80000fcc <IfxScuCcu_init>
-8000090e:	df 12 03 80 	jne %d2,1,80000914 <__StartUpSoftware_Phase4+0x42>
+800008fa:	91 00 00 48 	movh.a %a4,32768
+800008fe:	d9 44 2c 90 	lea %a4,[%a4]620 <8000026c <IfxScuCcu_defaultClockConfig>>
+80000902:	6d 00 65 03 	call 80000fcc <IfxScuCcu_init>
+80000906:	df 12 03 80 	jne %d2,1,8000090c <__StartUpSoftware_Phase4+0x42>
 
 /** Insert DEBUG instruction
  */
 IFX_INLINE void Ifx__debug(void)
 {
     __asm__ volatile ("debug" : : : "memory");
-80000912:	00 a0       	debug 
-80000914:	91 00 00 28 	movh.a %a2,32768
-80000918:	d9 22 a8 20 	lea %a2,[%a2]2216 <800008a8 <__StartUpSoftware_Phase5>>
-8000091c:	dc 02       	ji %a2
+8000090a:	00 a0       	debug 
+8000090c:	91 00 00 28 	movh.a %a2,32768
+80000910:	d9 22 a0 20 	lea %a2,[%a2]2208 <800008a0 <__StartUpSoftware_Phase5>>
+80000914:	dc 02       	ji %a2
 }
-8000091e:	00 90       	ret 
+80000916:	00 90       	ret 
 
-80000920 <__StartUpSoftware>:
+80000918 <__StartUpSoftware>:
     Ifx_Ssw_setAddressReg(a1, __SDATA2(0));
-80000920:	91 10 00 18 	movh.a %a1,32769
-80000924:	d9 11 00 08 	lea %a1,[%a1]-32768 <80008000 <_SMALL_DATA2_>>
+80000918:	91 10 00 18 	movh.a %a1,32769
+8000091c:	d9 11 00 08 	lea %a1,[%a1]-32768 <80008000 <_SMALL_DATA2_>>
     Ifx_Ssw_MTCR(CPU_PSW, IFX_CFG_SSW_PSW_DEFAULT);
-80000928:	3b 00 98 20 	mov %d2,2432
-8000092c:	cd 42 e0 0f 	mtcr $psw,%d2
+80000920:	3b 00 98 20 	mov %d2,2432
+80000924:	cd 42 e0 0f 	mtcr $psw,%d2
     unsigned int  tempValue = SCU_RSTSTAT.U;
-80000930:	91 30 00 2f 	movh.a %a2,61443
-80000934:	19 22 10 16 	ld.w %d2,[%a2]24656 <f0036050 <bmhd_3_copy+0x40c34a50>>
+80000928:	91 30 00 2f 	movh.a %a2,61443
+8000092c:	19 22 10 16 	ld.w %d2,[%a2]24656 <f0036050 <bmhd_3_copy+0x40c34a50>>
     if ((tempValue & IFX_SSW_POWERONRESET_MASK) > 0U)
-80000938:	7b d0 38 31 	movh %d3,5005
-8000093c:	26 23       	and %d3,%d2
+80000930:	7b d0 38 31 	movh %d3,5005
+80000934:	26 23       	and %d3,%d2
     unsigned int  tempValue = SCU_RSTSTAT.U;
-8000093e:	d9 22 10 16 	lea %a2,[%a2]24656 <f0036050 <bmhd_3_copy+0x40c34a50>>
+80000936:	d9 22 10 16 	lea %a2,[%a2]24656 <f0036050 <bmhd_3_copy+0x40c34a50>>
     if ((tempValue & IFX_SSW_POWERONRESET_MASK) > 0U)
-80000942:	df 03 15 80 	jne %d3,0,8000096c <__StartUpSoftware+0x4c>
+8000093a:	df 03 15 80 	jne %d3,0,80000964 <__StartUpSoftware+0x4c>
     else if ((tempValue & IFX_SSW_APPLICATIONRESET_MASK) > 0U)
-80000946:	8f b2 1f 31 	and %d3,%d2,507
-8000094a:	df 03 17 00 	jeq %d3,0,80000978 <__StartUpSoftware+0x58>
+8000093e:	8f b2 1f 31 	and %d3,%d2,507
+80000942:	df 03 17 00 	jeq %d3,0,80000970 <__StartUpSoftware+0x58>
         tempValue = (SCU_RSTCON.U >> ((31U - Ifx_Ssw_CLZ(tempValue)) << 1U)) & 3U;
-8000094e:	91 30 00 2f 	movh.a %a2,61443
-80000952:	0f 03 b0 21 	clz %d2,%d3
-80000956:	8b f2 01 21 	rsub %d2,%d2,31
-8000095a:	19 23 18 16 	ld.w %d3,[%a2]24664 <f0036058 <bmhd_3_copy+0x40c34a58>>
-8000095e:	06 12       	sh %d2,1
-80000960:	57 03 62 22 	extr.u %d2,%d3,%d2,2
-80000964:	d9 22 18 16 	lea %a2,[%a2]24664 <f0036058 <bmhd_3_copy+0x40c34a58>>
+80000946:	91 30 00 2f 	movh.a %a2,61443
+8000094a:	0f 03 b0 21 	clz %d2,%d3
+8000094e:	8b f2 01 21 	rsub %d2,%d2,31
+80000952:	19 23 18 16 	ld.w %d3,[%a2]24664 <f0036058 <bmhd_3_copy+0x40c34a58>>
+80000956:	06 12       	sh %d2,1
+80000958:	57 03 62 22 	extr.u %d2,%d3,%d2,2
+8000095c:	d9 22 18 16 	lea %a2,[%a2]24664 <f0036058 <bmhd_3_copy+0x40c34a58>>
         if (tempValue == IFX_SSW_APPLICATIONRESET)
-80000968:	df 22 0a 00 	jeq %d2,2,8000097c <__StartUpSoftware+0x5c>
-8000096c:	91 00 00 28 	movh.a %a2,32768
-80000970:	d9 22 78 c0 	lea %a2,[%a2]1848 <80000738 <__StartUpSoftware_Phase2>>
-80000974:	dc 02       	ji %a2
+80000960:	df 22 0a 00 	jeq %d2,2,80000974 <__StartUpSoftware+0x5c>
+80000964:	91 00 00 28 	movh.a %a2,32768
+80000968:	d9 22 70 c0 	lea %a2,[%a2]1840 <80000730 <__StartUpSoftware_Phase2>>
+8000096c:	dc 02       	ji %a2
 }
-80000976:	00 90       	ret 
+8000096e:	00 90       	ret 
     else if (((unsigned int)tempValue & ((unsigned int)IFX_SCU_RSTSTAT_CB3_MSK << IFX_SCU_RSTSTAT_CB3_OFF)))
-80000978:	ef 42 08 00 	jz.t %d2,20,80000988 <__StartUpSoftware+0x68>
+80000970:	ef 42 08 00 	jz.t %d2,20,80000980 <__StartUpSoftware+0x68>
     __asm__ volatile ("ji %0" ::"a" (fun));
-8000097c:	91 00 00 28 	movh.a %a2,32768
-80000980:	d9 22 82 00 	lea %a2,[%a2]2050 <80000802 <__StartUpSoftware_Phase3ApplicationResetPath>>
-80000984:	dc 02       	ji %a2
+80000974:	91 00 00 28 	movh.a %a2,32768
+80000978:	d9 22 7a f0 	lea %a2,[%a2]2042 <800007fa <__StartUpSoftware_Phase3ApplicationResetPath>>
+8000097c:	dc 02       	ji %a2
 }
-80000986:	00 90       	ret 
+8000097e:	00 90       	ret 
     else if (CPU0_KRST0.B.RSTSTAT != 0)   /*CPU0 KRST status */
-80000988:	91 10 88 2f 	movh.a %a2,63617
-8000098c:	19 22 00 0d 	ld.w %d2,[%a2]-12288 <f880d000 <bmhd_3_copy+0x4940ba00>>
-80000990:	d9 22 00 0d 	lea %a2,[%a2]-12288 <f880d000 <bmhd_3_copy+0x4940ba00>>
-80000994:	37 02 e2 20 	extr.u %d2,%d2,1,2
-80000998:	df 02 f2 ff 	jne %d2,0,8000097c <__StartUpSoftware+0x5c>
-8000099c:	1d ff e8 ff 	j 8000096c <__StartUpSoftware+0x4c>
+80000980:	91 10 88 2f 	movh.a %a2,63617
+80000984:	19 22 00 0d 	ld.w %d2,[%a2]-12288 <f880d000 <bmhd_3_copy+0x4940ba00>>
+80000988:	d9 22 00 0d 	lea %a2,[%a2]-12288 <f880d000 <bmhd_3_copy+0x4940ba00>>
+8000098c:	37 02 e2 20 	extr.u %d2,%d2,1,2
+80000990:	df 02 f2 ff 	jne %d2,0,80000974 <__StartUpSoftware+0x5c>
+80000994:	1d ff e8 ff 	j 80000964 <__StartUpSoftware+0x4c>
 
-800009a0 <hardware_init_hook>:
+80000998 <hardware_init_hook>:
 {}
-800009a0:	00 90       	ret 
+80000998:	00 90       	ret 
 
-800009a2 <software_init_hook>:
+8000099a <software_init_hook>:
 {}
-800009a2:	00 90       	ret 
+8000099a:	00 90       	ret 
 
-800009a4 <__Core0_start>:
+8000099c <__Core0_start>:
     password  = watchdog->CON0.B.PW;
-800009a4:	91 30 00 2f 	movh.a %a2,61443
+8000099c:	91 30 00 2f 	movh.a %a2,61443
     password  = watchdog->CON0.B.PW;
-800009a8:	91 30 00 3f 	movh.a %a3,61443
+800009a0:	91 30 00 3f 	movh.a %a3,61443
     password  = watchdog->CON0.B.PW;
-800009ac:	19 23 0c 96 	ld.w %d3,[%a2]25164 <f003624c <bmhd_3_copy+0x40c34c4c>>
+800009a4:	19 23 0c 96 	ld.w %d3,[%a2]25164 <f003624c <bmhd_3_copy+0x40c34c4c>>
     password  = watchdog->CON0.B.PW;
-800009b0:	19 32 28 a6 	ld.w %d2,[%a3]25256 <f00362a8 <bmhd_3_copy+0x40c34ca8>>
+800009a8:	19 32 28 a6 	ld.w %d2,[%a3]25256 <f00362a8 <bmhd_3_copy+0x40c34ca8>>
     password  = watchdog->CON0.B.PW;
-800009b4:	37 03 6e 31 	extr.u %d3,%d3,2,14
+800009ac:	37 03 6e 31 	extr.u %d3,%d3,2,14
     password  = watchdog->CON0.B.PW;
-800009b8:	37 02 6e 21 	extr.u %d2,%d2,2,14
+800009b0:	37 02 6e 21 	extr.u %d2,%d2,2,14
     if (watchdog->CON0.B.LCK)
-800009bc:	19 24 0c 96 	ld.w %d4,[%a2]25164 <f003624c <bmhd_3_copy+0x40c34c4c>>
-800009c0:	8f f3 83 81 	xor %d8,%d3,63
+800009b4:	19 24 0c 96 	ld.w %d4,[%a2]25164 <f003624c <bmhd_3_copy+0x40c34c4c>>
+800009b8:	8f f3 83 81 	xor %d8,%d3,63
     password  = watchdog->CON0.B.PW;
-800009c4:	d9 22 0c 96 	lea %a2,[%a2]25164 <f003624c <bmhd_3_copy+0x40c34c4c>>
+800009bc:	d9 22 0c 96 	lea %a2,[%a2]25164 <f003624c <bmhd_3_copy+0x40c34c4c>>
     password  = watchdog->CON0.B.PW;
-800009c8:	d9 33 28 a6 	lea %a3,[%a3]25256 <f00362a8 <bmhd_3_copy+0x40c34ca8>>
-800009cc:	8f f2 83 91 	xor %d9,%d2,63
+800009c0:	d9 33 28 a6 	lea %a3,[%a3]25256 <f00362a8 <bmhd_3_copy+0x40c34ca8>>
+800009c4:	8f f2 83 91 	xor %d9,%d2,63
                            ((unsigned int)password << IFX_SCU_WDTCPU_CON0_PW_OFF) |
-800009d0:	8f 28 00 20 	sh %d2,%d8,2
+800009c8:	8f 28 00 20 	sh %d2,%d8,2
     if (watchdog->CON0.B.LCK)
-800009d4:	6f 14 0b 00 	jz.t %d4,1,800009ea <__Core0_start+0x46>
+800009cc:	6f 14 0b 00 	jz.t %d4,1,800009e2 <__Core0_start+0x46>
                            ((unsigned int)watchdog->CON0.B.REL << IFX_SCU_WDTCPU_CON0_REL_OFF);
-800009d8:	54 23       	ld.w %d3,[%a2]
+800009d0:	54 23       	ld.w %d3,[%a2]
                            ((unsigned int)password << IFX_SCU_WDTCPU_CON0_PW_OFF) |
-800009da:	8f 28 00 20 	sh %d2,%d8,2
+800009d2:	8f 28 00 20 	sh %d2,%d8,2
                            ((unsigned int)watchdog->CON0.B.REL << IFX_SCU_WDTCPU_CON0_REL_OFF);
-800009de:	b7 03 10 30 	insert %d3,%d3,0,0,16
+800009d6:	b7 03 10 30 	insert %d3,%d3,0,0,16
                            ((unsigned int)password << IFX_SCU_WDTCPU_CON0_PW_OFF) |
-800009e2:	a6 23       	or %d3,%d2
-800009e4:	8f 13 40 31 	or %d3,%d3,1
+800009da:	a6 23       	or %d3,%d2
+800009dc:	8f 13 40 31 	or %d3,%d3,1
         watchdog->CON0.U = ((unsigned int)1 << IFX_SCU_WDTCPU_CON0_ENDINIT_OFF) |
-800009e8:	74 23       	st.w [%a2],%d3
+800009e0:	74 23       	st.w [%a2],%d3
                        ((unsigned int)watchdog->CON0.B.REL << IFX_SCU_WDTCPU_CON0_REL_OFF);
-800009ea:	91 30 00 2f 	movh.a %a2,61443
-800009ee:	19 24 0c 96 	ld.w %d4,[%a2]25164 <f003624c <bmhd_3_copy+0x40c34c4c>>
-800009f2:	d9 22 0c 96 	lea %a2,[%a2]25164 <f003624c <bmhd_3_copy+0x40c34c4c>>
-800009f6:	b7 04 10 40 	insert %d4,%d4,0,0,16
+800009e2:	91 30 00 2f 	movh.a %a2,61443
+800009e6:	19 24 0c 96 	ld.w %d4,[%a2]25164 <f003624c <bmhd_3_copy+0x40c34c4c>>
+800009ea:	d9 22 0c 96 	lea %a2,[%a2]25164 <f003624c <bmhd_3_copy+0x40c34c4c>>
+800009ee:	b7 04 10 40 	insert %d4,%d4,0,0,16
         Ifx_Ssw_MTCR(CPU_PCON0, pcon0.U);
-800009fa:	82 03       	mov %d3,0
+800009f2:	82 03       	mov %d3,0
                        ((unsigned int)password << IFX_SCU_WDTCPU_CON0_PW_OFF) |
-800009fc:	a6 24       	or %d4,%d2
-800009fe:	8f 24 40 41 	or %d4,%d4,2
+800009f4:	a6 24       	or %d4,%d2
+800009f6:	8f 24 40 41 	or %d4,%d4,2
     watchdog->CON0.U = ((unsigned int)0 << IFX_SCU_WDTCPU_CON0_ENDINIT_OFF) |
-80000a02:	74 24       	st.w [%a2],%d4
+800009fa:	74 24       	st.w [%a2],%d4
     watchdog->CON0.U;
-80000a04:	54 24       	ld.w %d4,[%a2]
-80000a06:	cd c3 20 09 	mtcr $pcon0,%d3
+800009fc:	54 24       	ld.w %d4,[%a2]
+800009fe:	cd c3 20 09 	mtcr $pcon0,%d3
     __asm__ volatile ("isync" : : : "memory");
-80000a0a:	0d 00 c0 04 	isync 
+80000a02:	0d 00 c0 04 	isync 
         Ifx_Ssw_MTCR(CPU_DCON0, dcon0.U);
-80000a0e:	cd 03 04 09 	mtcr $dcon0,%d3
-80000a12:	0d 00 c0 04 	isync 
+80000a06:	cd 03 04 09 	mtcr $dcon0,%d3
+80000a0a:	0d 00 c0 04 	isync 
     Ifx_Ssw_setAddressReg(a0, __SDATA1(0));
-80000a16:	91 10 00 07 	movh.a %a0,28673
-80000a1a:	d9 00 00 08 	lea %a0,[%a0]-32768 <70008000 <_SMALL_DATA_>>
+80000a0e:	91 10 00 07 	movh.a %a0,28673
+80000a12:	d9 00 00 08 	lea %a0,[%a0]-32768 <70008000 <_SMALL_DATA_>>
     Ifx_Ssw_setAddressReg(a8, __SDATA3(0));
-80000a1e:	91 10 00 88 	movh.a %a8,32769
-80000a22:	d9 88 00 08 	lea %a8,[%a8]-32768 <80008000 <_SMALL_DATA2_>>
+80000a16:	91 10 00 88 	movh.a %a8,32769
+80000a1a:	d9 88 00 08 	lea %a8,[%a8]-32768 <80008000 <_SMALL_DATA2_>>
     Ifx_Ssw_setAddressReg(a9, __SDATA4(0));
-80000a26:	91 10 00 99 	movh.a %a9,36865
-80000a2a:	d9 99 00 08 	lea %a9,[%a9]-32768 <90008000 <_SMALL_DATA4_>>
+80000a1e:	91 10 00 99 	movh.a %a9,36865
+80000a22:	d9 99 00 08 	lea %a9,[%a9]-32768 <90008000 <_SMALL_DATA4_>>
     Ifx_Ssw_MTCR(CPU_BTV, (unsigned int)__TRAPTAB(0));
-80000a2e:	91 00 00 38 	movh.a %a3,32768
-80000a32:	80 33       	mov.d %d3,%a3
-80000a34:	1b 03 10 30 	addi %d3,%d3,256
-80000a38:	cd 43 e2 0f 	mtcr $btv,%d3
+80000a26:	91 00 00 38 	movh.a %a3,32768
+80000a2a:	80 33       	mov.d %d3,%a3
+80000a2c:	1b 03 10 30 	addi %d3,%d3,256
+80000a30:	cd 43 e2 0f 	mtcr $btv,%d3
     Ifx_Ssw_MTCR(CPU_BIV, (unsigned int)__INTTAB(0));
-80000a3c:	91 00 03 38 	movh.a %a3,32816
-80000a40:	80 33       	mov.d %d3,%a3
-80000a42:	1b 03 00 3e 	addi %d3,%d3,-8192
-80000a46:	cd 03 e2 0f 	mtcr $biv,%d3
+80000a34:	91 00 03 38 	movh.a %a3,32816
+80000a38:	80 33       	mov.d %d3,%a3
+80000a3a:	1b 03 00 3e 	addi %d3,%d3,-8192
+80000a3e:	cd 03 e2 0f 	mtcr $biv,%d3
     Ifx_Ssw_MTCR(CPU_ISP, (unsigned int)__ISTACK(0));
-80000a4a:	91 40 00 37 	movh.a %a3,28676
-80000a4e:	80 33       	mov.d %d3,%a3
-80000a50:	1b 03 b0 39 	addi %d3,%d3,-25856
-80000a54:	cd 83 e2 0f 	mtcr $isp,%d3
+80000a42:	91 40 00 37 	movh.a %a3,28676
+80000a46:	80 33       	mov.d %d3,%a3
+80000a48:	1b 03 b0 39 	addi %d3,%d3,-25856
+80000a4c:	cd 83 e2 0f 	mtcr $isp,%d3
     if (watchdog->CON0.B.LCK)
-80000a58:	54 23       	ld.w %d3,[%a2]
-80000a5a:	6f 13 09 00 	jz.t %d3,1,80000a6c <__Core0_start+0xc8>
+80000a50:	54 23       	ld.w %d3,[%a2]
+80000a52:	6f 13 09 00 	jz.t %d3,1,80000a64 <__Core0_start+0xc8>
                            ((unsigned int)watchdog->CON0.B.REL << IFX_SCU_WDTCPU_CON0_REL_OFF);
-80000a5e:	54 23       	ld.w %d3,[%a2]
-80000a60:	b7 03 10 30 	insert %d3,%d3,0,0,16
+80000a56:	54 23       	ld.w %d3,[%a2]
+80000a58:	b7 03 10 30 	insert %d3,%d3,0,0,16
                            ((unsigned int)password << IFX_SCU_WDTCPU_CON0_PW_OFF) |
-80000a64:	a6 23       	or %d3,%d2
-80000a66:	8f 13 40 31 	or %d3,%d3,1
+80000a5c:	a6 23       	or %d3,%d2
+80000a5e:	8f 13 40 31 	or %d3,%d3,1
         watchdog->CON0.U = ((unsigned int)1 << IFX_SCU_WDTCPU_CON0_ENDINIT_OFF) |
-80000a6a:	74 23       	st.w [%a2],%d3
+80000a62:	74 23       	st.w [%a2],%d3
                        ((unsigned int)watchdog->CON0.B.REL << IFX_SCU_WDTCPU_CON0_REL_OFF);
-80000a6c:	91 30 00 cf 	movh.a %a12,61443
-80000a70:	19 c3 0c 96 	ld.w %d3,[%a12]25164 <f003624c <bmhd_3_copy+0x40c34c4c>>
-80000a74:	d9 cc 0c 96 	lea %a12,[%a12]25164 <f003624c <bmhd_3_copy+0x40c34c4c>>
-80000a78:	b7 03 10 30 	insert %d3,%d3,0,0,16
+80000a64:	91 30 00 cf 	movh.a %a12,61443
+80000a68:	19 c3 0c 96 	ld.w %d3,[%a12]25164 <f003624c <bmhd_3_copy+0x40c34c4c>>
+80000a6c:	d9 cc 0c 96 	lea %a12,[%a12]25164 <f003624c <bmhd_3_copy+0x40c34c4c>>
+80000a70:	b7 03 10 30 	insert %d3,%d3,0,0,16
     Ifx_Ssw_disableCpuWatchdog(&MODULE_SCU.WDTCPU[0], cpuWdtPassword);
-80000a7c:	40 c4       	mov.aa %a4,%a12
+80000a74:	40 c4       	mov.aa %a4,%a12
                        ((unsigned int)password << IFX_SCU_WDTCPU_CON0_PW_OFF) |
-80000a7e:	a6 32       	or %d2,%d3
-80000a80:	8f 32 40 21 	or %d2,%d2,3
-80000a84:	02 84       	mov %d4,%d8
+80000a76:	a6 32       	or %d2,%d3
+80000a78:	8f 32 40 21 	or %d2,%d2,3
+80000a7c:	02 84       	mov %d4,%d8
     watchdog->CON0.U = ((unsigned int)1 << IFX_SCU_WDTCPU_CON0_ENDINIT_OFF) |
-80000a86:	74 c2       	st.w [%a12],%d2
+80000a7e:	74 c2       	st.w [%a12],%d2
     watchdog->CON0.U;
-80000a88:	54 c2       	ld.w %d2,[%a12]
-80000a8a:	6d 00 49 18 	call 80003b1c <Ifx_Ssw_disableCpuWatchdog>
+80000a80:	54 c2       	ld.w %d2,[%a12]
+80000a82:	6d 00 4d 18 	call 80003b1c <Ifx_Ssw_disableCpuWatchdog>
     Ifx_Ssw_disableSafetyWatchdog(safetyWdtPassword);
-80000a8e:	02 94       	mov %d4,%d9
-80000a90:	6d 00 88 18 	call 80003ba0 <Ifx_Ssw_disableSafetyWatchdog>
+80000a86:	02 94       	mov %d4,%d9
+80000a88:	6d 00 8c 18 	call 80003ba0 <Ifx_Ssw_disableSafetyWatchdog>
 	hardware_init_hook();
-80000a94:	6d ff 86 ff 	call 800009a0 <hardware_init_hook>
+80000a8c:	6d ff 86 ff 	call 80000998 <hardware_init_hook>
 	(void)Ifx_Ssw_doCppInit();
-80000a98:	6d 00 1a 19 	call 80003ccc <Ifx_Ssw_doCppInit>
+80000a90:	6d 00 1e 19 	call 80003ccc <Ifx_Ssw_doCppInit>
 	software_init_hook();
-80000a9c:	6d ff 83 ff 	call 800009a2 <software_init_hook>
+80000a94:	6d ff 83 ff 	call 8000099a <software_init_hook>
     Ifx_Ssw_enableSafetyWatchdog(safetyWdtPassword);
-80000aa0:	02 94       	mov %d4,%d9
-80000aa2:	6d 00 91 18 	call 80003bc4 <Ifx_Ssw_enableSafetyWatchdog>
+80000a98:	02 94       	mov %d4,%d9
+80000a9a:	6d 00 95 18 	call 80003bc4 <Ifx_Ssw_enableSafetyWatchdog>
     Ifx_Ssw_enableCpuWatchdog(&MODULE_SCU.WDTCPU[0], cpuWdtPassword);
-80000aa6:	02 84       	mov %d4,%d8
-80000aa8:	40 c4       	mov.aa %a4,%a12
-80000aaa:	6d 00 5a 18 	call 80003b5e <Ifx_Ssw_enableCpuWatchdog>
+80000a9e:	02 84       	mov %d4,%d8
+80000aa0:	40 c4       	mov.aa %a4,%a12
+80000aa2:	6d 00 5e 18 	call 80003b5e <Ifx_Ssw_enableCpuWatchdog>
     __asm__ volatile ("ji %0" ::"a" (fun));
-80000aae:	91 00 00 28 	movh.a %a2,32768
-80000ab2:	d9 22 90 b0 	lea %a2,[%a2]2768 <80000ad0 <core0_main>>
-80000ab6:	dc 02       	ji %a2
+80000aa6:	91 00 00 28 	movh.a %a2,32768
+80000aaa:	d9 22 92 b0 	lea %a2,[%a2]2770 <80000ad2 <core0_main>>
+80000aae:	dc 02       	ji %a2
 
-80000ab8 <x>:
+80000ab0 <x>:
     __asm__ volatile ("ji %a11");
 }
 
 IFX_SSW_INLINE void Ifx_Ssw_infiniteLoop(void)
 {
     __asm("x: loopu\t x");
-80000ab8:	fd 00 00 80 	loopu 80000ab8 <x>
+80000ab0:	fd 00 00 80 	loopu 80000ab0 <x>
 }
-80000abc:	00 90       	ret 
+80000ab4:	00 90       	ret 
 
-80000abe <nopDelay>:
+80000ab6 <nopDelay>:
 #include "Ifx_Types.h"
 #include "IfxCpu.h"
 #include "IfxScuWdt.h"
 #include "MCMCAN.h"
 
 void nopDelay(uint32 cycles) {
-80000abe:	40 ae       	mov.aa %a14,%sp
+80000ab6:	40 ae       	mov.aa %a14,%sp
+    cycles*=150000;
+80000ab8:	7b 20 00 20 	movh %d2,2
+80000abc:	1b 02 9f 24 	addi %d2,%d2,18928
+80000ac0:	e2 24       	mul %d4,%d2
     for (uint32 i = 0; i < cycles; i++) {
-80000ac0:	82 02       	mov %d2,0
-80000ac2:	1d 00 04 00 	j 80000aca <nopDelay+0xc>
+80000ac2:	82 02       	mov %d2,0
+80000ac4:	1d 00 04 00 	j 80000acc <nopDelay+0x16>
 
 /** Insert NOP instruction
  */
 IFX_INLINE void Ifx__nop(void)
 {
     __asm__ volatile ("nop" : : : "memory");
-80000ac6:	00 00       	nop 
-80000ac8:	c2 12       	add %d2,1
-80000aca:	3f 42 fe ff 	jlt.u %d2,%d4,80000ac6 <nopDelay+0x8>
+80000ac8:	00 00       	nop 
+80000aca:	c2 12       	add %d2,1
+80000acc:	3f 42 fe ff 	jlt.u %d2,%d4,80000ac8 <nopDelay+0x12>
         __nop();
     }
 }
-80000ace:	00 90       	ret 
+80000ad0:	00 90       	ret 
 
-80000ad0 <core0_main>:
+80000ad2 <core0_main>:
 
 IFX_ALIGN(4) IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
 void core0_main(void)
 {
-80000ad0:	40 ae       	mov.aa %a14,%sp
+80000ad2:	40 ae       	mov.aa %a14,%sp
 }
 
 
 IFX_INLINE void IfxCpu_enableInterrupts(void)
 {
     __enable();
-80000ad2:	0d 00 00 03 	enable 
+80000ad4:	0d 00 00 03 	enable 
     IfxCpu_enableInterrupts();
     
     /* !!WATCHDOG0 AND SAFETY WATCHDOG ARE DISABLED HERE!!
      * Enable the watchdogs and service them periodically if it is required
      */
     IfxScuWdt_disableCpuWatchdog(IfxScuWdt_getCpuWatchdogPassword());
-80000ad6:	6d 00 80 07 	call 800019d6 <IfxScuWdt_getCpuWatchdogPassword>
-80000ada:	02 24       	mov %d4,%d2
-80000adc:	6d 00 ef 06 	call 800018ba <IfxScuWdt_disableCpuWatchdog>
+80000ad8:	6d 00 7f 07 	call 800019d6 <IfxScuWdt_getCpuWatchdogPassword>
+80000adc:	02 24       	mov %d4,%d2
+80000ade:	6d 00 ee 06 	call 800018ba <IfxScuWdt_disableCpuWatchdog>
     IfxScuWdt_disableSafetyWatchdog(IfxScuWdt_getSafetyWatchdogPassword());
-80000ae0:	6d 00 8d 07 	call 800019fa <IfxScuWdt_getSafetyWatchdogPassword>
-80000ae4:	02 24       	mov %d4,%d2
-80000ae6:	6d 00 29 07 	call 80001938 <IfxScuWdt_disableSafetyWatchdog>
+80000ae2:	6d 00 8c 07 	call 800019fa <IfxScuWdt_getSafetyWatchdogPassword>
+80000ae6:	02 24       	mov %d4,%d2
+80000ae8:	6d 00 28 07 	call 80001938 <IfxScuWdt_disableSafetyWatchdog>
     
     /* Wait for CPU sync event */
     IfxCpu_emitEvent(&g_cpuSyncEvent);
-80000aea:	91 00 00 c7 	movh.a %a12,28672
-80000aee:	d9 cc 30 00 	lea %a12,[%a12]48 <70000030 <g_cpuSyncEvent>>
-80000af2:	40 c4       	mov.aa %a4,%a12
-80000af4:	6d 00 7a 09 	call 80001de8 <IfxCpu_emitEvent>
+80000aec:	91 00 00 c7 	movh.a %a12,28672
+80000af0:	d9 cc 18 00 	lea %a12,[%a12]24 <70000018 <g_cpuSyncEvent>>
+80000af4:	40 c4       	mov.aa %a4,%a12
+80000af6:	6d 00 79 09 	call 80001de8 <IfxCpu_emitEvent>
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
-80000af8:	82 14       	mov %d4,1
-80000afa:	40 c4       	mov.aa %a4,%a12
-80000afc:	6d 00 34 09 	call 80001d64 <IfxCpu_waitEvent>
+80000afa:	82 14       	mov %d4,1
+80000afc:	40 c4       	mov.aa %a4,%a12
+80000afe:	6d 00 33 09 	call 80001d64 <IfxCpu_waitEvent>
     
     initLeds();
-80000b00:	6d 00 3a 1b 	call 80004174 <initLeds>
+80000b02:	6d 00 47 1b 	call 80004190 <initLeds>
     /* Application code: initialization of MCMCAN module, LEDs and the transmission of the CAN message */
     initMcmcan();
-80000b04:	6d 00 8c 1a 	call 8000401c <initMcmcan>
+80000b06:	6d 00 8f 1a 	call 80004024 <initMcmcan>
     initLeds();
-80000b08:	6d 00 36 1b 	call 80004174 <initLeds>
+80000b0a:	6d 00 43 1b 	call 80004190 <initLeds>
     transmitCanMessage();
-80000b0c:	6d 00 01 1b 	call 8000410e <transmitCanMessage>
+80000b0e:	6d 00 0e 1b 	call 8000412a <transmitCanMessage>
 
     while(1)
     {
         transmitCanMessage();
-80000b10:	6d 00 ff 1a 	call 8000410e <transmitCanMessage>
-        nopDelay(3000000);
-80000b14:	7b e0 02 40 	movh %d4,46
-80000b18:	1b 04 6c 4c 	addi %d4,%d4,-14656
-80000b1c:	6d ff d1 ff 	call 80000abe <nopDelay>
+80000b12:	6d 00 0c 1b 	call 8000412a <transmitCanMessage>
+        nopDelay(5);
+80000b16:	82 54       	mov %d4,5
+80000b18:	6d ff cf ff 	call 80000ab6 <nopDelay>
     while(1)
-80000b20:	1d ff f8 ff 	j 80000b10 <core0_main+0x40>
+80000b1c:	1d ff fb ff 	j 80000b12 <core0_main+0x40>
 
 Disassembly of section .init:
 
-80000b24 <_init>:
-80000b24:	6d 00 6e 00 	call 80000c00 <frame_dummy>
-80000b28:	6d 00 52 20 	call 80004bcc <__do_global_ctors_aux>
-80000b2c:	00 90       	ret 
+80000b20 <_init>:
+80000b20:	6d 00 70 00 	call 80000c00 <frame_dummy>
+80000b24:	6d 00 62 20 	call 80004be8 <__do_global_ctors_aux>
+80000b28:	00 90       	ret 
+80000b2a:	00 00       	nop 
+80000b2c:	00 00       	nop 
 	...
 
 Disassembly of section .fini:
@@ -3342,15 +3347,15 @@ Disassembly of section .CPU1.text:
     stmCount = (unsigned int)(Ifx_Ssw_getStmFrequency() * IFX_CFG_SSW_STARTCPU_WAIT_TIME_IN_SECONDS);
 80300270:	6d e8 da 1c 	call 80003c24 <Ifx_Ssw_getStmFrequency>
 80300274:	02 24       	mov %d4,%d2
-80300276:	6d e8 ef 1f 	call 80004254 <__extendsfdf2>
+80300276:	6d e8 fd 1f 	call 80004270 <__extendsfdf2>
 8030027a:	0b 23 10 48 	mov %e4,%d3,%d2
 8030027e:	7b c0 b1 6e 	movh %d6,60188
 80300282:	7b a0 f1 73 	movh %d7,16154
 80300286:	1b d6 32 64 	addi %d6,%d6,17197
 8030028a:	1b 27 6e 73 	addi %d7,%d7,14050
-8030028e:	6d e8 4b 21 	call 80004524 <__muldf3>
+8030028e:	6d e8 59 21 	call 80004540 <__muldf3>
 80300292:	0b 23 10 48 	mov %e4,%d3,%d2
-80300296:	6d e8 c3 1f 	call 8000421c <__fixunsdfsi>
+80300296:	6d e8 d1 1f 	call 80004238 <__fixunsdfsi>
     while ((unsigned int)(STM0_TIM0.U - stmCountBegin) < stmCount)
 8030029a:	85 f3 10 01 	ld.w %d3,f0001010 <bmhd_3_copy+0x40bffa10>
 8030029e:	a2 83       	sub %d3,%d8
@@ -3406,7 +3411,7 @@ void core1_main(void)
     /* Wait for CPU sync event */
     IfxCpu_emitEvent(&g_cpuSyncEvent);
 803002ea:	91 00 00 c7 	movh.a %a12,28672
-803002ee:	d9 cc 30 00 	lea %a12,[%a12]48 <70000030 <g_cpuSyncEvent>>
+803002ee:	d9 cc 18 00 	lea %a12,[%a12]24 <70000018 <g_cpuSyncEvent>>
 803002f2:	40 c4       	mov.aa %a4,%a12
 803002f4:	6d e8 7a 0d 	call 80001de8 <IfxCpu_emitEvent>
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
@@ -3587,15 +3592,15 @@ Disassembly of section .CPU2.text:
     stmCount = (unsigned int)(Ifx_Ssw_getStmFrequency() * IFX_CFG_SSW_STARTCPU_WAIT_TIME_IN_SECONDS);
 80600270:	6d d0 da 1c 	call 80003c24 <Ifx_Ssw_getStmFrequency>
 80600274:	02 24       	mov %d4,%d2
-80600276:	6d d0 ef 1f 	call 80004254 <__extendsfdf2>
+80600276:	6d d0 fd 1f 	call 80004270 <__extendsfdf2>
 8060027a:	0b 23 10 48 	mov %e4,%d3,%d2
 8060027e:	7b c0 b1 6e 	movh %d6,60188
 80600282:	7b a0 f1 73 	movh %d7,16154
 80600286:	1b d6 32 64 	addi %d6,%d6,17197
 8060028a:	1b 27 6e 73 	addi %d7,%d7,14050
-8060028e:	6d d0 4b 21 	call 80004524 <__muldf3>
+8060028e:	6d d0 59 21 	call 80004540 <__muldf3>
 80600292:	0b 23 10 48 	mov %e4,%d3,%d2
-80600296:	6d d0 c3 1f 	call 8000421c <__fixunsdfsi>
+80600296:	6d d0 d1 1f 	call 80004238 <__fixunsdfsi>
     while ((unsigned int)(STM0_TIM0.U - stmCountBegin) < stmCount)
 8060029a:	85 f3 10 01 	ld.w %d3,f0001010 <bmhd_3_copy+0x40bffa10>
 8060029e:	a2 83       	sub %d3,%d8
@@ -3651,7 +3656,7 @@ void core2_main(void)
     /* Wait for CPU sync event */
     IfxCpu_emitEvent(&g_cpuSyncEvent);
 806002ea:	91 00 00 c7 	movh.a %a12,28672
-806002ee:	d9 cc 30 00 	lea %a12,[%a12]48 <70000030 <g_cpuSyncEvent>>
+806002ee:	d9 cc 18 00 	lea %a12,[%a12]24 <70000018 <g_cpuSyncEvent>>
 806002f2:	40 c4       	mov.aa %a4,%a12
 806002f4:	6d d0 7a 0d 	call 80001de8 <IfxCpu_emitEvent>
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
@@ -3832,15 +3837,15 @@ Disassembly of section .CPU3.text:
     stmCount = (unsigned int)(Ifx_Ssw_getStmFrequency() * IFX_CFG_SSW_STARTCPU_WAIT_TIME_IN_SECONDS);
 80900270:	6d b8 da 1c 	call 80003c24 <Ifx_Ssw_getStmFrequency>
 80900274:	02 24       	mov %d4,%d2
-80900276:	6d b8 ef 1f 	call 80004254 <__extendsfdf2>
+80900276:	6d b8 fd 1f 	call 80004270 <__extendsfdf2>
 8090027a:	0b 23 10 48 	mov %e4,%d3,%d2
 8090027e:	7b c0 b1 6e 	movh %d6,60188
 80900282:	7b a0 f1 73 	movh %d7,16154
 80900286:	1b d6 32 64 	addi %d6,%d6,17197
 8090028a:	1b 27 6e 73 	addi %d7,%d7,14050
-8090028e:	6d b8 4b 21 	call 80004524 <__muldf3>
+8090028e:	6d b8 59 21 	call 80004540 <__muldf3>
 80900292:	0b 23 10 48 	mov %e4,%d3,%d2
-80900296:	6d b8 c3 1f 	call 8000421c <__fixunsdfsi>
+80900296:	6d b8 d1 1f 	call 80004238 <__fixunsdfsi>
     while ((unsigned int)(STM0_TIM0.U - stmCountBegin) < stmCount)
 8090029a:	85 f3 10 01 	ld.w %d3,f0001010 <bmhd_3_copy+0x40bffa10>
 8090029e:	a2 83       	sub %d3,%d8
@@ -3890,7 +3895,7 @@ void core3_main(void)
     /* Wait for CPU sync event */
     IfxCpu_emitEvent(&g_cpuSyncEvent);
 809002d8:	91 00 00 c7 	movh.a %a12,28672
-809002dc:	d9 cc 30 00 	lea %a12,[%a12]48 <70000030 <g_cpuSyncEvent>>
+809002dc:	d9 cc 18 00 	lea %a12,[%a12]24 <70000018 <g_cpuSyncEvent>>
 809002e0:	40 c4       	mov.aa %a4,%a12
 809002e2:	6d b8 83 0d 	call 80001de8 <IfxCpu_emitEvent>
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
@@ -3905,10 +3910,10 @@ Disassembly of section .text:
 
 80000b38 <deregister_tm_clones>:
 80000b38:	7b 00 00 27 	movh %d2,28672
-80000b3c:	1b 82 02 20 	addi %d2,%d2,40
+80000b3c:	1b 02 01 20 	addi %d2,%d2,16
 80000b40:	91 00 00 47 	movh.a %a4,28672
 80000b44:	60 22       	mov.a %a2,%d2
-80000b46:	d9 44 28 00 	lea %a4,[%a4]40 <70000028 <__TMC_END__>>
+80000b46:	d9 44 10 00 	lea %a4,[%a4]16 <70000010 <__TMC_END__>>
 80000b4a:	7d 42 0a 00 	jeq.a %a2,%a4,80000b5e <deregister_tm_clones+0x26>
 80000b4e:	91 00 00 20 	movh.a %a2,0
 80000b52:	d9 22 00 00 	lea %a2,[%a2]0 <0 <__TRICORE_DERIVATE_MEMORY_MAP__-0x380>>
@@ -3918,10 +3923,10 @@ Disassembly of section .text:
 
 80000b60 <register_tm_clones>:
 80000b60:	7b 00 00 27 	movh %d2,28672
-80000b64:	1b 82 02 20 	addi %d2,%d2,40
+80000b64:	1b 02 01 20 	addi %d2,%d2,16
 80000b68:	91 00 00 47 	movh.a %a4,28672
 80000b6c:	60 22       	mov.a %a2,%d2
-80000b6e:	d9 44 28 00 	lea %a4,[%a4]40 <70000028 <__TMC_END__>>
+80000b6e:	d9 44 10 00 	lea %a4,[%a4]16 <70000010 <__TMC_END__>>
 80000b72:	01 42 20 20 	sub.a %a2,%a2,%a4
 80000b76:	80 22       	mov.d %d2,%a2
 80000b78:	8f e2 3f 30 	sha %d3,%d2,-2
@@ -3937,23 +3942,23 @@ Disassembly of section .text:
 
 80000b9c <__do_global_dtors_aux>:
 80000b9c:	91 00 00 e7 	movh.a %a14,28672
-80000ba0:	39 e2 28 00 	ld.bu %d2,[%a14]40 <70000028 <__TMC_END__>>
+80000ba0:	39 e2 10 00 	ld.bu %d2,[%a14]16 <70000010 <__TMC_END__>>
 80000ba4:	df 02 2d 80 	jne %d2,0,80000bfe <__do_global_dtors_aux+0x62>
 80000ba8:	91 00 00 38 	movh.a %a3,32768
 80000bac:	91 00 00 28 	movh.a %a2,32768
-80000bb0:	d9 33 d8 04 	lea %a3,[%a3]19480 <80004c18 <__DTOR_END__>>
-80000bb4:	d9 22 cc 04 	lea %a2,[%a2]19468 <80004c0c <__DTOR_LIST__>>
+80000bb0:	d9 33 f0 04 	lea %a3,[%a3]19504 <80004c30 <__DTOR_END__>>
+80000bb4:	d9 22 e4 04 	lea %a2,[%a2]19492 <80004c24 <__DTOR_LIST__>>
 80000bb8:	01 23 20 20 	sub.a %a2,%a3,%a2
 80000bbc:	80 22       	mov.d %d2,%a2
 80000bbe:	86 e2       	sha %d2,-2
 80000bc0:	1b f2 ff 8f 	addi %d8,%d2,-1
 80000bc4:	91 00 00 c7 	movh.a %a12,28672
 80000bc8:	7b 00 00 28 	movh %d2,32768
-80000bcc:	1b c2 c0 24 	addi %d2,%d2,19468
+80000bcc:	1b 42 c2 24 	addi %d2,%d2,19492
 80000bd0:	60 2d       	mov.a %a13,%d2
-80000bd2:	19 c2 2c 00 	ld.w %d2,[%a12]44 <7000002c <dtor_idx.0>>
+80000bd2:	19 c2 14 00 	ld.w %d2,[%a12]20 <70000014 <dtor_idx.0>>
 80000bd6:	7f 82 0f 80 	jge.u %d2,%d8,80000bf4 <__do_global_dtors_aux+0x58>
-80000bda:	d9 cc 2c 00 	lea %a12,[%a12]44 <7000002c <dtor_idx.0>>
+80000bda:	d9 cc 14 00 	lea %a12,[%a12]20 <70000014 <dtor_idx.0>>
 80000bde:	c2 12       	add %d2,1
 80000be0:	74 c2       	st.w [%a12],%d2
 80000be2:	06 22       	sh %d2,2
@@ -3964,7 +3969,7 @@ Disassembly of section .text:
 80000bf0:	3f 82 f7 ff 	jlt.u %d2,%d8,80000bde <__do_global_dtors_aux+0x42>
 80000bf4:	6d ff a2 ff 	call 80000b38 <deregister_tm_clones>
 80000bf8:	82 12       	mov %d2,1
-80000bfa:	e9 e2 28 00 	st.b [%a14]40 <70000028 <__TMC_END__>>,%d2
+80000bfa:	e9 e2 10 00 	st.b [%a14]16 <70000010 <__TMC_END__>>,%d2
 80000bfe:	00 90       	ret 
 
 80000c00 <frame_dummy>:
@@ -3982,7 +3987,7 @@ void IfxScuCcu_calRGainParameters(IfxScuCcu_ModulationAmplitude modamp, IfxScuCc
     float32  mod_amp       = IfxScuCcu_MA_percent[modamp];
 80000c08:	8f 24 00 20 	sh %d2,%d4,2
 80000c0c:	91 00 00 28 	movh.a %a2,32768
-80000c10:	d9 22 2c b0 	lea %a2,[%a2]748 <800002ec <IfxScuCcu_MA_percent>>
+80000c10:	d9 22 14 b0 	lea %a2,[%a2]724 <800002d4 <IfxScuCcu_MA_percent>>
 80000c14:	01 22 00 26 	addsc.a %a2,%a2,%d2,0
 80000c18:	54 22       	ld.w %d2,[%a2]
 
@@ -7646,7 +7651,7 @@ IfxCan_Index IfxCan_getIndex(Ifx_CAN *can)
         if (IfxCan_cfg_indexMap[index].module == can)
 80002520:	8f 32 00 30 	sh %d3,%d2,3
 80002524:	91 00 00 28 	movh.a %a2,32768
-80002528:	d9 22 24 90 	lea %a2,[%a2]612 <80000264 <IfxCan_cfg_indexMap>>
+80002528:	d9 22 0c 90 	lea %a2,[%a2]588 <8000024c <IfxCan_cfg_indexMap>>
 8000252c:	01 23 00 26 	addsc.a %a2,%a2,%d3,0
 80002530:	54 23       	ld.w %d3,[%a2]
 80002532:	80 44       	mov.d %d4,%a4
@@ -7655,7 +7660,7 @@ IfxCan_Index IfxCan_getIndex(Ifx_CAN *can)
             result = (IfxCan_Index)IfxCan_cfg_indexMap[index].index;
 80002538:	06 32       	sh %d2,3
 8000253a:	91 00 00 28 	movh.a %a2,32768
-8000253e:	d9 22 24 90 	lea %a2,[%a2]612 <80000264 <IfxCan_cfg_indexMap>>
+8000253e:	d9 22 0c 90 	lea %a2,[%a2]588 <8000024c <IfxCan_cfg_indexMap>>
 80002542:	01 22 00 26 	addsc.a %a2,%a2,%d2,0
 80002546:	19 22 04 00 	ld.w %d2,[%a2]4
             break;
@@ -7801,7 +7806,7 @@ void IfxCan_Can_initMessage(IfxCan_Message *message)
 80002602:	3b 00 02 50 	mov %d5,32
 80002606:	82 04       	mov %d4,0
 80002608:	40 c4       	mov.aa %a4,%a12
-8000260a:	6d 00 00 0e 	call 8000420a <memset>
+8000260a:	6d 00 0e 0e 	call 80004226 <memset>
 8000260e:	3b 80 00 20 	mov %d2,8
 80002612:	59 e2 f4 ff 	st.w [%a14]-12,%d2
         .readFromRxFifo0       = FALSE,
@@ -9659,7 +9664,7 @@ void IfxCan_Can_initNodeConfig(IfxCan_Can_NodeConfig *config, IfxCan_Can *can)
 800034d8:	3b 40 16 50 	mov %d5,356
 800034dc:	82 04       	mov %d4,0
 800034de:	40 d4       	mov.aa %a4,%a13
-800034e0:	6d 00 95 06 	call 8000420a <memset>
+800034e0:	6d 00 a3 06 	call 80004226 <memset>
 800034e4:	82 32       	mov %d2,3
 800034e6:	59 e2 e4 af 	st.w [%a14]-348,%d2
 800034ea:	7b 80 00 30 	movh %d3,8
@@ -9814,6 +9819,7 @@ void IfxCan_Can_readMessage(IfxCan_Can_Node *node, IfxCan_Message *message, uint
 800036e8:	40 5c       	mov.aa %a12,%a5
 800036ea:	80 69       	mov.d %d9,%a6
     IfxCan_RxBufferId bufferId = IfxCan_RxBufferId_0;
+
     Ifx_CAN_RXMSG    *rxBufferElement;
 
     if ((message->readFromRxFifo0) || (message->readFromRxFifo1))
@@ -9905,6 +9911,7 @@ void IfxCan_Can_readMessage(IfxCan_Can_Node *node, IfxCan_Message *message, uint
 8000377c:	02 84       	mov %d4,%d8
 8000377e:	99 d4 04 00 	ld.a %a4,[%a13]4
 80003782:	6d ff 3c f3 	call 80001dfa <IfxCan_Node_clearRxBufferNewDataFlag>
+
 }
 80003786:	00 90       	ret 
             bufferId        = IfxCan_Node_getRxFifo1GetIndex(node->node);
@@ -10167,6 +10174,7 @@ void IfxCan_Can_setStandardFilter(IfxCan_Can_Node *node, IfxCan_Filter *filter)
 80003950:	54 22       	ld.w %d2,[%a2]
 80003952:	37 32 0b 28 	insert %d2,%d2,%d3,16,11
 80003956:	74 22       	st.w [%a2],%d2
+    //IfxCan_Node_setStandardFilterId2(standardFilterElement, filter->id2);
     IfxCan_Node_setStandardFilterConfiguration(standardFilterElement, filter->elementConfiguration);
 80003958:	19 c3 04 00 	ld.w %d3,[%a12]4
     standardFilterElement->S0.B.SFEC = filterElementConfiguration;
@@ -10705,7 +10713,7 @@ void Ifx_Ssw_doCppInit(void)
     /* clear table */
     pTable = (unsigned int *)&__clear_table;
 80003cd0:	91 00 00 28 	movh.a %a2,32768
-80003cd4:	d9 22 74 50 	lea %a2,[%a2]1396 <80000574 <__clear_table>>
+80003cd4:	d9 22 70 50 	lea %a2,[%a2]1392 <80000570 <__clear_table>>
 
     while (pTable)
 80003cd8:	1d 00 32 00 	j 80003d3c <Ifx_Ssw_doCppInit+0x70>
@@ -10716,7 +10724,7 @@ void Ifx_Ssw_doCppInit(void)
 
         while (uiCnt--)
 80003cdc:	91 00 00 28 	movh.a %a2,32768
-80003ce0:	d9 22 54 80 	lea %a2,[%a2]1556 <80000614 <__copy_table>>
+80003ce0:	d9 22 50 80 	lea %a2,[%a2]1552 <80000610 <__copy_table>>
 80003ce4:	1d 00 7c 00 	j 80003ddc <Ifx_Ssw_doCppInit+0x110>
             *pBlockDest.ullPtr++ = 0;
 80003ce8:	99 e2 f8 ff 	ld.a %a2,[%a14]-8
@@ -10853,7 +10861,7 @@ void Ifx_Ssw_doCppInit(void)
 	#elif defined(__GNUC__) && !defined(__HIGHTEC__)
 		extern void _init(void); /* cpp initialization */
 		_init();
-80003e04:	6d ff 90 e6 	call 80000b24 <_init>
+80003e04:	6d ff 8e e6 	call 80000b20 <_init>
 	#elif defined(__ghs__)
 		extern void _main(void); /* cpp initialization */
 		_main();
@@ -10902,11 +10910,11 @@ IFX_SSW_INLINE void Ifx_Ssw_jumpBackToLink(void)
         /*Loop through each configured phase*/
         for (phaseConfig = &sequence->phaseConfig[0];
 80003e2e:	91 00 00 28 	movh.a %a2,32768
-80003e32:	d9 23 74 00 	lea %a3,[%a2]1076 <80000434 <IfxPmsEvr_cfgSequenceDefault>>
+80003e32:	d9 23 5c 00 	lea %a3,[%a2]1052 <8000041c <IfxPmsEvr_cfgSequenceDefault>>
 80003e36:	b0 43       	add.a %a3,4
 80003e38:	d4 33       	ld.a %a3,[%a3]
              phaseConfig < &sequence->phaseConfig[sequence->numOfPhases];
-80003e3a:	39 27 74 00 	ld.bu %d7,[%a2]1076 <80000434 <IfxPmsEvr_cfgSequenceDefault>>
+80003e3a:	39 27 5c 00 	ld.bu %d7,[%a2]1052 <8000041c <IfxPmsEvr_cfgSequenceDefault>>
 80003e3e:	53 c7 20 70 	mul %d7,%d7,12
 80003e42:	80 33       	mov.d %d3,%a3
 80003e44:	42 73       	add %d3,%d7
@@ -10957,7 +10965,7 @@ IFX_INLINE void IfxPmsEvr_wait(float32 waitInSec)
     uint32 stmCountBegin = STM0_TIM0.U;     /* it is necessary to get this value to have minimum 100uS delay in subsequent CPU start */
 80003e7e:	c5 f6 10 01 	lea %a6,f0001010 <bmhd_3_copy+0x40bffa10>
              phaseConfig < &sequence->phaseConfig[sequence->numOfPhases];
-80003e82:	d9 2c 74 00 	lea %a12,[%a2]1076 <80000434 <IfxPmsEvr_cfgSequenceDefault>>
+80003e82:	d9 2c 5c 00 	lea %a12,[%a2]1052 <8000041c <IfxPmsEvr_cfgSequenceDefault>>
 80003e86:	1d 00 15 00 	j 80003eb0 <Ifx_Ssw_Pms_Init+0xa6>
     uint32 stmCount      = (uint32)((float32)33000000UL * waitInSec);
 80003e8a:	19 32 08 00 	ld.w %d2,[%a3]8
@@ -11057,10 +11065,10 @@ void Ifx_Ssw_Pms_InitCheck(void)
 80003f42:	00 90       	ret 
         for (regCfgCount = 0; regCfgCount < checkConfig->numOfRegisters; regCfgCount++)
 80003f44:	91 00 00 28 	movh.a %a2,32768
-80003f48:	39 25 24 c0 	ld.bu %d5,[%a2]804 <80000324 <IfxPmsEvr_checkRegCfgDefault>>
+80003f48:	39 25 0c c0 	ld.bu %d5,[%a2]780 <8000030c <IfxPmsEvr_checkRegCfgDefault>>
 80003f4c:	bf 15 1d 00 	jlt %d5,1,80003f86 <Ifx_Ssw_Pms_InitCheck+0x56>
             const IfxPmsEvr_StepDownRegulatorRegConfig *regConfig = &checkConfig->regConfig[regCfgCount];
-80003f50:	d9 22 24 c0 	lea %a2,[%a2]804 <80000324 <IfxPmsEvr_checkRegCfgDefault>>
+80003f50:	d9 22 0c c0 	lea %a2,[%a2]780 <8000030c <IfxPmsEvr_checkRegCfgDefault>>
 80003f54:	b0 42       	add.a %a2,4
 80003f56:	d4 22       	ld.a %a2,[%a2]
     boolean allRight = TRUE;
@@ -11107,7 +11115,7 @@ void canIsrTxHandler(void)
     //����
     IfxCan_Node_clearInterruptFlag(g_mcmcan.canSrcNode.node, IfxCan_Interrupt_transmissionCompleted);
 80003f9a:	91 00 00 27 	movh.a %a2,28672
-80003f9e:	d9 22 14 10 	lea %a2,[%a2]84 <70000054 <g_mcmcan>>
+80003f9e:	d9 22 3c 00 	lea %a2,[%a2]60 <7000003c <g_mcmcan>>
 80003fa2:	d9 22 0c 00 	lea %a2,[%a2]12 <7000000c <LCF_DSPR0_START+0xc>>
 80003fa6:	d4 22       	ld.a %a2,[%a2]
     node->IR.U = value;
@@ -11116,9 +11124,9 @@ void canIsrTxHandler(void)
     /* Just to indicate that the CAN message has been transmitted by turning on LED1 */
     IfxPort_setPinLow(g_led1.port, g_led1.pinIndex);
 80003fb0:	91 00 00 27 	movh.a %a2,28672
-80003fb4:	d9 23 04 10 	lea %a3,[%a2]68 <70000044 <g_led1>>
-80003fb8:	99 22 04 10 	ld.a %a2,[%a2]68 <70000044 <g_led1>>
-80003fbc:	39 32 04 00 	ld.bu %d2,[%a3]4 <70000044 <g_led1>>
+80003fb4:	d9 23 2c 00 	lea %a3,[%a2]44 <7000002c <g_led1>>
+80003fb8:	99 22 2c 00 	ld.a %a2,[%a2]44 <7000002c <g_led1>>
+80003fbc:	39 32 04 00 	ld.bu %d2,[%a3]4 <7000002c <g_led1>>
 }
 
 
@@ -11146,1066 +11154,1075 @@ void canIsrRxHandler(void)
 {
 80003fd2:	40 ae       	mov.aa %a14,%sp
     /* Clear the "Message stored to Dedicated RX Buffer" interrupt flag */
-    IfxCan_Node_clearInterruptFlag(g_mcmcan.canDstNode.node, IfxCan_Interrupt_messageStoredToDedicatedRxBuffer);
+    IfxCan_Node_clearInterruptFlag(g_mcmcan.canDstNode.node, IfxCan_Interrupt_rxFifo0NewMessage);
 80003fd4:	91 00 00 47 	movh.a %a4,28672
-80003fd8:	d9 44 14 10 	lea %a4,[%a4]84 <70000054 <g_mcmcan>>
-80003fdc:	99 42 2c 00 	ld.a %a2,[%a4]44 <7000002c <dtor_idx.0>>
-80003fe0:	7b 80 00 20 	movh %d2,8
-80003fe4:	59 22 10 50 	st.w [%a2]336,%d2
+80003fd8:	d9 44 3c 00 	lea %a4,[%a4]60 <7000003c <g_mcmcan>>
+80003fdc:	99 42 2c 00 	ld.a %a2,[%a4]44 <7000002c <g_led1>>
+80003fe0:	82 12       	mov %d2,1
+80003fe2:	59 22 10 50 	st.w [%a2]336,%d2
 
     /* Read the received CAN message */
+    g_mcmcan.rxMsg.readFromRxFifo0 = TRUE;
+80003fe6:	e9 42 02 80 	st.b [%a4]514 <70000202 <g_mcmcan+0x1c6>>,%d2
+    g_mcmcan.rxMsg.readFromRxFifo1 = FALSE;
+80003fea:	82 02       	mov %d2,0
+80003fec:	e9 42 03 80 	st.b [%a4]515 <70000203 <g_mcmcan+0x1c7>>,%d2
+
     IfxCan_Can_readMessage(&g_mcmcan.canDstNode, &g_mcmcan.rxMsg, g_mcmcan.rxData);
-80003fe8:	d9 46 0c 80 	lea %a6,[%a4]524 <7000020c <g_mcmcan+0x1b8>>
-80003fec:	d9 45 24 70 	lea %a5,[%a4]484 <700001e4 <g_mcmcan+0x190>>
-80003ff0:	d9 44 28 00 	lea %a4,[%a4]40 <70000028 <__TMC_END__>>
-80003ff4:	6d ff 78 fb 	call 800036e4 <IfxCan_Can_readMessage>
+80003ff0:	d9 46 0c 80 	lea %a6,[%a4]524 <7000020c <g_mcmcan+0x1d0>>
+80003ff4:	d9 45 24 70 	lea %a5,[%a4]484 <700001e4 <g_mcmcan+0x1a8>>
+80003ff8:	d9 44 28 00 	lea %a4,[%a4]40 <70000028 <g_led2+0xc>>
+80003ffc:	6d ff 74 fb 	call 800036e4 <IfxCan_Can_readMessage>
     IfxPort_setPinState(g_led2.port, g_led2.pinIndex,  IfxPort_State_toggled);
-80003ff8:	91 00 00 27 	movh.a %a2,28672
-80003ffc:	d9 23 34 00 	lea %a3,[%a2]52 <70000034 <g_led2>>
-80004000:	99 22 34 00 	ld.a %a2,[%a2]52 <70000034 <g_led2>>
-80004004:	39 32 04 00 	ld.bu %d2,[%a3]4 <70000034 <g_led2>>
-80004008:	7b 10 00 30 	movh %d3,1
-8000400c:	c2 13       	add %d3,1
-8000400e:	0f 23 00 20 	sh %d2,%d3,%d2
-80004012:	59 22 04 00 	st.w [%a2]4,%d2
+80004000:	91 00 00 27 	movh.a %a2,28672
+80004004:	d9 23 1c 00 	lea %a3,[%a2]28 <7000001c <g_led2>>
+80004008:	99 22 1c 00 	ld.a %a2,[%a2]28 <7000001c <g_led2>>
+8000400c:	39 32 04 00 	ld.bu %d2,[%a3]4 <7000001c <g_led2>>
+80004010:	7b 10 00 30 	movh %d3,1
+80004014:	c2 13       	add %d3,1
+80004016:	0f 23 00 20 	sh %d2,%d3,%d2
+8000401a:	59 22 04 00 	st.w [%a2]4,%d2
 //        ( g_mcmcan.rxMsg.messageId == g_mcmcan.txMsg.messageId ) )
 //    {
 //        /* Turn on the LED2 to indicate correctness of the received message */
 //        IfxPort_setPinLow(g_led2.port, g_led2.pinIndex);
 //    }
 }
-80004016:	0d 00 40 02 	rslcx 
-8000401a:	00 80       	rfe 
+8000401e:	0d 00 40 02 	rslcx 
+80004022:	00 80       	rfe 
 
-8000401c <initMcmcan>:
+80004024 <initMcmcan>:
+
+
 
 /* Function to initialize MCMCAN module and nodes related for this application use case */
 void initMcmcan(void)
 {
-8000401c:	40 ae       	mov.aa %a14,%sp
-8000401e:	20 18       	sub.a %sp,24
-     * ==========================================================================================
-     *  - load default CAN module configuration into configuration structure
-     *  - initialize CAN module with the default configuration
-     * ==========================================================================================
-     */
-    IfxCan_Can_initModuleConfig(&g_mcmcan.canConfig, &MODULE_CAN2);
-80004020:	91 00 00 c7 	movh.a %a12,28672
-80004024:	d9 cc 14 10 	lea %a12,[%a12]84 <70000054 <g_mcmcan>>
-80004028:	91 20 02 5f 	movh.a %a5,61474
-8000402c:	40 c4       	mov.aa %a4,%a12
-8000402e:	6d ff 16 f3 	call 8000265a <IfxCan_Can_initModuleConfig>
+80004024:	40 ae       	mov.aa %a14,%sp
+80004026:	20 18       	sub.a %sp,24
+    IfxCan_Can_initModuleConfig(&g_mcmcan.canConfig, &MODULE_CAN0);
+80004028:	91 00 00 c7 	movh.a %a12,28672
+8000402c:	d9 cc 3c 00 	lea %a12,[%a12]60 <7000003c <g_mcmcan>>
+80004030:	91 00 02 5f 	movh.a %a5,61472
+80004034:	40 c4       	mov.aa %a4,%a12
+80004036:	6d ff 12 f3 	call 8000265a <IfxCan_Can_initModuleConfig>
 
     IfxCan_Can_initModule(&g_mcmcan.canModule, &g_mcmcan.canConfig);
-80004032:	80 c2       	mov.d %d2,%a12
-80004034:	1b 42 00 80 	addi %d8,%d2,4
-80004038:	40 c5       	mov.aa %a5,%a12
-8000403a:	60 84       	mov.a %a4,%d8
-8000403c:	6d ff fe f2 	call 80002638 <IfxCan_Can_initModule>
-                .rxPinMode = IfxPort_InputMode_pullUp,
-                .txPin = &IfxCan_TXD10_P13_0_OUT,
-                .txPinMode = IfxPort_OutputMode_pushPull
-        };
-
-    IFX_CONST IfxCan_Can_Pins Can2PortInf0 = {
-80004040:	d9 ed ec ff 	lea %a13,[%a14]-20
-80004044:	91 00 00 27 	movh.a %a2,28672
-80004048:	d9 22 10 00 	lea %a2,[%a2]16 <70000010 <LCF_DSPR0_START+0x10>>
-8000404c:	40 d3       	mov.aa %a3,%a13
-8000404e:	09 24 48 01 	ld.d %e4,[%a2+]8 <70000008 <LCF_DSPR0_START+0x8>>
-80004052:	89 34 48 01 	st.d [%a3+]8 <70000008 <LCF_DSPR0_START+0x8>>,%e4
-80004056:	09 24 48 01 	ld.d %e4,[%a2+]8 <70000008 <LCF_DSPR0_START+0x8>>
-8000405a:	89 34 48 01 	st.d [%a3+]8 <70000008 <LCF_DSPR0_START+0x8>>,%e4
-8000405e:	44 24       	ld.w %d4,[%a2+]
-80004060:	64 34       	st.w [%a3+],%d4
-//       &IfxCan_RXD00B_P20_7_IN,   IfxPort_InputMode_pullUp,    // CAN00_RX
-//       IfxPort_PadDriver_cmosAutomotiveSpeed4
-//    };
+8000403a:	80 c2       	mov.d %d2,%a12
+8000403c:	1b 42 00 80 	addi %d8,%d2,4
+80004040:	40 c5       	mov.aa %a5,%a12
+80004042:	60 84       	mov.a %a4,%d8
+80004044:	6d ff fa f2 	call 80002638 <IfxCan_Can_initModule>
 
 
     IfxCan_Can_initNodeConfig(&g_mcmcan.canNodeConfig, &g_mcmcan.canModule);
-80004062:	80 c2       	mov.d %d2,%a12
-80004064:	1b 82 04 90 	addi %d9,%d2,72
-80004068:	60 85       	mov.a %a5,%d8
-8000406a:	60 94       	mov.a %a4,%d9
-8000406c:	6d ff 2f fa 	call 800034ca <IfxCan_Can_initNodeConfig>
+80004048:	80 c2       	mov.d %d2,%a12
+8000404a:	1b 82 04 90 	addi %d9,%d2,72
+8000404e:	60 85       	mov.a %a5,%d8
+80004050:	60 94       	mov.a %a4,%d9
+80004052:	6d ff 3c fa 	call 800034ca <IfxCan_Can_initNodeConfig>
 
-    //g_mcmcan.canNodeConfig.busLoopbackEnabled = 0;
+
     g_mcmcan.canNodeConfig.nodeId = IfxCan_NodeId_0;
-80004070:	82 08       	mov %d8,0
-80004072:	59 c8 0c 10 	st.w [%a12]76 <7000004c <g_led1+0x8>>,%d8
+80004056:	82 08       	mov %d8,0
+80004058:	59 c8 0c 10 	st.w [%a12]76 <7000004c <g_mcmcan+0x10>>,%d8
 
-    //�޸ĳɿ��Է��ͺͽ���
+
     g_mcmcan.canNodeConfig.frame.type = IfxCan_FrameType_transmitAndReceive;
-80004076:	82 23       	mov %d3,2
-80004078:	59 c3 14 10 	st.w [%a12]84 <70000054 <g_mcmcan>>,%d3
+8000405c:	82 22       	mov %d2,2
+8000405e:	59 c2 14 10 	st.w [%a12]84 <70000054 <g_mcmcan+0x18>>,%d2
 
-    //����������
+
     g_mcmcan.canNodeConfig.baudRate.baudrate = 500000;
-8000407c:	7b 80 00 20 	movh %d2,8
-80004080:	1b 02 12 2a 	addi %d2,%d2,-24288
-80004084:	59 c2 1c 10 	st.w [%a12]92 <7000005c <g_mcmcan+0x8>>,%d2
+80004062:	7b 80 00 30 	movh %d3,8
+80004066:	1b 03 12 3a 	addi %d3,%d3,-24288
+8000406a:	59 c3 1c 10 	st.w [%a12]92 <7000005c <g_mcmcan+0x20>>,%d3
     g_mcmcan.canNodeConfig.baudRate.prescaler = 0;
-80004088:	f9 c8 24 10 	st.h [%a12]100 <70000064 <g_mcmcan+0x10>>,%d8
+8000406e:	f9 c8 24 10 	st.h [%a12]100 <70000064 <g_mcmcan+0x28>>,%d8
     g_mcmcan.canNodeConfig.baudRate.samplePoint = 8000;
-8000408c:	3b 00 f4 21 	mov %d2,8000
-80004090:	f9 c2 20 10 	st.h [%a12]96 <70000060 <g_mcmcan+0xc>>,%d2
+80004072:	3b 00 f4 31 	mov %d3,8000
+80004076:	f9 c3 20 10 	st.h [%a12]96 <70000060 <g_mcmcan+0x24>>,%d3
     g_mcmcan.canNodeConfig.baudRate.syncJumpWidth = 2000;
-80004094:	3b 00 7d 20 	mov %d2,2000
-80004098:	f9 c2 22 10 	st.h [%a12]98 <70000062 <g_mcmcan+0xe>>,%d2
+8000407a:	3b 00 7d 30 	mov %d3,2000
+8000407e:	f9 c3 22 10 	st.h [%a12]98 <70000062 <g_mcmcan+0x26>>,%d3
     g_mcmcan.canNodeConfig.baudRate.timeSegment1 = 3;
-8000409c:	82 32       	mov %d2,3
-8000409e:	e9 c2 26 10 	st.b [%a12]102 <70000066 <g_mcmcan+0x12>>,%d2
+80004082:	82 33       	mov %d3,3
+80004084:	e9 c3 26 10 	st.b [%a12]102 <70000066 <g_mcmcan+0x2a>>,%d3
     g_mcmcan.canNodeConfig.baudRate.timeSegment2 = 10;
-800040a2:	3b a0 00 20 	mov %d2,10
-800040a6:	e9 c2 27 10 	st.b [%a12]103 <70000067 <g_mcmcan+0x13>>,%d2
-    //PIN
-    g_mcmcan.canNodeConfig.pins = &Can2PortInf0;
-800040aa:	b5 cd 24 60 	st.a [%a12]420 <700001a4 <g_mcmcan+0x150>>,%a13
+80004088:	3b a0 00 30 	mov %d3,10
+8000408c:	e9 c3 27 10 	st.b [%a12]103 <70000067 <g_mcmcan+0x2b>>,%d3
 
-    //�����������ж�
-    //���ͳɹ��жϴ�
+    g_mcmcan.canNodeConfig.pins = &Can0PortInf0;
+80004090:	91 00 00 28 	movh.a %a2,32768
+80004094:	d9 22 5c 50 	lea %a2,[%a2]1372 <8000055c <Can0PortInf0>>
+80004098:	b5 c2 24 60 	st.a [%a12]420 <700001a4 <g_mcmcan+0x168>>,%a2
+
+
     g_mcmcan.canNodeConfig.interruptConfig.transmissionCompletedEnabled = TRUE;
-800040ae:	82 12       	mov %d2,1
-800040b0:	e9 c2 11 30 	st.b [%a12]209 <700000d1 <g_mcmcan+0x7d>>,%d2
-    //���ӽ����жϴ�
-    g_mcmcan.canNodeConfig.interruptConfig.messageStoredToDedicatedRxBufferEnabled = TRUE;
-800040b4:	e9 c2 1b 30 	st.b [%a12]219 <700000db <g_mcmcan+0x87>>,%d2
+8000409c:	82 1a       	mov %d10,1
+8000409e:	e9 ca 11 30 	st.b [%a12]209 <700000d1 <g_mcmcan+0x95>>,%d10
+
+    g_mcmcan.canNodeConfig.interruptConfig.rxFifo0NewMessageEnabled = TRUE;
+800040a2:	e9 ca 08 30 	st.b [%a12]200 <700000c8 <g_mcmcan+0x8c>>,%d10
 
 
     g_mcmcan.canNodeConfig.interruptConfig.traco.priority = ISR_PRIORITY_CAN_TX;
-800040b8:	f9 c3 1c 60 	st.h [%a12]412 <7000019c <g_mcmcan+0x148>>,%d3
+800040a6:	f9 c2 1c 60 	st.h [%a12]412 <7000019c <g_mcmcan+0x160>>,%d2
     g_mcmcan.canNodeConfig.interruptConfig.traco.interruptLine = IfxCan_InterruptLine_0;
-800040bc:	59 c8 18 60 	st.w [%a12]408 <70000198 <g_mcmcan+0x144>>,%d8
+800040aa:	59 c8 18 60 	st.w [%a12]408 <70000198 <g_mcmcan+0x15c>>,%d8
     g_mcmcan.canNodeConfig.interruptConfig.traco.typeOfService = IfxSrc_Tos_cpu0;
-800040c0:	59 c8 20 60 	st.w [%a12]416 <700001a0 <g_mcmcan+0x14c>>,%d8
+800040ae:	59 c8 20 60 	st.w [%a12]416 <700001a0 <g_mcmcan+0x164>>,%d8
 
 
 
-    g_mcmcan.canNodeConfig.interruptConfig.reint.priority = ISR_PRIORITY_CAN_RX;
-800040c4:	82 32       	mov %d2,3
-800040c6:	f9 c2 08 50 	st.h [%a12]328 <70000148 <g_mcmcan+0xf4>>,%d2
-    g_mcmcan.canNodeConfig.interruptConfig.reint.interruptLine = IfxCan_InterruptLine_1;
-800040ca:	82 12       	mov %d2,1
-800040cc:	59 c2 04 50 	st.w [%a12]324 <70000144 <g_mcmcan+0xf0>>,%d2
-    g_mcmcan.canNodeConfig.interruptConfig.reint.typeOfService = IfxSrc_Tos_cpu0;
-800040d0:	59 c8 0c 50 	st.w [%a12]332 <7000014c <g_mcmcan+0xf8>>,%d8
+    g_mcmcan.canNodeConfig.interruptConfig.rxf0n.priority = ISR_PRIORITY_CAN_FIFO0_RX;
+800040b2:	82 32       	mov %d2,3
+800040b4:	f9 c2 38 50 	st.h [%a12]376 <70000178 <g_mcmcan+0x13c>>,%d2
+    g_mcmcan.canNodeConfig.interruptConfig.rxf0n.interruptLine = IfxCan_InterruptLine_1;
+800040b8:	82 1c       	mov %d12,1
+800040ba:	59 cc 34 50 	st.w [%a12]372 <70000174 <g_mcmcan+0x138>>,%d12
+    g_mcmcan.canNodeConfig.interruptConfig.rxf0n.typeOfService = IfxSrc_Tos_cpu0;
+800040be:	59 c8 3c 50 	st.w [%a12]380 <7000017c <g_mcmcan+0x140>>,%d8
+
+    g_mcmcan.canNodeConfig.rxConfig.rxMode = IfxCan_RxMode_fifo0;
+800040c2:	59 cc 18 20 	st.w [%a12]152 <70000098 <g_mcmcan+0x5c>>,%d12
+    g_mcmcan.canNodeConfig.rxConfig.rxFifo0DataFieldSize = IfxCan_DataFieldSize_8;
+800040c6:	59 c8 20 20 	st.w [%a12]160 <700000a0 <g_mcmcan+0x64>>,%d8
+    g_mcmcan.canNodeConfig.rxConfig.rxFifo0Size = 15;
+800040ca:	3b f0 00 20 	mov %d2,15
+800040ce:	e9 c2 32 20 	st.b [%a12]178 <700000b2 <g_mcmcan+0x76>>,%d2
 
     IfxCan_Can_initNode(&g_mcmcan.canSrcNode, &g_mcmcan.canNodeConfig);
-800040d4:	60 95       	mov.a %a5,%d9
-800040d6:	d9 c4 08 00 	lea %a4,[%a12]8 <70000008 <LCF_DSPR0_START+0x8>>
-800040da:	6d ff c5 f2 	call 80002664 <IfxCan_Can_initNode>
+800040d2:	60 95       	mov.a %a5,%d9
+800040d4:	d9 c4 08 00 	lea %a4,[%a12]8 <70000008 <LCF_DSPR0_START+0x8>>
+800040d8:	6d ff c6 f2 	call 80002664 <IfxCan_Can_initNode>
 
     IfxCan_Can_initNode(&g_mcmcan.canDstNode, &g_mcmcan.canNodeConfig);
-800040de:	80 c2       	mov.d %d2,%a12
-800040e0:	1b 82 02 a0 	addi %d10,%d2,40
-800040e4:	60 95       	mov.a %a5,%d9
-800040e6:	60 a4       	mov.a %a4,%d10
-800040e8:	6d ff be f2 	call 80002664 <IfxCan_Can_initNode>
-     *  - assign the filter to the dedicated RX Buffer (RxBuffer0 in this case)
-     *
-     *  - initialize the standard filter with the modified configuration
-     * ==========================================================================================
-     */
-    g_mcmcan.canFilter.number = 0;
-800040ec:	e9 c8 2c 60 	st.b [%a12]428 <700001ac <g_mcmcan+0x158>>,%d8
-    g_mcmcan.canFilter.elementConfiguration = IfxCan_FilterElementConfiguration_storeInRxBuffer;
-800040f0:	82 72       	mov %d2,7
-800040f2:	59 c2 30 60 	st.w [%a12]432 <700001b0 <g_mcmcan+0x15c>>,%d2
-    g_mcmcan.canFilter.id1 = CAN_MESSAGE_ID;
-800040f6:	3b 70 77 20 	mov %d2,1911
-800040fa:	59 c2 38 60 	st.w [%a12]440 <700001b8 <g_mcmcan+0x164>>,%d2
-    g_mcmcan.canFilter.rxBufferOffset = IfxCan_RxBufferId_0;
-800040fe:	59 c8 00 70 	st.w [%a12]448 <700001c0 <g_mcmcan+0x16c>>,%d8
+800040dc:	80 c2       	mov.d %d2,%a12
+800040de:	1b 82 02 b0 	addi %d11,%d2,40
+800040e2:	60 95       	mov.a %a5,%d9
+800040e4:	60 b4       	mov.a %a4,%d11
+800040e6:	6d ff bf f2 	call 80002664 <IfxCan_Can_initNode>
+//    g_mcmcan.canFilter.rxBufferOffset = IfxCan_RxBufferId_0;
+//    IfxCan_Can_setStandardFilter(&g_mcmcan.canDstNode, &g_mcmcan.canFilter);
 
-    IfxCan_Can_setStandardFilter(&g_mcmcan.canDstNode, &g_mcmcan.canFilter);
-80004102:	d9 c5 2c 60 	lea %a5,[%a12]428 <700001ac <g_mcmcan+0x158>>
-80004106:	60 a4       	mov.a %a4,%d10
+    IfxCan_Filter filter;
+
+    filter.number = 0;
+800040ea:	e9 e8 e8 ff 	st.b [%a14]-24,%d8
+    filter.type = IfxCan_FilterType_range;
+800040ee:	59 e8 f0 ff 	st.w [%a14]-16,%d8
+    filter.elementConfiguration = IfxCan_FilterElementConfiguration_storeInRxFifo0;
+800040f2:	59 ec ec ff 	st.w [%a14]-20,%d12
+    filter.id1 = 0;
+800040f6:	59 e8 f4 ff 	st.w [%a14]-12,%d8
+    filter.id2 = 10;
+800040fa:	3b a0 00 20 	mov %d2,10
+800040fe:	59 e2 f8 ff 	st.w [%a14]-8,%d2
+    //filter.rxBufferOffset = IfxCan_RxBufferId_0;
+    IfxCan_Can_setStandardFilter(&g_mcmcan.canDstNode, &filter);
+80004102:	d9 e5 e8 ff 	lea %a5,[%a14]-24
+80004106:	60 b4       	mov.a %a4,%d11
 80004108:	6d ff f3 fb 	call 800038ee <IfxCan_Can_setStandardFilter>
-}
-8000410c:	00 90       	ret 
+//    IfxCan_Can_setStandardFilter(&g_mcmcan.canDstNode, &filter);
 
-8000410e <transmitCanMessage>:
+
+
+
+    IfxCan_Can_initMessage(&g_mcmcan.rxMsg);
+8000410c:	d9 c4 24 70 	lea %a4,[%a12]484 <700001e4 <g_mcmcan+0x1a8>>
+80004110:	6d ff 74 f2 	call 800025f8 <IfxCan_Can_initMessage>
+    g_mcmcan.rxMsg.readFromRxFifo0=TRUE;
+80004114:	e9 ca 02 80 	st.b [%a12]514 <70000202 <g_mcmcan+0x1c6>>,%d10
+    memset((void *)(&g_mcmcan.rxData[0]), INVALID_RX_DATA_VALUE, MAXIMUM_CAN_DATA_PAYLOAD * sizeof(uint32));
+80004118:	7b 60 5a 2a 	movh %d2,42406
+8000411c:	1b 52 5a 2a 	addi %d2,%d2,-23131
+80004120:	59 c2 0c 80 	st.w [%a12]524 <7000020c <g_mcmcan+0x1d0>>,%d2
+80004124:	59 c2 10 80 	st.w [%a12]528 <70000210 <g_mcmcan+0x1d4>>,%d2
+}
+80004128:	00 90       	ret 
+
+8000412a <transmitCanMessage>:
 
 /* Function to initialize both TX and RX messages with the default data values.
  * After initialization of the messages, the TX message is transmitted.
  */
 void transmitCanMessage(void)
 {
-8000410e:	40 ae       	mov.aa %a14,%sp
+8000412a:	40 ae       	mov.aa %a14,%sp
     /* Initialization of the RX message with the default configuration */
     IfxCan_Can_initMessage(&g_mcmcan.rxMsg);
-80004110:	91 00 00 c7 	movh.a %a12,28672
-80004114:	d9 cc 38 80 	lea %a12,[%a12]568 <70000238 <g_mcmcan+0x1e4>>
-80004118:	40 c4       	mov.aa %a4,%a12
-8000411a:	6d ff 6f f2 	call 800025f8 <IfxCan_Can_initMessage>
+8000412c:	91 00 00 c7 	movh.a %a12,28672
+80004130:	d9 cc 20 80 	lea %a12,[%a12]544 <70000220 <g_mcmcan+0x1e4>>
+80004134:	40 c4       	mov.aa %a4,%a12
+80004136:	6d ff 61 f2 	call 800025f8 <IfxCan_Can_initMessage>
 
     /* Invalidation of the RX message data content */
     memset((void *)(&g_mcmcan.rxData[0]), INVALID_RX_DATA_VALUE, MAXIMUM_CAN_DATA_PAYLOAD * sizeof(uint32));
-8000411e:	7b 60 5a 2a 	movh %d2,42406
-80004122:	1b 52 5a 2a 	addi %d2,%d2,-23131
-80004126:	59 c2 28 00 	st.w [%a12]40 <70000028 <__TMC_END__>>,%d2
-8000412a:	59 c2 2c 00 	st.w [%a12]44 <7000002c <dtor_idx.0>>,%d2
+8000413a:	7b 60 5a 2a 	movh %d2,42406
+8000413e:	1b 52 5a 2a 	addi %d2,%d2,-23131
+80004142:	59 c2 28 00 	st.w [%a12]40 <70000028 <g_led2+0xc>>,%d2
+80004146:	59 c2 2c 00 	st.w [%a12]44 <7000002c <g_led1>>,%d2
 
     /* Initialization of the TX message with the default configuration */
     IfxCan_Can_initMessage(&g_mcmcan.txMsg);
-8000412e:	d9 c4 e0 ff 	lea %a4,[%a12]-32 <6fffffe0 <__CSA1_END+0xffc43e0>>
-80004132:	6d ff 63 f2 	call 800025f8 <IfxCan_Can_initMessage>
+8000414a:	d9 c4 e0 ff 	lea %a4,[%a12]-32 <6fffffe0 <__CSA1_END+0xffc43e0>>
+8000414e:	6d ff 55 f2 	call 800025f8 <IfxCan_Can_initMessage>
 
     /* Define the content of the data to be transmitted */
     g_mcmcan.txData[0] = TX_DATA_LOW_WORD;
-80004136:	7b b0 0c 2c 	movh %d2,49355
-8000413a:	1b a2 01 2c 	addi %d2,%d2,-16358
-8000413e:	59 c2 20 00 	st.w [%a12]32 <70000020 <LCF_DSPR0_START+0x20>>,%d2
+80004152:	7b b0 0c 2c 	movh %d2,49355
+80004156:	1b a2 01 2c 	addi %d2,%d2,-16358
+8000415a:	59 c2 20 00 	st.w [%a12]32 <70000020 <g_led2+0x4>>,%d2
     g_mcmcan.txData[1] = TX_DATA_HIGH_WORD;
-80004142:	7b f0 a5 2b 	movh %d2,47711
-80004146:	1b 12 a1 2b 	addi %d2,%d2,-17903
-8000414a:	59 c2 24 00 	st.w [%a12]36 <70000024 <LCF_DSPR0_START+0x24>>,%d2
+8000415e:	7b f0 a5 2b 	movh %d2,47711
+80004162:	1b 12 a1 2b 	addi %d2,%d2,-17903
+80004166:	59 c2 24 00 	st.w [%a12]36 <70000024 <g_led2+0x8>>,%d2
 
     /* Set the message ID that is used during the receive acceptance phase */
     g_mcmcan.txMsg.messageId = CAN_MESSAGE_ID;
-8000414e:	3b 70 77 20 	mov %d2,1911
-80004152:	59 c2 e4 ff 	st.w [%a12]-28 <6fffffe4 <__CSA1_END+0xffc43e4>>,%d2
+8000416a:	3b 70 77 20 	mov %d2,1911
+8000416e:	59 c2 e4 ff 	st.w [%a12]-28 <6fffffe4 <__CSA1_END+0xffc43e4>>,%d2
 
     /* Send the CAN message with the previously defined TX message content */
     while( IfxCan_Status_notSentBusy ==
            IfxCan_Can_sendMessage(&g_mcmcan.canSrcNode, &g_mcmcan.txMsg, &g_mcmcan.txData[0]) )
-80004156:	91 00 00 67 	movh.a %a6,28672
-8000415a:	d9 66 18 90 	lea %a6,[%a6]600 <70000258 <g_mcmcan+0x204>>
-8000415e:	d9 65 c0 ff 	lea %a5,[%a6]-64 <6fffffc0 <__CSA1_END+0xffc43c0>>
-80004162:	d9 64 c4 8f 	lea %a4,[%a6]-508 <6ffffe04 <__CSA1_END+0xffc4204>>
-80004166:	6d ff 41 fb 	call 800037e8 <IfxCan_Can_sendMessage>
+80004172:	91 00 00 67 	movh.a %a6,28672
+80004176:	d9 66 00 90 	lea %a6,[%a6]576 <70000240 <g_mcmcan+0x204>>
+8000417a:	d9 65 c0 ff 	lea %a5,[%a6]-64 <6fffffc0 <__CSA1_END+0xffc43c0>>
+8000417e:	d9 64 c4 8f 	lea %a4,[%a6]-508 <6ffffe04 <__CSA1_END+0xffc4204>>
+80004182:	6d ff 33 fb 	call 800037e8 <IfxCan_Can_sendMessage>
     while( IfxCan_Status_notSentBusy ==
-8000416a:	8b 02 02 22 	eq %d2,%d2,32
-8000416e:	df 02 f4 ff 	jne %d2,0,80004156 <transmitCanMessage+0x48>
+80004186:	8b 02 02 22 	eq %d2,%d2,32
+8000418a:	df 02 f4 ff 	jne %d2,0,80004172 <transmitCanMessage+0x48>
     {
     }
 }
-80004172:	00 90       	ret 
+8000418e:	00 90       	ret 
 
-80004174 <initLeds>:
+80004190 <initLeds>:
 
 /* Function to initialize the LEDs */
 void initLeds(void)
 {
-80004174:	40 ae       	mov.aa %a14,%sp
+80004190:	40 ae       	mov.aa %a14,%sp
      *  - define the GPIO pin that is connected to the LED
      *  - define the general GPIO pin usage (no alternate function used)
      *  - define the pad driver strength
      * ======================================================================
      */
     g_led1.port      = &MODULE_P21;
-80004176:	7b 00 00 87 	movh %d8,28672
-8000417a:	60 82       	mov.a %a2,%d8
-8000417c:	d9 2d 04 10 	lea %a13,[%a2]68
-80004180:	91 40 00 4f 	movh.a %a4,61444
-80004184:	d9 44 40 4b 	lea %a4,[%a4]-19200 <f003b500 <bmhd_3_copy+0x40c39f00>>
-80004188:	b5 24 04 10 	st.a [%a2]68 <f003b500 <bmhd_3_copy+0x40c39f00>>,%a4
+80004192:	7b 00 00 87 	movh %d8,28672
+80004196:	60 82       	mov.a %a2,%d8
+80004198:	d9 2d 2c 00 	lea %a13,[%a2]44
+8000419c:	91 40 00 4f 	movh.a %a4,61444
+800041a0:	d9 44 40 4b 	lea %a4,[%a4]-19200 <f003b500 <bmhd_3_copy+0x40c39f00>>
+800041a4:	b5 24 2c 00 	st.a [%a2]44 <f003b500 <bmhd_3_copy+0x40c39f00>>,%a4
     g_led1.pinIndex  = 4;
-8000418c:	82 42       	mov %d2,4
-8000418e:	e9 d2 04 00 	st.b [%a13]4,%d2
+800041a8:	82 42       	mov %d2,4
+800041aa:	e9 d2 04 00 	st.b [%a13]4,%d2
     g_led1.mode      = IfxPort_OutputIdx_general;
-80004192:	3b 00 08 50 	mov %d5,128
-80004196:	59 d5 08 00 	st.w [%a13]8,%d5
+800041ae:	3b 00 08 50 	mov %d5,128
+800041b2:	59 d5 08 00 	st.w [%a13]8,%d5
     g_led1.padDriver = IfxPort_PadDriver_cmosAutomotiveSpeed1;
-8000419a:	82 03       	mov %d3,0
-8000419c:	59 d3 0c 00 	st.w [%a13]12,%d3
+800041b6:	82 03       	mov %d3,0
+800041b8:	59 d3 0c 00 	st.w [%a13]12,%d3
 
     g_led2.port      = &MODULE_P21;
-800041a0:	91 00 00 f7 	movh.a %a15,28672
-800041a4:	d9 fc 34 00 	lea %a12,[%a15]52 <70000034 <g_led2>>
-800041a8:	b5 f4 34 00 	st.a [%a15]52 <70000034 <g_led2>>,%a4
+800041bc:	91 00 00 f7 	movh.a %a15,28672
+800041c0:	d9 fc 1c 00 	lea %a12,[%a15]28 <7000001c <g_led2>>
+800041c4:	b5 f4 1c 00 	st.a [%a15]28 <7000001c <g_led2>>,%a4
     g_led2.pinIndex  = 5;
-800041ac:	82 52       	mov %d2,5
-800041ae:	e9 c2 04 00 	st.b [%a12]4,%d2
+800041c8:	82 52       	mov %d2,5
+800041ca:	e9 c2 04 00 	st.b [%a12]4,%d2
     g_led2.mode      = IfxPort_OutputIdx_general;
-800041b2:	59 c5 08 00 	st.w [%a12]8,%d5
+800041ce:	59 c5 08 00 	st.w [%a12]8,%d5
     g_led2.padDriver = IfxPort_PadDriver_cmosAutomotiveSpeed1;
-800041b6:	59 c3 0c 00 	st.w [%a12]12,%d3
-800041ba:	3b 00 01 20 	mov %d2,16
-800041be:	d9 42 04 00 	lea %a2,[%a4]4 <f0040004 <bmhd_3_copy+0x40c3ea04>>
-800041c2:	59 42 04 00 	st.w [%a4]4 <f0040004 <bmhd_3_copy+0x40c3ea04>>,%d2
-800041c6:	3b 00 02 20 	mov %d2,32
-800041ca:	74 22       	st.w [%a2],%d2
+800041d2:	59 c3 0c 00 	st.w [%a12]12,%d3
+800041d6:	3b 00 01 20 	mov %d2,16
+800041da:	d9 42 04 00 	lea %a2,[%a4]4 <f0040004 <bmhd_3_copy+0x40c3ea04>>
+800041de:	59 42 04 00 	st.w [%a4]4 <f0040004 <bmhd_3_copy+0x40c3ea04>>,%d2
+800041e2:	3b 00 02 20 	mov %d2,32
+800041e6:	74 22       	st.w [%a2],%d2
     IfxPort_setPinMode(port, pinIndex, (IfxPort_Mode)(index | mode));
-800041cc:	82 44       	mov %d4,4
-800041ce:	6d ff 6e ec 	call 80001aaa <IfxPort_setPinMode>
+800041e8:	82 44       	mov %d4,4
+800041ea:	6d ff 60 ec 	call 80001aaa <IfxPort_setPinMode>
     IfxPort_setPinHigh(g_led1.port, g_led1.pinIndex);
     IfxPort_setPinHigh(g_led2.port, g_led2.pinIndex);
 
     /* Set the pin input/output mode for both pins connected to the LEDs */
     IfxPort_setPinModeOutput(g_led1.port, g_led1.pinIndex, IfxPort_OutputMode_pushPull, g_led1.mode);
     IfxPort_setPinModeOutput(g_led2.port, g_led2.pinIndex, IfxPort_OutputMode_pushPull, g_led2.mode);
-800041d2:	19 c5 08 00 	ld.w %d5,[%a12]8
-800041d6:	8f 05 48 51 	or %d5,%d5,128
-800041da:	39 c4 04 00 	ld.bu %d4,[%a12]4
-800041de:	99 f4 34 00 	ld.a %a4,[%a15]52 <70000034 <g_led2>>
-800041e2:	6d ff 64 ec 	call 80001aaa <IfxPort_setPinMode>
+800041ee:	19 c5 08 00 	ld.w %d5,[%a12]8
+800041f2:	8f 05 48 51 	or %d5,%d5,128
+800041f6:	39 c4 04 00 	ld.bu %d4,[%a12]4
+800041fa:	99 f4 1c 00 	ld.a %a4,[%a15]28 <7000001c <g_led2>>
+800041fe:	6d ff 56 ec 	call 80001aaa <IfxPort_setPinMode>
 
     /* Set the pad driver mode for both pins connected to the LEDs */
     IfxPort_setPinPadDriver(g_led1.port, g_led1.pinIndex, g_led1.padDriver);
-800041e6:	19 d5 0c 00 	ld.w %d5,[%a13]12
-800041ea:	39 d4 04 00 	ld.bu %d4,[%a13]4
-800041ee:	60 82       	mov.a %a2,%d8
-800041f0:	99 24 04 10 	ld.a %a4,[%a2]68
-800041f4:	6d ff 98 ec 	call 80001b24 <IfxPort_setPinPadDriver>
+80004202:	19 d5 0c 00 	ld.w %d5,[%a13]12
+80004206:	39 d4 04 00 	ld.bu %d4,[%a13]4
+8000420a:	60 82       	mov.a %a2,%d8
+8000420c:	99 24 2c 00 	ld.a %a4,[%a2]44
+80004210:	6d ff 8a ec 	call 80001b24 <IfxPort_setPinPadDriver>
     IfxPort_setPinPadDriver(g_led2.port, g_led2.pinIndex, g_led2.padDriver);
-800041f8:	19 c5 0c 00 	ld.w %d5,[%a12]12
-800041fc:	39 c4 04 00 	ld.bu %d4,[%a12]4
-80004200:	99 f4 34 00 	ld.a %a4,[%a15]52 <70000034 <g_led2>>
-80004204:	6d ff 90 ec 	call 80001b24 <IfxPort_setPinPadDriver>
+80004214:	19 c5 0c 00 	ld.w %d5,[%a12]12
+80004218:	39 c4 04 00 	ld.bu %d4,[%a12]4
+8000421c:	99 f4 1c 00 	ld.a %a4,[%a15]28 <7000001c <g_led2>>
+80004220:	6d ff 82 ec 	call 80001b24 <IfxPort_setPinPadDriver>
 }
-80004208:	00 90       	ret 
+80004224:	00 90       	ret 
 
-8000420a <memset>:
-8000420a:	40 42       	mov.aa %a2,%a4
-8000420c:	df 05 07 00 	jeq %d5,0,8000421a <memset+0x10>
-80004210:	60 53       	mov.a %a3,%d5
-80004212:	b0 f3       	add.a %a3,-1
-80004214:	24 44       	st.b [%a4+],%d4
-80004216:	fd 30 ff 7f 	loop %a3,80004214 <memset+0xa>
-8000421a:	00 90       	ret 
-
-8000421c <__fixunsdfsi>:
-8000421c:	82 06       	mov %d6,0
-8000421e:	7b 00 1e 74 	movh %d7,16864
-80004222:	60 4d       	mov.a %a13,%d4
-80004224:	60 5c       	mov.a %a12,%d5
-80004226:	6d 00 91 02 	call 80004748 <__gedf2>
-8000422a:	ff 02 07 00 	jge %d2,0,80004238 <__fixunsdfsi+0x1c>
-8000422e:	80 d4       	mov.d %d4,%a13
-80004230:	80 c5       	mov.d %d5,%a12
-80004232:	6d 00 ab 02 	call 80004788 <__fixdfsi>
+80004226 <memset>:
+80004226:	40 42       	mov.aa %a2,%a4
+80004228:	df 05 07 00 	jeq %d5,0,80004236 <memset+0x10>
+8000422c:	60 53       	mov.a %a3,%d5
+8000422e:	b0 f3       	add.a %a3,-1
+80004230:	24 44       	st.b [%a4+],%d4
+80004232:	fd 30 ff 7f 	loop %a3,80004230 <memset+0xa>
 80004236:	00 90       	ret 
+
+80004238 <__fixunsdfsi>:
 80004238:	82 06       	mov %d6,0
 8000423a:	7b 00 1e 74 	movh %d7,16864
-8000423e:	80 d4       	mov.d %d4,%a13
-80004240:	80 c5       	mov.d %d5,%a12
-80004242:	6d 00 4e 01 	call 800044de <__subdf3>
-80004246:	0b 23 10 48 	mov %e4,%d3,%d2
-8000424a:	6d 00 9f 02 	call 80004788 <__fixdfsi>
-8000424e:	9b 02 00 28 	addih %d2,%d2,32768
+8000423e:	60 4d       	mov.a %a13,%d4
+80004240:	60 5c       	mov.a %a12,%d5
+80004242:	6d 00 91 02 	call 80004764 <__gedf2>
+80004246:	ff 02 07 00 	jge %d2,0,80004254 <__fixunsdfsi+0x1c>
+8000424a:	80 d4       	mov.d %d4,%a13
+8000424c:	80 c5       	mov.d %d5,%a12
+8000424e:	6d 00 ab 02 	call 800047a4 <__fixdfsi>
 80004252:	00 90       	ret 
+80004254:	82 06       	mov %d6,0
+80004256:	7b 00 1e 74 	movh %d7,16864
+8000425a:	80 d4       	mov.d %d4,%a13
+8000425c:	80 c5       	mov.d %d5,%a12
+8000425e:	6d 00 4e 01 	call 800044fa <__subdf3>
+80004262:	0b 23 10 48 	mov %e4,%d3,%d2
+80004266:	6d 00 9f 02 	call 800047a4 <__fixdfsi>
+8000426a:	9b 02 00 28 	addih %d2,%d2,32768
+8000426e:	00 90       	ret 
 
-80004254 <__extendsfdf2>:
-80004254:	20 20       	sub.a %sp,32
-80004256:	d9 a5 10 00 	lea %a5,[%sp]16
-8000425a:	d9 a4 0c 00 	lea %a4,[%sp]12
-8000425e:	59 a4 0c 00 	st.w [%sp]12,%d4
-80004262:	6d 00 e1 02 	call 80004824 <__unpack_f>
-80004266:	19 a2 1c 00 	ld.w %d2,[%sp]28
-8000426a:	19 a6 18 00 	ld.w %d6,[%sp]24
-8000426e:	53 12 40 40 	mul.u %e4,%d2,1
-80004272:	77 45 00 3f 	dextr %d3,%d5,%d4,30
-80004276:	8f e4 01 20 	sh %d2,%d4,30
-8000427a:	19 a5 14 00 	ld.w %d5,[%sp]20
-8000427e:	19 a4 10 00 	ld.w %d4,[%sp]16
-80004282:	74 a2       	st.w [%sp],%d2
-80004284:	59 a3 04 00 	st.w [%sp]4,%d3
-80004288:	6d 00 be 02 	call 80004804 <__make_dp>
-8000428c:	00 90       	ret 
+80004270 <__extendsfdf2>:
+80004270:	20 20       	sub.a %sp,32
+80004272:	d9 a5 10 00 	lea %a5,[%sp]16
+80004276:	d9 a4 0c 00 	lea %a4,[%sp]12
+8000427a:	59 a4 0c 00 	st.w [%sp]12,%d4
+8000427e:	6d 00 e1 02 	call 80004840 <__unpack_f>
+80004282:	19 a2 1c 00 	ld.w %d2,[%sp]28
+80004286:	19 a6 18 00 	ld.w %d6,[%sp]24
+8000428a:	53 12 40 40 	mul.u %e4,%d2,1
+8000428e:	77 45 00 3f 	dextr %d3,%d5,%d4,30
+80004292:	8f e4 01 20 	sh %d2,%d4,30
+80004296:	19 a5 14 00 	ld.w %d5,[%sp]20
+8000429a:	19 a4 10 00 	ld.w %d4,[%sp]16
+8000429e:	74 a2       	st.w [%sp],%d2
+800042a0:	59 a3 04 00 	st.w [%sp]4,%d3
+800042a4:	6d 00 be 02 	call 80004820 <__make_dp>
+800042a8:	00 90       	ret 
 
-8000428e <_fpadd_parts>:
-8000428e:	54 42       	ld.w %d2,[%a4]
-80004290:	40 42       	mov.aa %a2,%a4
-80004292:	bf 22 c2 80 	jlt.u %d2,2,80004416 <_fpadd_parts+0x188>
-80004296:	54 53       	ld.w %d3,[%a5]
-80004298:	40 52       	mov.aa %a2,%a5
-8000429a:	bf 23 be 80 	jlt.u %d3,2,80004416 <_fpadd_parts+0x188>
-8000429e:	df 42 e3 00 	jeq %d2,4,80004464 <_fpadd_parts+0x1d6>
-800042a2:	df 43 ba 00 	jeq %d3,4,80004416 <_fpadd_parts+0x188>
-800042a6:	df 23 b9 00 	jeq %d3,2,80004418 <_fpadd_parts+0x18a>
-800042aa:	df 22 b6 00 	jeq %d2,2,80004416 <_fpadd_parts+0x188>
-800042ae:	19 40 08 00 	ld.w %d0,[%a4]8
-800042b2:	19 57 08 00 	ld.w %d7,[%a5]8
-800042b6:	09 44 4c 09 	ld.d %e4,[%a4]12
-800042ba:	0b 70 80 60 	sub %d6,%d0,%d7
-800042be:	09 52 4c 09 	ld.d %e2,[%a5]12
-800042c2:	bf 06 c2 00 	jlt %d6,0,80004446 <_fpadd_parts+0x1b8>
-800042c6:	8b 06 84 12 	ge %d1,%d6,64
-800042ca:	df 01 c4 80 	jne %d1,0,80004452 <_fpadd_parts+0x1c4>
-800042ce:	df 06 2a 00 	jeq %d6,0,80004322 <_fpadd_parts+0x94>
-800042d2:	8b 06 82 72 	ge %d7,%d6,32
-800042d6:	2b 32 50 97 	seln %d9,%d7,%d2,%d3
-800042da:	ab 03 a0 87 	seln %d8,%d7,%d3,0
-800042de:	8f f6 01 71 	and %d7,%d6,31
-800042e2:	8b 07 02 11 	rsub %d1,%d7,32
-800042e6:	17 98 80 11 	dextr %d1,%d8,%d9,%d1
-800042ea:	2b 91 40 17 	sel %d1,%d7,%d1,%d9
-800042ee:	8b 06 82 a2 	ge %d10,%d6,32
-800042f2:	32 57       	rsub %d7
-800042f4:	02 19       	mov %d9,%d1
-800042f6:	8f f6 01 61 	and %d6,%d6,31
-800042fa:	82 f1       	mov %d1,-1
-800042fc:	0f 78 00 80 	sh %d8,%d8,%d7
-80004300:	17 11 80 76 	dextr %d7,%d1,%d1,%d6
-80004304:	0f 61 00 60 	sh %d6,%d1,%d6
-80004308:	2b 67 50 7a 	seln %d7,%d10,%d7,%d6
-8000430c:	ab 06 a0 6a 	seln %d6,%d10,%d6,0
-80004310:	0f 62 e0 10 	andn %d1,%d2,%d6
-80004314:	0f 73 e0 60 	andn %d6,%d3,%d7
-80004318:	a6 16       	or %d6,%d1
-8000431a:	8b 06 00 95 	or.ne %d9,%d6,0
-8000431e:	0b 98 10 28 	mov %e2,%d8,%d9
-80004322:	19 41 04 00 	ld.w %d1,[%a4]4
-80004326:	19 56 04 00 	ld.w %d6,[%a5]4
-8000432a:	5f 61 4c 00 	jeq %d1,%d6,800043c2 <_fpadd_parts+0x134>
-8000432e:	0b 24 c0 60 	subx %d6,%d4,%d2
-80004332:	0b 35 d0 70 	subc %d7,%d5,%d3
-80004336:	df 01 06 00 	jeq %d1,0,80004342 <_fpadd_parts+0xb4>
-8000433a:	0b 42 c0 60 	subx %d6,%d2,%d4
-8000433e:	0b 53 d0 70 	subc %d7,%d3,%d5
-80004342:	8b 07 00 31 	rsub %d3,%d7,0
-80004346:	8b 06 00 91 	rsub %d9,%d6,0
-8000434a:	ab f3 1f 36 	cadd %d3,%d6,%d3,-1
-8000434e:	82 12       	mov %d2,1
-80004350:	bf 07 05 00 	jlt %d7,0,8000435a <_fpadd_parts+0xcc>
-80004354:	02 69       	mov %d9,%d6
-80004356:	02 73       	mov %d3,%d7
-80004358:	82 02       	mov %d2,0
-8000435a:	8b f9 9f 70 	addx %d7,%d9,-1
-8000435e:	82 f5       	mov %d5,-1
-80004360:	8b f3 bf 60 	addc %d6,%d3,-1
-80004364:	06 c5       	sh %d5,-4
-80004366:	59 62 04 00 	st.w [%a6]4,%d2
-8000436a:	82 e1       	mov %d1,-2
-8000436c:	0b 56 00 21 	eq %d2,%d6,%d5
-80004370:	0b 71 30 22 	and.lt.u %d2,%d1,%d7
-80004374:	59 60 08 00 	st.w [%a6]8,%d0
-80004378:	59 69 0c 00 	st.w [%a6]12,%d9
-8000437c:	59 63 10 00 	st.w [%a6]16,%d3
-80004380:	0b 65 a0 22 	or.lt.u %d2,%d5,%d6
-80004384:	df 02 2b 80 	jne %d2,0,800043da <_fpadd_parts+0x14c>
-80004388:	1b f0 ff 7f 	addi %d7,%d0,-1
-8000438c:	77 93 80 30 	dextr %d3,%d3,%d9,1
-80004390:	06 19       	sh %d9,1
-80004392:	8b f9 9f 00 	addx %d0,%d9,-1
-80004396:	8b f3 bf 60 	addc %d6,%d3,-1
-8000439a:	0b 56 00 21 	eq %d2,%d6,%d5
-8000439e:	0b 01 50 22 	and.ge.u %d2,%d1,%d0
-800043a2:	0b 56 a0 22 	or.lt.u %d2,%d6,%d5
-800043a6:	02 78       	mov %d8,%d7
-800043a8:	c2 f7       	add %d7,-1
-800043aa:	df 02 f1 ff 	jne %d2,0,8000438c <_fpadd_parts+0xfe>
-800043ae:	82 32       	mov %d2,3
-800043b0:	59 69 0c 00 	st.w [%a6]12,%d9
-800043b4:	59 63 10 00 	st.w [%a6]16,%d3
-800043b8:	59 68 08 00 	st.w [%a6]8,%d8
-800043bc:	74 62       	st.w [%a6],%d2
-800043be:	40 62       	mov.aa %a2,%a6
-800043c0:	00 90       	ret 
-800043c2:	0b 24 40 90 	addx %d9,%d4,%d2
-800043c6:	0b 35 50 30 	addc %d3,%d5,%d3
-800043ca:	59 61 04 00 	st.w [%a6]4,%d1
-800043ce:	59 60 08 00 	st.w [%a6]8,%d0
-800043d2:	59 69 0c 00 	st.w [%a6]12,%d9
-800043d6:	59 63 10 00 	st.w [%a6]16,%d3
-800043da:	82 32       	mov %d2,3
-800043dc:	7b 00 00 52 	movh %d5,8192
-800043e0:	40 62       	mov.aa %a2,%a6
-800043e2:	74 62       	st.w [%a6],%d2
-800043e4:	0b 53 00 21 	eq %d2,%d3,%d5
-800043e8:	b7 02 01 20 	insert %d2,%d2,0,0,1
-800043ec:	0b 53 a0 22 	or.lt.u %d2,%d3,%d5
-800043f0:	df 02 13 80 	jne %d2,0,80004416 <_fpadd_parts+0x188>
-800043f4:	8f f3 1f 20 	sh %d2,%d3,-1
-800043f8:	77 93 80 5f 	dextr %d5,%d3,%d9,31
-800043fc:	8f 19 00 31 	and %d3,%d9,1
-80004400:	59 62 10 00 	st.w [%a6]16,%d2
-80004404:	19 62 08 00 	ld.w %d2,[%a6]8
-80004408:	a6 53       	or %d3,%d5
-8000440a:	c2 12       	add %d2,1
-8000440c:	d9 63 08 00 	lea %a3,[%a6]8
-80004410:	59 63 0c 00 	st.w [%a6]12,%d3
-80004414:	74 32       	st.w [%a3],%d2
-80004416:	00 90       	ret 
-80004418:	40 42       	mov.aa %a2,%a4
-8000441a:	df 22 fe ff 	jne %d2,2,80004416 <_fpadd_parts+0x188>
-8000441e:	40 63       	mov.aa %a3,%a6
-80004420:	09 44 48 01 	ld.d %e4,[%a4+]8
-80004424:	89 34 48 01 	st.d [%a3+]8,%e4
-80004428:	09 44 48 01 	ld.d %e4,[%a4+]8
-8000442c:	89 34 48 01 	st.d [%a3+]8,%e4
-80004430:	44 44       	ld.w %d4,[%a4+]
-80004432:	64 34       	st.w [%a3+],%d4
-80004434:	19 23 04 00 	ld.w %d3,[%a2]4
-80004438:	19 52 04 00 	ld.w %d2,[%a5]4
-8000443c:	40 62       	mov.aa %a2,%a6
-8000443e:	26 32       	and %d2,%d3
-80004440:	59 62 04 00 	st.w [%a6]4,%d2
-80004444:	00 90       	ret 
-80004446:	0b 07 80 60 	sub %d6,%d7,%d0
-8000444a:	8b 06 44 12 	lt %d1,%d6,64
-8000444e:	df 01 1d 80 	jne %d1,0,80004488 <_fpadd_parts+0x1fa>
-80004452:	3f 07 06 00 	jlt %d7,%d0,8000445e <_fpadd_parts+0x1d0>
-80004456:	d2 04       	mov %e4,0
-80004458:	02 70       	mov %d0,%d7
-8000445a:	1d ff 64 ff 	j 80004322 <_fpadd_parts+0x94>
-8000445e:	d2 02       	mov %e2,0
-80004460:	1d ff 61 ff 	j 80004322 <_fpadd_parts+0x94>
-80004464:	40 42       	mov.aa %a2,%a4
-80004466:	df 43 d8 ff 	jne %d3,4,80004416 <_fpadd_parts+0x188>
-8000446a:	19 43 04 00 	ld.w %d3,[%a4]4
-8000446e:	19 52 04 00 	ld.w %d2,[%a5]4
-80004472:	7b 00 00 48 	movh %d4,32768
-80004476:	0b 23 10 21 	ne %d2,%d3,%d2
-8000447a:	1b 84 22 40 	addi %d4,%d4,552
-8000447e:	80 43       	mov.d %d3,%a4
-80004480:	2b 43 50 22 	seln %d2,%d2,%d3,%d4
-80004484:	60 22       	mov.a %a2,%d2
-80004486:	00 90       	ret 
-80004488:	8b 06 82 02 	ge %d0,%d6,32
-8000448c:	2b 54 50 90 	seln %d9,%d0,%d4,%d5
-80004490:	ab 05 a0 80 	seln %d8,%d0,%d5,0
-80004494:	8f f6 01 01 	and %d0,%d6,31
-80004498:	8b 00 02 11 	rsub %d1,%d0,32
-8000449c:	17 98 80 11 	dextr %d1,%d8,%d9,%d1
-800044a0:	2b 91 40 10 	sel %d1,%d0,%d1,%d9
-800044a4:	8b 06 82 a2 	ge %d10,%d6,32
-800044a8:	32 50       	rsub %d0
-800044aa:	02 19       	mov %d9,%d1
-800044ac:	8f f6 01 61 	and %d6,%d6,31
-800044b0:	82 f1       	mov %d1,-1
-800044b2:	0f 08 00 80 	sh %d8,%d8,%d0
-800044b6:	17 11 80 06 	dextr %d0,%d1,%d1,%d6
-800044ba:	0f 61 00 60 	sh %d6,%d1,%d6
-800044be:	2b 60 50 0a 	seln %d0,%d10,%d0,%d6
-800044c2:	ab 06 a0 6a 	seln %d6,%d10,%d6,0
-800044c6:	0f 64 e0 10 	andn %d1,%d4,%d6
-800044ca:	0f 05 e0 60 	andn %d6,%d5,%d0
-800044ce:	a6 16       	or %d6,%d1
-800044d0:	8b 06 00 95 	or.ne %d9,%d6,0
-800044d4:	0b 98 10 48 	mov %e4,%d8,%d9
-800044d8:	02 70       	mov %d0,%d7
-800044da:	1d ff 24 ff 	j 80004322 <_fpadd_parts+0x94>
+800042aa <_fpadd_parts>:
+800042aa:	54 42       	ld.w %d2,[%a4]
+800042ac:	40 42       	mov.aa %a2,%a4
+800042ae:	bf 22 c2 80 	jlt.u %d2,2,80004432 <_fpadd_parts+0x188>
+800042b2:	54 53       	ld.w %d3,[%a5]
+800042b4:	40 52       	mov.aa %a2,%a5
+800042b6:	bf 23 be 80 	jlt.u %d3,2,80004432 <_fpadd_parts+0x188>
+800042ba:	df 42 e3 00 	jeq %d2,4,80004480 <_fpadd_parts+0x1d6>
+800042be:	df 43 ba 00 	jeq %d3,4,80004432 <_fpadd_parts+0x188>
+800042c2:	df 23 b9 00 	jeq %d3,2,80004434 <_fpadd_parts+0x18a>
+800042c6:	df 22 b6 00 	jeq %d2,2,80004432 <_fpadd_parts+0x188>
+800042ca:	19 40 08 00 	ld.w %d0,[%a4]8
+800042ce:	19 57 08 00 	ld.w %d7,[%a5]8
+800042d2:	09 44 4c 09 	ld.d %e4,[%a4]12
+800042d6:	0b 70 80 60 	sub %d6,%d0,%d7
+800042da:	09 52 4c 09 	ld.d %e2,[%a5]12
+800042de:	bf 06 c2 00 	jlt %d6,0,80004462 <_fpadd_parts+0x1b8>
+800042e2:	8b 06 84 12 	ge %d1,%d6,64
+800042e6:	df 01 c4 80 	jne %d1,0,8000446e <_fpadd_parts+0x1c4>
+800042ea:	df 06 2a 00 	jeq %d6,0,8000433e <_fpadd_parts+0x94>
+800042ee:	8b 06 82 72 	ge %d7,%d6,32
+800042f2:	2b 32 50 97 	seln %d9,%d7,%d2,%d3
+800042f6:	ab 03 a0 87 	seln %d8,%d7,%d3,0
+800042fa:	8f f6 01 71 	and %d7,%d6,31
+800042fe:	8b 07 02 11 	rsub %d1,%d7,32
+80004302:	17 98 80 11 	dextr %d1,%d8,%d9,%d1
+80004306:	2b 91 40 17 	sel %d1,%d7,%d1,%d9
+8000430a:	8b 06 82 a2 	ge %d10,%d6,32
+8000430e:	32 57       	rsub %d7
+80004310:	02 19       	mov %d9,%d1
+80004312:	8f f6 01 61 	and %d6,%d6,31
+80004316:	82 f1       	mov %d1,-1
+80004318:	0f 78 00 80 	sh %d8,%d8,%d7
+8000431c:	17 11 80 76 	dextr %d7,%d1,%d1,%d6
+80004320:	0f 61 00 60 	sh %d6,%d1,%d6
+80004324:	2b 67 50 7a 	seln %d7,%d10,%d7,%d6
+80004328:	ab 06 a0 6a 	seln %d6,%d10,%d6,0
+8000432c:	0f 62 e0 10 	andn %d1,%d2,%d6
+80004330:	0f 73 e0 60 	andn %d6,%d3,%d7
+80004334:	a6 16       	or %d6,%d1
+80004336:	8b 06 00 95 	or.ne %d9,%d6,0
+8000433a:	0b 98 10 28 	mov %e2,%d8,%d9
+8000433e:	19 41 04 00 	ld.w %d1,[%a4]4
+80004342:	19 56 04 00 	ld.w %d6,[%a5]4
+80004346:	5f 61 4c 00 	jeq %d1,%d6,800043de <_fpadd_parts+0x134>
+8000434a:	0b 24 c0 60 	subx %d6,%d4,%d2
+8000434e:	0b 35 d0 70 	subc %d7,%d5,%d3
+80004352:	df 01 06 00 	jeq %d1,0,8000435e <_fpadd_parts+0xb4>
+80004356:	0b 42 c0 60 	subx %d6,%d2,%d4
+8000435a:	0b 53 d0 70 	subc %d7,%d3,%d5
+8000435e:	8b 07 00 31 	rsub %d3,%d7,0
+80004362:	8b 06 00 91 	rsub %d9,%d6,0
+80004366:	ab f3 1f 36 	cadd %d3,%d6,%d3,-1
+8000436a:	82 12       	mov %d2,1
+8000436c:	bf 07 05 00 	jlt %d7,0,80004376 <_fpadd_parts+0xcc>
+80004370:	02 69       	mov %d9,%d6
+80004372:	02 73       	mov %d3,%d7
+80004374:	82 02       	mov %d2,0
+80004376:	8b f9 9f 70 	addx %d7,%d9,-1
+8000437a:	82 f5       	mov %d5,-1
+8000437c:	8b f3 bf 60 	addc %d6,%d3,-1
+80004380:	06 c5       	sh %d5,-4
+80004382:	59 62 04 00 	st.w [%a6]4,%d2
+80004386:	82 e1       	mov %d1,-2
+80004388:	0b 56 00 21 	eq %d2,%d6,%d5
+8000438c:	0b 71 30 22 	and.lt.u %d2,%d1,%d7
+80004390:	59 60 08 00 	st.w [%a6]8,%d0
+80004394:	59 69 0c 00 	st.w [%a6]12,%d9
+80004398:	59 63 10 00 	st.w [%a6]16,%d3
+8000439c:	0b 65 a0 22 	or.lt.u %d2,%d5,%d6
+800043a0:	df 02 2b 80 	jne %d2,0,800043f6 <_fpadd_parts+0x14c>
+800043a4:	1b f0 ff 7f 	addi %d7,%d0,-1
+800043a8:	77 93 80 30 	dextr %d3,%d3,%d9,1
+800043ac:	06 19       	sh %d9,1
+800043ae:	8b f9 9f 00 	addx %d0,%d9,-1
+800043b2:	8b f3 bf 60 	addc %d6,%d3,-1
+800043b6:	0b 56 00 21 	eq %d2,%d6,%d5
+800043ba:	0b 01 50 22 	and.ge.u %d2,%d1,%d0
+800043be:	0b 56 a0 22 	or.lt.u %d2,%d6,%d5
+800043c2:	02 78       	mov %d8,%d7
+800043c4:	c2 f7       	add %d7,-1
+800043c6:	df 02 f1 ff 	jne %d2,0,800043a8 <_fpadd_parts+0xfe>
+800043ca:	82 32       	mov %d2,3
+800043cc:	59 69 0c 00 	st.w [%a6]12,%d9
+800043d0:	59 63 10 00 	st.w [%a6]16,%d3
+800043d4:	59 68 08 00 	st.w [%a6]8,%d8
+800043d8:	74 62       	st.w [%a6],%d2
+800043da:	40 62       	mov.aa %a2,%a6
+800043dc:	00 90       	ret 
+800043de:	0b 24 40 90 	addx %d9,%d4,%d2
+800043e2:	0b 35 50 30 	addc %d3,%d5,%d3
+800043e6:	59 61 04 00 	st.w [%a6]4,%d1
+800043ea:	59 60 08 00 	st.w [%a6]8,%d0
+800043ee:	59 69 0c 00 	st.w [%a6]12,%d9
+800043f2:	59 63 10 00 	st.w [%a6]16,%d3
+800043f6:	82 32       	mov %d2,3
+800043f8:	7b 00 00 52 	movh %d5,8192
+800043fc:	40 62       	mov.aa %a2,%a6
+800043fe:	74 62       	st.w [%a6],%d2
+80004400:	0b 53 00 21 	eq %d2,%d3,%d5
+80004404:	b7 02 01 20 	insert %d2,%d2,0,0,1
+80004408:	0b 53 a0 22 	or.lt.u %d2,%d3,%d5
+8000440c:	df 02 13 80 	jne %d2,0,80004432 <_fpadd_parts+0x188>
+80004410:	8f f3 1f 20 	sh %d2,%d3,-1
+80004414:	77 93 80 5f 	dextr %d5,%d3,%d9,31
+80004418:	8f 19 00 31 	and %d3,%d9,1
+8000441c:	59 62 10 00 	st.w [%a6]16,%d2
+80004420:	19 62 08 00 	ld.w %d2,[%a6]8
+80004424:	a6 53       	or %d3,%d5
+80004426:	c2 12       	add %d2,1
+80004428:	d9 63 08 00 	lea %a3,[%a6]8
+8000442c:	59 63 0c 00 	st.w [%a6]12,%d3
+80004430:	74 32       	st.w [%a3],%d2
+80004432:	00 90       	ret 
+80004434:	40 42       	mov.aa %a2,%a4
+80004436:	df 22 fe ff 	jne %d2,2,80004432 <_fpadd_parts+0x188>
+8000443a:	40 63       	mov.aa %a3,%a6
+8000443c:	09 44 48 01 	ld.d %e4,[%a4+]8
+80004440:	89 34 48 01 	st.d [%a3+]8,%e4
+80004444:	09 44 48 01 	ld.d %e4,[%a4+]8
+80004448:	89 34 48 01 	st.d [%a3+]8,%e4
+8000444c:	44 44       	ld.w %d4,[%a4+]
+8000444e:	64 34       	st.w [%a3+],%d4
+80004450:	19 23 04 00 	ld.w %d3,[%a2]4
+80004454:	19 52 04 00 	ld.w %d2,[%a5]4
+80004458:	40 62       	mov.aa %a2,%a6
+8000445a:	26 32       	and %d2,%d3
+8000445c:	59 62 04 00 	st.w [%a6]4,%d2
+80004460:	00 90       	ret 
+80004462:	0b 07 80 60 	sub %d6,%d7,%d0
+80004466:	8b 06 44 12 	lt %d1,%d6,64
+8000446a:	df 01 1d 80 	jne %d1,0,800044a4 <_fpadd_parts+0x1fa>
+8000446e:	3f 07 06 00 	jlt %d7,%d0,8000447a <_fpadd_parts+0x1d0>
+80004472:	d2 04       	mov %e4,0
+80004474:	02 70       	mov %d0,%d7
+80004476:	1d ff 64 ff 	j 8000433e <_fpadd_parts+0x94>
+8000447a:	d2 02       	mov %e2,0
+8000447c:	1d ff 61 ff 	j 8000433e <_fpadd_parts+0x94>
+80004480:	40 42       	mov.aa %a2,%a4
+80004482:	df 43 d8 ff 	jne %d3,4,80004432 <_fpadd_parts+0x188>
+80004486:	19 43 04 00 	ld.w %d3,[%a4]4
+8000448a:	19 52 04 00 	ld.w %d2,[%a5]4
+8000448e:	7b 00 00 48 	movh %d4,32768
+80004492:	0b 23 10 21 	ne %d2,%d3,%d2
+80004496:	1b 04 21 40 	addi %d4,%d4,528
+8000449a:	80 43       	mov.d %d3,%a4
+8000449c:	2b 43 50 22 	seln %d2,%d2,%d3,%d4
+800044a0:	60 22       	mov.a %a2,%d2
+800044a2:	00 90       	ret 
+800044a4:	8b 06 82 02 	ge %d0,%d6,32
+800044a8:	2b 54 50 90 	seln %d9,%d0,%d4,%d5
+800044ac:	ab 05 a0 80 	seln %d8,%d0,%d5,0
+800044b0:	8f f6 01 01 	and %d0,%d6,31
+800044b4:	8b 00 02 11 	rsub %d1,%d0,32
+800044b8:	17 98 80 11 	dextr %d1,%d8,%d9,%d1
+800044bc:	2b 91 40 10 	sel %d1,%d0,%d1,%d9
+800044c0:	8b 06 82 a2 	ge %d10,%d6,32
+800044c4:	32 50       	rsub %d0
+800044c6:	02 19       	mov %d9,%d1
+800044c8:	8f f6 01 61 	and %d6,%d6,31
+800044cc:	82 f1       	mov %d1,-1
+800044ce:	0f 08 00 80 	sh %d8,%d8,%d0
+800044d2:	17 11 80 06 	dextr %d0,%d1,%d1,%d6
+800044d6:	0f 61 00 60 	sh %d6,%d1,%d6
+800044da:	2b 60 50 0a 	seln %d0,%d10,%d0,%d6
+800044de:	ab 06 a0 6a 	seln %d6,%d10,%d6,0
+800044e2:	0f 64 e0 10 	andn %d1,%d4,%d6
+800044e6:	0f 05 e0 60 	andn %d6,%d5,%d0
+800044ea:	a6 16       	or %d6,%d1
+800044ec:	8b 06 00 95 	or.ne %d9,%d6,0
+800044f0:	0b 98 10 48 	mov %e4,%d8,%d9
+800044f4:	02 70       	mov %d0,%d7
+800044f6:	1d ff 24 ff 	j 8000433e <_fpadd_parts+0x94>
 
-800044de <__subdf3>:
-800044de:	20 50       	sub.a %sp,80
-800044e0:	d9 a5 14 00 	lea %a5,[%sp]20
-800044e4:	d9 a4 04 00 	lea %a4,[%sp]4
-800044e8:	89 a4 44 09 	st.d [%sp]4,%e4
-800044ec:	89 a6 4c 09 	st.d [%sp]12,%e6
-800044f0:	6d 00 ad 02 	call 80004a4a <__unpack_d>
-800044f4:	d9 a5 28 00 	lea %a5,[%sp]40
-800044f8:	d9 a4 0c 00 	lea %a4,[%sp]12
-800044fc:	6d 00 a7 02 	call 80004a4a <__unpack_d>
-80004500:	19 a2 2c 00 	ld.w %d2,[%sp]44
-80004504:	d9 a4 14 00 	lea %a4,[%sp]20
-80004508:	8f 12 80 21 	xor %d2,%d2,1
-8000450c:	d9 a6 3c 00 	lea %a6,[%sp]60
+800044fa <__subdf3>:
+800044fa:	20 50       	sub.a %sp,80
+800044fc:	d9 a5 14 00 	lea %a5,[%sp]20
+80004500:	d9 a4 04 00 	lea %a4,[%sp]4
+80004504:	89 a4 44 09 	st.d [%sp]4,%e4
+80004508:	89 a6 4c 09 	st.d [%sp]12,%e6
+8000450c:	6d 00 ad 02 	call 80004a66 <__unpack_d>
 80004510:	d9 a5 28 00 	lea %a5,[%sp]40
-80004514:	59 a2 2c 00 	st.w [%sp]44,%d2
-80004518:	6d ff bb fe 	call 8000428e <_fpadd_parts>
-8000451c:	40 24       	mov.aa %a4,%a2
-8000451e:	6d 00 c7 01 	call 800048ac <__pack_d>
-80004522:	00 90       	ret 
+80004514:	d9 a4 0c 00 	lea %a4,[%sp]12
+80004518:	6d 00 a7 02 	call 80004a66 <__unpack_d>
+8000451c:	19 a2 2c 00 	ld.w %d2,[%sp]44
+80004520:	d9 a4 14 00 	lea %a4,[%sp]20
+80004524:	8f 12 80 21 	xor %d2,%d2,1
+80004528:	d9 a6 3c 00 	lea %a6,[%sp]60
+8000452c:	d9 a5 28 00 	lea %a5,[%sp]40
+80004530:	59 a2 2c 00 	st.w [%sp]44,%d2
+80004534:	6d ff bb fe 	call 800042aa <_fpadd_parts>
+80004538:	40 24       	mov.aa %a4,%a2
+8000453a:	6d 00 c7 01 	call 800048c8 <__pack_d>
+8000453e:	00 90       	ret 
 
-80004524 <__muldf3>:
-80004524:	20 50       	sub.a %sp,80
-80004526:	d9 a5 14 00 	lea %a5,[%sp]20
-8000452a:	d9 a4 04 00 	lea %a4,[%sp]4
-8000452e:	89 a4 44 09 	st.d [%sp]4,%e4
-80004532:	89 a6 4c 09 	st.d [%sp]12,%e6
-80004536:	6d 00 8a 02 	call 80004a4a <__unpack_d>
-8000453a:	d9 a5 28 00 	lea %a5,[%sp]40
-8000453e:	d9 a4 0c 00 	lea %a4,[%sp]12
-80004542:	6d 00 84 02 	call 80004a4a <__unpack_d>
-80004546:	19 a2 14 00 	ld.w %d2,[%sp]20
-8000454a:	ff 22 0f 80 	jge.u %d2,2,80004568 <__muldf3+0x44>
-8000454e:	19 a3 18 00 	ld.w %d3,[%sp]24
-80004552:	19 a2 2c 00 	ld.w %d2,[%sp]44
-80004556:	d9 a4 14 00 	lea %a4,[%sp]20
-8000455a:	0b 23 10 21 	ne %d2,%d3,%d2
-8000455e:	59 a2 18 00 	st.w [%sp]24,%d2
-80004562:	6d 00 a5 01 	call 800048ac <__pack_d>
-80004566:	00 90       	ret 
-80004568:	19 a3 28 00 	ld.w %d3,[%sp]40
-8000456c:	bf 23 14 80 	jlt.u %d3,2,80004594 <__muldf3+0x70>
-80004570:	df 42 0a 80 	jne %d2,4,80004584 <__muldf3+0x60>
-80004574:	91 00 00 48 	movh.a %a4,32768
-80004578:	d9 44 28 80 	lea %a4,[%a4]552 <80000228 <__thenan_df>>
-8000457c:	df 23 f3 7f 	jeq %d3,2,80004562 <__muldf3+0x3e>
-80004580:	1d ff e7 ff 	j 8000454e <__muldf3+0x2a>
-80004584:	df 43 15 80 	jne %d3,4,800045ae <__muldf3+0x8a>
-80004588:	91 00 00 48 	movh.a %a4,32768
-8000458c:	d9 44 28 80 	lea %a4,[%a4]552 <80000228 <__thenan_df>>
-80004590:	df 22 e9 7f 	jeq %d2,2,80004562 <__muldf3+0x3e>
-80004594:	19 a2 2c 00 	ld.w %d2,[%sp]44
-80004598:	19 a3 18 00 	ld.w %d3,[%sp]24
-8000459c:	d9 a4 28 00 	lea %a4,[%sp]40
-800045a0:	0b 23 10 21 	ne %d2,%d3,%d2
-800045a4:	59 a2 2c 00 	st.w [%sp]44,%d2
-800045a8:	6d 00 82 01 	call 800048ac <__pack_d>
-800045ac:	00 90       	ret 
-800045ae:	19 a5 2c 00 	ld.w %d5,[%sp]44
-800045b2:	19 a4 18 00 	ld.w %d4,[%sp]24
-800045b6:	0b 45 10 a1 	ne %d10,%d5,%d4
-800045ba:	df 22 aa 00 	jeq %d2,2,8000470e <__muldf3+0x1ea>
-800045be:	df 23 ae 00 	jeq %d3,2,8000471a <__muldf3+0x1f6>
-800045c2:	19 a6 34 00 	ld.w %d6,[%sp]52
-800045c6:	19 a4 20 00 	ld.w %d4,[%sp]32
-800045ca:	82 03       	mov %d3,0
-800045cc:	73 46 68 00 	mul.u %e0,%d6,%d4
-800045d0:	19 a2 38 00 	ld.w %d2,[%sp]56
-800045d4:	82 0b       	mov %d11,0
-800045d6:	03 36 0a 11 	madd %d1,%d1,%d6,%d3
-800045da:	02 48       	mov %d8,%d4
-800045dc:	19 a7 24 00 	ld.w %d7,[%sp]36
-800045e0:	03 4b 0a 11 	madd %d1,%d1,%d11,%d4
-800045e4:	73 42 68 40 	mul.u %e4,%d2,%d4
-800045e8:	82 0d       	mov %d13,0
-800045ea:	82 0c       	mov %d12,0
-800045ec:	03 32 0a 55 	madd %d5,%d5,%d2,%d3
-800045f0:	03 8d 0a 55 	madd %d5,%d5,%d13,%d8
-800045f4:	73 27 68 80 	mul.u %e8,%d7,%d2
-800045f8:	03 d7 0a 99 	madd %d9,%d9,%d7,%d13
-800045fc:	03 2c 0a 99 	madd %d9,%d9,%d12,%d2
-80004600:	03 67 68 24 	madd.u %e2,%e4,%d7,%d6
-80004604:	03 b7 0a 33 	madd %d3,%d3,%d7,%d11
-80004608:	03 6c 0a 33 	madd %d3,%d3,%d12,%d6
-8000460c:	0b 35 00 61 	eq %d6,%d5,%d3
-80004610:	0b 42 30 62 	and.lt.u %d6,%d2,%d4
-80004614:	0b 53 a0 62 	or.lt.u %d6,%d3,%d5
-80004618:	02 67       	mov %d7,%d6
-8000461a:	82 06       	mov %d6,0
-8000461c:	0b 06 40 60 	addx %d6,%d6,%d0
-80004620:	0b 12 50 50 	addc %d5,%d2,%d1
-80004624:	0b 51 00 41 	eq %d4,%d1,%d5
-80004628:	0b 06 50 42 	and.ge.u %d4,%d6,%d0
-8000462c:	0b 51 a0 42 	or.lt.u %d4,%d1,%d5
-80004630:	df 04 06 80 	jne %d4,0,8000463c <__muldf3+0x118>
-80004634:	8b 1b 80 b0 	addx %d11,%d11,1
-80004638:	8b 07 a0 70 	addc %d7,%d7,0
-8000463c:	82 04       	mov %d4,0
-8000463e:	0b 83 40 30 	addx %d3,%d3,%d8
-80004642:	0b 94 50 20 	addc %d2,%d4,%d9
-80004646:	0b b3 40 30 	addx %d3,%d3,%d11
-8000464a:	0b 72 50 20 	addc %d2,%d2,%d7
-8000464e:	19 a4 1c 00 	ld.w %d4,[%sp]28
-80004652:	19 a7 30 00 	ld.w %d7,[%sp]48
-80004656:	59 aa 00 10 	st.w [%sp]64,%d10
-8000465a:	0b 74 00 10 	add %d1,%d4,%d7
-8000465e:	7b 00 00 42 	movh %d4,8192
-80004662:	1b 41 00 00 	addi %d0,%d1,4
-80004666:	0b 42 00 71 	eq %d7,%d2,%d4
-8000466a:	b7 07 01 70 	insert %d7,%d7,0,0,1
-8000466e:	59 a0 04 10 	st.w [%sp]68,%d0
-80004672:	0b 42 a0 72 	or.lt.u %d7,%d2,%d4
-80004676:	df 07 2b 80 	jne %d7,0,800046cc <__muldf3+0x1a8>
-8000467a:	1b 51 00 70 	addi %d7,%d1,5
-8000467e:	8f 13 00 01 	and %d0,%d3,1
-80004682:	02 71       	mov %d1,%d7
-80004684:	df 00 07 00 	jeq %d0,0,80004692 <__muldf3+0x16e>
-80004688:	77 65 80 6f 	dextr %d6,%d5,%d6,31
-8000468c:	06 f5       	sh %d5,-1
-8000468e:	b7 f5 81 5f 	insert %d5,%d5,15,31,1
-80004692:	77 32 80 3f 	dextr %d3,%d2,%d3,31
-80004696:	06 f2       	sh %d2,-1
-80004698:	0b 24 30 01 	lt.u %d0,%d4,%d2
-8000469c:	0b 24 70 02 	or.eq %d0,%d4,%d2
-800046a0:	c2 17       	add %d7,1
-800046a2:	df 00 ee ff 	jne %d0,0,8000467e <__muldf3+0x15a>
-800046a6:	59 a1 04 10 	st.w [%sp]68,%d1
-800046aa:	8f f3 0f 41 	and %d4,%d3,255
-800046ae:	8b 04 28 42 	ne %d4,%d4,128
-800046b2:	df 04 3a 00 	jeq %d4,0,80004726 <__muldf3+0x202>
-800046b6:	59 a2 0c 10 	st.w [%sp]76,%d2
-800046ba:	82 32       	mov %d2,3
-800046bc:	59 a3 08 10 	st.w [%sp]72,%d3
-800046c0:	d9 a4 3c 00 	lea %a4,[%sp]60
-800046c4:	59 a2 3c 00 	st.w [%sp]60,%d2
-800046c8:	1d ff 4d ff 	j 80004562 <__muldf3+0x3e>
-800046cc:	7b 00 00 71 	movh %d7,4096
-800046d0:	0b 27 30 41 	lt.u %d4,%d7,%d2
-800046d4:	0b 27 70 42 	or.eq %d4,%d7,%d2
-800046d8:	df 04 e9 ff 	jne %d4,0,800046aa <__muldf3+0x186>
-800046dc:	77 32 80 20 	dextr %d2,%d2,%d3,1
-800046e0:	c2 f0       	add %d0,-1
-800046e2:	06 13       	sh %d3,1
-800046e4:	ff 05 06 00 	jge %d5,0,800046f0 <__muldf3+0x1cc>
-800046e8:	8f 13 40 11 	or %d1,%d3,1
-800046ec:	0b 21 10 28 	mov %e2,%d1,%d2
-800046f0:	0b 72 00 41 	eq %d4,%d2,%d7
-800046f4:	b7 04 01 40 	insert %d4,%d4,0,0,1
-800046f8:	77 65 80 50 	dextr %d5,%d5,%d6,1
-800046fc:	0b 72 a0 42 	or.lt.u %d4,%d2,%d7
-80004700:	06 16       	sh %d6,1
-80004702:	df 04 ed ff 	jne %d4,0,800046dc <__muldf3+0x1b8>
-80004706:	59 a0 04 10 	st.w [%sp]68,%d0
-8000470a:	1d ff d0 ff 	j 800046aa <__muldf3+0x186>
-8000470e:	59 aa 18 00 	st.w [%sp]24,%d10
-80004712:	d9 a4 14 00 	lea %a4,[%sp]20
-80004716:	1d ff 26 ff 	j 80004562 <__muldf3+0x3e>
-8000471a:	59 aa 2c 00 	st.w [%sp]44,%d10
-8000471e:	d9 a4 28 00 	lea %a4,[%sp]40
-80004722:	1d ff 20 ff 	j 80004562 <__muldf3+0x3e>
-80004726:	77 32 00 4c 	dextr %d4,%d2,%d3,24
-8000472a:	a6 65       	or %d5,%d6
-8000472c:	8b 05 20 52 	ne %d5,%d5,0
-80004730:	0f 45 e0 40 	andn %d4,%d5,%d4
-80004734:	df 04 c1 7f 	jeq %d4,0,800046b6 <__muldf3+0x192>
-80004738:	8b 03 88 30 	addx %d3,%d3,128
-8000473c:	8b 02 a0 20 	addc %d2,%d2,0
-80004740:	8f f3 cf 31 	andn %d3,%d3,255
-80004744:	1d ff b9 ff 	j 800046b6 <__muldf3+0x192>
+80004540 <__muldf3>:
+80004540:	20 50       	sub.a %sp,80
+80004542:	d9 a5 14 00 	lea %a5,[%sp]20
+80004546:	d9 a4 04 00 	lea %a4,[%sp]4
+8000454a:	89 a4 44 09 	st.d [%sp]4,%e4
+8000454e:	89 a6 4c 09 	st.d [%sp]12,%e6
+80004552:	6d 00 8a 02 	call 80004a66 <__unpack_d>
+80004556:	d9 a5 28 00 	lea %a5,[%sp]40
+8000455a:	d9 a4 0c 00 	lea %a4,[%sp]12
+8000455e:	6d 00 84 02 	call 80004a66 <__unpack_d>
+80004562:	19 a2 14 00 	ld.w %d2,[%sp]20
+80004566:	ff 22 0f 80 	jge.u %d2,2,80004584 <__muldf3+0x44>
+8000456a:	19 a3 18 00 	ld.w %d3,[%sp]24
+8000456e:	19 a2 2c 00 	ld.w %d2,[%sp]44
+80004572:	d9 a4 14 00 	lea %a4,[%sp]20
+80004576:	0b 23 10 21 	ne %d2,%d3,%d2
+8000457a:	59 a2 18 00 	st.w [%sp]24,%d2
+8000457e:	6d 00 a5 01 	call 800048c8 <__pack_d>
+80004582:	00 90       	ret 
+80004584:	19 a3 28 00 	ld.w %d3,[%sp]40
+80004588:	bf 23 14 80 	jlt.u %d3,2,800045b0 <__muldf3+0x70>
+8000458c:	df 42 0a 80 	jne %d2,4,800045a0 <__muldf3+0x60>
+80004590:	91 00 00 48 	movh.a %a4,32768
+80004594:	d9 44 10 80 	lea %a4,[%a4]528 <80000210 <__thenan_df>>
+80004598:	df 23 f3 7f 	jeq %d3,2,8000457e <__muldf3+0x3e>
+8000459c:	1d ff e7 ff 	j 8000456a <__muldf3+0x2a>
+800045a0:	df 43 15 80 	jne %d3,4,800045ca <__muldf3+0x8a>
+800045a4:	91 00 00 48 	movh.a %a4,32768
+800045a8:	d9 44 10 80 	lea %a4,[%a4]528 <80000210 <__thenan_df>>
+800045ac:	df 22 e9 7f 	jeq %d2,2,8000457e <__muldf3+0x3e>
+800045b0:	19 a2 2c 00 	ld.w %d2,[%sp]44
+800045b4:	19 a3 18 00 	ld.w %d3,[%sp]24
+800045b8:	d9 a4 28 00 	lea %a4,[%sp]40
+800045bc:	0b 23 10 21 	ne %d2,%d3,%d2
+800045c0:	59 a2 2c 00 	st.w [%sp]44,%d2
+800045c4:	6d 00 82 01 	call 800048c8 <__pack_d>
+800045c8:	00 90       	ret 
+800045ca:	19 a5 2c 00 	ld.w %d5,[%sp]44
+800045ce:	19 a4 18 00 	ld.w %d4,[%sp]24
+800045d2:	0b 45 10 a1 	ne %d10,%d5,%d4
+800045d6:	df 22 aa 00 	jeq %d2,2,8000472a <__muldf3+0x1ea>
+800045da:	df 23 ae 00 	jeq %d3,2,80004736 <__muldf3+0x1f6>
+800045de:	19 a6 34 00 	ld.w %d6,[%sp]52
+800045e2:	19 a4 20 00 	ld.w %d4,[%sp]32
+800045e6:	82 03       	mov %d3,0
+800045e8:	73 46 68 00 	mul.u %e0,%d6,%d4
+800045ec:	19 a2 38 00 	ld.w %d2,[%sp]56
+800045f0:	82 0b       	mov %d11,0
+800045f2:	03 36 0a 11 	madd %d1,%d1,%d6,%d3
+800045f6:	02 48       	mov %d8,%d4
+800045f8:	19 a7 24 00 	ld.w %d7,[%sp]36
+800045fc:	03 4b 0a 11 	madd %d1,%d1,%d11,%d4
+80004600:	73 42 68 40 	mul.u %e4,%d2,%d4
+80004604:	82 0d       	mov %d13,0
+80004606:	82 0c       	mov %d12,0
+80004608:	03 32 0a 55 	madd %d5,%d5,%d2,%d3
+8000460c:	03 8d 0a 55 	madd %d5,%d5,%d13,%d8
+80004610:	73 27 68 80 	mul.u %e8,%d7,%d2
+80004614:	03 d7 0a 99 	madd %d9,%d9,%d7,%d13
+80004618:	03 2c 0a 99 	madd %d9,%d9,%d12,%d2
+8000461c:	03 67 68 24 	madd.u %e2,%e4,%d7,%d6
+80004620:	03 b7 0a 33 	madd %d3,%d3,%d7,%d11
+80004624:	03 6c 0a 33 	madd %d3,%d3,%d12,%d6
+80004628:	0b 35 00 61 	eq %d6,%d5,%d3
+8000462c:	0b 42 30 62 	and.lt.u %d6,%d2,%d4
+80004630:	0b 53 a0 62 	or.lt.u %d6,%d3,%d5
+80004634:	02 67       	mov %d7,%d6
+80004636:	82 06       	mov %d6,0
+80004638:	0b 06 40 60 	addx %d6,%d6,%d0
+8000463c:	0b 12 50 50 	addc %d5,%d2,%d1
+80004640:	0b 51 00 41 	eq %d4,%d1,%d5
+80004644:	0b 06 50 42 	and.ge.u %d4,%d6,%d0
+80004648:	0b 51 a0 42 	or.lt.u %d4,%d1,%d5
+8000464c:	df 04 06 80 	jne %d4,0,80004658 <__muldf3+0x118>
+80004650:	8b 1b 80 b0 	addx %d11,%d11,1
+80004654:	8b 07 a0 70 	addc %d7,%d7,0
+80004658:	82 04       	mov %d4,0
+8000465a:	0b 83 40 30 	addx %d3,%d3,%d8
+8000465e:	0b 94 50 20 	addc %d2,%d4,%d9
+80004662:	0b b3 40 30 	addx %d3,%d3,%d11
+80004666:	0b 72 50 20 	addc %d2,%d2,%d7
+8000466a:	19 a4 1c 00 	ld.w %d4,[%sp]28
+8000466e:	19 a7 30 00 	ld.w %d7,[%sp]48
+80004672:	59 aa 00 10 	st.w [%sp]64,%d10
+80004676:	0b 74 00 10 	add %d1,%d4,%d7
+8000467a:	7b 00 00 42 	movh %d4,8192
+8000467e:	1b 41 00 00 	addi %d0,%d1,4
+80004682:	0b 42 00 71 	eq %d7,%d2,%d4
+80004686:	b7 07 01 70 	insert %d7,%d7,0,0,1
+8000468a:	59 a0 04 10 	st.w [%sp]68,%d0
+8000468e:	0b 42 a0 72 	or.lt.u %d7,%d2,%d4
+80004692:	df 07 2b 80 	jne %d7,0,800046e8 <__muldf3+0x1a8>
+80004696:	1b 51 00 70 	addi %d7,%d1,5
+8000469a:	8f 13 00 01 	and %d0,%d3,1
+8000469e:	02 71       	mov %d1,%d7
+800046a0:	df 00 07 00 	jeq %d0,0,800046ae <__muldf3+0x16e>
+800046a4:	77 65 80 6f 	dextr %d6,%d5,%d6,31
+800046a8:	06 f5       	sh %d5,-1
+800046aa:	b7 f5 81 5f 	insert %d5,%d5,15,31,1
+800046ae:	77 32 80 3f 	dextr %d3,%d2,%d3,31
+800046b2:	06 f2       	sh %d2,-1
+800046b4:	0b 24 30 01 	lt.u %d0,%d4,%d2
+800046b8:	0b 24 70 02 	or.eq %d0,%d4,%d2
+800046bc:	c2 17       	add %d7,1
+800046be:	df 00 ee ff 	jne %d0,0,8000469a <__muldf3+0x15a>
+800046c2:	59 a1 04 10 	st.w [%sp]68,%d1
+800046c6:	8f f3 0f 41 	and %d4,%d3,255
+800046ca:	8b 04 28 42 	ne %d4,%d4,128
+800046ce:	df 04 3a 00 	jeq %d4,0,80004742 <__muldf3+0x202>
+800046d2:	59 a2 0c 10 	st.w [%sp]76,%d2
+800046d6:	82 32       	mov %d2,3
+800046d8:	59 a3 08 10 	st.w [%sp]72,%d3
+800046dc:	d9 a4 3c 00 	lea %a4,[%sp]60
+800046e0:	59 a2 3c 00 	st.w [%sp]60,%d2
+800046e4:	1d ff 4d ff 	j 8000457e <__muldf3+0x3e>
+800046e8:	7b 00 00 71 	movh %d7,4096
+800046ec:	0b 27 30 41 	lt.u %d4,%d7,%d2
+800046f0:	0b 27 70 42 	or.eq %d4,%d7,%d2
+800046f4:	df 04 e9 ff 	jne %d4,0,800046c6 <__muldf3+0x186>
+800046f8:	77 32 80 20 	dextr %d2,%d2,%d3,1
+800046fc:	c2 f0       	add %d0,-1
+800046fe:	06 13       	sh %d3,1
+80004700:	ff 05 06 00 	jge %d5,0,8000470c <__muldf3+0x1cc>
+80004704:	8f 13 40 11 	or %d1,%d3,1
+80004708:	0b 21 10 28 	mov %e2,%d1,%d2
+8000470c:	0b 72 00 41 	eq %d4,%d2,%d7
+80004710:	b7 04 01 40 	insert %d4,%d4,0,0,1
+80004714:	77 65 80 50 	dextr %d5,%d5,%d6,1
+80004718:	0b 72 a0 42 	or.lt.u %d4,%d2,%d7
+8000471c:	06 16       	sh %d6,1
+8000471e:	df 04 ed ff 	jne %d4,0,800046f8 <__muldf3+0x1b8>
+80004722:	59 a0 04 10 	st.w [%sp]68,%d0
+80004726:	1d ff d0 ff 	j 800046c6 <__muldf3+0x186>
+8000472a:	59 aa 18 00 	st.w [%sp]24,%d10
+8000472e:	d9 a4 14 00 	lea %a4,[%sp]20
+80004732:	1d ff 26 ff 	j 8000457e <__muldf3+0x3e>
+80004736:	59 aa 2c 00 	st.w [%sp]44,%d10
+8000473a:	d9 a4 28 00 	lea %a4,[%sp]40
+8000473e:	1d ff 20 ff 	j 8000457e <__muldf3+0x3e>
+80004742:	77 32 00 4c 	dextr %d4,%d2,%d3,24
+80004746:	a6 65       	or %d5,%d6
+80004748:	8b 05 20 52 	ne %d5,%d5,0
+8000474c:	0f 45 e0 40 	andn %d4,%d5,%d4
+80004750:	df 04 c1 7f 	jeq %d4,0,800046d2 <__muldf3+0x192>
+80004754:	8b 03 88 30 	addx %d3,%d3,128
+80004758:	8b 02 a0 20 	addc %d2,%d2,0
+8000475c:	8f f3 cf 31 	andn %d3,%d3,255
+80004760:	1d ff b9 ff 	j 800046d2 <__muldf3+0x192>
 
-80004748 <__gedf2>:
-80004748:	20 38       	sub.a %sp,56
-8000474a:	d9 a5 10 00 	lea %a5,[%sp]16
-8000474e:	40 a4       	mov.aa %a4,%sp
-80004750:	89 a4 40 09 	st.d [%sp],%e4
-80004754:	89 a6 48 09 	st.d [%sp]8,%e6
-80004758:	6d 00 79 01 	call 80004a4a <__unpack_d>
-8000475c:	d9 a5 24 00 	lea %a5,[%sp]36
-80004760:	d9 a4 08 00 	lea %a4,[%sp]8
-80004764:	6d 00 73 01 	call 80004a4a <__unpack_d>
-80004768:	19 a3 10 00 	ld.w %d3,[%sp]16
-8000476c:	82 f2       	mov %d2,-1
-8000476e:	bf 23 0c 80 	jlt.u %d3,2,80004786 <__gedf2+0x3e>
-80004772:	19 a3 24 00 	ld.w %d3,[%sp]36
-80004776:	bf 23 08 80 	jlt.u %d3,2,80004786 <__gedf2+0x3e>
-8000477a:	d9 a5 24 00 	lea %a5,[%sp]36
-8000477e:	d9 a4 10 00 	lea %a4,[%sp]16
-80004782:	6d 00 c3 01 	call 80004b08 <__fpcmp_parts_d>
-80004786:	00 90       	ret 
+80004764 <__gedf2>:
+80004764:	20 38       	sub.a %sp,56
+80004766:	d9 a5 10 00 	lea %a5,[%sp]16
+8000476a:	40 a4       	mov.aa %a4,%sp
+8000476c:	89 a4 40 09 	st.d [%sp],%e4
+80004770:	89 a6 48 09 	st.d [%sp]8,%e6
+80004774:	6d 00 79 01 	call 80004a66 <__unpack_d>
+80004778:	d9 a5 24 00 	lea %a5,[%sp]36
+8000477c:	d9 a4 08 00 	lea %a4,[%sp]8
+80004780:	6d 00 73 01 	call 80004a66 <__unpack_d>
+80004784:	19 a3 10 00 	ld.w %d3,[%sp]16
+80004788:	82 f2       	mov %d2,-1
+8000478a:	bf 23 0c 80 	jlt.u %d3,2,800047a2 <__gedf2+0x3e>
+8000478e:	19 a3 24 00 	ld.w %d3,[%sp]36
+80004792:	bf 23 08 80 	jlt.u %d3,2,800047a2 <__gedf2+0x3e>
+80004796:	d9 a5 24 00 	lea %a5,[%sp]36
+8000479a:	d9 a4 10 00 	lea %a4,[%sp]16
+8000479e:	6d 00 c3 01 	call 80004b24 <__fpcmp_parts_d>
+800047a2:	00 90       	ret 
 
-80004788 <__fixdfsi>:
-80004788:	20 20       	sub.a %sp,32
-8000478a:	d9 a5 0c 00 	lea %a5,[%sp]12
-8000478e:	d9 a4 04 00 	lea %a4,[%sp]4
-80004792:	89 a4 44 09 	st.d [%sp]4,%e4
-80004796:	6d 00 5a 01 	call 80004a4a <__unpack_d>
-8000479a:	19 a3 0c 00 	ld.w %d3,[%sp]12
-8000479e:	82 02       	mov %d2,0
-800047a0:	bf 33 25 80 	jlt.u %d3,3,800047ea <__fixdfsi+0x62>
-800047a4:	df 43 29 00 	jeq %d3,4,800047f6 <__fixdfsi+0x6e>
-800047a8:	19 a3 14 00 	ld.w %d3,[%sp]20
-800047ac:	bf 03 1f 00 	jlt %d3,0,800047ea <__fixdfsi+0x62>
-800047b0:	8b f3 41 22 	lt %d2,%d3,31
-800047b4:	19 a6 10 00 	ld.w %d6,[%sp]16
-800047b8:	df 02 1a 00 	jeq %d2,0,800047ec <__fixdfsi+0x64>
-800047bc:	8b c3 03 21 	rsub %d2,%d3,60
-800047c0:	19 a5 1c 00 	ld.w %d5,[%sp]28
-800047c4:	19 a4 18 00 	ld.w %d4,[%sp]24
-800047c8:	8b 02 82 32 	ge %d3,%d2,32
-800047cc:	2b 54 50 43 	seln %d4,%d3,%d4,%d5
-800047d0:	ab 05 a0 53 	seln %d5,%d3,%d5,0
-800047d4:	8f f2 01 31 	and %d3,%d2,31
-800047d8:	8b 03 02 21 	rsub %d2,%d3,32
-800047dc:	17 45 80 22 	dextr %d2,%d5,%d4,%d2
-800047e0:	2b 42 40 23 	sel %d2,%d3,%d2,%d4
-800047e4:	df 06 03 00 	jeq %d6,0,800047ea <__fixdfsi+0x62>
-800047e8:	32 52       	rsub %d2
-800047ea:	00 90       	ret 
-800047ec:	82 f2       	mov %d2,-1
-800047ee:	06 f2       	sh %d2,-1
-800047f0:	ab 12 00 26 	cadd %d2,%d6,%d2,1
-800047f4:	00 90       	ret 
-800047f6:	19 a3 10 00 	ld.w %d3,[%sp]16
-800047fa:	82 f2       	mov %d2,-1
-800047fc:	06 f2       	sh %d2,-1
-800047fe:	ab 12 00 23 	cadd %d2,%d3,%d2,1
-80004802:	00 90       	ret 
+800047a4 <__fixdfsi>:
+800047a4:	20 20       	sub.a %sp,32
+800047a6:	d9 a5 0c 00 	lea %a5,[%sp]12
+800047aa:	d9 a4 04 00 	lea %a4,[%sp]4
+800047ae:	89 a4 44 09 	st.d [%sp]4,%e4
+800047b2:	6d 00 5a 01 	call 80004a66 <__unpack_d>
+800047b6:	19 a3 0c 00 	ld.w %d3,[%sp]12
+800047ba:	82 02       	mov %d2,0
+800047bc:	bf 33 25 80 	jlt.u %d3,3,80004806 <__fixdfsi+0x62>
+800047c0:	df 43 29 00 	jeq %d3,4,80004812 <__fixdfsi+0x6e>
+800047c4:	19 a3 14 00 	ld.w %d3,[%sp]20
+800047c8:	bf 03 1f 00 	jlt %d3,0,80004806 <__fixdfsi+0x62>
+800047cc:	8b f3 41 22 	lt %d2,%d3,31
+800047d0:	19 a6 10 00 	ld.w %d6,[%sp]16
+800047d4:	df 02 1a 00 	jeq %d2,0,80004808 <__fixdfsi+0x64>
+800047d8:	8b c3 03 21 	rsub %d2,%d3,60
+800047dc:	19 a5 1c 00 	ld.w %d5,[%sp]28
+800047e0:	19 a4 18 00 	ld.w %d4,[%sp]24
+800047e4:	8b 02 82 32 	ge %d3,%d2,32
+800047e8:	2b 54 50 43 	seln %d4,%d3,%d4,%d5
+800047ec:	ab 05 a0 53 	seln %d5,%d3,%d5,0
+800047f0:	8f f2 01 31 	and %d3,%d2,31
+800047f4:	8b 03 02 21 	rsub %d2,%d3,32
+800047f8:	17 45 80 22 	dextr %d2,%d5,%d4,%d2
+800047fc:	2b 42 40 23 	sel %d2,%d3,%d2,%d4
+80004800:	df 06 03 00 	jeq %d6,0,80004806 <__fixdfsi+0x62>
+80004804:	32 52       	rsub %d2
+80004806:	00 90       	ret 
+80004808:	82 f2       	mov %d2,-1
+8000480a:	06 f2       	sh %d2,-1
+8000480c:	ab 12 00 26 	cadd %d2,%d6,%d2,1
+80004810:	00 90       	ret 
+80004812:	19 a3 10 00 	ld.w %d3,[%sp]16
+80004816:	82 f2       	mov %d2,-1
+80004818:	06 f2       	sh %d2,-1
+8000481a:	ab 12 00 23 	cadd %d2,%d3,%d2,1
+8000481e:	00 90       	ret 
 
-80004804 <__make_dp>:
-80004804:	20 18       	sub.a %sp,24
-80004806:	09 a2 d8 09 	ld.da %a2,[%sp]24
-8000480a:	d9 a4 04 00 	lea %a4,[%sp]4
-8000480e:	59 a4 04 00 	st.w [%sp]4,%d4
-80004812:	59 a5 08 00 	st.w [%sp]8,%d5
-80004816:	59 a6 0c 00 	st.w [%sp]12,%d6
-8000481a:	89 a2 d0 09 	st.da [%sp]16,%a2
-8000481e:	6d 00 47 00 	call 800048ac <__pack_d>
-80004822:	00 90       	ret 
+80004820 <__make_dp>:
+80004820:	20 18       	sub.a %sp,24
+80004822:	09 a2 d8 09 	ld.da %a2,[%sp]24
+80004826:	d9 a4 04 00 	lea %a4,[%sp]4
+8000482a:	59 a4 04 00 	st.w [%sp]4,%d4
+8000482e:	59 a5 08 00 	st.w [%sp]8,%d5
+80004832:	59 a6 0c 00 	st.w [%sp]12,%d6
+80004836:	89 a2 d0 09 	st.da [%sp]16,%a2
+8000483a:	6d 00 47 00 	call 800048c8 <__pack_d>
+8000483e:	00 90       	ret 
 
-80004824 <__unpack_f>:
-80004824:	54 42       	ld.w %d2,[%a4]
-80004826:	8f 12 1e 50 	sh %d5,%d2,-31
-8000482a:	37 02 e8 3b 	extr.u %d3,%d2,23,8
-8000482e:	b7 02 89 4b 	insert %d4,%d2,0,23,9
-80004832:	59 55 04 00 	st.w [%a5]4,%d5
-80004836:	df 03 16 80 	jne %d3,0,80004862 <__unpack_f+0x3e>
-8000483a:	df 04 25 00 	jeq %d4,0,80004884 <__unpack_f+0x60>
-8000483e:	82 33       	mov %d3,3
-80004840:	8f 74 00 20 	sh %d2,%d4,7
-80004844:	7b 00 00 54 	movh %d5,16384
-80004848:	74 53       	st.w [%a5],%d3
-8000484a:	3b 10 f8 3f 	mov %d3,-127
-8000484e:	06 12       	sh %d2,1
-80004850:	02 34       	mov %d4,%d3
-80004852:	c2 f3       	add %d3,-1
-80004854:	3f 52 fd ff 	jlt.u %d2,%d5,8000484e <__unpack_f+0x2a>
-80004858:	59 54 08 00 	st.w [%a5]8,%d4
-8000485c:	59 52 0c 00 	st.w [%a5]12,%d2
-80004860:	00 90       	ret 
-80004862:	8b f3 2f 52 	ne %d5,%d3,255
-80004866:	df 05 12 00 	jeq %d5,0,8000488a <__unpack_f+0x66>
-8000486a:	82 32       	mov %d2,3
-8000486c:	1b 13 f8 3f 	addi %d3,%d3,-127
-80004870:	74 52       	st.w [%a5],%d2
-80004872:	8f 74 00 20 	sh %d2,%d4,7
-80004876:	b7 f2 01 2f 	insert %d2,%d2,15,30,1
-8000487a:	59 53 08 00 	st.w [%a5]8,%d3
-8000487e:	59 52 0c 00 	st.w [%a5]12,%d2
-80004882:	00 90       	ret 
-80004884:	82 22       	mov %d2,2
-80004886:	74 52       	st.w [%a5],%d2
-80004888:	00 90       	ret 
-8000488a:	df 04 05 80 	jne %d4,0,80004894 <__unpack_f+0x70>
-8000488e:	82 42       	mov %d2,4
-80004890:	74 52       	st.w [%a5],%d2
-80004892:	00 90       	ret 
-80004894:	37 02 61 3b 	extr.u %d3,%d2,22,1
-80004898:	06 72       	sh %d2,7
-8000489a:	74 53       	st.w [%a5],%d3
-8000489c:	7b 00 00 32 	movh %d3,8192
-800048a0:	1b 03 f8 3f 	addi %d3,%d3,-128
-800048a4:	26 32       	and %d2,%d3
-800048a6:	59 52 0c 00 	st.w [%a5]12,%d2
-800048aa:	00 90       	ret 
+80004840 <__unpack_f>:
+80004840:	54 42       	ld.w %d2,[%a4]
+80004842:	8f 12 1e 50 	sh %d5,%d2,-31
+80004846:	37 02 e8 3b 	extr.u %d3,%d2,23,8
+8000484a:	b7 02 89 4b 	insert %d4,%d2,0,23,9
+8000484e:	59 55 04 00 	st.w [%a5]4,%d5
+80004852:	df 03 16 80 	jne %d3,0,8000487e <__unpack_f+0x3e>
+80004856:	df 04 25 00 	jeq %d4,0,800048a0 <__unpack_f+0x60>
+8000485a:	82 33       	mov %d3,3
+8000485c:	8f 74 00 20 	sh %d2,%d4,7
+80004860:	7b 00 00 54 	movh %d5,16384
+80004864:	74 53       	st.w [%a5],%d3
+80004866:	3b 10 f8 3f 	mov %d3,-127
+8000486a:	06 12       	sh %d2,1
+8000486c:	02 34       	mov %d4,%d3
+8000486e:	c2 f3       	add %d3,-1
+80004870:	3f 52 fd ff 	jlt.u %d2,%d5,8000486a <__unpack_f+0x2a>
+80004874:	59 54 08 00 	st.w [%a5]8,%d4
+80004878:	59 52 0c 00 	st.w [%a5]12,%d2
+8000487c:	00 90       	ret 
+8000487e:	8b f3 2f 52 	ne %d5,%d3,255
+80004882:	df 05 12 00 	jeq %d5,0,800048a6 <__unpack_f+0x66>
+80004886:	82 32       	mov %d2,3
+80004888:	1b 13 f8 3f 	addi %d3,%d3,-127
+8000488c:	74 52       	st.w [%a5],%d2
+8000488e:	8f 74 00 20 	sh %d2,%d4,7
+80004892:	b7 f2 01 2f 	insert %d2,%d2,15,30,1
+80004896:	59 53 08 00 	st.w [%a5]8,%d3
+8000489a:	59 52 0c 00 	st.w [%a5]12,%d2
+8000489e:	00 90       	ret 
+800048a0:	82 22       	mov %d2,2
+800048a2:	74 52       	st.w [%a5],%d2
+800048a4:	00 90       	ret 
+800048a6:	df 04 05 80 	jne %d4,0,800048b0 <__unpack_f+0x70>
+800048aa:	82 42       	mov %d2,4
+800048ac:	74 52       	st.w [%a5],%d2
+800048ae:	00 90       	ret 
+800048b0:	37 02 61 3b 	extr.u %d3,%d2,22,1
+800048b4:	06 72       	sh %d2,7
+800048b6:	74 53       	st.w [%a5],%d3
+800048b8:	7b 00 00 32 	movh %d3,8192
+800048bc:	1b 03 f8 3f 	addi %d3,%d3,-128
+800048c0:	26 32       	and %d2,%d3
+800048c2:	59 52 0c 00 	st.w [%a5]12,%d2
+800048c6:	00 90       	ret 
 
-800048ac <__pack_d>:
-800048ac:	54 44       	ld.w %d4,[%a4]
-800048ae:	19 43 0c 00 	ld.w %d3,[%a4]12
-800048b2:	19 42 10 00 	ld.w %d2,[%a4]16
-800048b6:	19 41 04 00 	ld.w %d1,[%a4]4
-800048ba:	bf 24 56 80 	jlt.u %d4,2,80004966 <__pack_d+0xba>
-800048be:	7b 00 ff 57 	movh %d5,32752
-800048c2:	d2 06       	mov %e6,0
-800048c4:	df 44 0b 00 	jeq %d4,4,800048da <__pack_d+0x2e>
-800048c8:	0f 23 a0 50 	or %d5,%d3,%d2
-800048cc:	8b 05 00 02 	eq %d0,%d5,0
-800048d0:	8b 24 e0 04 	or.eq %d0,%d4,2
-800048d4:	82 05       	mov %d5,0
-800048d6:	df 00 0c 00 	jeq %d0,0,800048ee <__pack_d+0x42>
-800048da:	0b 10 00 28 	mov %e2,%d1
-800048de:	a6 75       	or %d5,%d7
-800048e0:	8f f2 01 20 	sh %d2,%d2,31
-800048e4:	0f 25 a0 40 	or %d4,%d5,%d2
-800048e8:	02 43       	mov %d3,%d4
-800048ea:	02 62       	mov %d2,%d6
-800048ec:	00 90       	ret 
-800048ee:	19 44 08 00 	ld.w %d4,[%a4]8
-800048f2:	3b 20 c0 0f 	mov %d0,-1022
-800048f6:	3f 04 41 00 	jlt %d4,%d0,80004978 <__pack_d+0xcc>
-800048fa:	3b 00 40 00 	mov %d0,1024
-800048fe:	7b 00 ff 57 	movh %d5,32752
-80004902:	7f 04 ec 7f 	jge %d4,%d0,800048da <__pack_d+0x2e>
-80004906:	8f f3 0f 51 	and %d5,%d3,255
-8000490a:	8b 05 28 52 	ne %d5,%d5,128
-8000490e:	df 05 1b 00 	jeq %d5,0,80004944 <__pack_d+0x98>
-80004912:	8b f3 87 30 	addx %d3,%d3,127
-80004916:	8b 02 a0 20 	addc %d2,%d2,0
-8000491a:	7b 00 00 52 	movh %d5,8192
-8000491e:	0b 25 30 61 	lt.u %d6,%d5,%d2
-80004922:	0b 25 70 62 	or.eq %d6,%d5,%d2
-80004926:	df 06 19 80 	jne %d6,0,80004958 <__pack_d+0xac>
-8000492a:	1b f4 3f 40 	addi %d4,%d4,1023
-8000492e:	0b 40 00 48 	mov %e4,%d4
-80004932:	77 32 00 6c 	dextr %d6,%d2,%d3,24
-80004936:	06 82       	sh %d2,-8
-80004938:	b7 02 0c 7a 	insert %d7,%d2,0,20,12
-8000493c:	8f 44 01 50 	sh %d5,%d4,20
-80004940:	1d ff cd ff 	j 800048da <__pack_d+0x2e>
-80004944:	8f 03 10 51 	and %d5,%d3,256
-80004948:	df 05 e9 7f 	jeq %d5,0,8000491a <__pack_d+0x6e>
-8000494c:	8b 03 88 30 	addx %d3,%d3,128
-80004950:	8b 02 a0 20 	addc %d2,%d2,0
-80004954:	1d ff e3 ff 	j 8000491a <__pack_d+0x6e>
-80004958:	77 32 80 3f 	dextr %d3,%d2,%d3,31
-8000495c:	1b 04 40 40 	addi %d4,%d4,1024
-80004960:	06 f2       	sh %d2,-1
-80004962:	1d ff e6 ff 	j 8000492e <__pack_d+0x82>
-80004966:	77 32 00 6c 	dextr %d6,%d2,%d3,24
-8000496a:	06 82       	sh %d2,-8
-8000496c:	b7 12 8d 79 	insert %d7,%d2,1,19,13
-80004970:	7b 00 ff 57 	movh %d5,32752
-80004974:	1d ff b3 ff 	j 800048da <__pack_d+0x2e>
-80004978:	0b 40 80 40 	sub %d4,%d0,%d4
-8000497c:	8b 94 83 02 	ge %d0,%d4,57
-80004980:	df 00 ad ff 	jne %d0,0,800048da <__pack_d+0x2e>
-80004984:	8b 04 82 52 	ge %d5,%d4,32
-80004988:	2b 23 50 05 	seln %d0,%d5,%d3,%d2
-8000498c:	ab 02 a0 75 	seln %d7,%d5,%d2,0
-80004990:	8f f4 01 51 	and %d5,%d4,31
-80004994:	8b 05 02 61 	rsub %d6,%d5,32
-80004998:	17 07 80 66 	dextr %d6,%d7,%d0,%d6
-8000499c:	2b 06 40 65 	sel %d6,%d5,%d6,%d0
-800049a0:	8b 04 82 82 	ge %d8,%d4,32
-800049a4:	32 55       	rsub %d5
-800049a6:	02 60       	mov %d0,%d6
-800049a8:	8f f4 01 41 	and %d4,%d4,31
-800049ac:	82 f6       	mov %d6,-1
-800049ae:	0f 57 00 70 	sh %d7,%d7,%d5
-800049b2:	17 66 80 54 	dextr %d5,%d6,%d6,%d4
-800049b6:	0f 46 00 40 	sh %d4,%d6,%d4
-800049ba:	2b 45 50 58 	seln %d5,%d8,%d5,%d4
-800049be:	ab 04 a0 48 	seln %d4,%d8,%d4,0
-800049c2:	0f 43 e0 30 	andn %d3,%d3,%d4
-800049c6:	0f 52 e0 20 	andn %d2,%d2,%d5
-800049ca:	a6 32       	or %d2,%d3
-800049cc:	02 03       	mov %d3,%d0
-800049ce:	8b 02 00 35 	or.ne %d3,%d2,0
-800049d2:	8f f3 0f 51 	and %d5,%d3,255
-800049d6:	82 12       	mov %d2,1
-800049d8:	8b 05 08 24 	and.eq %d2,%d5,128
-800049dc:	02 74       	mov %d4,%d7
-800049de:	df 02 14 80 	jne %d2,0,80004a06 <__pack_d+0x15a>
-800049e2:	8b f3 87 30 	addx %d3,%d3,127
-800049e6:	8b 07 a0 20 	addc %d2,%d7,0
-800049ea:	77 32 00 6c 	dextr %d6,%d2,%d3,24
-800049ee:	7b 00 00 31 	movh %d3,4096
-800049f2:	8f 82 1f 70 	sh %d7,%d2,-8
-800049f6:	0b 32 50 21 	ge.u %d2,%d2,%d3
-800049fa:	b7 07 0c 7a 	insert %d7,%d7,0,20,12
-800049fe:	8f 42 01 50 	sh %d5,%d2,20
-80004a02:	1d ff 6c ff 	j 800048da <__pack_d+0x2e>
-80004a06:	8b 03 88 60 	addx %d6,%d3,128
-80004a0a:	8b 07 a0 20 	addc %d2,%d7,0
-80004a0e:	7b 00 00 a1 	movh %d10,4096
-80004a12:	8f 82 1f 70 	sh %d7,%d2,-8
-80004a16:	77 62 00 6c 	dextr %d6,%d2,%d6,24
-80004a1a:	0b a2 50 21 	ge.u %d2,%d2,%d10
-80004a1e:	53 12 40 80 	mul.u %e8,%d2,1
-80004a22:	8f 03 10 01 	and %d0,%d3,256
-80004a26:	b7 07 0c 7a 	insert %d7,%d7,0,20,12
-80004a2a:	8f 48 01 50 	sh %d5,%d8,20
-80004a2e:	df 00 56 ff 	jne %d0,0,800048da <__pack_d+0x2e>
-80004a32:	8f 84 1f 70 	sh %d7,%d4,-8
-80004a36:	0b a4 50 21 	ge.u %d2,%d4,%d10
-80004a3a:	77 34 00 6c 	dextr %d6,%d4,%d3,24
-80004a3e:	b7 07 0c 7a 	insert %d7,%d7,0,20,12
-80004a42:	8f 42 01 50 	sh %d5,%d2,20
-80004a46:	1d ff 4a ff 	j 800048da <__pack_d+0x2e>
+800048c8 <__pack_d>:
+800048c8:	54 44       	ld.w %d4,[%a4]
+800048ca:	19 43 0c 00 	ld.w %d3,[%a4]12
+800048ce:	19 42 10 00 	ld.w %d2,[%a4]16
+800048d2:	19 41 04 00 	ld.w %d1,[%a4]4
+800048d6:	bf 24 56 80 	jlt.u %d4,2,80004982 <__pack_d+0xba>
+800048da:	7b 00 ff 57 	movh %d5,32752
+800048de:	d2 06       	mov %e6,0
+800048e0:	df 44 0b 00 	jeq %d4,4,800048f6 <__pack_d+0x2e>
+800048e4:	0f 23 a0 50 	or %d5,%d3,%d2
+800048e8:	8b 05 00 02 	eq %d0,%d5,0
+800048ec:	8b 24 e0 04 	or.eq %d0,%d4,2
+800048f0:	82 05       	mov %d5,0
+800048f2:	df 00 0c 00 	jeq %d0,0,8000490a <__pack_d+0x42>
+800048f6:	0b 10 00 28 	mov %e2,%d1
+800048fa:	a6 75       	or %d5,%d7
+800048fc:	8f f2 01 20 	sh %d2,%d2,31
+80004900:	0f 25 a0 40 	or %d4,%d5,%d2
+80004904:	02 43       	mov %d3,%d4
+80004906:	02 62       	mov %d2,%d6
+80004908:	00 90       	ret 
+8000490a:	19 44 08 00 	ld.w %d4,[%a4]8
+8000490e:	3b 20 c0 0f 	mov %d0,-1022
+80004912:	3f 04 41 00 	jlt %d4,%d0,80004994 <__pack_d+0xcc>
+80004916:	3b 00 40 00 	mov %d0,1024
+8000491a:	7b 00 ff 57 	movh %d5,32752
+8000491e:	7f 04 ec 7f 	jge %d4,%d0,800048f6 <__pack_d+0x2e>
+80004922:	8f f3 0f 51 	and %d5,%d3,255
+80004926:	8b 05 28 52 	ne %d5,%d5,128
+8000492a:	df 05 1b 00 	jeq %d5,0,80004960 <__pack_d+0x98>
+8000492e:	8b f3 87 30 	addx %d3,%d3,127
+80004932:	8b 02 a0 20 	addc %d2,%d2,0
+80004936:	7b 00 00 52 	movh %d5,8192
+8000493a:	0b 25 30 61 	lt.u %d6,%d5,%d2
+8000493e:	0b 25 70 62 	or.eq %d6,%d5,%d2
+80004942:	df 06 19 80 	jne %d6,0,80004974 <__pack_d+0xac>
+80004946:	1b f4 3f 40 	addi %d4,%d4,1023
+8000494a:	0b 40 00 48 	mov %e4,%d4
+8000494e:	77 32 00 6c 	dextr %d6,%d2,%d3,24
+80004952:	06 82       	sh %d2,-8
+80004954:	b7 02 0c 7a 	insert %d7,%d2,0,20,12
+80004958:	8f 44 01 50 	sh %d5,%d4,20
+8000495c:	1d ff cd ff 	j 800048f6 <__pack_d+0x2e>
+80004960:	8f 03 10 51 	and %d5,%d3,256
+80004964:	df 05 e9 7f 	jeq %d5,0,80004936 <__pack_d+0x6e>
+80004968:	8b 03 88 30 	addx %d3,%d3,128
+8000496c:	8b 02 a0 20 	addc %d2,%d2,0
+80004970:	1d ff e3 ff 	j 80004936 <__pack_d+0x6e>
+80004974:	77 32 80 3f 	dextr %d3,%d2,%d3,31
+80004978:	1b 04 40 40 	addi %d4,%d4,1024
+8000497c:	06 f2       	sh %d2,-1
+8000497e:	1d ff e6 ff 	j 8000494a <__pack_d+0x82>
+80004982:	77 32 00 6c 	dextr %d6,%d2,%d3,24
+80004986:	06 82       	sh %d2,-8
+80004988:	b7 12 8d 79 	insert %d7,%d2,1,19,13
+8000498c:	7b 00 ff 57 	movh %d5,32752
+80004990:	1d ff b3 ff 	j 800048f6 <__pack_d+0x2e>
+80004994:	0b 40 80 40 	sub %d4,%d0,%d4
+80004998:	8b 94 83 02 	ge %d0,%d4,57
+8000499c:	df 00 ad ff 	jne %d0,0,800048f6 <__pack_d+0x2e>
+800049a0:	8b 04 82 52 	ge %d5,%d4,32
+800049a4:	2b 23 50 05 	seln %d0,%d5,%d3,%d2
+800049a8:	ab 02 a0 75 	seln %d7,%d5,%d2,0
+800049ac:	8f f4 01 51 	and %d5,%d4,31
+800049b0:	8b 05 02 61 	rsub %d6,%d5,32
+800049b4:	17 07 80 66 	dextr %d6,%d7,%d0,%d6
+800049b8:	2b 06 40 65 	sel %d6,%d5,%d6,%d0
+800049bc:	8b 04 82 82 	ge %d8,%d4,32
+800049c0:	32 55       	rsub %d5
+800049c2:	02 60       	mov %d0,%d6
+800049c4:	8f f4 01 41 	and %d4,%d4,31
+800049c8:	82 f6       	mov %d6,-1
+800049ca:	0f 57 00 70 	sh %d7,%d7,%d5
+800049ce:	17 66 80 54 	dextr %d5,%d6,%d6,%d4
+800049d2:	0f 46 00 40 	sh %d4,%d6,%d4
+800049d6:	2b 45 50 58 	seln %d5,%d8,%d5,%d4
+800049da:	ab 04 a0 48 	seln %d4,%d8,%d4,0
+800049de:	0f 43 e0 30 	andn %d3,%d3,%d4
+800049e2:	0f 52 e0 20 	andn %d2,%d2,%d5
+800049e6:	a6 32       	or %d2,%d3
+800049e8:	02 03       	mov %d3,%d0
+800049ea:	8b 02 00 35 	or.ne %d3,%d2,0
+800049ee:	8f f3 0f 51 	and %d5,%d3,255
+800049f2:	82 12       	mov %d2,1
+800049f4:	8b 05 08 24 	and.eq %d2,%d5,128
+800049f8:	02 74       	mov %d4,%d7
+800049fa:	df 02 14 80 	jne %d2,0,80004a22 <__pack_d+0x15a>
+800049fe:	8b f3 87 30 	addx %d3,%d3,127
+80004a02:	8b 07 a0 20 	addc %d2,%d7,0
+80004a06:	77 32 00 6c 	dextr %d6,%d2,%d3,24
+80004a0a:	7b 00 00 31 	movh %d3,4096
+80004a0e:	8f 82 1f 70 	sh %d7,%d2,-8
+80004a12:	0b 32 50 21 	ge.u %d2,%d2,%d3
+80004a16:	b7 07 0c 7a 	insert %d7,%d7,0,20,12
+80004a1a:	8f 42 01 50 	sh %d5,%d2,20
+80004a1e:	1d ff 6c ff 	j 800048f6 <__pack_d+0x2e>
+80004a22:	8b 03 88 60 	addx %d6,%d3,128
+80004a26:	8b 07 a0 20 	addc %d2,%d7,0
+80004a2a:	7b 00 00 a1 	movh %d10,4096
+80004a2e:	8f 82 1f 70 	sh %d7,%d2,-8
+80004a32:	77 62 00 6c 	dextr %d6,%d2,%d6,24
+80004a36:	0b a2 50 21 	ge.u %d2,%d2,%d10
+80004a3a:	53 12 40 80 	mul.u %e8,%d2,1
+80004a3e:	8f 03 10 01 	and %d0,%d3,256
+80004a42:	b7 07 0c 7a 	insert %d7,%d7,0,20,12
+80004a46:	8f 48 01 50 	sh %d5,%d8,20
+80004a4a:	df 00 56 ff 	jne %d0,0,800048f6 <__pack_d+0x2e>
+80004a4e:	8f 84 1f 70 	sh %d7,%d4,-8
+80004a52:	0b a4 50 21 	ge.u %d2,%d4,%d10
+80004a56:	77 34 00 6c 	dextr %d6,%d4,%d3,24
+80004a5a:	b7 07 0c 7a 	insert %d7,%d7,0,20,12
+80004a5e:	8f 42 01 50 	sh %d5,%d2,20
+80004a62:	1d ff 4a ff 	j 800048f6 <__pack_d+0x2e>
 
-80004a4a <__unpack_d>:
-80004a4a:	09 48 40 09 	ld.d %e8,[%a4]
-80004a4e:	3b f0 7f 00 	mov %d0,2047
-80004a52:	8f 19 1e 70 	sh %d7,%d9,-31
-80004a56:	37 09 6b 5a 	extr.u %d5,%d9,20,11
-80004a5a:	b7 09 0c 6a 	insert %d6,%d9,0,20,12
-80004a5e:	59 57 04 00 	st.w [%a5]4,%d7
-80004a62:	df 05 26 80 	jne %d5,0,80004aae <__unpack_d+0x64>
-80004a66:	8b 08 20 22 	ne %d2,%d8,0
-80004a6a:	8b 06 00 25 	or.ne %d2,%d6,0
-80004a6e:	df 02 33 00 	jeq %d2,0,80004ad4 <__unpack_d+0x8a>
-80004a72:	82 32       	mov %d2,3
-80004a74:	77 86 00 34 	dextr %d3,%d6,%d8,8
-80004a78:	8f 88 00 40 	sh %d4,%d8,8
-80004a7c:	74 52       	st.w [%a5],%d2
-80004a7e:	3b 10 c0 5f 	mov %d5,-1023
-80004a82:	7b 00 00 61 	movh %d6,4096
-80004a86:	77 43 80 30 	dextr %d3,%d3,%d4,1
-80004a8a:	02 57       	mov %d7,%d5
-80004a8c:	0b 63 00 21 	eq %d2,%d3,%d6
-80004a90:	b7 02 01 20 	insert %d2,%d2,0,0,1
-80004a94:	06 14       	sh %d4,1
-80004a96:	0b 63 a0 22 	or.lt.u %d2,%d3,%d6
-80004a9a:	c2 f5       	add %d5,-1
-80004a9c:	df 02 f5 ff 	jne %d2,0,80004a86 <__unpack_d+0x3c>
-80004aa0:	59 57 08 00 	st.w [%a5]8,%d7
-80004aa4:	59 54 0c 00 	st.w [%a5]12,%d4
-80004aa8:	59 53 10 00 	st.w [%a5]16,%d3
-80004aac:	00 90       	ret 
-80004aae:	5f 05 16 00 	jeq %d5,%d0,80004ada <__unpack_d+0x90>
-80004ab2:	82 32       	mov %d2,3
-80004ab4:	1b 15 c0 5f 	addi %d5,%d5,-1023
-80004ab8:	8f 88 00 40 	sh %d4,%d8,8
-80004abc:	74 52       	st.w [%a5],%d2
-80004abe:	77 86 00 24 	dextr %d2,%d6,%d8,8
-80004ac2:	59 55 08 00 	st.w [%a5]8,%d5
-80004ac6:	b7 f2 01 2e 	insert %d2,%d2,15,28,1
-80004aca:	59 54 0c 00 	st.w [%a5]12,%d4
-80004ace:	59 52 10 00 	st.w [%a5]16,%d2
-80004ad2:	00 90       	ret 
-80004ad4:	82 22       	mov %d2,2
-80004ad6:	74 52       	st.w [%a5],%d2
-80004ad8:	00 90       	ret 
-80004ada:	8b 08 20 52 	ne %d5,%d8,0
-80004ade:	8b 06 00 55 	or.ne %d5,%d6,0
-80004ae2:	df 05 05 80 	jne %d5,0,80004aec <__unpack_d+0xa2>
-80004ae6:	82 42       	mov %d2,4
-80004ae8:	74 52       	st.w [%a5],%d2
-80004aea:	00 90       	ret 
-80004aec:	77 89 00 34 	dextr %d3,%d9,%d8,8
-80004af0:	37 09 e1 49 	extr.u %d4,%d9,19,1
-80004af4:	b7 03 85 3d 	insert %d3,%d3,0,27,5
-80004af8:	8f 88 00 20 	sh %d2,%d8,8
-80004afc:	74 54       	st.w [%a5],%d4
-80004afe:	59 52 0c 00 	st.w [%a5]12,%d2
-80004b02:	59 53 10 00 	st.w [%a5]16,%d3
+80004a66 <__unpack_d>:
+80004a66:	09 48 40 09 	ld.d %e8,[%a4]
+80004a6a:	3b f0 7f 00 	mov %d0,2047
+80004a6e:	8f 19 1e 70 	sh %d7,%d9,-31
+80004a72:	37 09 6b 5a 	extr.u %d5,%d9,20,11
+80004a76:	b7 09 0c 6a 	insert %d6,%d9,0,20,12
+80004a7a:	59 57 04 00 	st.w [%a5]4,%d7
+80004a7e:	df 05 26 80 	jne %d5,0,80004aca <__unpack_d+0x64>
+80004a82:	8b 08 20 22 	ne %d2,%d8,0
+80004a86:	8b 06 00 25 	or.ne %d2,%d6,0
+80004a8a:	df 02 33 00 	jeq %d2,0,80004af0 <__unpack_d+0x8a>
+80004a8e:	82 32       	mov %d2,3
+80004a90:	77 86 00 34 	dextr %d3,%d6,%d8,8
+80004a94:	8f 88 00 40 	sh %d4,%d8,8
+80004a98:	74 52       	st.w [%a5],%d2
+80004a9a:	3b 10 c0 5f 	mov %d5,-1023
+80004a9e:	7b 00 00 61 	movh %d6,4096
+80004aa2:	77 43 80 30 	dextr %d3,%d3,%d4,1
+80004aa6:	02 57       	mov %d7,%d5
+80004aa8:	0b 63 00 21 	eq %d2,%d3,%d6
+80004aac:	b7 02 01 20 	insert %d2,%d2,0,0,1
+80004ab0:	06 14       	sh %d4,1
+80004ab2:	0b 63 a0 22 	or.lt.u %d2,%d3,%d6
+80004ab6:	c2 f5       	add %d5,-1
+80004ab8:	df 02 f5 ff 	jne %d2,0,80004aa2 <__unpack_d+0x3c>
+80004abc:	59 57 08 00 	st.w [%a5]8,%d7
+80004ac0:	59 54 0c 00 	st.w [%a5]12,%d4
+80004ac4:	59 53 10 00 	st.w [%a5]16,%d3
+80004ac8:	00 90       	ret 
+80004aca:	5f 05 16 00 	jeq %d5,%d0,80004af6 <__unpack_d+0x90>
+80004ace:	82 32       	mov %d2,3
+80004ad0:	1b 15 c0 5f 	addi %d5,%d5,-1023
+80004ad4:	8f 88 00 40 	sh %d4,%d8,8
+80004ad8:	74 52       	st.w [%a5],%d2
+80004ada:	77 86 00 24 	dextr %d2,%d6,%d8,8
+80004ade:	59 55 08 00 	st.w [%a5]8,%d5
+80004ae2:	b7 f2 01 2e 	insert %d2,%d2,15,28,1
+80004ae6:	59 54 0c 00 	st.w [%a5]12,%d4
+80004aea:	59 52 10 00 	st.w [%a5]16,%d2
+80004aee:	00 90       	ret 
+80004af0:	82 22       	mov %d2,2
+80004af2:	74 52       	st.w [%a5],%d2
+80004af4:	00 90       	ret 
+80004af6:	8b 08 20 52 	ne %d5,%d8,0
+80004afa:	8b 06 00 55 	or.ne %d5,%d6,0
+80004afe:	df 05 05 80 	jne %d5,0,80004b08 <__unpack_d+0xa2>
+80004b02:	82 42       	mov %d2,4
+80004b04:	74 52       	st.w [%a5],%d2
 80004b06:	00 90       	ret 
+80004b08:	77 89 00 34 	dextr %d3,%d9,%d8,8
+80004b0c:	37 09 e1 49 	extr.u %d4,%d9,19,1
+80004b10:	b7 03 85 3d 	insert %d3,%d3,0,27,5
+80004b14:	8f 88 00 20 	sh %d2,%d8,8
+80004b18:	74 54       	st.w [%a5],%d4
+80004b1a:	59 52 0c 00 	st.w [%a5]12,%d2
+80004b1e:	59 53 10 00 	st.w [%a5]16,%d3
+80004b22:	00 90       	ret 
 
-80004b08 <__fpcmp_parts_d>:
-80004b08:	54 43       	ld.w %d3,[%a4]
-80004b0a:	82 12       	mov %d2,1
-80004b0c:	bf 23 45 80 	jlt.u %d3,2,80004b96 <__fpcmp_parts_d+0x8e>
-80004b10:	54 54       	ld.w %d4,[%a5]
-80004b12:	bf 24 42 80 	jlt.u %d4,2,80004b96 <__fpcmp_parts_d+0x8e>
-80004b16:	8b 44 00 52 	eq %d5,%d4,4
-80004b1a:	8b 43 00 54 	and.eq %d5,%d3,4
-80004b1e:	df 05 50 80 	jne %d5,0,80004bbe <__fpcmp_parts_d+0xb6>
-80004b22:	df 43 45 00 	jeq %d3,4,80004bac <__fpcmp_parts_d+0xa4>
-80004b26:	df 44 3d 00 	jeq %d4,4,80004ba0 <__fpcmp_parts_d+0x98>
-80004b2a:	8b 24 00 52 	eq %d5,%d4,2
-80004b2e:	8b 23 00 54 	and.eq %d5,%d3,2
-80004b32:	82 02       	mov %d2,0
-80004b34:	df 05 31 80 	jne %d5,0,80004b96 <__fpcmp_parts_d+0x8e>
-80004b38:	df 23 34 00 	jeq %d3,2,80004ba0 <__fpcmp_parts_d+0x98>
-80004b3c:	19 42 04 00 	ld.w %d2,[%a4]4
-80004b40:	df 24 2c 00 	jeq %d4,2,80004b98 <__fpcmp_parts_d+0x90>
-80004b44:	19 53 04 00 	ld.w %d3,[%a5]4
-80004b48:	5f 23 28 80 	jne %d3,%d2,80004b98 <__fpcmp_parts_d+0x90>
-80004b4c:	19 44 08 00 	ld.w %d4,[%a4]8
-80004b50:	19 53 08 00 	ld.w %d3,[%a5]8
-80004b54:	3f 43 22 00 	jlt %d3,%d4,80004b98 <__fpcmp_parts_d+0x90>
-80004b58:	3f 34 2f 00 	jlt %d4,%d3,80004bb6 <__fpcmp_parts_d+0xae>
-80004b5c:	19 45 10 00 	ld.w %d5,[%a4]16
-80004b60:	19 56 10 00 	ld.w %d6,[%a5]16
-80004b64:	19 40 0c 00 	ld.w %d0,[%a4]12
-80004b68:	0b 65 00 41 	eq %d4,%d5,%d6
-80004b6c:	19 57 0c 00 	ld.w %d7,[%a5]12
-80004b70:	02 43       	mov %d3,%d4
-80004b72:	0b 07 50 32 	and.ge.u %d3,%d7,%d0
-80004b76:	0b 70 50 42 	and.ge.u %d4,%d0,%d7
-80004b7a:	0b 65 a0 32 	or.lt.u %d3,%d5,%d6
-80004b7e:	0b 56 a0 42 	or.lt.u %d4,%d6,%d5
-80004b82:	82 f5       	mov %d5,-1
-80004b84:	ab 15 a0 52 	seln %d5,%d2,%d5,1
-80004b88:	82 16       	mov %d6,1
-80004b8a:	ab f6 bf 22 	seln %d2,%d2,%d6,-1
-80004b8e:	ab 05 a0 44 	seln %d4,%d4,%d5,0
-80004b92:	2b 24 40 23 	sel %d2,%d3,%d4,%d2
-80004b96:	00 90       	ret 
-80004b98:	82 13       	mov %d3,1
-80004b9a:	ab f3 bf 22 	seln %d2,%d2,%d3,-1
-80004b9e:	00 90       	ret 
-80004ba0:	19 53 04 00 	ld.w %d3,[%a5]4
-80004ba4:	82 f2       	mov %d2,-1
-80004ba6:	ab 12 a0 23 	seln %d2,%d3,%d2,1
-80004baa:	00 90       	ret 
-80004bac:	19 43 04 00 	ld.w %d3,[%a4]4
-80004bb0:	ab f2 bf 23 	seln %d2,%d3,%d2,-1
-80004bb4:	00 90       	ret 
-80004bb6:	82 f3       	mov %d3,-1
-80004bb8:	ab 13 a0 22 	seln %d2,%d2,%d3,1
-80004bbc:	00 90       	ret 
-80004bbe:	19 53 04 00 	ld.w %d3,[%a5]4
-80004bc2:	19 42 04 00 	ld.w %d2,[%a4]4
-80004bc6:	0b 23 80 20 	sub %d2,%d3,%d2
-80004bca:	00 90       	ret 
+80004b24 <__fpcmp_parts_d>:
+80004b24:	54 43       	ld.w %d3,[%a4]
+80004b26:	82 12       	mov %d2,1
+80004b28:	bf 23 45 80 	jlt.u %d3,2,80004bb2 <__fpcmp_parts_d+0x8e>
+80004b2c:	54 54       	ld.w %d4,[%a5]
+80004b2e:	bf 24 42 80 	jlt.u %d4,2,80004bb2 <__fpcmp_parts_d+0x8e>
+80004b32:	8b 44 00 52 	eq %d5,%d4,4
+80004b36:	8b 43 00 54 	and.eq %d5,%d3,4
+80004b3a:	df 05 50 80 	jne %d5,0,80004bda <__fpcmp_parts_d+0xb6>
+80004b3e:	df 43 45 00 	jeq %d3,4,80004bc8 <__fpcmp_parts_d+0xa4>
+80004b42:	df 44 3d 00 	jeq %d4,4,80004bbc <__fpcmp_parts_d+0x98>
+80004b46:	8b 24 00 52 	eq %d5,%d4,2
+80004b4a:	8b 23 00 54 	and.eq %d5,%d3,2
+80004b4e:	82 02       	mov %d2,0
+80004b50:	df 05 31 80 	jne %d5,0,80004bb2 <__fpcmp_parts_d+0x8e>
+80004b54:	df 23 34 00 	jeq %d3,2,80004bbc <__fpcmp_parts_d+0x98>
+80004b58:	19 42 04 00 	ld.w %d2,[%a4]4
+80004b5c:	df 24 2c 00 	jeq %d4,2,80004bb4 <__fpcmp_parts_d+0x90>
+80004b60:	19 53 04 00 	ld.w %d3,[%a5]4
+80004b64:	5f 23 28 80 	jne %d3,%d2,80004bb4 <__fpcmp_parts_d+0x90>
+80004b68:	19 44 08 00 	ld.w %d4,[%a4]8
+80004b6c:	19 53 08 00 	ld.w %d3,[%a5]8
+80004b70:	3f 43 22 00 	jlt %d3,%d4,80004bb4 <__fpcmp_parts_d+0x90>
+80004b74:	3f 34 2f 00 	jlt %d4,%d3,80004bd2 <__fpcmp_parts_d+0xae>
+80004b78:	19 45 10 00 	ld.w %d5,[%a4]16
+80004b7c:	19 56 10 00 	ld.w %d6,[%a5]16
+80004b80:	19 40 0c 00 	ld.w %d0,[%a4]12
+80004b84:	0b 65 00 41 	eq %d4,%d5,%d6
+80004b88:	19 57 0c 00 	ld.w %d7,[%a5]12
+80004b8c:	02 43       	mov %d3,%d4
+80004b8e:	0b 07 50 32 	and.ge.u %d3,%d7,%d0
+80004b92:	0b 70 50 42 	and.ge.u %d4,%d0,%d7
+80004b96:	0b 65 a0 32 	or.lt.u %d3,%d5,%d6
+80004b9a:	0b 56 a0 42 	or.lt.u %d4,%d6,%d5
+80004b9e:	82 f5       	mov %d5,-1
+80004ba0:	ab 15 a0 52 	seln %d5,%d2,%d5,1
+80004ba4:	82 16       	mov %d6,1
+80004ba6:	ab f6 bf 22 	seln %d2,%d2,%d6,-1
+80004baa:	ab 05 a0 44 	seln %d4,%d4,%d5,0
+80004bae:	2b 24 40 23 	sel %d2,%d3,%d4,%d2
+80004bb2:	00 90       	ret 
+80004bb4:	82 13       	mov %d3,1
+80004bb6:	ab f3 bf 22 	seln %d2,%d2,%d3,-1
+80004bba:	00 90       	ret 
+80004bbc:	19 53 04 00 	ld.w %d3,[%a5]4
+80004bc0:	82 f2       	mov %d2,-1
+80004bc2:	ab 12 a0 23 	seln %d2,%d3,%d2,1
+80004bc6:	00 90       	ret 
+80004bc8:	19 43 04 00 	ld.w %d3,[%a4]4
+80004bcc:	ab f2 bf 23 	seln %d2,%d3,%d2,-1
+80004bd0:	00 90       	ret 
+80004bd2:	82 f3       	mov %d3,-1
+80004bd4:	ab 13 a0 22 	seln %d2,%d2,%d3,1
+80004bd8:	00 90       	ret 
+80004bda:	19 53 04 00 	ld.w %d3,[%a5]4
+80004bde:	19 42 04 00 	ld.w %d2,[%a4]4
+80004be2:	0b 23 80 20 	sub %d2,%d3,%d2
+80004be6:	00 90       	ret 
 
-80004bcc <__do_global_ctors_aux>:
-80004bcc:	91 00 00 28 	movh.a %a2,32768
-80004bd0:	d9 22 c0 04 	lea %a2,[%a2]19456 <80004c00 <__CTOR_END__>>
-80004bd4:	19 22 fc ff 	ld.w %d2,[%a2]-4 <7ffffffc <__CSA0_END+0xffc43fc>>
-80004bd8:	d9 23 fc ff 	lea %a3,[%a2]-4 <7ffffffc <__CSA0_END+0xffc43fc>>
-80004bdc:	df f2 0a 00 	jeq %d2,-1,80004bf0 <__do_global_ctors_aux+0x24>
-80004be0:	40 3c       	mov.aa %a12,%a3
-80004be2:	60 22       	mov.a %a2,%d2
-80004be4:	b0 cc       	add.a %a12,-4
-80004be6:	2d 02 00 00 	calli %a2
-80004bea:	54 c2       	ld.w %d2,[%a12]
-80004bec:	df f2 fb ff 	jne %d2,-1,80004be2 <__do_global_ctors_aux+0x16>
-80004bf0:	00 90       	ret 
+80004be8 <__do_global_ctors_aux>:
+80004be8:	91 00 00 28 	movh.a %a2,32768
+80004bec:	d9 22 d8 04 	lea %a2,[%a2]19480 <80004c18 <__CTOR_END__>>
+80004bf0:	19 22 fc ff 	ld.w %d2,[%a2]-4 <7ffffffc <__CSA0_END+0xffc43fc>>
+80004bf4:	d9 23 fc ff 	lea %a3,[%a2]-4 <7ffffffc <__CSA0_END+0xffc43fc>>
+80004bf8:	df f2 0a 00 	jeq %d2,-1,80004c0c <__do_global_ctors_aux+0x24>
+80004bfc:	40 3c       	mov.aa %a12,%a3
+80004bfe:	60 22       	mov.a %a2,%d2
+80004c00:	b0 cc       	add.a %a12,-4
+80004c02:	2d 02 00 00 	calli %a2
+80004c06:	54 c2       	ld.w %d2,[%a12]
+80004c08:	df f2 fb ff 	jne %d2,-1,80004bfe <__do_global_ctors_aux+0x16>
+80004c0c:	00 90       	ret 
 	...

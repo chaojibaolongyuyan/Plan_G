@@ -809,6 +809,7 @@ void IfxCan_Can_initNodeConfig(IfxCan_Can_NodeConfig *config, IfxCan_Can *can)
 void IfxCan_Can_readMessage(IfxCan_Can_Node *node, IfxCan_Message *message, uint32 *data)
 {
     IfxCan_RxBufferId bufferId = IfxCan_RxBufferId_0;
+
     Ifx_CAN_RXMSG    *rxBufferElement;
 
     if ((message->readFromRxFifo0) || (message->readFromRxFifo1))
@@ -863,6 +864,7 @@ void IfxCan_Can_readMessage(IfxCan_Can_Node *node, IfxCan_Message *message, uint
 
     /* clear newdata flag after reading */
     IfxCan_Node_clearRxBufferNewDataFlag(node->node, bufferId);
+
 }
 
 
@@ -970,6 +972,7 @@ void IfxCan_Can_setStandardFilter(IfxCan_Can_Node *node, IfxCan_Filter *filter)
     }
 
     IfxCan_Node_setStandardFilterId1(standardFilterElement, filter->id1);
+    //IfxCan_Node_setStandardFilterId2(standardFilterElement, filter->id2);
     IfxCan_Node_setStandardFilterConfiguration(standardFilterElement, filter->elementConfiguration);
     IfxCan_Node_setStandardFilterType(standardFilterElement, filter->type);
 

@@ -47,6 +47,7 @@
 #include "MCMCAN.h"
 
 void nopDelay(uint32 cycles) {
+    cycles*=150000;
     for (uint32 i = 0; i < cycles; i++) {
         __nop();
     }
@@ -77,7 +78,7 @@ void core0_main(void)
     while(1)
     {
         transmitCanMessage();
-        nopDelay(3000000);
+        nopDelay(5);
 
     }
 }

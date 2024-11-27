@@ -34,9 +34,33 @@
 /*-------------------------------------------------Global variables--------------------------------------------------*/
 /*********************************************************************************************************************/
 McmcanType                  g_mcmcan;                       /* Global MCMCAN configuration and control structure    */
+McmcanType                  g_mcmcan1;                      /* Global MCMCAN1 configuration and control structure    */
 IfxPort_Pin_Config          g_led1;                         /* Global LED1 configuration and control structure      */
 IfxPort_Pin_Config          g_led2;                         /* Global LED2 configuration and control structure      */
+IfxPort_Pin_Config          g_led3;                         /* Global LED3 configuration and control structure      */
+IFX_CONST IfxCan_Can_Pins Can0PortInf0 = {
+        .padDriver = IfxPort_PadDriver_cmosAutomotiveSpeed1,
+        .rxPin = &IfxCan_RXD00B_P20_7_IN,
+        .rxPinMode = IfxPort_InputMode_pullUp,
+        .txPin = &IfxCan_TXD00_P20_8_OUT,
+        .txPinMode = IfxPort_OutputMode_pushPull
+};
 
+IFX_CONST IfxCan_Can_Pins Can1PortInf0 = {
+        .padDriver = IfxPort_PadDriver_cmosAutomotiveSpeed1,
+        .rxPin = &IfxCan_RXD10A_P00_1_IN,
+        .rxPinMode = IfxPort_InputMode_pullUp,
+        .txPin = &IfxCan_TXD10_P13_0_OUT,
+        .txPinMode = IfxPort_OutputMode_pushPull
+};
+
+IFX_CONST IfxCan_Can_Pins Can2PortInf0 = {
+        .padDriver = IfxPort_PadDriver_cmosAutomotiveSpeed1,
+        .rxPin = &IfxCan_RXD20A_P10_5_IN,
+        .rxPinMode = IfxPort_InputMode_pullUp,
+        .txPin = &IfxCan_TXD20_P10_6_OUT,
+        .txPinMode = IfxPort_OutputMode_pushPull
+};
 /*********************************************************************************************************************/
 /*---------------------------------------------Function Implementations----------------------------------------------*/
 /*********************************************************************************************************************/
@@ -52,7 +76,9 @@ IfxPort_Pin_Config          g_led2;                         /* Global LED2 confi
  *  - priority: Interrupt priority. Refer Usage of Interrupt Macro for more details.
  */
 IFX_INTERRUPT(canIsrTxHandler, 0, ISR_PRIORITY_CAN_TX);
-IFX_INTERRUPT(canIsrRxHandler, 0, ISR_PRIORITY_CAN_RX);
+IFX_INTERRUPT(canIsrRxHandler, 0, ISR_PRIORITY_CAN_FIFO0_RX);
+//IFX_INTERRUPT(canIsrTxHandler1, 0, ISR_PRIORITY_CAN1_TX);
+//IFX_INTERRUPT(canIsrRxHandler1, 0, ISR_PRIORITY_CAN1_RX);
 
 /* Interrupt Service Routine (ISR) called once the TX interrupt has been generated.
  * Turns on the LED1 to indicate successful CAN message transmission.
@@ -87,9 +113,12 @@ void canIsrTxHandler(void)
 void canIsrRxHandler(void)
 {
     /* Clear the "Message stored to Dedicated RX Buffer" interrupt flag */
-    IfxCan_Node_clearInterruptFlag(g_mcmcan.canDstNode.node, IfxCan_Interrupt_messageStoredToDedicatedRxBuffer);
+    IfxCan_Node_clearInterruptFlag(g_mcmcan.canDstNode.node, IfxCan_Interrupt_rxFifo0NewMessage);
 
     /* Read the received CAN message */
+    g_mcmcan.rxMsg.readFromRxFifo0 = TRUE;
+    g_mcmcan.rxMsg.readFromRxFifo1 = FALSE;
+
     IfxCan_Can_readMessage(&g_mcmcan.canDstNode, &g_mcmcan.rxMsg, g_mcmcan.rxData);
     IfxPort_setPinState(g_led2.port, g_led2.pinIndex,  IfxPort_State_toggled);
 
@@ -103,93 +132,39 @@ void canIsrRxHandler(void)
 //    }
 }
 
+
+
+
 /* Function to initialize MCMCAN module and nodes related for this application use case */
 void initMcmcan(void)
 {
-    /* ==========================================================================================
-     * CAN module configuration and initialization:
-     * ==========================================================================================
-     *  - load default CAN module configuration into configuration structure
-     *  - initialize CAN module with the default configuration
-     * ==========================================================================================
-     */
-    IfxCan_Can_initModuleConfig(&g_mcmcan.canConfig, &MODULE_CAN2);
+    IfxCan_Can_initModuleConfig(&g_mcmcan.canConfig, &MODULE_CAN0);
 
     IfxCan_Can_initModule(&g_mcmcan.canModule, &g_mcmcan.canConfig);
-
-    /* ==========================================================================================
-     * Source CAN node configuration and initialization:
-     * ==========================================================================================
-     *  - load default CAN node configuration into configuration structure
-     *
-     *  - set source CAN node in the "Loop-Back" mode (no external pins are used)
-     *  - assign source CAN node to CAN node 0
-     *
-     *  - define the frame to be the transmitting one
-     *
-     *  - once the transmission is completed, raise the interrupt
-     *  - define the transmission complete interrupt priority
-     *  - assign the interrupt line 0 to the transmission complete interrupt
-     *  - transmission complete interrupt service routine should be serviced by the CPU0
-     *
-     *  - initialize the source CAN node with the modified configuration
-     * ==========================================================================================
-     */
-    IFX_CONST IfxCan_Can_Pins Can0PortInf0 = {
-            .padDriver = IfxPort_PadDriver_cmosAutomotiveSpeed1,
-            .rxPin = &IfxCan_RXD00B_P20_7_IN,
-            .rxPinMode = IfxPort_InputMode_pullUp,
-            .txPin = &IfxCan_TXD00_P20_8_OUT,
-            .txPinMode = IfxPort_OutputMode_pushPull
-    };
-
-    IFX_CONST IfxCan_Can_Pins Can1PortInf0 = {
-                .padDriver = IfxPort_PadDriver_cmosAutomotiveSpeed1,
-                .rxPin = &IfxCan_RXD10A_P00_1_IN,
-                .rxPinMode = IfxPort_InputMode_pullUp,
-                .txPin = &IfxCan_TXD10_P13_0_OUT,
-                .txPinMode = IfxPort_OutputMode_pushPull
-        };
-
-    IFX_CONST IfxCan_Can_Pins Can2PortInf0 = {
-                    .padDriver = IfxPort_PadDriver_cmosAutomotiveSpeed1,
-                    .rxPin = &IfxCan_RXD20A_P10_5_IN,
-                    .rxPinMode = IfxPort_InputMode_pullUp,
-                    .txPin = &IfxCan_TXD20_P10_6_OUT,
-                    .txPinMode = IfxPort_OutputMode_pushPull
-            };
-    //���ַ��������ͬ
-//    IFX_CONST IfxCan_Can_Pins Can00_pins =
-//    {
-//       &IfxCan_TXD00_P20_8_OUT,   IfxPort_OutputMode_pushPull, // CAN00_TX
-//       &IfxCan_RXD00B_P20_7_IN,   IfxPort_InputMode_pullUp,    // CAN00_RX
-//       IfxPort_PadDriver_cmosAutomotiveSpeed4
-//    };
 
 
     IfxCan_Can_initNodeConfig(&g_mcmcan.canNodeConfig, &g_mcmcan.canModule);
 
-    //g_mcmcan.canNodeConfig.busLoopbackEnabled = 0;
+
     g_mcmcan.canNodeConfig.nodeId = IfxCan_NodeId_0;
 
-    //�޸ĳɿ��Է��ͺͽ���
+
     g_mcmcan.canNodeConfig.frame.type = IfxCan_FrameType_transmitAndReceive;
 
-    //����������
+
     g_mcmcan.canNodeConfig.baudRate.baudrate = 500000;
     g_mcmcan.canNodeConfig.baudRate.prescaler = 0;
     g_mcmcan.canNodeConfig.baudRate.samplePoint = 8000;
     g_mcmcan.canNodeConfig.baudRate.syncJumpWidth = 2000;
     g_mcmcan.canNodeConfig.baudRate.timeSegment1 = 3;
     g_mcmcan.canNodeConfig.baudRate.timeSegment2 = 10;
-    //PIN
-    g_mcmcan.canNodeConfig.pins = &Can2PortInf0;
 
-    //�����������ж�
-    //���ͳɹ��жϴ�
+    g_mcmcan.canNodeConfig.pins = &Can0PortInf0;
+
+
     g_mcmcan.canNodeConfig.interruptConfig.transmissionCompletedEnabled = TRUE;
-    //���ӽ����жϴ�
-    g_mcmcan.canNodeConfig.interruptConfig.messageStoredToDedicatedRxBufferEnabled = TRUE;
+
+    g_mcmcan.canNodeConfig.interruptConfig.rxFifo0NewMessageEnabled = TRUE;
 
 
     g_mcmcan.canNodeConfig.interruptConfig.traco.priority = ISR_PRIORITY_CAN_TX;
@@ -198,89 +173,58 @@ void initMcmcan(void)
 
 
 
-    g_mcmcan.canNodeConfig.interruptConfig.reint.priority = ISR_PRIORITY_CAN_RX;
-    g_mcmcan.canNodeConfig.interruptConfig.reint.interruptLine = IfxCan_InterruptLine_1;
-    g_mcmcan.canNodeConfig.interruptConfig.reint.typeOfService = IfxSrc_Tos_cpu0;
+    g_mcmcan.canNodeConfig.interruptConfig.rxf0n.priority = ISR_PRIORITY_CAN_FIFO0_RX;
+    g_mcmcan.canNodeConfig.interruptConfig.rxf0n.interruptLine = IfxCan_InterruptLine_1;
+    g_mcmcan.canNodeConfig.interruptConfig.rxf0n.typeOfService = IfxSrc_Tos_cpu0;
+
+    g_mcmcan.canNodeConfig.rxConfig.rxMode = IfxCan_RxMode_fifo0;
+    g_mcmcan.canNodeConfig.rxConfig.rxFifo0DataFieldSize = IfxCan_DataFieldSize_8;
+    g_mcmcan.canNodeConfig.rxConfig.rxFifo0Size = 15;
 
     IfxCan_Can_initNode(&g_mcmcan.canSrcNode, &g_mcmcan.canNodeConfig);
 
     IfxCan_Can_initNode(&g_mcmcan.canDstNode, &g_mcmcan.canNodeConfig);
 
-    /* ==========================================================================================
-     * Destination CAN node configuration and initialization:
-     * ==========================================================================================
-     *  - load default CAN node configuration into configuration structure
-     *
-     *  - set destination CAN node in the "Loop-Back" mode (no external pins are used)
-     *  - assign destination CAN node to CAN node 1
-     *
-     *  - define the frame to be the receiving one
-     *
-     *  - once the message is stored in the dedicated RX buffer, raise the interrupt
-     *  - define the receive interrupt priority
-     *  - assign the interrupt line 1 to the receive interrupt
-     *  - receive interrupt service routine should be serviced by the CPU0
-     *
-     *  - initialize the destination CAN node with the modified configuration
-     * ==========================================================================================
-     */
-//    IfxCan_Can_initNodeConfig(&g_mcmcan.canNodeConfig, &g_mcmcan.canModule);
-//
-//    //���յ�����
-//    //g_mcmcan.canNodeConfig.busLoopbackEnabled = 0;
-//    g_mcmcan.canNodeConfig.nodeId = IfxCan_NodeId_1;
-//
-//    g_mcmcan.canNodeConfig.frame.type = IfxCan_FrameType_transmitAndReceive;
-//
-//
-//    g_mcmcan.canNodeConfig.baudRate.baudrate = 500000;
-//    g_mcmcan.canNodeConfig.baudRate.prescaler = 0;
-//    g_mcmcan.canNodeConfig.baudRate.samplePoint = 8000;
-//    g_mcmcan.canNodeConfig.baudRate.syncJumpWidth = 2000;
-//    g_mcmcan.canNodeConfig.baudRate.timeSegment1 = 3;
-//    g_mcmcan.canNodeConfig.baudRate.timeSegment2 = 10;
-//    //PIN
-//    g_mcmcan.canNodeConfig.pins = &Can1PortInf0;
-//
-//    //�����������ж�
-//    //���ͳɹ��жϴ�
-//    g_mcmcan.canNodeConfig.interruptConfig.transmissionCompletedEnabled = TRUE;
-//    //���ӽ����жϴ�
-//    g_mcmcan.canNodeConfig.interruptConfig.messageStoredToDedicatedRxBufferEnabled = TRUE;
-//
-//
-//    g_mcmcan.canNodeConfig.interruptConfig.traco.priority = ISR_PRIORITY_CAN_TX;
-//    g_mcmcan.canNodeConfig.interruptConfig.traco.interruptLine = IfxCan_InterruptLine_0;
-//    g_mcmcan.canNodeConfig.interruptConfig.traco.typeOfService = IfxSrc_Tos_cpu0;
-//
-//
-//
-//    g_mcmcan.canNodeConfig.interruptConfig.reint.priority = ISR_PRIORITY_CAN_RX;
-//    g_mcmcan.canNodeConfig.interruptConfig.reint.interruptLine = IfxCan_InterruptLine_1;
-//    g_mcmcan.canNodeConfig.interruptConfig.reint.typeOfService = IfxSrc_Tos_cpu0;
-//
-//    IfxCan_Can_initNode(&g_mcmcan.canSrcNode, &g_mcmcan.canNodeConfig);
-//
-//    IfxCan_Can_initNode(&g_mcmcan.canDstNode, &g_mcmcan.canNodeConfig);
+//    g_mcmcan.canFilter.number = 0;
+//    g_mcmcan.canFilter.type = IfxCan_FilterType_range;
+//    g_mcmcan.canFilter.elementConfiguration = IfxCan_FilterElementConfiguration_storeInRxBuffer;
+//    g_mcmcan.canFilter.id1 = 0x0;
+//    g_mcmcan.canFilter.id2 = 1911;
+//    g_mcmcan.canFilter.rxBufferOffset = IfxCan_RxBufferId_0;
+//    IfxCan_Can_setStandardFilter(&g_mcmcan.canDstNode, &g_mcmcan.canFilter);
+
+    IfxCan_Filter filter;
+
+    filter.number = 0;
+    filter.type = IfxCan_FilterType_range;
+    filter.elementConfiguration = IfxCan_FilterElementConfiguration_storeInRxFifo0;
+    filter.id1 = 0;
+    filter.id2 = 10;
+    //filter.rxBufferOffset = IfxCan_RxBufferId_0;
+    IfxCan_Can_setStandardFilter(&g_mcmcan.canDstNode, &filter);
+
+//    filter.number = 1;
+//    filter.type = IfxCan_FilterType_classic;
+//    filter.elementConfiguration = IfxCan_FilterElementConfiguration_storeInRxBuffer;
+//    filter.id1 = 1;
+//    filter.rxBufferOffset = IfxCan_RxBufferId_0;
+//    IfxCan_Can_setStandardFilter(&g_mcmcan.canDstNode, &filter);
 
 
-    /* ==========================================================================================
-     * CAN filter configuration and initialization:
-     * ==========================================================================================
-     *  - filter configuration is stored under the filter element number 0
-     *  - store received frame in a dedicated RX Buffer
-     *  - define the same message ID as defined for the TX message
-     *  - assign the filter to the dedicated RX Buffer (RxBuffer0 in this case)
-     *
-     *  - initialize the standard filter with the modified configuration
-     * ==========================================================================================
-     */
-    g_mcmcan.canFilter.number = 0;
-    g_mcmcan.canFilter.elementConfiguration = IfxCan_FilterElementConfiguration_storeInRxBuffer;
-    g_mcmcan.canFilter.id1 = CAN_MESSAGE_ID;
-    g_mcmcan.canFilter.rxBufferOffset = IfxCan_RxBufferId_0;
 
-    IfxCan_Can_setStandardFilter(&g_mcmcan.canDstNode, &g_mcmcan.canFilter);
+//    filter.number = 1;
+//    filter.elementConfiguration = IfxCan_FilterElementConfiguration_storeInRxBuffer;
+//    filter.id1 = 0x7ff;
+//    filter.rxBufferOffset = IfxCan_RxBufferId_1;
+//
+//    IfxCan_Can_setStandardFilter(&g_mcmcan.canDstNode, &filter);
+
+
+
+
+    IfxCan_Can_initMessage(&g_mcmcan.rxMsg);
+    g_mcmcan.rxMsg.readFromRxFifo0=TRUE;
+    memset((void *)(&g_mcmcan.rxData[0]), INVALID_RX_DATA_VALUE, MAXIMUM_CAN_DATA_PAYLOAD * sizeof(uint32));
 }
 
 /* Function to initialize both TX and RX messages with the default data values.
@@ -333,17 +277,25 @@ void initLeds(void)
     g_led2.mode      = IfxPort_OutputIdx_general;
     g_led2.padDriver = IfxPort_PadDriver_cmosAutomotiveSpeed1;
 
+    g_led3.port      = &MODULE_P20;
+    g_led3.pinIndex  = 9;
+    g_led3.mode      = IfxPort_OutputIdx_general;
+    g_led3.padDriver = IfxPort_PadDriver_cmosAutomotiveSpeed1;
+
     /* Initialize the pins connected to LEDs to level "HIGH", which keep the LEDs turned off as default state */
     IfxPort_setPinHigh(g_led1.port, g_led1.pinIndex);
     IfxPort_setPinHigh(g_led2.port, g_led2.pinIndex);
+    IfxPort_setPinHigh(g_led3.port, g_led3.pinIndex);
 
     /* Set the pin input/output mode for both pins connected to the LEDs */
     IfxPort_setPinModeOutput(g_led1.port, g_led1.pinIndex, IfxPort_OutputMode_pushPull, g_led1.mode);
     IfxPort_setPinModeOutput(g_led2.port, g_led2.pinIndex, IfxPort_OutputMode_pushPull, g_led2.mode);
+    IfxPort_setPinModeOutput(g_led3.port, g_led3.pinIndex, IfxPort_OutputMode_pushPull, g_led3.mode);
 
     /* Set the pad driver mode for both pins connected to the LEDs */
     IfxPort_setPinPadDriver(g_led1.port, g_led1.pinIndex, g_led1.padDriver);
     IfxPort_setPinPadDriver(g_led2.port, g_led2.pinIndex, g_led2.padDriver);
+    IfxPort_setPinPadDriver(g_led3.port, g_led3.pinIndex, g_led3.padDriver);
 }
 
 //
