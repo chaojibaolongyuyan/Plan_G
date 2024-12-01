@@ -24,33 +24,22 @@
  * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
  * IN THE SOFTWARE.
  *********************************************************************************************************************/
- /*\title MCMCAN data transmission
- * \abstract MCMCAN is used to exchange data between two nodes, implemented in the same device using Loop-Back mode.
- * \description A CAN message is sent from CAN node 0 to CAN node 1 using Loop-Back mode. After the CAN message
- *              transmission, an interrupt is generated and an LED is turned on to confirm successful message
- *              transmission. Once the CAN message is successfully received by the CAN node 1, an interrupt is
- *              generated. Inside the interrupt service routine the content of the received CAN message is compared to
- *              the content of the transmitted CAN message. In case of a success, another LED is turned on to confirm
- *              successful message reception.
- *
- * \name MCMCAN_1_KIT_TC397_TFT
- * \version V1.0.2
- * \board APPLICATION KIT TC3X7 V2.0, KIT_A2G_TC397_5V_TFT, TC39xXX_B-Step
- * \keywords CAN, MCMCAN, AURIX, INTERRUPT, LOOP-BACK, MCMCAN_1
- * \documents https://www.infineon.com/aurix-expert-training/Infineon-AURIX_MCMCAN_1_KIT_TC397_TFT-TR-v01_00_02-EN.pdf
- * \documents https://www.infineon.com/aurix-expert-training/TC39B_iLLD_UM_1_0_1_12_1.chm
- * \lastUpdated 2021-03-22
- *********************************************************************************************************************/
 #include "Ifx_Types.h"
 #include "IfxCpu.h"
 #include "IfxScuWdt.h"
-#include "MCMCAN.h"
 
-void nopDelay(uint32 cycles) {
-    for (uint32 i = 0; i < cycles; i++) {
-        __nop();
-    }
-}
+//#include "GPIO.h"
+//#include "Drive_Output.h"
+//#include "Frequency_Sample.h"
+//#include "Analog_Sample.h"
+//#include "Communicate.h"
+//#include "Schedule.h"
+
+#include "zf_device_icm20602.h"
+#include "zf_driver_uart.h"
+#include "stdio.h"
+
+#include "Bsp.h"
 
 IFX_ALIGN(4) IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
@@ -68,17 +57,59 @@ void core0_main(void)
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
     
-    initLeds();
-    /* Application code: initialization of MCMCAN module, LEDs and the transmission of the CAN message */
-    initMcmcan();
-    initLeds();
-    transmitCanMessage();
+    //gpio_init();
+    //GTM_Tom_init();
+    //init_TIM();
+    //initEVADC();
+
+    //initMcmcan();
+    //initLeds();
+    //transmitCanMessage();
+    
+    //initSTM();
+    //initLED();
+
+    icm20602_init();
+
+//    fifo_init(&uart_data_fifo, FIFO_DATA_8BIT, uart_get_data, 64);              // 初始化 fifo 挂载缓冲区
+    uart_init(UART_0, 115200, UART0_TX_P14_0, UART0_RX_P14_1);             // 初始化串口
+//    uart_rx_interrupt(UART_INDEX, 1);                                           // 开启 UART_INDEX 的接收中断
+//    uart_write_string(UART_0, "UART Text.");                                // 输出测试信息
+//    uart_write_byte(UART_0, '\r');                                          // 输出回车
+//    uart_write_byte(UART_0, '\n');                                          // 输出换行
+//    printf("start");
+
+    /* Initialize a time variable */
+    Ifx_TickTime ticksFor100ms = IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 100);
+//    waitTime(ticksFor100ms);    /* Wait 100 ms */
 
     while(1)
     {
-        transmitCanMessage();
-        nopDelay(3000000);
+        //run_schedule();
 
+        //measure_PWM();
+        //readEVADC();
+
+        //transmitCanMessage();
+
+        icm20602_get_acc();
+        icm20602_get_gyro();
+        printf("acc_x = %f , acc_y = %f , acc_z = %f , gyro_x = %f , gyro_y = %f , gyro_z = %f\r\n",
+                acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z);
+
+        waitTime(ticksFor100ms);
     }
 }
 
+//-------------------------------------------------------------------------     // printf 重定向 此部分不允许用户更改
+//-------------------------------------------------------------------------------------------------------------------
+//  @brief      重定向printf 到串口
+//  @param      ch      需要打印的字节
+//  @param      stream  数据流
+//  @note       此函数由编译器自带库里的printf所调用
+//-------------------------------------------------------------------------------------------------------------------
+int fputc(int ch, FILE *stream)
+{
+    uart_write_byte(UART_0, (char)ch);
+    return(ch);
+}
