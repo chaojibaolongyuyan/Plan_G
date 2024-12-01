@@ -62,13 +62,13 @@ void SpiIf_initChannelConfig(SpiIf_ChConfig *config, SpiIf *driver)
     config->mode.autoCS          = 1;
     config->mode.loopback        = 0;
     config->mode.clockPolarity   = SpiIf_ClockPolarity_idleLow;
-    config->mode.shiftClock      = SpiIf_ShiftClock_shiftTransmitDataOnLeadingEdge;
+    config->mode.shiftClock      = SpiIf_ShiftClock_shiftTransmitDataOnTrailingEdge;  //SpiIf_ShiftClock_shiftTransmitDataOnLeadingEdge
     config->mode.dataHeading     = SpiIf_DataHeading_msbFirst;
     config->mode.dataWidth       = 8;
     config->mode.csActiveLevel   = Ifx_ActiveState_low;
-    config->mode.csLeadDelay     = SpiIf_SlsoTiming_0;
-    config->mode.csTrailDelay    = SpiIf_SlsoTiming_0;
-    config->mode.csInactiveDelay = SpiIf_SlsoTiming_0;
+    config->mode.csLeadDelay     = SpiIf_SlsoTiming_1;
+    config->mode.csTrailDelay    = SpiIf_SlsoTiming_1;
+    config->mode.csInactiveDelay = SpiIf_SlsoTiming_1;
     config->mode.parityCheck     = 0;
     config->mode.parityMode      = Ifx_ParityMode_even;
     config->errorChecks.baudrate = 0;

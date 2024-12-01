@@ -45,6 +45,11 @@
 #include "IfxCpu.h"
 #include "IfxScuWdt.h"
 #include "MCMCAN.h"
+#include "FreeRTOS.h"
+#include "task.h"
+
+
+//#define configMINIMAL_STACK_SIZE                   ( ( unsigned short ) 256 )
 
 void nopDelay(uint32 cycles) {
     cycles*=150000;
@@ -54,6 +59,8 @@ void nopDelay(uint32 cycles) {
 }
 
 IFX_ALIGN(4) IfxCpu_syncEvent g_cpuSyncEvent = 0;
+
+
 
 void core0_main(void)
 {
@@ -71,16 +78,24 @@ void core0_main(void)
     
     initLeds();
     /* Application code: initialization of MCMCAN module, LEDs and the transmission of the CAN message */
-    initMcmcan();
-    initMcmcan1();
-    initMcmcan2();
-    initLeds();
+//    initMcmcan();
+//    initMcmcan1();
+//    initMcmcan2();
+//    initLeds();
     //transmitCanMessage();
+    //IfxPort_setPinState(g_led1.port, g_led1.pinIndex,  IfxPort_State_toggled);
+    xTaskCreate(LDE1, "APP LED1", configMINIMAL_STACK_SIZE, NULL, 5, NULL);
+
+    /* Create LED2 app task */
+    //xTaskCreate(LDE2, "APP LED2", configMINIMAL_STACK_SIZE, NULL, 11, NULL);
+
+    /* Start the scheduler */
+    vTaskStartScheduler();
 
     while(1)
     {
-        transmitCanMessage2();
-        nopDelay(5);
+        //transmitCanMessage2();
+//        nopDelay(5);
 
     }
 }

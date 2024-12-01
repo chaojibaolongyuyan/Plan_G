@@ -38,6 +38,8 @@
 #include "IfxCan.h"
 #include "IfxCpu_Irq.h"
 #include "IfxPort.h"                                        /* For GPIO Port Pin Control                            */
+#include "FreeRTOS.h"
+#include "task.h"
 
 /*********************************************************************************************************************/
 /*------------------------------------------------------Macros-------------------------------------------------------*/
@@ -58,6 +60,10 @@
 #define TX_DATA_HIGH_WORD           (uint32)0xBA5EBA11      /* Define CAN data higher word to be transmitted        */
 #define MAXIMUM_CAN_DATA_PAYLOAD    2                       /* Define maximum classical CAN payload in 4-byte words */
 
+
+extern IfxPort_Pin_Config          g_led1;                         /* Global LED1 configuration and control structure      */
+extern IfxPort_Pin_Config          g_led2;                         /* Global LED2 configuration and control structure      */
+extern IfxPort_Pin_Config          g_led3;                         /* Global LED3 configuration and control structure      */
 /*********************************************************************************************************************/
 /*--------------------------------------------------Data Structures--------------------------------------------------*/
 /*********************************************************************************************************************/
@@ -86,6 +92,8 @@ void transmitCanMessage1(void);
 void transmitCanMessage2(void);
 void initLeds(void);
 void intPortCan(void);
+void LDE1(void *pvParameters);
+void LDE2(void *pvParameters);
 
 
 #endif /* MCMCAN_H_ */

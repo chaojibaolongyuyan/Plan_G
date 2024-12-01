@@ -4,6 +4,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Bsp.c \
 ../Cpu0_Main.c \
 ../Cpu1_Main.c \
 ../Cpu2_Main.c \
@@ -15,6 +16,7 @@ LSL_SRCS += \
 ../Lcf_Tasking_Tricore_Tc.lsl 
 
 C_DEPS += \
+./Bsp.d \
 ./Cpu0_Main.d \
 ./Cpu1_Main.d \
 ./Cpu2_Main.d \
@@ -22,6 +24,7 @@ C_DEPS += \
 ./MCMCAN.d 
 
 OBJS += \
+./Bsp.o \
 ./Cpu0_Main.o \
 ./Cpu1_Main.o \
 ./Cpu2_Main.o \
@@ -41,7 +44,7 @@ OBJS += \
 clean: clean--2e-
 
 clean--2e-:
-	-$(RM) ./Cpu0_Main.d ./Cpu0_Main.o ./Cpu1_Main.d ./Cpu1_Main.o ./Cpu2_Main.d ./Cpu2_Main.o ./Cpu3_Main.d ./Cpu3_Main.o ./MCMCAN.d ./MCMCAN.o
+	-$(RM) ./Bsp.d ./Bsp.o ./Cpu0_Main.d ./Cpu0_Main.o ./Cpu1_Main.d ./Cpu1_Main.o ./Cpu2_Main.d ./Cpu2_Main.o ./Cpu3_Main.d ./Cpu3_Main.o ./MCMCAN.d ./MCMCAN.o
 
 .PHONY: clean--2e-
 

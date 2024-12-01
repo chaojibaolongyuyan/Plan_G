@@ -45,7 +45,19 @@ MCMCAN.o: ../MCMCAN.c ../MCMCAN.h \
  H:\Plan_G\Libraries\iLLD\TC38A\Tricore/_Impl/IfxSrc_cfg.h \
  H:\Plan_G\Libraries\iLLD\TC38A\Tricore\Can\Std/IfxCan.h \
  H:\Plan_G\Libraries\iLLD\TC38A\Tricore\Cpu\Irq/IfxCpu_Irq.h \
- H:\Plan_G\Libraries\iLLD\TC38A\Tricore\Port\Std/IfxPort.h
+ H:\Plan_G\Libraries\iLLD\TC38A\Tricore\Port\Std/IfxPort.h \
+ H:\Plan_G\FreeRTOS\Source\include/FreeRTOS.h \
+ H:\Plan_G\FreeRTOS/FreeRTOSConfig.h \
+ H:\Plan_G\FreeRTOS\Source\include/projdefs.h \
+ H:\Plan_G\FreeRTOS\Source\include/portable.h \
+ H:\Plan_G\FreeRTOS\Source\include/deprecated_definitions.h \
+ H:\Plan_G\FreeRTOS\Source\portable\GCC\TriCore_1782/portmacro.h \
+ H:\Plan_G\Libraries\iLLD\TC38A\Tricore/Cpu/Irq/IfxCpu_Irq.h \
+ H:\Plan_G\Libraries\Infra\Sfr\TC38A\_Reg/IfxInt_reg.h \
+ H:\Plan_G\Libraries\Infra\Sfr\TC38A\_Reg/IfxInt_regdef.h \
+ H:\Plan_G\FreeRTOS\Source\include/mpu_wrappers.h \
+ H:\Plan_G\FreeRTOS\Source\include/task.h \
+ H:\Plan_G\FreeRTOS\Source\include/list.h
 ../MCMCAN.h:
 H:\Plan_G\Libraries\iLLD\TC38A\Tricore\Cpu\Std/Ifx_Types.h:
 H:\Plan_G\Libraries\Infra\Platform/Tricore/Compilers/Compilers.h:
@@ -94,3 +106,15 @@ H:\Plan_G\Libraries\iLLD\TC38A\Tricore/_Impl/IfxSrc_cfg.h:
 H:\Plan_G\Libraries\iLLD\TC38A\Tricore\Can\Std/IfxCan.h:
 H:\Plan_G\Libraries\iLLD\TC38A\Tricore\Cpu\Irq/IfxCpu_Irq.h:
 H:\Plan_G\Libraries\iLLD\TC38A\Tricore\Port\Std/IfxPort.h:
+H:\Plan_G\FreeRTOS\Source\include/FreeRTOS.h:
+H:\Plan_G\FreeRTOS/FreeRTOSConfig.h:
+H:\Plan_G\FreeRTOS\Source\include/projdefs.h:
+H:\Plan_G\FreeRTOS\Source\include/portable.h:
+H:\Plan_G\FreeRTOS\Source\include/deprecated_definitions.h:
+H:\Plan_G\FreeRTOS\Source\portable\GCC\TriCore_1782/portmacro.h:
+H:\Plan_G\Libraries\iLLD\TC38A\Tricore/Cpu/Irq/IfxCpu_Irq.h:
+H:\Plan_G\Libraries\Infra\Sfr\TC38A\_Reg/IfxInt_reg.h:
+H:\Plan_G\Libraries\Infra\Sfr\TC38A\_Reg/IfxInt_regdef.h:
+H:\Plan_G\FreeRTOS\Source\include/mpu_wrappers.h:
+H:\Plan_G\FreeRTOS\Source\include/task.h:
+H:\Plan_G\FreeRTOS\Source\include/list.h:

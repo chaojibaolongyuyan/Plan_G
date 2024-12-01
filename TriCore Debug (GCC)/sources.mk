@@ -20,12 +20,16 @@ SECONDARY_SIZE :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+. \
 Configurations/Debug \
 Configurations \
-. \
+FreeRTOS/Source \
+FreeRTOS/Source/portable/GCC/TriCore_1782 \
+FreeRTOS/Source/portable/MemMang \
 Libraries/GIAST_DRIVER \
 Libraries/Infra/Platform/Tricore/Compilers \
 Libraries/Infra/Ssw/TC38A/Tricore \
+Libraries/Service/CpuGeneric/StdIf \
 Libraries/iLLD/TC38A/Tricore/Can/Can \
 Libraries/iLLD/TC38A/Tricore/Can/Std \
 Libraries/iLLD/TC38A/Tricore/Cpu/Irq \
@@ -37,6 +41,8 @@ Libraries/iLLD/TC38A/Tricore/Pms/Std \
 Libraries/iLLD/TC38A/Tricore/Port/Std \
 Libraries/iLLD/TC38A/Tricore/Scu/Std \
 Libraries/iLLD/TC38A/Tricore/Src/Std \
+Libraries/iLLD/TC38A/Tricore/Stm/Std \
+Libraries/iLLD/TC38A/Tricore/Stm/Timer \
 Libraries/iLLD/TC38A/Tricore/_Impl \
 Libraries/iLLD/TC38A/Tricore/_PinMap \
 

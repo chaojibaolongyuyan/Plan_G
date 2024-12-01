@@ -10,6 +10,8 @@ RM := rm -rf
 -include sources.mk
 -include Libraries/iLLD/TC38A/Tricore/_PinMap/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/_Impl/subdir.mk
+-include Libraries/iLLD/TC38A/Tricore/Stm/Timer/subdir.mk
+-include Libraries/iLLD/TC38A/Tricore/Stm/Std/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/Src/Std/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/Scu/Std/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/Port/Std/subdir.mk
@@ -21,9 +23,13 @@ RM := rm -rf
 -include Libraries/iLLD/TC38A/Tricore/Cpu/Irq/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/Can/Std/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/Can/Can/subdir.mk
+-include Libraries/Service/CpuGeneric/StdIf/subdir.mk
 -include Libraries/Infra/Ssw/TC38A/Tricore/subdir.mk
 -include Libraries/Infra/Platform/Tricore/Compilers/subdir.mk
 -include Libraries/GIAST_DRIVER/subdir.mk
+-include FreeRTOS/Source/portable/MemMang/subdir.mk
+-include FreeRTOS/Source/portable/GCC/TriCore_1782/subdir.mk
+-include FreeRTOS/Source/subdir.mk
 -include Configurations/Debug/subdir.mk
 -include Configurations/subdir.mk
 -include subdir.mk

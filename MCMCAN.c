@@ -39,6 +39,7 @@ McmcanType                  g_mcmcan2;                      /* Global MCMCAN2 co
 IfxPort_Pin_Config          g_led1;                         /* Global LED1 configuration and control structure      */
 IfxPort_Pin_Config          g_led2;                         /* Global LED2 configuration and control structure      */
 IfxPort_Pin_Config          g_led3;                         /* Global LED3 configuration and control structure      */
+int cnt=0;
 IFX_CONST IfxCan_Can_Pins Can0PortInf0 = {
         .padDriver = IfxPort_PadDriver_cmosAutomotiveSpeed1,
         .rxPin = &IfxCan_RXD00B_P20_7_IN,
@@ -87,7 +88,32 @@ IFX_INTERRUPT(canIsrRxHandler2, 0, ISR_PRIORITY_CAN2_FIFO0_RX);
 
 /* Interrupt Service Routine (ISR) called once the TX interrupt has been generated.
  * Turns on the LED1 to indicate successful CAN message transmission.
+ *
+ *
+ *
  */
+
+void LDE1(void *pvParameters)
+{
+    for(;;)
+    {
+        IfxPort_setPinState(g_led1.port, g_led1.pinIndex,  IfxPort_State_toggled);
+        //printf("finish");
+        ++cnt;
+        vTaskDelay(4294967295);
+    }
+}
+
+void LDE2(void *pvParameters)
+{
+    for(;;)
+    {
+        IfxPort_setPinState(g_led2.port, g_led2.pinIndex,  IfxPort_State_toggled);
+        vTaskDelay(1000000000);
+    }
+}
+
+
 void canIsrTxHandler(void)
 {
     /* Clear the "Transmission Completed" interrupt flag */

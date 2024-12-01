@@ -21,12 +21,28 @@
         </__.0>
         <__.1>
          <BookmarkList></BookmarkList>
-         <CaretPos>3669</CaretPos>
+         <CaretPos>3800</CaretPos>
          <Encoding>6</Encoding>
          <FileName>H:\Plan_G\Cpu0_Main.c</FileName>
          <FileType>1</FileType>
-         <ScrollPos>36</ScrollPos>
+         <ScrollPos>42</ScrollPos>
         </__.1>
+        <__.2>
+         <BookmarkList></BookmarkList>
+         <CaretPos>11747</CaretPos>
+         <Encoding>6</Encoding>
+         <FileName>H:\Plan_G\Libraries\iLLD\TC38A\Tricore\Cpu\Trap\IfxCpu_Trap.c</FileName>
+         <FileType>1</FileType>
+         <ScrollPos>270</ScrollPos>
+        </__.2>
+        <__.3>
+         <BookmarkList></BookmarkList>
+         <CaretPos>128950</CaretPos>
+         <Encoding>6</Encoding>
+         <FileName>H:\Plan_G\FreeRTOS\Source\tasks.c</FileName>
+         <FileType>1</FileType>
+         <ScrollPos>3872</ScrollPos>
+        </__.3>
        </EditorPersist>
       </EditorPersist>
      </REG_ROOT>
@@ -77,14 +93,49 @@
      <ViewData>
       <AllViewBaseData>
        <__.0>
-        <ViewId>0</ViewId>
-        <ViewType>Document</ViewType>
+        <ViewId>4</ViewId>
+        <ViewType>Disassembly</ViewType>
        </__.0>
        <__.1>
-        <ViewId>1</ViewId>
+        <ViewId>0</ViewId>
         <ViewType>Document</ViewType>
        </__.1>
+       <__.2>
+        <ViewId>1</ViewId>
+        <ViewType>Document</ViewType>
+       </__.2>
+       <__.3>
+        <ViewId>2</ViewId>
+        <ViewType>Document</ViewType>
+       </__.3>
+       <__.4>
+        <ViewId>3</ViewId>
+        <ViewType>Document</ViewType>
+       </__.4>
       </AllViewBaseData>
+      <DissasemblyViews>
+       <__.0>
+        <ViewId>4</ViewId>
+        <ViewType>Disassembly</ViewType>
+        <ColumnData>
+         <__.0>
+          <Pos>0</Pos>
+          <Visible>true</Visible>
+          <Width>100</Width>
+         </__.0>
+         <__.1>
+          <Pos>0</Pos>
+          <Visible>true</Visible>
+          <Width>80</Width>
+         </__.1>
+         <__.2>
+          <Pos>0</Pos>
+          <Visible>true</Visible>
+          <Width>400</Width>
+         </__.2>
+        </ColumnData>
+       </__.0>
+      </DissasemblyViews>
       <DocumentViews>
        <__.0>
         <RelativePath>..\..\..\Libraries\Infra\Ssw\TC38A\Tricore\Ifx_Ssw_Tc0.c</RelativePath>
@@ -96,13 +147,23 @@
         <ViewId>1</ViewId>
         <ViewType>Document</ViewType>
        </__.1>
+       <__.2>
+        <RelativePath>..\..\..\FreeRTOS\Source\tasks.c</RelativePath>
+        <ViewId>2</ViewId>
+        <ViewType>Document</ViewType>
+       </__.2>
+       <__.3>
+        <RelativePath>..\..\..\Libraries\iLLD\TC38A\Tricore\Cpu\Trap\IfxCpu_Trap.c</RelativePath>
+        <ViewId>3</ViewId>
+        <ViewType>Document</ViewType>
+       </__.3>
       </DocumentViews>
      </ViewData>
      <ViewLayout>
-      <PrimaryDocumentPaneId>3</PrimaryDocumentPaneId>
+      <PrimaryDocumentPaneId>4</PrimaryDocumentPaneId>
       <Frames>
        <__.0>
-        <FocusedViewId>1</FocusedViewId>
+        <FocusedViewId>3</FocusedViewId>
         <FrameState>3</FrameState>
         <IsPrimary>true</IsPrimary>
         <Bounds>
@@ -117,51 +178,93 @@
          <IsDocumentPane>false</IsDocumentPane>
          <IsPinned>false</IsPinned>
          <IsTabbed>false</IsTabbed>
-         <Orientation>Vertical</Orientation>
+         <Orientation>Horizontal</Orientation>
          <TopTabViewId>-1</TopTabViewId>
          <ViewId>-1</ViewId>
          <Children>
           <__.0>
            <DockType>None</DockType>
-           <Extent>0.7</Extent>
+           <Extent>0.75</Extent>
            <IsDocumentPane>false</IsDocumentPane>
            <IsPinned>false</IsPinned>
            <IsTabbed>false</IsTabbed>
            <Orientation>Vertical</Orientation>
            <TopTabViewId>-1</TopTabViewId>
            <ViewId>-1</ViewId>
-          </__.0>
-          <__.1>
-           <DockType>None</DockType>
-           <Extent>0.3</Extent>
-           <IsDocumentPane>true</IsDocumentPane>
-           <IsPinned>false</IsPinned>
-           <IsTabbed>true</IsTabbed>
-           <Orientation>None</Orientation>
-           <TopTabViewId>1</TopTabViewId>
-           <ViewId>-1</ViewId>
            <Children>
             <__.0>
-             <DockType>Document</DockType>
-             <Extent>1</Extent>
+             <DockType>None</DockType>
+             <Extent>0.7</Extent>
              <IsDocumentPane>false</IsDocumentPane>
              <IsPinned>false</IsPinned>
              <IsTabbed>false</IsTabbed>
-             <Orientation>None</Orientation>
+             <Orientation>Vertical</Orientation>
              <TopTabViewId>-1</TopTabViewId>
-             <ViewId>0</ViewId>
+             <ViewId>-1</ViewId>
             </__.0>
             <__.1>
-             <DockType>Document</DockType>
-             <Extent>1</Extent>
-             <IsDocumentPane>false</IsDocumentPane>
+             <DockType>None</DockType>
+             <Extent>0.3</Extent>
+             <IsDocumentPane>true</IsDocumentPane>
              <IsPinned>false</IsPinned>
-             <IsTabbed>false</IsTabbed>
+             <IsTabbed>true</IsTabbed>
              <Orientation>None</Orientation>
-             <TopTabViewId>-1</TopTabViewId>
-             <ViewId>1</ViewId>
+             <TopTabViewId>3</TopTabViewId>
+             <ViewId>-1</ViewId>
+             <Children>
+              <__.0>
+               <DockType>Document</DockType>
+               <Extent>1</Extent>
+               <IsDocumentPane>false</IsDocumentPane>
+               <IsPinned>false</IsPinned>
+               <IsTabbed>false</IsTabbed>
+               <Orientation>None</Orientation>
+               <TopTabViewId>-1</TopTabViewId>
+               <ViewId>0</ViewId>
+              </__.0>
+              <__.1>
+               <DockType>Document</DockType>
+               <Extent>1</Extent>
+               <IsDocumentPane>false</IsDocumentPane>
+               <IsPinned>false</IsPinned>
+               <IsTabbed>false</IsTabbed>
+               <Orientation>None</Orientation>
+               <TopTabViewId>-1</TopTabViewId>
+               <ViewId>1</ViewId>
+              </__.1>
+              <__.2>
+               <DockType>Document</DockType>
+               <Extent>1</Extent>
+               <IsDocumentPane>false</IsDocumentPane>
+               <IsPinned>false</IsPinned>
+               <IsTabbed>false</IsTabbed>
+               <Orientation>None</Orientation>
+               <TopTabViewId>-1</TopTabViewId>
+               <ViewId>2</ViewId>
+              </__.2>
+              <__.3>
+               <DockType>Document</DockType>
+               <Extent>1</Extent>
+               <IsDocumentPane>false</IsDocumentPane>
+               <IsPinned>false</IsPinned>
+               <IsTabbed>false</IsTabbed>
+               <Orientation>None</Orientation>
+               <TopTabViewId>-1</TopTabViewId>
+               <ViewId>3</ViewId>
+              </__.3>
+             </Children>
             </__.1>
            </Children>
+          </__.0>
+          <__.1>
+           <DockType>View</DockType>
+           <Extent>0.25</Extent>
+           <IsDocumentPane>false</IsDocumentPane>
+           <IsPinned>false</IsPinned>
+           <IsTabbed>false</IsTabbed>
+           <Orientation>Vertical</Orientation>
+           <TopTabViewId>-1</TopTabViewId>
+           <ViewId>4</ViewId>
           </__.1>
          </Children>
         </Dock>
@@ -182,6 +285,10 @@
       </FindInFilesDialogData>
      </GlobalData>
      <History>
+      <ComboBox>
+       <ComboBoxes>
+       </ComboBoxes>
+      </ComboBox>
      </History>
      <Options>
       <CallstackWindow>

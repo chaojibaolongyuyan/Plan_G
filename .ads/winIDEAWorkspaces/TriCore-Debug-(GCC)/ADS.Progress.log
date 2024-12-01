@@ -11,6 +11,6 @@ EMULATION	Final debug frequency set
 EMULATION	SoC ID match OK
 SoC	Detected device: TC380 series, rev. AE
 EMULATION	STARTED
-PROGRAMMING 	28082 bytes
+PROGRAMMING 	29483 bytes
 PROGRAMMING	Infineon TC38x_PFLASH_10MB (6 sectors)
-SoC	Detected device: TC380 series, rev. AE
+EMULATION	END - Without cleanup
