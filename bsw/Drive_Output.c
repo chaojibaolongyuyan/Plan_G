@@ -118,7 +118,7 @@ void GTM_Tom_init(void)
     IfxGtm_Tom_Pwm_init(&g_tomDriver, &g_tomConfig);                /* Initialize the GTM TOM                       */
     IfxGtm_Tom_Pwm_start(&g_tomDriver, TRUE);                       /* Start the PWM */
 
-    //PWM_Control(1, 500);
+    PWM_Control(0, 400);
 }
 
 void PWM_Control(uint8 PortNum, uint16 PwmDuty)

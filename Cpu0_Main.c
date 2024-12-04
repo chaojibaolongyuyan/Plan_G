@@ -35,11 +35,15 @@
 //#include "Communicate.h"
 //#include "Schedule.h"
 
-#include "zf_device_icm20602.h"
-#include "zf_driver_uart.h"
-#include "stdio.h"
+//#include "zf_device_icm20602.h"
+//#include "zf_driver_uart.h"
+//#include "stdio.h"
+//
+//#include "Bsp.h"
 
-#include "Bsp.h"
+#include "App_Config.h"
+#include "FreeRTOS.h"
+#include "task.h"
 
 IFX_ALIGN(4) IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
@@ -69,10 +73,10 @@ void core0_main(void)
     //initSTM();
     //initLED();
 
-    icm20602_init();
+    //icm20602_init();
 
 //    fifo_init(&uart_data_fifo, FIFO_DATA_8BIT, uart_get_data, 64);              // 初始化 fifo 挂载缓冲区
-    uart_init(UART_0, 115200, UART0_TX_P14_0, UART0_RX_P14_1);             // 初始化串口
+    //uart_init(UART_0, 115200, UART0_TX_P14_0, UART0_RX_P14_1);             // 初始化串口
 //    uart_rx_interrupt(UART_INDEX, 1);                                           // 开启 UART_INDEX 的接收中断
 //    uart_write_string(UART_0, "UART Text.");                                // 输出测试信息
 //    uart_write_byte(UART_0, '\r');                                          // 输出回车
@@ -80,8 +84,17 @@ void core0_main(void)
 //    printf("start");
 
     /* Initialize a time variable */
-    Ifx_TickTime ticksFor100ms = IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 100);
+//    Ifx_TickTime ticksFor100ms = IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 100);
 //    waitTime(ticksFor100ms);    /* Wait 100 ms */
+
+    /* Create LED1 app task */
+    xTaskCreate(task_app_led1, "APP LED1", configMINIMAL_STACK_SIZE, NULL, 0, NULL);
+
+    /* Create LED2 app task */
+    xTaskCreate(task_app_led2, "APP LED2", configMINIMAL_STACK_SIZE, NULL, 0, NULL);
+
+    /* Start the scheduler */
+    vTaskStartScheduler();
 
     while(1)
     {
@@ -92,14 +105,27 @@ void core0_main(void)
 
         //transmitCanMessage();
 
-        icm20602_get_acc();
-        icm20602_get_gyro();
-        printf("acc_x = %f , acc_y = %f , acc_z = %f , gyro_x = %f , gyro_y = %f , gyro_z = %f\r\n",
-                acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z);
-
-        waitTime(ticksFor100ms);
+//        icm20602_get_acc();
+//        icm20602_get_gyro();
+//        printf("acc_x = %f , acc_y = %f , acc_z = %f , gyro_x = %f , gyro_y = %f , gyro_z = %f\r\n",
+//                acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z);
+//
+//        waitTime(ticksFor100ms);
     }
 }
+
+/* Required FreeRTOS callback, called in case of a stack overflow.
+ * For the sake of simplicity, this function will loop indefinitely
+ * and the root cause can be confirmed by using a debugger
+ */
+void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName)
+{
+    while (1)
+    {
+        __nop();
+    }
+}
+
 
 //-------------------------------------------------------------------------     // printf 重定向 此部分不允许用户更改
 //-------------------------------------------------------------------------------------------------------------------
@@ -108,8 +134,8 @@ void core0_main(void)
 //  @param      stream  数据流
 //  @note       此函数由编译器自带库里的printf所调用
 //-------------------------------------------------------------------------------------------------------------------
-int fputc(int ch, FILE *stream)
-{
-    uart_write_byte(UART_0, (char)ch);
-    return(ch);
-}
+//int fputc(int ch, FILE *stream)
+//{
+//    uart_write_byte(UART_0, (char)ch);
+//    return(ch);
+//}
