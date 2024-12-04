@@ -44,6 +44,8 @@
 #include "App_Config.h"
 #include "FreeRTOS.h"
 #include "task.h"
+#include "CANTASK.h"
+
 
 IFX_ALIGN(4) IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
@@ -60,7 +62,11 @@ void core0_main(void)
     /* Wait for CPU sync event */
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
-    
+    initMcmcan();
+    initMcmcan1();
+    initMcmcan2();
+
+
     //gpio_init();
     //GTM_Tom_init();
     //init_TIM();
@@ -88,10 +94,10 @@ void core0_main(void)
 //    waitTime(ticksFor100ms);    /* Wait 100 ms */
 
     /* Create LED1 app task */
-    xTaskCreate(task_app_led1, "APP LED1", configMINIMAL_STACK_SIZE, NULL, 0, NULL);
+    xTaskCreate(CAN0_Trans_5ms, "CAN0_MESSAGE", configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 
     /* Create LED2 app task */
-    xTaskCreate(task_app_led2, "APP LED2", configMINIMAL_STACK_SIZE, NULL, 0, NULL);
+    xTaskCreate(CAN1_Trans_10ms, "CAN1_MESSAGE", configMINIMAL_STACK_SIZE, NULL, 0, NULL);
 
     /* Start the scheduler */
     vTaskStartScheduler();

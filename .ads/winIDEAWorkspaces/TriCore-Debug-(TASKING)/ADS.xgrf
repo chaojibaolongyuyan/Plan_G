@@ -13,20 +13,36 @@
        <EditorPersist>
         <__.0>
          <BookmarkList></BookmarkList>
+         <CaretPos>32931</CaretPos>
+         <Encoding>6</Encoding>
+         <FileName>H:\Plan_G\Libraries\iLLD\TC38A\Tricore\Cpu\Std\IfxCpu.h</FileName>
+         <FileType>1</FileType>
+         <ScrollPos>714</ScrollPos>
+        </__.0>
+        <__.1>
+         <BookmarkList></BookmarkList>
          <CaretPos>32169</CaretPos>
          <Encoding>6</Encoding>
          <FileName>D:\Softinstall\Infineon\AURIX-v1.10.6-workspace\demo5\Libraries\iLLD\TC38A\Tricore\Cpu\Std\IfxCpu.h</FileName>
          <FileType>1</FileType>
          <ScrollPos>728</ScrollPos>
-        </__.0>
-        <__.1>
+        </__.1>
+        <__.2>
          <BookmarkList></BookmarkList>
          <CaretPos>12637</CaretPos>
          <Encoding>6</Encoding>
          <FileName>D:\Softinstall\Infineon\AURIX-v1.10.6-workspace\demo5\Libraries\Infra\Ssw\TC38A\Tricore\Ifx_Ssw_Tc0.c</FileName>
          <FileType>1</FileType>
          <ScrollPos>317</ScrollPos>
-        </__.1>
+        </__.2>
+        <__.3>
+         <BookmarkList></BookmarkList>
+         <CaretPos>12988</CaretPos>
+         <Encoding>6</Encoding>
+         <FileName>H:\Plan_G\Libraries\Infra\Ssw\TC38A\Tricore\Ifx_Ssw_Tc0.c</FileName>
+         <FileType>1</FileType>
+         <ScrollPos>302</ScrollPos>
+        </__.3>
        </EditorPersist>
       </EditorPersist>
      </REG_ROOT>
@@ -416,6 +432,10 @@
       </FindInFilesDialogData>
      </GlobalData>
      <History>
+      <ComboBox>
+       <ComboBoxes>
+       </ComboBoxes>
+      </ComboBox>
      </History>
      <Options>
       <CallstackWindow>
