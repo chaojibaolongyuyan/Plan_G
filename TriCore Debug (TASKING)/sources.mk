@@ -34,6 +34,8 @@ Libraries/Service/CpuGeneric/StdIf \
 Libraries/Service/CpuGeneric/SysSe/Bsp \
 Libraries/iLLD/TC38A/Tricore/Asclin/Asc \
 Libraries/iLLD/TC38A/Tricore/Asclin/Std \
+Libraries/iLLD/TC38A/Tricore/Can/Can \
+Libraries/iLLD/TC38A/Tricore/Can/Std \
 Libraries/iLLD/TC38A/Tricore/Cpu/Irq \
 Libraries/iLLD/TC38A/Tricore/Cpu/Std \
 Libraries/iLLD/TC38A/Tricore/Cpu/Trap \
