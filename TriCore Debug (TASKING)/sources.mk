@@ -51,6 +51,7 @@ Libraries/iLLD/TC38A/Tricore/Pms/Std \
 Libraries/iLLD/TC38A/Tricore/Port/Io \
 Libraries/iLLD/TC38A/Tricore/Port/Std \
 Libraries/iLLD/TC38A/Tricore/Qspi/SpiMaster \
+Libraries/iLLD/TC38A/Tricore/Qspi/SpiSlave \
 Libraries/iLLD/TC38A/Tricore/Qspi/Std \
 Libraries/iLLD/TC38A/Tricore/Scu/Std \
 Libraries/iLLD/TC38A/Tricore/Src/Std \
