@@ -19,6 +19,15 @@ void CAN0_Trans_5ms()
     }
 }
 
+void CAN0_Trans_10ms()
+{
+    for(;;)
+    {
+        CAN0Data_Send(2);
+        vTaskDelay(pdMS_TO_TICKS(10));
+    }
+}
+
 void CAN1_Trans_10ms()
 {
     for(;;)

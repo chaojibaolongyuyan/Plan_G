@@ -47,12 +47,12 @@
 #define PIN6                        6                       /* LED2 used in RX ISR is connected to this pin         */
 #define INVALID_RX_DATA_VALUE       0xA5                    /* Used to invalidate RX message data content           */
 #define INVALID_ID_VALUE            (uint32)0xFFFFFFFF      /* Used to invalidate RX message ID value               */
-#define ISR_PRIORITY_CAN_TX         2                       /* Define the CAN TX interrupt priority                 */
-#define ISR_PRIORITY_CAN_FIFO0_RX   3                       /* Define the CAN RX interrupt priority                 */
-#define ISR_PRIORITY_CAN1_TX        4                       /* Define the CAN TX interrupt priority                 */
-#define ISR_PRIORITY_CAN1_FIFO0_RX  5                       /* Define the CAN RX interrupt priority                 */
-#define ISR_PRIORITY_CAN2_TX        6                       /* Define the CAN TX interrupt priority                 */
-#define ISR_PRIORITY_CAN2_FIFO0_RX  7                       /* Define the CAN RX interrupt priority                 */
+#define ISR_PRIORITY_CAN_TX         20                       /* Define the CAN TX interrupt priority                 */
+#define ISR_PRIORITY_CAN_FIFO0_RX   21                       /* Define the CAN RX interrupt priority                 */
+#define ISR_PRIORITY_CAN1_TX        22                       /* Define the CAN TX interrupt priority                 */
+#define ISR_PRIORITY_CAN1_FIFO0_RX  23                       /* Define the CAN RX interrupt priority                 */
+#define ISR_PRIORITY_CAN2_TX        24                       /* Define the CAN TX interrupt priority                 */
+#define ISR_PRIORITY_CAN2_FIFO0_RX  25                       /* Define the CAN RX interrupt priority                 */
 
 #define TX_DATA_LOW_WORD            (uint32)0xC0CAC01A      /* Define CAN data lower word to be transmitted         */
 #define TX_DATA_HIGH_WORD           (uint32)0xBA5EBA11      /* Define CAN data higher word to be transmitted        */

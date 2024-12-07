@@ -19,6 +19,7 @@ RM := rm -rf
 -include Libraries/iLLD/TC38A/Tricore/Src/Std/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/Scu/Std/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/Qspi/Std/subdir.mk
+-include Libraries/iLLD/TC38A/Tricore/Qspi/SpiSlave/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/Qspi/SpiMaster/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/Port/Std/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/Port/Io/subdir.mk

@@ -62,6 +62,9 @@ void core0_main(void)
     /* Wait for CPU sync event */
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
+
+
+
     initMcmcan();
     initMcmcan1();
     initMcmcan2();
@@ -77,7 +80,7 @@ void core0_main(void)
     //transmitCanMessage();
     
     //initSTM();
-    //initLED();
+    initLeds();
 
     //icm20602_init();
 
@@ -104,7 +107,12 @@ void core0_main(void)
 
     while(1)
     {
+
         //run_schedule();
+//        for(int i=0;i<65534;i++)
+//        {
+//            transmitCanMessage1();
+//        }
 
         //measure_PWM();
         //readEVADC();
