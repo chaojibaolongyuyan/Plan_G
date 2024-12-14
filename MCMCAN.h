@@ -78,6 +78,9 @@ typedef struct
 extern McmcanType                  g_mcmcan;                       /* Global MCMCAN configuration and control structure    */
 extern McmcanType                  g_mcmcan1;                      /* Global MCMCAN1 configuration and control structure   */
 extern McmcanType                  g_mcmcan2;                      /* Global MCMCAN2 configuration and control structure   */
+extern IfxPort_Pin_Config          g_led1;                         /* Global LED1 configuration and control structure      */
+extern IfxPort_Pin_Config          g_led2;                         /* Global LED2 configuration and control structure      */
+extern IfxPort_Pin_Config          g_led3;                         /* Global LED3 configuration and control structure      */
 /*********************************************************************************************************************/
 /*-----------------------------------------------Function Prototypes-------------------------------------------------*/
 /*********************************************************************************************************************/
