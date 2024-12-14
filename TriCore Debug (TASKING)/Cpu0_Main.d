@@ -142,30 +142,6 @@ Cpu0_Main.o :	"H:\\Plan_G\\OS\\FreeRTOS\\include\task.h"
 "H:\\Plan_G\\OS\\FreeRTOS\\include\task.h" :
 Cpu0_Main.o :	"H:\\Plan_G\\OS\\FreeRTOS\\include\list.h"
 "H:\\Plan_G\\OS\\FreeRTOS\\include\list.h" :
-Cpu0_Main.o :	..\CANTASK.h
-..\CANTASK.h :
-Cpu0_Main.o :	..\MCMCAN.h
-..\MCMCAN.h :
-Cpu0_Main.o :	"I:\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\string.h"
-"I:\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\string.h" :
-Cpu0_Main.o :	"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\\Can\\Can\IfxCan_Can.h"
-"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\\Can\\Can\IfxCan_Can.h" :
-Cpu0_Main.o :	"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\Can\Std\IfxCan.h"
-"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\Can\Std\IfxCan.h" :
-Cpu0_Main.o :	"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\_Impl\IfxCan_cfg.h"
-"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\_Impl\IfxCan_cfg.h" :
-Cpu0_Main.o :	"H:\\Plan_G\\Libraries\\Infra\\Sfr\\TC38A\\_Reg\IfxCan_reg.h"
-"H:\\Plan_G\\Libraries\\Infra\\Sfr\\TC38A\\_Reg\IfxCan_reg.h" :
-Cpu0_Main.o :	"H:\\Plan_G\\Libraries\\Infra\\Sfr\\TC38A\\_Reg\IfxCan_regdef.h"
-"H:\\Plan_G\\Libraries\\Infra\\Sfr\\TC38A\\_Reg\IfxCan_regdef.h" :
-Cpu0_Main.o :	"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\_PinMap\IfxCan_PinMap.h"
-"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\_PinMap\IfxCan_PinMap.h" :
-Cpu0_Main.o :	"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\\Can\\Std\IfxCan.h"
-"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\\Can\\Std\IfxCan.h" :
-Cpu0_Main.o :	"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\\Cpu\\Irq\IfxCpu_Irq.h"
-"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\\Cpu\\Irq\IfxCpu_Irq.h" :
-Cpu0_Main.o :	"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\\Port\\Std\IfxPort.h"
-"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\\Port\\Std\IfxPort.h" :
 Cpu0_Main.o :	..\Qspi_L9658.h
 ..\Qspi_L9658.h :
 Cpu0_Main.o :	"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\\Qspi\\SpiMaster\IfxQspi_SpiMaster.h"

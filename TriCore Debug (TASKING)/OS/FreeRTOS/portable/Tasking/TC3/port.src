@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
-	.compiler_invocation	"ctc -f cc33692a --dep-file=OS/FreeRTOS/portable/Tasking/TC3/port.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc38x -D__CPU_TC38X__ --core=tc1.6.2 --fp-model=+float -D__CPU__=tc38x -IH:\\\\Plan_G -IH:\\\\Plan_G\\\\Configurations -IH:\\\\Plan_G\\\\Libraries -IH:\\\\Plan_G\\\\Libraries\\\\Infra -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Platform -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Sfr -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Sfr\\\\TC38A -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Sfr\\\\TC38A\\\\_Reg -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Ssw -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Ssw\\\\TC38A -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Ssw\\\\TC38A\\\\Tricore -IH:\\\\Plan_G\\\\Libraries\\\\Service -IH:\\\\Plan_G\\\\Libraries\\\\Service\\\\CpuGeneric -IH:\\\\Plan_G\\\\Libraries\\\\Service\\\\CpuGeneric\\\\If -IH:\\\\Plan_G\\\\Libraries\\\\Service\\\\CpuGeneric\\\\StdIf -IH:\\\\Plan_G\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IH:\\\\Plan_G\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IH:\\\\Plan_G\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IH:\\\\Plan_G\\\\Libraries\\\\iLLD -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Asclin -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Asclin\\\\Asc -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Asclin\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Can -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Can\\\\Can -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Can\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Cpu -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Cpu\\\\Irq -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Cpu\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Cpu\\\\Trap -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Dma -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Dma\\\\Dma -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Dma\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Evadc -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Evadc\\\\Adc -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Evadc\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Gtm -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Gtm\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Gtm\\\\Tim -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Gtm\\\\Tim\\\\In -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Gtm\\\\Tom -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Gtm\\\\Tom\\\\Pwm -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Mtu -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Mtu\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Pms -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Pms\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Port -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Port\\\\Io -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Port\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Qspi -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Qspi\\\\SpiMaster -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Qspi\\\\SpiSlave -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Qspi\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Scu -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Scu\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Src -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Src\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Stm -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Stm\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\_Impl -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\_Lib -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\_Lib\\\\DataHandling -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\_PinMap -IH:\\\\Plan_G\\\\OS -IH:\\\\Plan_G\\\\OS\\\\FreeRTOS -IH:\\\\Plan_G\\\\OS\\\\FreeRTOS\\\\include -IH:\\\\Plan_G\\\\OS\\\\FreeRTOS\\\\portable -IH:\\\\Plan_G\\\\OS\\\\FreeRTOS\\\\portable\\\\Tasking -IH:\\\\Plan_G\\\\OS\\\\FreeRTOS\\\\portable\\\\Tasking\\\\TC3 -IH:\\\\Plan_G\\\\bsw -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o OS/FreeRTOS/portable/Tasking/TC3/port.src ../OS/FreeRTOS/portable/Tasking/TC3/port.c"
+	.compiler_invocation	"ctc -f cc3308a --dep-file=OS/FreeRTOS/portable/Tasking/TC3/port.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc38x -D__CPU_TC38X__ --core=tc1.6.2 --fp-model=+float -D__CPU__=tc38x -IH:\\\\Plan_G -IH:\\\\Plan_G\\\\Configurations -IH:\\\\Plan_G\\\\Libraries -IH:\\\\Plan_G\\\\Libraries\\\\Infra -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Platform -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Sfr -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Sfr\\\\TC38A -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Sfr\\\\TC38A\\\\_Reg -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Ssw -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Ssw\\\\TC38A -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Ssw\\\\TC38A\\\\Tricore -IH:\\\\Plan_G\\\\Libraries\\\\Service -IH:\\\\Plan_G\\\\Libraries\\\\Service\\\\CpuGeneric -IH:\\\\Plan_G\\\\Libraries\\\\Service\\\\CpuGeneric\\\\If -IH:\\\\Plan_G\\\\Libraries\\\\Service\\\\CpuGeneric\\\\StdIf -IH:\\\\Plan_G\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IH:\\\\Plan_G\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IH:\\\\Plan_G\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IH:\\\\Plan_G\\\\Libraries\\\\iLLD -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Asclin -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Asclin\\\\Asc -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Asclin\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Can -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Can\\\\Can -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Can\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Cpu -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Cpu\\\\Irq -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Cpu\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Cpu\\\\Trap -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Dma -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Dma\\\\Dma -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Dma\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Evadc -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Evadc\\\\Adc -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Evadc\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Gtm -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Gtm\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Gtm\\\\Tim -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Gtm\\\\Tim\\\\In -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Gtm\\\\Tom -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Gtm\\\\Tom\\\\Pwm -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Mtu -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Mtu\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Pms -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Pms\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Port -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Port\\\\Io -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Port\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Qspi -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Qspi\\\\SpiMaster -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Qspi\\\\SpiSlave -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Qspi\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Scu -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Scu\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Src -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Src\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Stm -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Stm\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\_Impl -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\_Lib -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\_Lib\\\\DataHandling -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\_PinMap -IH:\\\\Plan_G\\\\OS -IH:\\\\Plan_G\\\\OS\\\\FreeRTOS -IH:\\\\Plan_G\\\\OS\\\\FreeRTOS\\\\include -IH:\\\\Plan_G\\\\OS\\\\FreeRTOS\\\\portable -IH:\\\\Plan_G\\\\OS\\\\FreeRTOS\\\\portable\\\\Tasking -IH:\\\\Plan_G\\\\OS\\\\FreeRTOS\\\\portable\\\\Tasking\\\\TC3 -IH:\\\\Plan_G\\\\bsw -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o OS/FreeRTOS/portable/Tasking/TC3/port.src ../OS/FreeRTOS/portable/Tasking/TC3/port.c"
 	.compiler_name		"ctc"
 	;source	'../OS/FreeRTOS/portable/Tasking/TC3/port.c'
 
@@ -3906,11 +3906,6 @@ uxCriticalNesting:	.type	object
 	.half	1
 	.byte	111
 	.word	0,0
-.L320:
-	.word	-1,.L82,.L402-.L82,.L321-.L82
-	.half	1
-	.byte	95
-	.word	0,0
 .L332:
 	.word	-1,.L82,.L413-.L82,.L414-.L82
 	.half	1
@@ -3919,11 +3914,32 @@ uxCriticalNesting:	.type	object
 	.half	1
 	.byte	82
 	.word	0,0
+.L320:
+	.word	-1,.L82,.L402-.L82,.L321-.L82
+	.half	1
+	.byte	95
+	.word	0,0
+.L317:
+	.word	-1,.L82,.L396-.L82,.L395-.L82
+	.half	1
+	.byte	81
+	.word	.L395-.L82,.L397-.L82
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
 .L330:
 	.word	-1,.L82,.L410-.L82,.L411-.L82
 	.half	1
 	.byte	82
 	.word	.L411-.L82,.L412-.L82
+	.half	1
+	.byte	81
+	.word	0,0
+.L319:
+	.word	-1,.L82,.L399-.L82,.L400-.L82
+	.half	1
+	.byte	82
+	.word	.L400-.L82,.L44-.L82
 	.half	1
 	.byte	81
 	.word	0,0
@@ -3934,22 +3950,6 @@ uxCriticalNesting:	.type	object
 	.word	.L404-.L82,.L405-.L82
 	.half	1
 	.byte	95
-	.word	0,0
-.L319:
-	.word	-1,.L82,.L399-.L82,.L400-.L82
-	.half	1
-	.byte	82
-	.word	.L400-.L82,.L44-.L82
-	.half	1
-	.byte	81
-	.word	0,0
-.L317:
-	.word	-1,.L82,.L396-.L82,.L395-.L82
-	.half	1
-	.byte	81
-	.word	.L395-.L82,.L397-.L82
-	.half	5
-	.byte	144,32,157,32,0
 	.word	0,0
 .L310:
 	.word	0,0
@@ -4011,13 +4011,10 @@ uxCriticalNesting:	.type	object
 	.half	1
 	.byte	111
 	.word	0,0
-.L275:
-	.word	-1,.L76,.L371-.L76,.L370-.L76
+.L278:
+	.word	-1,.L76,.L377-.L76,.L279-.L76
 	.half	1
-	.byte	81
-	.word	.L370-.L76,.L372-.L76
-	.half	5
-	.byte	144,32,157,32,0
+	.byte	95
 	.word	0,0
 .L288:
 	.word	-1,.L76,.L384-.L76,.L385-.L76
@@ -4026,14 +4023,6 @@ uxCriticalNesting:	.type	object
 	.word	.L385-.L76,.L386-.L76
 	.half	1
 	.byte	88
-	.word	0,0
-.L280:
-	.word	-1,.L76,.L378-.L76,.L379-.L76
-	.half	1
-	.byte	81
-	.word	.L379-.L76,.L380-.L76
-	.half	1
-	.byte	95
 	.word	0,0
 .L290:
 	.word	-1,.L76,.L388-.L76,.L389-.L76
@@ -4051,8 +4040,19 @@ uxCriticalNesting:	.type	object
 	.half	1
 	.byte	81
 	.word	0,0
-.L278:
-	.word	-1,.L76,.L377-.L76,.L279-.L76
+.L275:
+	.word	-1,.L76,.L371-.L76,.L370-.L76
+	.half	1
+	.byte	81
+	.word	.L370-.L76,.L372-.L76
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L280:
+	.word	-1,.L76,.L378-.L76,.L379-.L76
+	.half	1
+	.byte	81
+	.word	.L379-.L76,.L380-.L76
 	.half	1
 	.byte	95
 	.word	0,0
@@ -4143,14 +4143,6 @@ uxCriticalNesting:	.type	object
 	.half	1
 	.byte	111
 	.word	0,0
-.L254:
-	.word	-1,.L70,.L347-.L70,.L348-.L70
-	.half	1
-	.byte	83
-	.word	.L348-.L70,.L10-.L70
-	.half	1
-	.byte	82
-	.word	0,0
 .L252:
 	.word	-1,.L70,.L344-.L70,.L345-.L70
 	.half	1
@@ -4158,6 +4150,14 @@ uxCriticalNesting:	.type	object
 	.word	.L345-.L70,.L346-.L70
 	.half	1
 	.byte	81
+	.word	0,0
+.L254:
+	.word	-1,.L70,.L347-.L70,.L348-.L70
+	.half	1
+	.byte	83
+	.word	.L348-.L70,.L10-.L70
+	.half	1
+	.byte	82
 	.word	0,0
 .L241:
 	.word	0,0

@@ -108,3 +108,13 @@ Cpu3_Main.o :	"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\\Port\\Std\IfxPort.h"
 "H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\\Port\\Std\IfxPort.h" :
 Cpu3_Main.o :	..\CANTASK.h
 ..\CANTASK.h :
+Cpu3_Main.o :	"H:\\Plan_G\\bsw\Schedule.h"
+"H:\\Plan_G\\bsw\Schedule.h" :
+Cpu3_Main.o :	"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\\Stm\\Std\IfxStm.h"
+"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\\Stm\\Std\IfxStm.h" :
+Cpu3_Main.o :	"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\_Impl\IfxStm_cfg.h"
+"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\_Impl\IfxStm_cfg.h" :
+Cpu3_Main.o :	"H:\\Plan_G\\Libraries\\Infra\\Sfr\\TC38A\\_Reg\IfxCbs_reg.h"
+"H:\\Plan_G\\Libraries\\Infra\\Sfr\\TC38A\\_Reg\IfxCbs_reg.h" :
+Cpu3_Main.o :	"H:\\Plan_G\\Libraries\\Infra\\Sfr\\TC38A\\_Reg\IfxCbs_regdef.h"
+"H:\\Plan_G\\Libraries\\Infra\\Sfr\\TC38A\\_Reg\IfxCbs_regdef.h" :

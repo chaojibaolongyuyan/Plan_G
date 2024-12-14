@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
-	.compiler_invocation	"ctc -f cc33436a --dep-file=Libraries/iLLD/TC38A/Tricore/Qspi/SpiMaster/IfxQspi_SpiMaster.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc38x -D__CPU_TC38X__ --core=tc1.6.2 --fp-model=+float -D__CPU__=tc38x -IH:\\\\Plan_G -IH:\\\\Plan_G\\\\Configurations -IH:\\\\Plan_G\\\\Libraries -IH:\\\\Plan_G\\\\Libraries\\\\Infra -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Platform -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Sfr -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Sfr\\\\TC38A -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Sfr\\\\TC38A\\\\_Reg -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Ssw -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Ssw\\\\TC38A -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Ssw\\\\TC38A\\\\Tricore -IH:\\\\Plan_G\\\\Libraries\\\\Service -IH:\\\\Plan_G\\\\Libraries\\\\Service\\\\CpuGeneric -IH:\\\\Plan_G\\\\Libraries\\\\Service\\\\CpuGeneric\\\\If -IH:\\\\Plan_G\\\\Libraries\\\\Service\\\\CpuGeneric\\\\StdIf -IH:\\\\Plan_G\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IH:\\\\Plan_G\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IH:\\\\Plan_G\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IH:\\\\Plan_G\\\\Libraries\\\\iLLD -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Asclin -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Asclin\\\\Asc -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Asclin\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Can -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Can\\\\Can -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Can\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Cpu -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Cpu\\\\Irq -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Cpu\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Cpu\\\\Trap -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Dma -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Dma\\\\Dma -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Dma\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Evadc -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Evadc\\\\Adc -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Evadc\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Gtm -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Gtm\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Gtm\\\\Tim -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Gtm\\\\Tim\\\\In -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Gtm\\\\Tom -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Gtm\\\\Tom\\\\Pwm -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Mtu -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Mtu\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Pms -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Pms\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Port -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Port\\\\Io -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Port\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Qspi -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Qspi\\\\SpiMaster -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Qspi\\\\SpiSlave -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Qspi\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Scu -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Scu\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Src -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Src\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Stm -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Stm\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\_Impl -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\_Lib -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\_Lib\\\\DataHandling -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\_PinMap -IH:\\\\Plan_G\\\\OS -IH:\\\\Plan_G\\\\OS\\\\FreeRTOS -IH:\\\\Plan_G\\\\OS\\\\FreeRTOS\\\\include -IH:\\\\Plan_G\\\\OS\\\\FreeRTOS\\\\portable -IH:\\\\Plan_G\\\\OS\\\\FreeRTOS\\\\portable\\\\Tasking -IH:\\\\Plan_G\\\\OS\\\\FreeRTOS\\\\portable\\\\Tasking\\\\TC3 -IH:\\\\Plan_G\\\\bsw -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o Libraries/iLLD/TC38A/Tricore/Qspi/SpiMaster/IfxQspi_SpiMaster.src ../Libraries/iLLD/TC38A/Tricore/Qspi/SpiMaster/IfxQspi_SpiMaster.c"
+	.compiler_invocation	"ctc -f cc32904a --dep-file=Libraries/iLLD/TC38A/Tricore/Qspi/SpiMaster/IfxQspi_SpiMaster.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc38x -D__CPU_TC38X__ --core=tc1.6.2 --fp-model=+float -D__CPU__=tc38x -IH:\\\\Plan_G -IH:\\\\Plan_G\\\\Configurations -IH:\\\\Plan_G\\\\Libraries -IH:\\\\Plan_G\\\\Libraries\\\\Infra -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Platform -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Sfr -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Sfr\\\\TC38A -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Sfr\\\\TC38A\\\\_Reg -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Ssw -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Ssw\\\\TC38A -IH:\\\\Plan_G\\\\Libraries\\\\Infra\\\\Ssw\\\\TC38A\\\\Tricore -IH:\\\\Plan_G\\\\Libraries\\\\Service -IH:\\\\Plan_G\\\\Libraries\\\\Service\\\\CpuGeneric -IH:\\\\Plan_G\\\\Libraries\\\\Service\\\\CpuGeneric\\\\If -IH:\\\\Plan_G\\\\Libraries\\\\Service\\\\CpuGeneric\\\\StdIf -IH:\\\\Plan_G\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IH:\\\\Plan_G\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IH:\\\\Plan_G\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IH:\\\\Plan_G\\\\Libraries\\\\iLLD -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Asclin -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Asclin\\\\Asc -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Asclin\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Can -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Can\\\\Can -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Can\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Cpu -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Cpu\\\\Irq -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Cpu\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Cpu\\\\Trap -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Dma -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Dma\\\\Dma -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Dma\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Evadc -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Evadc\\\\Adc -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Evadc\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Gtm -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Gtm\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Gtm\\\\Tim -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Gtm\\\\Tim\\\\In -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Gtm\\\\Tom -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Gtm\\\\Tom\\\\Pwm -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Mtu -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Mtu\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Pms -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Pms\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Port -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Port\\\\Io -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Port\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Qspi -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Qspi\\\\SpiMaster -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Qspi\\\\SpiSlave -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Qspi\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Scu -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Scu\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Src -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Src\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Stm -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\Stm\\\\Std -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\_Impl -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\_Lib -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\_Lib\\\\DataHandling -IH:\\\\Plan_G\\\\Libraries\\\\iLLD\\\\TC38A\\\\Tricore\\\\_PinMap -IH:\\\\Plan_G\\\\OS -IH:\\\\Plan_G\\\\OS\\\\FreeRTOS -IH:\\\\Plan_G\\\\OS\\\\FreeRTOS\\\\include -IH:\\\\Plan_G\\\\OS\\\\FreeRTOS\\\\portable -IH:\\\\Plan_G\\\\OS\\\\FreeRTOS\\\\portable\\\\Tasking -IH:\\\\Plan_G\\\\OS\\\\FreeRTOS\\\\portable\\\\Tasking\\\\TC3 -IH:\\\\Plan_G\\\\bsw -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o Libraries/iLLD/TC38A/Tricore/Qspi/SpiMaster/IfxQspi_SpiMaster.src ../Libraries/iLLD/TC38A/Tricore/Qspi/SpiMaster/IfxQspi_SpiMaster.c"
 	.compiler_name		"ctc"
 	;source	'../Libraries/iLLD/TC38A/Tricore/Qspi/SpiMaster/IfxQspi_SpiMaster.c'
 
@@ -36567,13 +36567,13 @@ __IfxQspi_SpiMaster_updateDelayParameters_function_end:
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L816:
-	.word	-1,.L303,.L814-.L303,.L1465-.L303
+.L805:
+	.word	-1,.L303,.L797-.L303,.L807-.L303
 	.half	1
 	.byte	95
 	.word	0,0
-.L805:
-	.word	-1,.L303,.L797-.L303,.L807-.L303
+.L816:
+	.word	-1,.L303,.L814-.L303,.L1465-.L303
 	.half	1
 	.byte	95
 	.word	0,0
@@ -36647,16 +36647,6 @@ __IfxQspi_SpiMaster_updateDelayParameters_function_end:
 	.half	1
 	.byte	102
 	.word	0,0
-.L773:
-	.word	-1,.L303,.L1454-.L303,.L1455-.L303
-	.half	1
-	.byte	95
-	.word	0,0
-.L774:
-	.word	-1,.L303,.L1457-.L303,.L1458-.L303
-	.half	1
-	.byte	95
-	.word	0,0
 .L783:
 	.word	-1,.L303,.L1460-.L303,.L1461-.L303
 	.half	1
@@ -36669,6 +36659,16 @@ __IfxQspi_SpiMaster_updateDelayParameters_function_end:
 	.word	.L95-.L303,.L1464-.L303
 	.half	5
 	.byte	144,32,157,32,0
+	.word	0,0
+.L774:
+	.word	-1,.L303,.L1457-.L303,.L1458-.L303
+	.half	1
+	.byte	95
+	.word	0,0
+.L773:
+	.word	-1,.L303,.L1454-.L303,.L1455-.L303
+	.half	1
+	.byte	95
 	.word	0,0
 .L770:
 	.word	-1,.L303,.L1452-.L303,.L1453-.L303
@@ -37137,8 +37137,8 @@ __IfxQspi_SpiMaster_updateDelayParameters_function_end:
 	.word	0,0
 .L1063:
 	.word	0,0
-.L1121:
-	.word	-1,.L327,.L1553-.L327,.L178-.L327
+.L1127:
+	.word	-1,.L327,.L1556-.L327,.L182-.L327
 	.half	1
 	.byte	83
 	.word	0,0
@@ -37147,13 +37147,8 @@ __IfxQspi_SpiMaster_updateDelayParameters_function_end:
 	.half	1
 	.byte	83
 	.word	0,0
-.L1127:
-	.word	-1,.L327,.L1556-.L327,.L182-.L327
-	.half	1
-	.byte	83
-	.word	0,0
-.L1086:
-	.word	-1,.L327,.L1548-.L327,.L170-.L327
+.L1121:
+	.word	-1,.L327,.L1553-.L327,.L178-.L327
 	.half	1
 	.byte	83
 	.word	0,0
@@ -37162,43 +37157,18 @@ __IfxQspi_SpiMaster_updateDelayParameters_function_end:
 	.half	1
 	.byte	83
 	.word	0,0
-.L1159:
-	.word	-1,.L327,.L1152-.L327,.L190-.L327
+.L1086:
+	.word	-1,.L327,.L1548-.L327,.L170-.L327
 	.half	1
-	.byte	95
+	.byte	83
 	.word	0,0
 .L1202:
 	.word	-1,.L327,.L1200-.L327,.L216-.L327
 	.half	1
 	.byte	95
 	.word	0,0
-.L1221:
-	.word	-1,.L327,.L1219-.L327,.L1600-.L327
-	.half	1
-	.byte	95
-	.word	0,0
-.L1216:
-	.word	-1,.L327,.L1214-.L327,.L1217-.L327
-	.half	1
-	.byte	95
-	.word	0,0
-.L1211:
-	.word	-1,.L327,.L1209-.L327,.L219-.L327
-	.half	1
-	.byte	95
-	.word	0,0
-.L1166:
-	.word	-1,.L327,.L1164-.L327,.L1167-.L327
-	.half	1
-	.byte	95
-	.word	0,0
-.L1163:
-	.word	-1,.L327,.L1160-.L327,.L191-.L327
-	.half	1
-	.byte	95
-	.word	0,0
-.L1173:
-	.word	-1,.L327,.L1171-.L327,.L1571-.L327
+.L1159:
+	.word	-1,.L327,.L1152-.L327,.L190-.L327
 	.half	1
 	.byte	95
 	.word	0,0
@@ -37207,8 +37177,38 @@ __IfxQspi_SpiMaster_updateDelayParameters_function_end:
 	.half	1
 	.byte	95
 	.word	0,0
+.L1173:
+	.word	-1,.L327,.L1171-.L327,.L1571-.L327
+	.half	1
+	.byte	95
+	.word	0,0
+.L1221:
+	.word	-1,.L327,.L1219-.L327,.L1600-.L327
+	.half	1
+	.byte	95
+	.word	0,0
+.L1166:
+	.word	-1,.L327,.L1164-.L327,.L1167-.L327
+	.half	1
+	.byte	95
+	.word	0,0
 .L1226:
 	.word	-1,.L327,.L1224-.L327,.L1608-.L327
+	.half	1
+	.byte	95
+	.word	0,0
+.L1163:
+	.word	-1,.L327,.L1160-.L327,.L191-.L327
+	.half	1
+	.byte	95
+	.word	0,0
+.L1211:
+	.word	-1,.L327,.L1209-.L327,.L219-.L327
+	.half	1
+	.byte	95
+	.word	0,0
+.L1216:
+	.word	-1,.L327,.L1214-.L327,.L1217-.L327
 	.half	1
 	.byte	95
 	.word	0,0
@@ -37364,9 +37364,9 @@ __IfxQspi_SpiMaster_updateDelayParameters_function_end:
 	.half	1
 	.byte	110
 	.word	0,0
-.L1197:
-	.word	0,0
 .L1023:
+	.word	0,0
+.L1197:
 	.word	0,0
 .L1181:
 	.word	0,0
@@ -37568,6 +37568,11 @@ __IfxQspi_SpiMaster_updateDelayParameters_function_end:
 	.half	1
 	.byte	100
 	.word	0,0
+.L1199:
+	.word	-1,.L327,.L1590-.L327,.L1591-.L327
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
 .L1198:
 	.word	-1,.L327,.L1587-.L327,.L1588-.L327
 	.half	5
@@ -37578,16 +37583,6 @@ __IfxQspi_SpiMaster_updateDelayParameters_function_end:
 	.half	1
 	.byte	95
 	.word	0,0
-.L1199:
-	.word	-1,.L327,.L1590-.L327,.L1591-.L327
-	.half	5
-	.byte	144,32,157,32,0
-	.word	0,0
-.L1082:
-	.word	-1,.L327,.L1546-.L327,.L1547-.L327
-	.half	1
-	.byte	95
-	.word	0,0
 .L1123:
 	.word	-1,.L327,.L1554-.L327,.L1555-.L327
 	.half	1
@@ -37595,6 +37590,11 @@ __IfxQspi_SpiMaster_updateDelayParameters_function_end:
 	.word	0,0
 .L1055:
 	.word	-1,.L327,.L1543-.L327,.L1544-.L327
+	.half	1
+	.byte	95
+	.word	0,0
+.L1082:
+	.word	-1,.L327,.L1546-.L327,.L1547-.L327
 	.half	1
 	.byte	95
 	.word	0,0
@@ -37654,13 +37654,13 @@ __IfxQspi_SpiMaster_updateDelayParameters_function_end:
 	.word	0,0
 .L1261:
 	.word	0,0
-.L1281:
-	.word	-1,.L329,.L1630-.L329,.L252-.L329
+.L1299:
+	.word	-1,.L329,.L1637-.L329,.L259-.L329
 	.half	1
 	.byte	83
 	.word	0,0
-.L1299:
-	.word	-1,.L329,.L1637-.L329,.L259-.L329
+.L1281:
+	.word	-1,.L329,.L1630-.L329,.L252-.L329
 	.half	1
 	.byte	83
 	.word	0,0
@@ -37754,13 +37754,13 @@ __IfxQspi_SpiMaster_updateDelayParameters_function_end:
 	.half	1
 	.byte	82
 	.word	0,0
-.L1243:
-	.word	-1,.L329,.L1622-.L329,.L1262-.L329
+.L1303:
+	.word	-1,.L329,.L1639-.L329,.L1640-.L329
 	.half	1
 	.byte	82
 	.word	0,0
-.L1303:
-	.word	-1,.L329,.L1639-.L329,.L1640-.L329
+.L1243:
+	.word	-1,.L329,.L1622-.L329,.L1262-.L329
 	.half	1
 	.byte	82
 	.word	0,0
@@ -37815,11 +37815,6 @@ __IfxQspi_SpiMaster_updateDelayParameters_function_end:
 	.half	1
 	.byte	95
 	.word	0,0
-.L1295:
-	.word	-1,.L329,.L1635-.L329,.L1636-.L329
-	.half	1
-	.byte	95
-	.word	0,0
 .L1289:
 	.word	-1,.L329,.L1632-.L329,.L1633-.L329
 	.half	1
@@ -37827,6 +37822,11 @@ __IfxQspi_SpiMaster_updateDelayParameters_function_end:
 	.word	0,0
 .L1257:
 	.word	-1,.L329,.L1627-.L329,.L1628-.L329
+	.half	1
+	.byte	95
+	.word	0,0
+.L1295:
+	.word	-1,.L329,.L1635-.L329,.L1636-.L329
 	.half	1
 	.byte	95
 	.word	0,0

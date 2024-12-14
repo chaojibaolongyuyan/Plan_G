@@ -44,7 +44,7 @@
 #include "App_Config.h"
 #include "FreeRTOS.h"
 #include "task.h"
-#include "CANTASK.h"
+//#include "CANTASK.h"
 #include "Qspi_L9658.h"
 
 
@@ -59,7 +59,7 @@ void core0_main(void)
      */
     IfxScuWdt_disableCpuWatchdog(IfxScuWdt_getCpuWatchdogPassword());
     IfxScuWdt_disableSafetyWatchdog(IfxScuWdt_getSafetyWatchdogPassword());
-    
+
     /* Wait for CPU sync event */
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
@@ -68,7 +68,7 @@ void core0_main(void)
 
     //initMcmcan();
     //initMcmcan1();
-    //initMcmcan2();
+//    initMcmcan2();
 
 
     //gpio_init();
@@ -76,8 +76,8 @@ void core0_main(void)
     //init_TIM();
     //initEVADC();
 
-    //initMcmcan();
-    //initLeds();
+//    initMcmcan();
+//    initLeds();
     //transmitCanMessage();
     
 //    initSTM();
@@ -110,7 +110,6 @@ void core0_main(void)
 
     while(1)
     {
-
 
 //        run_schedule();
 //        for(int i=0;i<65534;i++)

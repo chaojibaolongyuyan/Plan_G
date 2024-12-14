@@ -31,6 +31,7 @@
 /*********************************************************************************************************************/
 #include "Schedule.h"
 #include "IfxPort.h"
+#include "CANTask.h"
 
 /*********************************************************************************************************************/
 /*------------------------------------------------------Macros-------------------------------------------------------*/
@@ -154,13 +155,37 @@ void run_schedule(void)
     if( Schedule_call_update()){
         Schedule();
         if(task1){
-            IfxPort_setPinState(LED1, IfxPort_State_toggled);
+            CAN2Data_Send(2);
+            CAN2Data_Send(2);
+            CAN2Data_Send(2);
+            CAN2Data_Send(2);
+            CAN2Data_Send(2);
+            CAN2Data_Send(2);
+            CAN2Data_Send(2);
+            CAN2Data_Send(2);
+            CAN2Data_Send(2);
+            CAN2Data_Send(2);
+            CAN2Data_Send(2);
+            CAN2Data_Send(2);
+            CAN2Data_Send(2);
+            CAN2Data_Send(2);
+            CAN2Data_Send(2);
+            CAN2Data_Send(2);
+            CAN2Data_Send(2);
+            CAN2Data_Send(2);
+            CAN2Data_Send(2);
+            CAN2Data_Send(2);
+            CAN2Data_Send(2);
+
+
+//            IfxPort_setPinState(LED1, IfxPort_State_toggled);
         }
         if(task2){
-            IfxPort_setPinState(LED2, IfxPort_State_toggled);
+            CAN2Data_Send(1);
+//            IfxPort_setPinState(LED2, IfxPort_State_toggled);
         }
         if(task3){
-            IfxPort_setPinState(LED3, IfxPort_State_toggled);
+//            IfxPort_setPinState(LED3, IfxPort_State_toggled);
         }
     }
 }

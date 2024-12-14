@@ -19,6 +19,46 @@
          <FileType>1</FileType>
          <ScrollPos>317</ScrollPos>
         </__.0>
+        <__.10>
+         <BookmarkList></BookmarkList>
+         <CaretPos>2790</CaretPos>
+         <Encoding>6</Encoding>
+         <FileName>H:\Plan_G\Cpu3_Main.c</FileName>
+         <FileType>1</FileType>
+         <ScrollPos>5</ScrollPos>
+        </__.10>
+        <__.11>
+         <BookmarkList></BookmarkList>
+         <CaretPos>2542</CaretPos>
+         <Encoding>6</Encoding>
+         <FileName>H:\Plan_G\Cpu1_Main.c</FileName>
+         <FileType>1</FileType>
+         <ScrollPos>0</ScrollPos>
+        </__.11>
+        <__.12>
+         <BookmarkList></BookmarkList>
+         <CaretPos>90006</CaretPos>
+         <Encoding>6</Encoding>
+         <FileName>H:\Plan_G\Libraries\iLLD\TC38A\Tricore\Can\Std\IfxCan.h</FileName>
+         <FileType>1</FileType>
+         <ScrollPos>2004</ScrollPos>
+        </__.12>
+        <__.13>
+         <BookmarkList></BookmarkList>
+         <CaretPos>608</CaretPos>
+         <Encoding>6</Encoding>
+         <FileName>H:\Plan_G\CANTask.c</FileName>
+         <FileType>1</FileType>
+         <ScrollPos>38</ScrollPos>
+        </__.13>
+        <__.14>
+         <BookmarkList></BookmarkList>
+         <CaretPos>24652</CaretPos>
+         <Encoding>6</Encoding>
+         <FileName>H:\Plan_G\MCMCAN.c</FileName>
+         <FileType>1</FileType>
+         <ScrollPos>482</ScrollPos>
+        </__.14>
         <__.1>
          <BookmarkList></BookmarkList>
          <CaretPos>32169</CaretPos>
@@ -45,11 +85,11 @@
         </__.3>
         <__.4>
          <BookmarkList></BookmarkList>
-         <CaretPos>2559</CaretPos>
+         <CaretPos>4555</CaretPos>
          <Encoding>6</Encoding>
          <FileName>H:\Plan_G\Cpu0_Main.c</FileName>
          <FileType>1</FileType>
-         <ScrollPos>0</ScrollPos>
+         <ScrollPos>61</ScrollPos>
         </__.4>
         <__.5>
          <BookmarkList></BookmarkList>
@@ -77,12 +117,20 @@
         </__.7>
         <__.8>
          <BookmarkList></BookmarkList>
-         <CaretPos>8405</CaretPos>
+         <CaretPos>7807</CaretPos>
          <Encoding>6</Encoding>
          <FileName>H:\Plan_G\bsw\Schedule.c</FileName>
          <FileType>1</FileType>
          <ScrollPos>111</ScrollPos>
         </__.8>
+        <__.9>
+         <BookmarkList></BookmarkList>
+         <CaretPos>2510</CaretPos>
+         <Encoding>6</Encoding>
+         <FileName>H:\Plan_G\Libraries\iLLD\TC38A\Tricore\Can\Can\IfxCan_Can.c</FileName>
+         <FileType>1</FileType>
+         <ScrollPos>50</ScrollPos>
+        </__.9>
        </EditorPersist>
       </EditorPersist>
      </REG_ROOT>
@@ -137,13 +185,37 @@
         <ViewType>Disassembly</ViewType>
        </__.0>
        <__.10>
-        <ViewId>1</ViewId>
-        <ViewType>Output_Progress</ViewType>
+        <ViewId>12</ViewId>
+        <ViewType>Document</ViewType>
        </__.10>
        <__.11>
+        <ViewId>13</ViewId>
+        <ViewType>Document</ViewType>
+       </__.11>
+       <__.12>
+        <ViewId>14</ViewId>
+        <ViewType>Document</ViewType>
+       </__.12>
+       <__.13>
+        <ViewId>15</ViewId>
+        <ViewType>Document</ViewType>
+       </__.13>
+       <__.14>
+        <ViewId>16</ViewId>
+        <ViewType>Document</ViewType>
+       </__.14>
+       <__.15>
+        <ViewId>17</ViewId>
+        <ViewType>Document</ViewType>
+       </__.15>
+       <__.16>
+        <ViewId>1</ViewId>
+        <ViewType>Output_Progress</ViewType>
+       </__.16>
+       <__.17>
         <ViewId>0</ViewId>
         <ViewType>Symbols</ViewType>
-       </__.11>
+       </__.17>
        <__.1>
         <ViewId>2</ViewId>
         <ViewType>Locals</ViewType>
@@ -210,6 +282,21 @@
         <ViewId>4</ViewId>
         <ViewType>Document</ViewType>
        </__.0>
+       <__.10>
+        <RelativePath>..\..\..\Libraries\iLLD\TC38A\Tricore\Can\Std\IfxCan.h</RelativePath>
+        <ViewId>15</ViewId>
+        <ViewType>Document</ViewType>
+       </__.10>
+       <__.11>
+        <RelativePath>..\..\..\CANTask.c</RelativePath>
+        <ViewId>16</ViewId>
+        <ViewType>Document</ViewType>
+       </__.11>
+       <__.12>
+        <RelativePath>..\..\..\MCMCAN.c</RelativePath>
+        <ViewId>17</ViewId>
+        <ViewType>Document</ViewType>
+       </__.12>
        <__.1>
         <RelativePath>..\..\..\Libraries\iLLD\TC38A\Tricore\Cpu\Std\IfxCpu.h</RelativePath>
         <ViewId>5</ViewId>
@@ -240,6 +327,21 @@
         <ViewId>11</ViewId>
         <ViewType>Document</ViewType>
        </__.6>
+       <__.7>
+        <RelativePath>..\..\..\Libraries\iLLD\TC38A\Tricore\Can\Can\IfxCan_Can.c</RelativePath>
+        <ViewId>12</ViewId>
+        <ViewType>Document</ViewType>
+       </__.7>
+       <__.8>
+        <RelativePath>..\..\..\Cpu3_Main.c</RelativePath>
+        <ViewId>13</ViewId>
+        <ViewType>Document</ViewType>
+       </__.8>
+       <__.9>
+        <RelativePath>..\..\..\Cpu1_Main.c</RelativePath>
+        <ViewId>14</ViewId>
+        <ViewType>Document</ViewType>
+       </__.9>
       </DocumentViews>
       <OtherViews>
        <__.0>
@@ -430,6 +532,36 @@
                  <TopTabViewId>-1</TopTabViewId>
                  <ViewId>4</ViewId>
                 </__.0>
+                <__.10>
+                 <DockType>Document</DockType>
+                 <Extent>1</Extent>
+                 <IsDocumentPane>false</IsDocumentPane>
+                 <IsPinned>false</IsPinned>
+                 <IsTabbed>false</IsTabbed>
+                 <Orientation>None</Orientation>
+                 <TopTabViewId>-1</TopTabViewId>
+                 <ViewId>15</ViewId>
+                </__.10>
+                <__.11>
+                 <DockType>Document</DockType>
+                 <Extent>1</Extent>
+                 <IsDocumentPane>false</IsDocumentPane>
+                 <IsPinned>false</IsPinned>
+                 <IsTabbed>false</IsTabbed>
+                 <Orientation>None</Orientation>
+                 <TopTabViewId>-1</TopTabViewId>
+                 <ViewId>16</ViewId>
+                </__.11>
+                <__.12>
+                 <DockType>Document</DockType>
+                 <Extent>1</Extent>
+                 <IsDocumentPane>false</IsDocumentPane>
+                 <IsPinned>false</IsPinned>
+                 <IsTabbed>false</IsTabbed>
+                 <Orientation>None</Orientation>
+                 <TopTabViewId>-1</TopTabViewId>
+                 <ViewId>17</ViewId>
+                </__.12>
                 <__.1>
                  <DockType>Document</DockType>
                  <Extent>1</Extent>
@@ -490,6 +622,36 @@
                  <TopTabViewId>-1</TopTabViewId>
                  <ViewId>11</ViewId>
                 </__.6>
+                <__.7>
+                 <DockType>Document</DockType>
+                 <Extent>1</Extent>
+                 <IsDocumentPane>false</IsDocumentPane>
+                 <IsPinned>false</IsPinned>
+                 <IsTabbed>false</IsTabbed>
+                 <Orientation>None</Orientation>
+                 <TopTabViewId>-1</TopTabViewId>
+                 <ViewId>12</ViewId>
+                </__.7>
+                <__.8>
+                 <DockType>Document</DockType>
+                 <Extent>1</Extent>
+                 <IsDocumentPane>false</IsDocumentPane>
+                 <IsPinned>false</IsPinned>
+                 <IsTabbed>false</IsTabbed>
+                 <Orientation>None</Orientation>
+                 <TopTabViewId>-1</TopTabViewId>
+                 <ViewId>13</ViewId>
+                </__.8>
+                <__.9>
+                 <DockType>Document</DockType>
+                 <Extent>1</Extent>
+                 <IsDocumentPane>false</IsDocumentPane>
+                 <IsPinned>false</IsPinned>
+                 <IsTabbed>false</IsTabbed>
+                 <Orientation>None</Orientation>
+                 <TopTabViewId>-1</TopTabViewId>
+                 <ViewId>14</ViewId>
+                </__.9>
                </Children>
               </__.1>
              </Children>
@@ -567,6 +729,10 @@
       </FindInFilesDialogData>
      </GlobalData>
      <History>
+      <ComboBox>
+       <ComboBoxes>
+       </ComboBoxes>
+      </ComboBox>
      </History>
      <Options>
       <CallstackWindow>
