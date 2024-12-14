@@ -68,7 +68,7 @@ void core0_main(void)
 
     initMcmcan();
     initMcmcan1();
-    initMcmcan2();
+    //initMcmcan2();
 
 
     //gpio_init();
@@ -98,10 +98,10 @@ void core0_main(void)
 //    waitTime(ticksFor100ms);    /* Wait 100 ms */
 
     /* Create LED1 app task */
-    xTaskCreate(CAN0_Trans_5ms, "CAN0_MESSAGE", configMINIMAL_STACK_SIZE, NULL, 1, NULL);
+    //xTaskCreate(CAN0_Trans_5ms, "CAN0_MESSAGE", configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 
     /* Create LED2 app task */
-    xTaskCreate(CAN1_Trans_10ms, "CAN1_MESSAGE", configMINIMAL_STACK_SIZE, NULL, 2, NULL);
+    //xTaskCreate(CAN1_Trans_10ms, "CAN1_MESSAGE", configMINIMAL_STACK_SIZE, NULL, 2, NULL);
 
     //xTaskCreate(PSI5_ACC_TASK,"Read_ACC_Sensor", configMINIMAL_STACK_SIZE, NULL, 2 ,NULL);
 

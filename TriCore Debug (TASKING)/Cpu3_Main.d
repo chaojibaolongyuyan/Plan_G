@@ -76,3 +76,35 @@ Cpu3_Main.o :	"H:\\Plan_G\\Libraries\\Infra\\Sfr\\TC38A\\_Reg\IfxDmu_regdef.h"
 "H:\\Plan_G\\Libraries\\Infra\\Sfr\\TC38A\\_Reg\IfxDmu_regdef.h" :
 Cpu3_Main.o :	"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\\Scu\\Std\IfxScuWdt.h"
 "H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\\Scu\\Std\IfxScuWdt.h" :
+Cpu3_Main.o :	..\MCMCAN.h
+..\MCMCAN.h :
+Cpu3_Main.o :	"I:\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stdio.h"
+"I:\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stdio.h" :
+Cpu3_Main.o :	"I:\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stdarg.h"
+"I:\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stdarg.h" :
+Cpu3_Main.o :	"I:\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\string.h"
+"I:\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\string.h" :
+Cpu3_Main.o :	"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\\Can\\Can\IfxCan_Can.h"
+"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\\Can\\Can\IfxCan_Can.h" :
+Cpu3_Main.o :	"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\Can\Std\IfxCan.h"
+"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\Can\Std\IfxCan.h" :
+Cpu3_Main.o :	"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\_Impl\IfxCan_cfg.h"
+"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\_Impl\IfxCan_cfg.h" :
+Cpu3_Main.o :	"H:\\Plan_G\\Libraries\\Infra\\Sfr\\TC38A\\_Reg\IfxCan_reg.h"
+"H:\\Plan_G\\Libraries\\Infra\\Sfr\\TC38A\\_Reg\IfxCan_reg.h" :
+Cpu3_Main.o :	"H:\\Plan_G\\Libraries\\Infra\\Sfr\\TC38A\\_Reg\IfxCan_regdef.h"
+"H:\\Plan_G\\Libraries\\Infra\\Sfr\\TC38A\\_Reg\IfxCan_regdef.h" :
+Cpu3_Main.o :	"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\_PinMap\IfxCan_PinMap.h"
+"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\_PinMap\IfxCan_PinMap.h" :
+Cpu3_Main.o :	"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\Src\Std\IfxSrc.h"
+"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\Src\Std\IfxSrc.h" :
+Cpu3_Main.o :	"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\_Impl\IfxSrc_cfg.h"
+"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\_Impl\IfxSrc_cfg.h" :
+Cpu3_Main.o :	"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\\Can\\Std\IfxCan.h"
+"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\\Can\\Std\IfxCan.h" :
+Cpu3_Main.o :	"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\\Cpu\\Irq\IfxCpu_Irq.h"
+"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\\Cpu\\Irq\IfxCpu_Irq.h" :
+Cpu3_Main.o :	"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\\Port\\Std\IfxPort.h"
+"H:\\Plan_G\\Libraries\\iLLD\\TC38A\\Tricore\\Port\\Std\IfxPort.h" :
+Cpu3_Main.o :	..\CANTASK.h
+..\CANTASK.h :

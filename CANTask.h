@@ -18,3 +18,4 @@ void CAN2Data_Process(void);
 void CAN2Data_Send(uint32 CANID);
 void CAN0_Trans_5ms();
 void CAN1_Trans_10ms();
+void CAN2_Trans_5ms();

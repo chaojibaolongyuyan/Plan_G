@@ -412,13 +412,13 @@ void initMcmcan2(void)
 
     g_mcmcan2.canNodeConfig.interruptConfig.traco.priority = ISR_PRIORITY_CAN2_TX;
     g_mcmcan2.canNodeConfig.interruptConfig.traco.interruptLine = IfxCan_InterruptLine_4;
-    g_mcmcan2.canNodeConfig.interruptConfig.traco.typeOfService = IfxSrc_Tos_cpu0;
+    g_mcmcan2.canNodeConfig.interruptConfig.traco.typeOfService = IfxSrc_Tos_cpu3;
 
 
 
     g_mcmcan2.canNodeConfig.interruptConfig.rxf0n.priority = ISR_PRIORITY_CAN2_FIFO0_RX;
     g_mcmcan2.canNodeConfig.interruptConfig.rxf0n.interruptLine = IfxCan_InterruptLine_5;
-    g_mcmcan2.canNodeConfig.interruptConfig.rxf0n.typeOfService = IfxSrc_Tos_cpu0;
+    g_mcmcan2.canNodeConfig.interruptConfig.rxf0n.typeOfService = IfxSrc_Tos_cpu3;
 
     g_mcmcan2.canNodeConfig.rxConfig.rxMode = IfxCan_RxMode_fifo0;
     g_mcmcan2.canNodeConfig.rxConfig.rxFifo0DataFieldSize = IfxCan_DataFieldSize_8;
@@ -520,19 +520,19 @@ void transmitCanMessage2(void)
 //    IfxCan_Can_initMessage(&g_mcmcan2.txMsg);
 
     /* Define the content of the data to be transmitted */
-    g_mcmcan2.txData[0] = TX_DATA_LOW_WORD;
-    g_mcmcan2.txData[1] = TX_DATA_HIGH_WORD;
+    //g_mcmcan2.txData[0] = TX_DATA_LOW_WORD;
+    //g_mcmcan2.txData[1] = TX_DATA_HIGH_WORD;
 
     /* Set the message ID that is used during the receive acceptance phase */
-    g_mcmcan2.txMsg.messageId = CAN_MESSAGE_ID;
+    //g_mcmcan2.txMsg.messageId = CAN_MESSAGE_ID;
 
-    IfxCan_Can_sendMessage(&g_mcmcan2.canSrcNode, &g_mcmcan2.txMsg, &g_mcmcan2.txData[0]);
+    //IfxCan_Can_sendMessage(&g_mcmcan2.canSrcNode, &g_mcmcan2.txMsg, &g_mcmcan2.txData[0]);
 
     /* Send the CAN message with the previously defined TX message content */
-    //while( IfxCan_Status_notSentBusy ==
-    //       IfxCan_Can_sendMessage(&g_mcmcan2.canSrcNode, &g_mcmcan2.txMsg, &g_mcmcan2.txData[0]) )
-    //{
-    //}
+    while( IfxCan_Status_notSentBusy ==
+           IfxCan_Can_sendMessage(&g_mcmcan2.canSrcNode, &g_mcmcan2.txMsg, &g_mcmcan2.txData[0]) )
+    {
+    }
 }
 
 /* Function to initialize the LEDs */

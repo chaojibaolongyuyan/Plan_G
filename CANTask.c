@@ -37,6 +37,15 @@ void CAN1_Trans_10ms()
     }
 }
 
+
+void CAN2_Trans_5ms()
+{
+    for(;;)
+    {
+        CAN2Data_Send(2);
+    }
+}
+
 void CAN0Data_Process(void)
 {
     Data0_ReceiveTrans();
@@ -238,7 +247,7 @@ void Data2_SendTrans(uint32 CANID)
 {
     for(int i=0;i<8;i++)
     {
-        g_mcmcan2.txData[i/4]=(txData[i]<<24)+(g_mcmcan2.txData[i/4]>>8);
+        g_mcmcan2.txData[i/4]=(txData2[i]<<24)+(g_mcmcan2.txData[i/4]>>8);
     }
     g_mcmcan2.txMsg.messageId = CANID;
     transmitCanMessage2();

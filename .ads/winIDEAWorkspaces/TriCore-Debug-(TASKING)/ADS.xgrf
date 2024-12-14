@@ -13,11 +13,11 @@
        <EditorPersist>
         <__.0>
          <BookmarkList></BookmarkList>
-         <CaretPos>32931</CaretPos>
+         <CaretPos>12988</CaretPos>
          <Encoding>6</Encoding>
-         <FileName>H:\Plan_G\Libraries\iLLD\TC38A\Tricore\Cpu\Std\IfxCpu.h</FileName>
+         <FileName>H:\Plan_G\Libraries\Infra\Ssw\TC38A\Tricore\Ifx_Ssw_Tc0.c</FileName>
          <FileType>1</FileType>
-         <ScrollPos>714</ScrollPos>
+         <ScrollPos>302</ScrollPos>
         </__.0>
         <__.1>
          <BookmarkList></BookmarkList>
@@ -37,12 +37,36 @@
         </__.2>
         <__.3>
          <BookmarkList></BookmarkList>
-         <CaretPos>12988</CaretPos>
+         <CaretPos>32931</CaretPos>
          <Encoding>6</Encoding>
-         <FileName>H:\Plan_G\Libraries\Infra\Ssw\TC38A\Tricore\Ifx_Ssw_Tc0.c</FileName>
+         <FileName>H:\Plan_G\Libraries\iLLD\TC38A\Tricore\Cpu\Std\IfxCpu.h</FileName>
          <FileType>1</FileType>
-         <ScrollPos>302</ScrollPos>
+         <ScrollPos>714</ScrollPos>
         </__.3>
+        <__.4>
+         <BookmarkList></BookmarkList>
+         <CaretPos>2559</CaretPos>
+         <Encoding>6</Encoding>
+         <FileName>H:\Plan_G\Cpu0_Main.c</FileName>
+         <FileType>1</FileType>
+         <ScrollPos>0</ScrollPos>
+        </__.4>
+        <__.5>
+         <BookmarkList></BookmarkList>
+         <CaretPos>152164</CaretPos>
+         <Encoding>6</Encoding>
+         <FileName>H:\Plan_G\OS\FreeRTOS\tasks.c</FileName>
+         <FileType>1</FileType>
+         <ScrollPos>3650</ScrollPos>
+        </__.5>
+        <__.6>
+         <BookmarkList></BookmarkList>
+         <CaretPos>7655</CaretPos>
+         <Encoding>6</Encoding>
+         <FileName>H:\Plan_G\Libraries\iLLD\TC38A\Tricore\Cpu\Trap\IfxCpu_Trap.c</FileName>
+         <FileType>1</FileType>
+         <ScrollPos>125</ScrollPos>
+        </__.6>
        </EditorPersist>
       </EditorPersist>
      </REG_ROOT>
@@ -113,13 +137,25 @@
         <ViewType>Document</ViewType>
        </__.4>
        <__.5>
-        <ViewId>1</ViewId>
-        <ViewType>Output_Progress</ViewType>
+        <ViewId>7</ViewId>
+        <ViewType>Document</ViewType>
        </__.5>
        <__.6>
+        <ViewId>8</ViewId>
+        <ViewType>Document</ViewType>
+       </__.6>
+       <__.7>
+        <ViewId>9</ViewId>
+        <ViewType>Document</ViewType>
+       </__.7>
+       <__.8>
+        <ViewId>1</ViewId>
+        <ViewType>Output_Progress</ViewType>
+       </__.8>
+       <__.9>
         <ViewId>0</ViewId>
         <ViewType>Symbols</ViewType>
-       </__.6>
+       </__.9>
       </AllViewBaseData>
       <DissasemblyViews>
        <__.0>
@@ -155,6 +191,21 @@
         <ViewId>5</ViewId>
         <ViewType>Document</ViewType>
        </__.1>
+       <__.2>
+        <RelativePath>..\..\..\Cpu0_Main.c</RelativePath>
+        <ViewId>7</ViewId>
+        <ViewType>Document</ViewType>
+       </__.2>
+       <__.3>
+        <RelativePath>..\..\..\OS\FreeRTOS\tasks.c</RelativePath>
+        <ViewId>8</ViewId>
+        <ViewType>Document</ViewType>
+       </__.3>
+       <__.4>
+        <RelativePath>..\..\..\Libraries\iLLD\TC38A\Tricore\Cpu\Trap\IfxCpu_Trap.c</RelativePath>
+        <ViewId>9</ViewId>
+        <ViewType>Document</ViewType>
+       </__.4>
       </DocumentViews>
       <OtherViews>
        <__.0>
@@ -276,7 +327,7 @@
       <PrimaryDocumentPaneId>5</PrimaryDocumentPaneId>
       <Frames>
        <__.0>
-        <FocusedViewId>5</FocusedViewId>
+        <FocusedViewId>7</FocusedViewId>
         <FrameState>3</FrameState>
         <IsPrimary>true</IsPrimary>
         <Bounds>
@@ -332,7 +383,7 @@
                <IsPinned>false</IsPinned>
                <IsTabbed>true</IsTabbed>
                <Orientation>None</Orientation>
-               <TopTabViewId>5</TopTabViewId>
+               <TopTabViewId>7</TopTabViewId>
                <ViewId>-1</ViewId>
                <Children>
                 <__.0>
@@ -355,6 +406,36 @@
                  <TopTabViewId>-1</TopTabViewId>
                  <ViewId>5</ViewId>
                 </__.1>
+                <__.2>
+                 <DockType>Document</DockType>
+                 <Extent>1</Extent>
+                 <IsDocumentPane>false</IsDocumentPane>
+                 <IsPinned>false</IsPinned>
+                 <IsTabbed>false</IsTabbed>
+                 <Orientation>None</Orientation>
+                 <TopTabViewId>-1</TopTabViewId>
+                 <ViewId>7</ViewId>
+                </__.2>
+                <__.3>
+                 <DockType>Document</DockType>
+                 <Extent>1</Extent>
+                 <IsDocumentPane>false</IsDocumentPane>
+                 <IsPinned>false</IsPinned>
+                 <IsTabbed>false</IsTabbed>
+                 <Orientation>None</Orientation>
+                 <TopTabViewId>-1</TopTabViewId>
+                 <ViewId>8</ViewId>
+                </__.3>
+                <__.4>
+                 <DockType>Document</DockType>
+                 <Extent>1</Extent>
+                 <IsDocumentPane>false</IsDocumentPane>
+                 <IsPinned>false</IsPinned>
+                 <IsTabbed>false</IsTabbed>
+                 <Orientation>None</Orientation>
+                 <TopTabViewId>-1</TopTabViewId>
+                 <ViewId>9</ViewId>
+                </__.4>
                </Children>
               </__.1>
              </Children>
