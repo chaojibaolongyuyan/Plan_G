@@ -27,6 +27,7 @@
 #include "Ifx_Types.h"
 #include "IfxCpu.h"
 #include "IfxScuWdt.h"
+#include "Initialize.h"
 
 //#include "GPIO.h"
 //#include "Drive_Output.h"
@@ -44,6 +45,7 @@
 #include "App_Config.h"
 #include "FreeRTOS.h"
 #include "task.h"
+#include "Intern_Task.h"
 
 //#include "MCMCAN.h"
 //#include "CANTASK.h"
@@ -65,47 +67,10 @@ void core0_main(void)
     /* Wait for CPU sync event */
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
-    
-    /* Initialize a time variable */
-    Ifx_TickTime ticksFor100ms = IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 100);
-//    waitTime(ticksFor100ms);    /* Wait 100 ms */
 
-//    gpio_init();
-//    GTM_Tom_init();
-//    init_TIM();
-//    initEVADC();
+    initial();
 
-//    initMcmcan();
-//    initMcmcan2();
-//    initLeds();
-    //transmitCanMessage();
-    
-    initPeripherals();
-//    transferData();
-
-//    initSTM();
-    //initLED();
-
-//    icm20602_init();
-
-//    fifo_init(&uart_data_fifo, FIFO_DATA_8BIT, uart_get_data, 64);              // 初始化 fifo 挂载缓冲区
-      uart_init(UART_0, 115200, UART0_TX_P14_0, UART0_RX_P14_1);             // 初始化串口
-//    uart_rx_interrupt(UART_INDEX, 1);                                           // 开启 UART_INDEX 的接收中断
-    uart_write_string(UART_0, "UART Text.");                                // 输出测试信息
-    uart_write_byte(UART_0, '\r');                                          // 输出回车
-    uart_write_byte(UART_0, '\n');                                          // 输出换行
-//
-    printf("rec_data001 = 0x%x \r\n", recdata1);
-    printf("rec_data002 = 0x%x \r\n", recdata2);
-    printf("rec_data003 = 0x%x \r\n", recdata3);
-    printf("rec_data004 = 0x%x \r\n", recdata4);
-    printf("\r\n");
-    printf("rec_data0001 = 0x%x \r\n", recdata5);
-    printf("rec_data0002 = 0x%x \r\n", recdata6);
-    printf("rec_data0003 = 0x%x \r\n", recdata7);
-    printf("rec_data0004 = 0x%x \r\n", recdata8);
-    printf("\r\n");
-
+    xTaskCreate(X_TASK_5ms, "5ms_TASK", configMINIMAL_STACK_SIZE, NULL, 0, NULL);
 
     /* Create LED1 app task */
 //    xTaskCreate(task_app_led1, "APP LED1", configMINIMAL_STACK_SIZE, NULL, 0, NULL);
@@ -146,7 +111,7 @@ void core0_main(void)
         printf("FL_Acc = %f , FR_Acc = %f , RL_Acc = %f , RR_Acc = %f \r\n",
                         f32_FL_Acc, f32_FR_Acc, f32_RL_Acc, f32_RR_Acc);
 
-        waitTime(ticksFor100ms);
+
     }
 }
 

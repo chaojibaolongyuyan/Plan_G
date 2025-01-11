@@ -81,8 +81,8 @@ IFX_CONST IfxCan_Can_Pins Can2PortInf0 = {
  *  - vectabNum: Vector table number.
  *  - priority: Interrupt priority. Refer Usage of Interrupt Macro for more details.
  */
-IFX_INTERRUPT(canIsrTxHandler, 0, ISR_PRIORITY_CAN_TX);
-IFX_INTERRUPT(canIsrRxHandler, 0, ISR_PRIORITY_CAN_FIFO0_RX);
+IFX_INTERRUPT(canIsrTxHandler, 1, ISR_PRIORITY_CAN_TX);
+IFX_INTERRUPT(canIsrRxHandler, 1, ISR_PRIORITY_CAN_FIFO0_RX);
 IFX_INTERRUPT(canIsrTxHandler1, 0, ISR_PRIORITY_CAN1_TX);
 IFX_INTERRUPT(canIsrRxHandler1, 0, ISR_PRIORITY_CAN1_FIFO0_RX);
 IFX_INTERRUPT(canIsrTxHandler2, 0, ISR_PRIORITY_CAN2_TX);
@@ -271,13 +271,13 @@ void initMcmcan(void)
 
     g_mcmcan.canNodeConfig.interruptConfig.traco.priority = ISR_PRIORITY_CAN_TX;
     g_mcmcan.canNodeConfig.interruptConfig.traco.interruptLine = IfxCan_InterruptLine_0;
-    g_mcmcan.canNodeConfig.interruptConfig.traco.typeOfService = IfxSrc_Tos_cpu0;
+    g_mcmcan.canNodeConfig.interruptConfig.traco.typeOfService = IfxSrc_Tos_cpu1;
 
 
 
     g_mcmcan.canNodeConfig.interruptConfig.rxf0n.priority = ISR_PRIORITY_CAN_FIFO0_RX;
     g_mcmcan.canNodeConfig.interruptConfig.rxf0n.interruptLine = IfxCan_InterruptLine_1;
-    g_mcmcan.canNodeConfig.interruptConfig.rxf0n.typeOfService = IfxSrc_Tos_cpu0;
+    g_mcmcan.canNodeConfig.interruptConfig.rxf0n.typeOfService = IfxSrc_Tos_cpu1;
 
     g_mcmcan.canNodeConfig.rxConfig.rxMode = IfxCan_RxMode_fifo0;
     g_mcmcan.canNodeConfig.rxConfig.rxFifo0DataFieldSize = IfxCan_DataFieldSize_8;

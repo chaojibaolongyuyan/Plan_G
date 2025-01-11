@@ -57,4 +57,5 @@ void init_TIM(void);
 void measure_PWM(void);
 void generate_PWM(void);
 
+
 #endif /* BSW_FREQUENCY_SAMPLE_H_ */

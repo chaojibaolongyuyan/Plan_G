@@ -39,6 +39,7 @@
 /*-------------------------------------------------Global variables--------------------------------------------------*/
 /*********************************************************************************************************************/
 static float32 ff; //get clk frequency
+float32 PWM_ABSORBER[4];
 IfxGtm_Tom_Pwm_Config g_tomConfig;                                  /* Timer configuration structure                */
 IfxGtm_Tom_Pwm_Driver g_tomDriver;                                  /* Timer Driver structure  */
 float32 myfrequency = 2500;   //output pwm frequency hz
@@ -119,7 +120,9 @@ void GTM_Tom_init(void)
     IfxGtm_Tom_Pwm_start(&g_tomDriver, TRUE);                       /* Start the PWM */
 
     PWM_Control(0, 500);
-    PWM_Control(1, 300);
+    PWM_Control(1, 500);
+    PWM_Control(2, 500);
+    PWM_Control(3, 500);
 
 }
 
@@ -131,6 +134,7 @@ void PWM_Control(uint8 PortNum, uint16 PwmDuty)
     Ctl_Duty = ((config->period) * PwmDuty) / 1000;
     Ifx_GTM_TOM *tomSFR = &config->gtm->TOM[config->tom];
     IfxGtm_Tom_Ch_setCompareOneShadow(tomSFR, PortNum, Ctl_Duty);
+    PWM_ABSORBER[PortNum]=Ctl_Duty;
     //IfxGtm_Tom_Ch_setCompareOneShadow(&MODULE_GTM.TOM[0], PortNum, Ctl_Duty);
 }
 

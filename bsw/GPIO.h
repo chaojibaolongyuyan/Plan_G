@@ -54,6 +54,9 @@
 /*------------------------------------------------Function Prototypes------------------------------------------------*/
 /*********************************************************************************************************************/
 void gpio_init(void);
+void get_PORT_STATUS(void);
 uint8 Set_PORT_Output(uint8 PortNum, uint8 Value);
+
+extern uint8 PB[8];
 
 #endif /* BSW_GPIO_H_ */

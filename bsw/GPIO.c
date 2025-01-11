@@ -42,7 +42,7 @@
 /*********************************************************************************************************************/
 /*--------------------------------------------Private Variables/Constants--------------------------------------------*/
 /*********************************************************************************************************************/
-
+uint8 PB[8];
 const IfxPort_Io_ConfigPin configPin[] = {
     {&IfxPort_P23_0, IfxPort_Mode_outputPushPullGeneral, IfxPort_PadDriver_cmosAutomotiveSpeed1},         // P00.0
     {&IfxPort_P23_1, IfxPort_Mode_outputPushPullGeneral, IfxPort_PadDriver_cmosAutomotiveSpeed1},
@@ -135,6 +135,16 @@ void gpio_init(void)
     IfxPort_setPinState(&MODULE_P33, 9, IfxPort_State_low);
     Set_PORT_Output(6, 1);
     Set_PORT_Output(7, 1);
+}
+
+void get_PORT_STATUS(void)
+{
+    PB[2]=IfxPort_getPinState(&MODULE_P33, 4);
+    PB[3]=IfxPort_getPinState(&MODULE_P33, 5);
+    PB[4]=IfxPort_getPinState(&MODULE_P33, 6);
+    PB[5]=IfxPort_getPinState(&MODULE_P33, 7);
+    PB[6]=IfxPort_getPinState(&MODULE_P33, 8);
+    PB[7]=IfxPort_getPinState(&MODULE_P33, 9);
 }
 
 uint8 Set_PORT_Output(uint8 PortNum, uint8 Value)

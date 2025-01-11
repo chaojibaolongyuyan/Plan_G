@@ -27,7 +27,7 @@
 #include "Ifx_Types.h"
 #include "IfxCpu.h"
 #include "IfxScuWdt.h"
-
+#include "Schedule.h"
 extern IfxCpu_syncEvent g_cpuSyncEvent;
 
 
@@ -43,10 +43,12 @@ void core1_main(void)
     /* Wait for CPU sync event */
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
+    initSTM();
+
 
 
     while(1)
     {
-
+        run_schedule();
     }
 }

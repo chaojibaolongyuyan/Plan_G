@@ -2,6 +2,7 @@
 #include "FreeRTOS.h"
 #include "task.h"
 
+
 uint8 a,b,c,d,e,f,g,h;
 uint8 rxData[8];
 uint8 txData[8];
@@ -69,27 +70,64 @@ void CAN0Data_Send(uint32 CANID)
 
     if(CANID==1)
     {
-        txData[0]=0;
-        txData[1]=1;
-        txData[2]=2;
-        txData[3]=3;
-        txData[4]=4;
-        txData[5]=5;
-        txData[6]=6;
-        txData[7]=7;
+        txData[0]=(uint8)g_result_adc[0];
+        txData[1]=(uint8)g_result_adc[1];
+        txData[2]=(uint8)g_result_adc[2];
+        txData[3]=(uint8)g_result_adc[3];
+        txData[4]=(uint8)g_result_adc[4];
+        txData[5]=0;
+        txData[6]=0;
+        txData[7]=0;
     }
     else if(CANID==2)
     {
-        txData[0]=8;
-        txData[1]=9;
-        txData[2]=10;
-        txData[3]=11;
-        txData[4]=12;
-        txData[5]=13;
-        txData[6]=14;
-        txData[7]=15;
+        txData[0]=(uint8)PWM_ABSORBER[0];
+        txData[1]=(uint8)PWM_ABSORBER[1];
+        txData[2]=(uint8)PWM_ABSORBER[2];
+        txData[3]=(uint8)PWM_ABSORBER[3];
+        txData[4]=(uint8)g_measuredPwmDutyCycle[0];
+        txData[5]=(uint8)g_measuredPwmDutyCycle[0];
+        txData[6]=(uint8)g_measuredPwmDutyCycle[0];
+        txData[7]=(uint8)g_measuredPwmDutyCycle[0];
 
     }
+    else if(CANID==3)
+    {
+       txData[0]=(uint8)f32_FL_Acc;
+       txData[1]=(uint8)f32_FR_Acc;
+       txData[2]=(uint8)f32_RL_Acc;
+       txData[3]=(uint8)f32_RL_Acc;
+       txData[4]=0;
+       txData[5]=0;
+       txData[6]=0;
+       txData[7]=0;
+
+    }
+
+    else if(CANID==4)
+    {
+        txData[0]=(uint8)f32_FL_Acc;
+        txData[1]=(uint8)f32_FR_Acc;
+        txData[2]=(uint8)f32_RL_Acc;
+        txData[3]=(uint8)f32_RL_Acc;
+        txData[4]=0;
+        txData[5]=0;
+        txData[6]=0;
+        txData[7]=0;
+    }
+    else if(CANID==5)
+    {
+        txData[0]=PB[0];
+        txData[1]=PB[1];
+        txData[2]=PB[2];
+        txData[3]=PB[3];
+        txData[4]=PB[4];
+        txData[5]=PB[5];
+        txData[6]=PB[6];
+        txData[7]=PB[7];
+    }
+
+
 
     Data0_SendTrans(CANID);
 

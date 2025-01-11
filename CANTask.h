@@ -1,8 +1,14 @@
 #include "MCMCAN.h"
+#include "Analog_Sample.h"
+#include "Drive_Output.h"
+#include "Qspi_L9658.h"
+#include "GPIO.h"
+#include "Frequency_Sample.h"
 
+extern float32 PWM_ABSORBER[4];
 extern uint8 a,b,c,d,e,f,g,h;
-
-
+extern float32 g_measuredPwmDutyCycle[4];
+extern uint8 PB[8];
 
 void Data0_ReceiveTrans(void);
 void Data0_SendTrans(uint32 CANID);

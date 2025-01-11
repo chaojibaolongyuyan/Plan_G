@@ -76,39 +76,39 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := demo6_TC387TP
+BUILD_ARTIFACT_NAME := G_001
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 SECONDARY_SIZE += \
-demo6_TC387TP.siz \
+G_001.siz \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: demo6_TC387TP.elf secondary-outputs
+main-build: G_001.elf secondary-outputs
 
 # Tool invocations
-demo6_TC387TP.elf: $(OBJS) makefile $(OPTIONAL_TOOL_DEPS)
+G_001.elf: $(OBJS) makefile $(OPTIONAL_TOOL_DEPS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: TASKING Linker'
-	cctc --lsl-file="../Lcf_Tasking_Tricore_Tc.lsl" -Wl-Oc -Wl-OL -Wl-Ot -Wl-Ox -Wl-Oy -Wl--map-file="demo6_TC387TP.map" -Wl-mc -Wl-mf -Wl-mi -Wl-mk -Wl-ml -Wl-mm -Wl-md -Wl-mr -Wl-mu --no-warnings= -Wl--error-limit=42 --fp-model=3 -lrt --lsl-core=vtc --exceptions --strict --anachronisms --force-c++ -Ctc38x -o"demo6_TC387TP.elf" -Wl-o"demo6_TC387TP.hex:IHEX" $(OBJS)
+	cctc --lsl-file="../Lcf_Tasking_Tricore_Tc.lsl" -Wl-Oc -Wl-OL -Wl-Ot -Wl-Ox -Wl-Oy -Wl--map-file="G_001.map" -Wl-mc -Wl-mf -Wl-mi -Wl-mk -Wl-ml -Wl-mm -Wl-md -Wl-mr -Wl-mu --no-warnings= -Wl--error-limit=42 --fp-model=3 -lrt --lsl-core=vtc --exceptions --strict --anachronisms --force-c++ -Ctc38x -o"G_001.elf" -Wl-o"G_001.hex:IHEX" $(OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-demo6_TC387TP.siz: demo6_TC387TP.elf makefile $(OPTIONAL_TOOL_DEPS)
+G_001.siz: G_001.elf makefile $(OPTIONAL_TOOL_DEPS)
 	@echo 'Invoking: Print Size'
-	elfsize  "demo6_TC387TP.elf"
+	elfsize  "G_001.elf"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) demo6_TC387TP.siz demo6_TC387TP.elf
+	-$(RM) G_001.siz G_001.elf
 	-@echo ' '
 
 secondary-outputs: $(SECONDARY_SIZE)

@@ -55,5 +55,7 @@
 
 void GTM_Tom_init(void);
 void PWM_Control(uint8 PortNum, uint16 PwmDuty);
+extern float PWM_ABSORBER[4];
+
 
 #endif /* BSW_DRIVE_OUTPUT_H_ */
