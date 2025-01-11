@@ -54,6 +54,7 @@ IfxEvadc_Adc_Channel g_adcChannel[CHANNELS_NUM];                /* EVADC channel
 uint8 g_grp2channels[CHANNELS_NUM] = {AN0_CHID, AN1_CHID, AN2_CHID, AN3_CHID, AN4_CHID}; /* AN0, AN1, AN2, AN3, AN4 channel IDs array       */
 
 Ifx_EVADC_G_RES g_results[CHANNELS_NUM];                        /* Array of results                                 */
+float32 g_result_adc[CHANNELS_NUM];
 
 /*********************************************************************************************************************/
 /*--------------------------------------------Private Variables/Constants--------------------------------------------*/
@@ -156,5 +157,7 @@ void readEVADC()
 
         /* Store result */
         g_results[i] = conversionResult;
+
+        g_result_adc[i] = g_results[i].B.RESULT / 4095.0f;
     }
 }

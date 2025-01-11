@@ -35,16 +35,19 @@
 #include "CANTASK.h"
 #include "MCMCAN.h"
 
+#include "Bsp.h"
+
 /*********************************************************************************************************************/
 /*------------------------------------------------------Macros-------------------------------------------------------*/
 /*********************************************************************************************************************/
 /* QSPI modules */
-#define QSPI1_MASTER                &MODULE_QSPI1   /* SPI Master module                                            */
-#define QSPI2_MASTER                &MODULE_QSPI2   /* SPI Master module                                            */
-#define QSPI3_SLAVE                 &MODULE_QSPI3   /* SPI Slave module                                             */
+#define QSPI1_MASTER                &MODULE_QSPI0   /* SPI Master module                                            */
+//#define QSPI2_MASTER                &MODULE_QSPI2   /* SPI Master module                                            */
+//#define QSPI3_SLAVE                 &MODULE_QSPI3   /* SPI Slave module                                             */
+#define CS_PIN     &MODULE_P20,13
 
 /* LED port pin */
-#define LED_D110                    &MODULE_P13,3   /* LED D110 Port, Pin definition                                */
+#define LED_D110                    &MODULE_P10,6   /* LED D110 Port, Pin definition                                */
 
 #define MASTER_CHANNEL_BAUDRATE     1000000         /* Master channel baud rate                                     */
 
@@ -52,32 +55,46 @@
 #define ISR_PRIORITY_MASTER_TX      50
 #define ISR_PRIORITY_MASTER_RX      51
 #define ISR_PRIORITY_MASTER_ER      52
-#define ISR_PRIORITY_SLAVE_TX       53
-#define ISR_PRIORITY_SLAVE_RX       54
-#define ISR_PRIORITY_SLAVE_ER       55
+//#define ISR_PRIORITY_SLAVE_TX       53
+//#define ISR_PRIORITY_SLAVE_RX       54
+//#define ISR_PRIORITY_SLAVE_ER       55
 
 /*********************************************************************************************************************/
 /*-------------------------------------------------Global variables--------------------------------------------------*/
 /*********************************************************************************************************************/
 qspiComm g_qspi;
 
+
+
 /*********************************************************************************************************************/
 /*------------------------------------------------Function Prototypes------------------------------------------------*/
 /*********************************************************************************************************************/
 void initQSPI1Master(void);
 void initQSPI1MasterChannel(void);
-void initQSPI1MasterBuffers(void);
+//void initQSPI1MasterBuffers(void);
 void initQSPI(void);
-void initLED(void);
+//void initLED(void);
 void inittransferData(void);
 void verifyData(void);
-float PSI5_DataProvess(uint16 Data);
+float32 PSI5_DataProcess(uint16 Data);
 
 uint16 FL_Acc=0;
 uint16 FR_Acc=0;
 uint16 RL_Acc=0;
 uint16 RR_Acc=0;
 
+float32 f32_FL_Acc=0;
+float32 f32_FR_Acc=0;
+float32 f32_RL_Acc=0;
+float32 f32_RR_Acc=0;
+
+uint16 ii=0;
+uint16 p2013 = 2;
+uint16 p20131 = 2;
+uint16 p20132 = 2;
+
+uint16 recdata1=0, recdata2=0, recdata3=0, recdata4=0;
+uint16 recdata5=0, recdata6=0, recdata7=0, recdata8=0;
 
 /*********************************************************************************************************************/
 /*----------------------------------------------Function Implementations---------------------------------------------*/
@@ -92,7 +109,7 @@ void masterTxISR()
     IfxCpu_enableInterrupts();
     IfxQspi_SpiMaster_isrTransmit(&g_qspi.spiMaster);
 
-    IfxPort_setPinState(g_led1.port, g_led1.pinIndex,  IfxPort_State_toggled);
+//    IfxPort_setPinState(g_led1.port, g_led1.pinIndex,  IfxPort_State_toggled);
 }
 
 void masterRxISR()
@@ -100,7 +117,7 @@ void masterRxISR()
     IfxCpu_enableInterrupts();
     IfxQspi_SpiMaster_isrReceive(&g_qspi.spiMaster);
 
-    IfxPort_setPinState(g_led2.port, g_led2.pinIndex,  IfxPort_State_toggled);
+//    IfxPort_setPinState(g_led2.port, g_led2.pinIndex,  IfxPort_State_toggled);
 
 }
 
@@ -119,13 +136,17 @@ void masterErISR()
 void initQSPI1Master(void)
 {
     IfxQspi_SpiMaster_Config spiMasterConfig;                           /* Define a Master configuration            */
+
     IfxQspi_SpiMaster_initModuleConfig(&spiMasterConfig, QSPI1_MASTER); /* Initialize it with default values        */
+
     spiMasterConfig.base.mode = SpiIf_Mode_master;                      /* Configure the mode                       */
+
+    /* Select the port pins for communication */
     const IfxQspi_SpiMaster_Pins qspi1MasterPins = {
-        &IfxQspi1_SCLK_P10_2_OUT, IfxPort_OutputMode_pushPull,          /* SCLK Pin                       (CLK)     */
-        &IfxQspi1_MTSRA_P10_3_IN, IfxPort_OutputMode_pushPull,          /* MasterTransmitSlaveReceive pin (MOSI)    */
-        &IfxQspi1_MRSTA_P10_1_IN, IfxPort_InputMode_pullDown,           /* MasterReceiveSlaveTransmit pin (MISO)    */
-        IfxPort_PadDriver_cmosAutomotiveSpeed3                          /* Pad driver mode                          */
+        &IfxQspi0_SCLK_P20_11_OUT, IfxPort_OutputMode_pushPull,          /* SCLK Pin                       (CLK)     */
+        &IfxQspi0_MTSR_P20_14_OUT, IfxPort_OutputMode_pushPull,          /* MasterTransmitSlaveReceive pin (MOSI)    */
+        &IfxQspi0_MRSTA_P20_12_IN, IfxPort_InputMode_pullDown,           /* MasterReceiveSlaveTransmit pin (MISO)    */
+        IfxPort_PadDriver_cmosAutomotiveSpeed1                          /* Pad driver mode                          */
     };
     spiMasterConfig.pins = &qspi1MasterPins;                            /* Assign the Master's port pins            */
 
@@ -139,7 +160,9 @@ void initQSPI1Master(void)
     IfxQspi_SpiMaster_initModule(&g_qspi.spiMaster, &spiMasterConfig);
 }
 
-
+/* QSPI Master channel initialization
+ * This function initializes the QSPI1 Master channel.
+ */
 void initQSPI1MasterChannel(void)
 {
     IfxQspi_SpiMaster_ChannelConfig spiMasterChannelConfig;             /* Define a Master Channel configuration    */
@@ -147,57 +170,45 @@ void initQSPI1MasterChannel(void)
     /* Initialize the configuration with default values */
     IfxQspi_SpiMaster_initChannelConfig(&spiMasterChannelConfig, &g_qspi.spiMaster);
 
-    spiMasterChannelConfig.base.baudrate = MASTER_CHANNEL_BAUDRATE;     /* Set SCLK frequency to 1 MHz              */
+    spiMasterChannelConfig.base.baudrate = 1000000;     /* Set SCLK frequency to 1 MHz              */
+    spiMasterChannelConfig.base.mode.clockPolarity   = SpiIf_ClockPolarity_idleLow;
+//    spiMasterChannelConfig.base.mode.shiftClock    = SpiIf_ShiftClock_shiftTransmitDataOnLeadingEdge;
+//    spiMasterChannelConfig.base.mode.clockPolarity   = SpiIf_ClockPolarity_idleHigh;
+    spiMasterChannelConfig.base.mode.shiftClock    = SpiIf_ShiftClock_shiftTransmitDataOnTrailingEdge;
+
+    spiMasterChannelConfig.base.mode.dataHeading = SpiIf_DataHeading_msbFirst;
+    spiMasterChannelConfig.base.mode.dataWidth   = 16;
+    spiMasterChannelConfig.base.mode.csActiveLevel = Ifx_ActiveState_high;
+    spiMasterChannelConfig.base.mode.autoCS = 1;
+//    spiMasterChannelConfig.base.mode.autoCS = 0;
+//    spiMasterChannelConfig.base.mode.csLeadDelay = 1;
+    spiMasterChannelConfig.base.mode.csTrailDelay = 0;
+    spiMasterChannelConfig.base.mode.csInactiveDelay = 0;
 
     /* Select the port pin for the Chip Select signal */
-    const IfxQspi_SpiMaster_Output qspi1SlaveSelect = {                 /* QSPI2 Master selects the QSPI3 Slave     */
-        &IfxQspi1_SLSO9_P10_5_OUT, IfxPort_OutputMode_pushPull,         /* Slave Select port pin (CS)               */
+    const IfxQspi_SpiMaster_Output qspi1SlaveSelect = {                 /* QSPI1 Master selects the QSPI1 Slave     */
+        &IfxQspi0_SLSO2_P20_13_OUT, IfxPort_OutputMode_pushPull,         /* Slave Select port pin (CS)               */
         IfxPort_PadDriver_cmosAutomotiveSpeed1                          /* Pad driver mode                          */
     };
     spiMasterChannelConfig.sls.output = qspi1SlaveSelect;
 
     /* Initialize the QSPI Master channel */
     IfxQspi_SpiMaster_initChannel(&g_qspi.spiMasterChannel, &spiMasterChannelConfig);
-}
-
-void initQSPI1MasterBuffers(void)
-{
-    g_qspi.spiBuffers.spiMasterTxBuffer[0]=0x8F00;
-    g_qspi.spiBuffers.spiMasterTxBuffer[1]=0xC3A2;
-    g_qspi.spiBuffers.spiMasterTxBuffer[2]=0xC3A2;
-    g_qspi.spiBuffers.spiMasterTxBuffer[3]=0xC3A2;
-    g_qspi.spiBuffers.spiMasterTxBuffer[4]=0xC3A2;
-
-//    for (uint8 i = 0; i < 5; i++)
-//    {
-//        g_qspi.spiBuffers.spiMasterRxBuffer[i] = 0;                     /* Clear RX Buffer                          */
-//    }
-}
-
-void readQSPI1MasterBuffers(void)
-{
-    g_qspi.spiBuffers.spiMasterTxBuffer[0]=0x5FA2;
-    g_qspi.spiBuffers.spiMasterTxBuffer[1]=0x5FA2;
-    g_qspi.spiBuffers.spiMasterTxBuffer[2]=0x5FA2;
-    g_qspi.spiBuffers.spiMasterTxBuffer[3]=0x5FA2;
-//    for (uint8 i = 0; i < 4; i++)
-//    {
-//        g_qspi.spiBuffers.spiMasterRxBuffer[i] = 0;                     /* Clear RX Buffer                          */
-//    }
 
 }
+
 
 void PSI5_ACC_TASK()
 {
-    initQSPI();
-    for(;;)
-    {
-        transferData();
-        printf("FL_Acc = %d , FR_Acc = %d , RL_Acc = %d , RR_Acc = %d \r\n",
-                FL_Acc, FR_Acc, RL_Acc, RR_Acc);
-        vTaskDelay(pdMS_TO_TICKS(5));
-
-    }
+//    initQSPI();
+//    for(;;)
+//    {
+//        transferData();
+//        printf("FL_Acc = %d , FR_Acc = %d , RL_Acc = %d , RR_Acc = %d \r\n",
+//                FL_Acc, FR_Acc, RL_Acc, RR_Acc);
+//        vTaskDelay(pdMS_TO_TICKS(5));
+//
+//    }
 }
 
 
@@ -214,32 +225,121 @@ void initQSPI(void)
 /* This function to initialize the QSPI modules and the LED */
 void initPeripherals(void)
 {
-    initLED();
+//    initLED();
     initQSPI();
+//    IfxPort_setPinMode(CS_PIN, IfxPort_Mode_outputPushPullGeneral);
+//    IfxPort_setPinState(CS_PIN, IfxPort_State_low);
 }
 
 /* This function starts the data transfer */
 void inittransferData(void)
 {
-    initQSPI1MasterBuffers();
+//    Ifx_TickTime ticksFor10ms = IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 10);
 
-    while(IfxQspi_SpiMaster_getStatus(&g_qspi.spiMasterChannel) == SpiIf_Status_busy)
-    {   /* Wait until the previous communication has finished, if any */
+    g_qspi.spiBuffers.spiMasterTxBuffer[0]=0x8F00;
+    g_qspi.spiBuffers.spiMasterTxBuffer[1]=0x8F00;
+    g_qspi.spiBuffers.spiMasterTxBuffer[2]=0xC3A2;
+    g_qspi.spiBuffers.spiMasterTxBuffer[3]=0xC3A2;
+    g_qspi.spiBuffers.spiMasterTxBuffer[4]=0xC3A2;
+
+    for (uint8 i = 0; i < 20; i++)
+    {
+        g_qspi.spiBuffers.spiMasterRxBuffer[i] = 0;                     /* Clear RX Buffer                          */
     }
+
+//    while(IfxQspi_SpiMaster_getStatus(&g_qspi.spiMasterChannel) == SpiIf_Status_busy)
+//    {   /* Wait until the previous communication has finished, if any */
+//    }
     /* Send a data stream through the SPI Master */
-    IfxQspi_SpiMaster_exchange(&g_qspi.spiMasterChannel, &g_qspi.spiBuffers.spiMasterTxBuffer[0], &g_qspi.spiBuffers.spiMasterRxBuffer[0], 5);
+//    IfxPort_setPinState(CS_PIN,  IfxPort_State_high);
+
+//    IfxQspi_SpiMaster_exchange(&g_qspi.spiMasterChannel, &g_qspi.spiBuffers.spiMasterTxBuffer[0], &g_qspi.spiBuffers.spiMasterRxBuffer[0], 1);
+//    while(IfxQspi_SpiMaster_getStatus(&g_qspi.spiMasterChannel) == SpiIf_Status_busy){};
+
+//    IfxPort_setPinState(CS_PIN,  IfxPort_State_low);
+
+
+//    IfxPort_setPinState(CS_PIN,  IfxPort_State_high);
+
+    IfxQspi_SpiMaster_exchange(&g_qspi.spiMasterChannel, &g_qspi.spiBuffers.spiMasterTxBuffer[1], &g_qspi.spiBuffers.spiMasterRxBuffer[1], 4);
+
+    while(IfxQspi_SpiMaster_getStatus(&g_qspi.spiMasterChannel) == SpiIf_Status_busy){};
+//        waitTime(ticksFor10ms/1000);
+
+//    IfxPort_setPinState(CS_PIN,  IfxPort_State_low);
+
+//    p2013=IfxPort_getPinState(&MODULE_P20,13);
+//
+//    g_qspi.spiBuffers.spiMasterTxBuffer[0]=0x8F00;
+//    g_qspi.spiBuffers.spiMasterTxBuffer[1]=0xC3A2;
+//    g_qspi.spiBuffers.spiMasterTxBuffer[2]=0xC3A2;
+//    g_qspi.spiBuffers.spiMasterTxBuffer[3]=0xC3A2;
+//    g_qspi.spiBuffers.spiMasterTxBuffer[4]=0xC3A2;
+    g_qspi.spiBuffers.spiMasterTxBuffer[5]=0xC3A2;
+    g_qspi.spiBuffers.spiMasterTxBuffer[6]=0xC3A2;
+    g_qspi.spiBuffers.spiMasterTxBuffer[7]=0xC3A2;
+    g_qspi.spiBuffers.spiMasterTxBuffer[8]=0xC3A2;
+
+//    for (uint8 i = 0; i < 5; i++)
+//    {
+//        g_qspi.spiBuffers.spiMasterRxBuffer[i] = 0;                     /* Clear RX Buffer                          */
+//    }
+//
+//    waitTime(ticksFor10ms/10000);
+//    IfxPort_setPinState(CS_PIN,  IfxPort_State_high);
+
+    IfxQspi_SpiMaster_exchange(&g_qspi.spiMasterChannel, &g_qspi.spiBuffers.spiMasterTxBuffer[5], &g_qspi.spiBuffers.spiMasterRxBuffer[5], 4);
+//    while(IfxQspi_SpiMaster_getStatus(&g_qspi.spiMasterChannel) == SpiIf_Status_busy){};
+
+//    IfxQspi_SpiMaster_exchange(&g_qspi.spiMasterChannel, &g_qspi.spiBuffers.spiMasterTxBuffer[1], &g_qspi.spiBuffers.spiMasterRxBuffer[1], 4);
+
+
+    while(IfxQspi_SpiMaster_getStatus(&g_qspi.spiMasterChannel) == SpiIf_Status_busy){};
+//    waitTime(ticksFor10ms/10000);
+//    IfxPort_setPinState(CS_PIN,  IfxPort_State_low);
+
+
+//    waitTime(ticksFor10ms);
+    recdata1 = g_qspi.spiBuffers.spiMasterRxBuffer[1];
+    recdata2 = g_qspi.spiBuffers.spiMasterRxBuffer[2];
+    recdata3 = g_qspi.spiBuffers.spiMasterRxBuffer[3];
+    recdata4 = g_qspi.spiBuffers.spiMasterRxBuffer[4];
+    recdata5 = g_qspi.spiBuffers.spiMasterRxBuffer[5];
+    recdata6 = g_qspi.spiBuffers.spiMasterRxBuffer[6];
+    recdata7 = g_qspi.spiBuffers.spiMasterRxBuffer[7];
+    recdata8 = g_qspi.spiBuffers.spiMasterRxBuffer[8];
+
 
 }
 
 void transferData(void)
 {
-    readQSPI1MasterBuffers();
 
-    while(IfxQspi_SpiMaster_getStatus(&g_qspi.spiMasterChannel) == SpiIf_Status_busy)
-    {   /* Wait until the previous communication has finished, if any */
-    }
+//    for (uint8 i = 0; i < 20; i++)
+//    {
+//        g_qspi.spiBuffers.spiMasterRxBuffer[i] = 0;                     /* Clear RX Buffer                          */
+//    }
+
+//    while(IfxQspi_SpiMaster_getStatus(&g_qspi.spiMasterChannel) == SpiIf_Status_busy){};
+//    g_qspi.spiBuffers.spiMasterTxBuffer[9]=0x5782;
+    g_qspi.spiBuffers.spiMasterTxBuffer[9]=0x5FA2;
+    g_qspi.spiBuffers.spiMasterTxBuffer[10]=0x5FA2;
+    g_qspi.spiBuffers.spiMasterTxBuffer[11]=0x5FA2;
+    g_qspi.spiBuffers.spiMasterTxBuffer[12]=0x5FA2;
+
+//    while(IfxQspi_SpiMaster_getStatus(&g_qspi.spiMasterChannel) == SpiIf_Status_busy)
+//    {   /* Wait until the previous communication has finished, if any */
+//    }
+
+//    IfxPort_setPinState(CS_PIN,  IfxPort_State_high);
+
     /* Send a data stream through the SPI Master */
-    IfxQspi_SpiMaster_exchange(&g_qspi.spiMasterChannel, &g_qspi.spiBuffers.spiMasterTxBuffer[0], &g_qspi.spiBuffers.spiMasterRxBuffer[0], 4);
+    IfxQspi_SpiMaster_exchange(&g_qspi.spiMasterChannel, &g_qspi.spiBuffers.spiMasterTxBuffer[9], &g_qspi.spiBuffers.spiMasterRxBuffer[9], 4);
+
+    while(IfxQspi_SpiMaster_getStatus(&g_qspi.spiMasterChannel) == SpiIf_Status_busy){};
+
+//    IfxPort_setPinState(CS_PIN,  IfxPort_State_low);
+
 
     verifyData();
 }
@@ -247,17 +347,21 @@ void transferData(void)
 /* This function checks if the received data is correct */
 void verifyData(void)
 {
-    FL_Acc=g_qspi.spiBuffers.spiMasterRxBuffer[0];
-    FR_Acc=g_qspi.spiBuffers.spiMasterRxBuffer[1];
-    RL_Acc=g_qspi.spiBuffers.spiMasterRxBuffer[2];
-    RR_Acc=g_qspi.spiBuffers.spiMasterRxBuffer[3];
+    FL_Acc=g_qspi.spiBuffers.spiMasterRxBuffer[9];
+    FR_Acc=g_qspi.spiBuffers.spiMasterRxBuffer[10];
+    RL_Acc=g_qspi.spiBuffers.spiMasterRxBuffer[11];
+    RR_Acc=g_qspi.spiBuffers.spiMasterRxBuffer[12];
+    f32_FL_Acc = PSI5_DataProcess(FL_Acc);
+    f32_FR_Acc = PSI5_DataProcess(FR_Acc);
+    f32_RL_Acc = PSI5_DataProcess(RL_Acc);
+    f32_RR_Acc = PSI5_DataProcess(RR_Acc);
 }
 
-float PSI5_DataProcess(uint16 Data)       //PSI5加速度传感器信号值处理函数
+float32 PSI5_DataProcess(uint16 Data)       //PSI5加速度传感器信号值处理函数
 {
   uint16 Acc_Data,Acc_RevData,Acc_temp,Bit_temp;
-  float Acc;
-  char k;
+  float32 Acc;
+  uint8 k;
 
   Acc_RevData=Data&0x3FF;               //取出D0~D9的10位有效信号值，此时取出的值为倒序
 
@@ -272,17 +376,17 @@ float PSI5_DataProcess(uint16 Data)       //PSI5加速度传感器信号值处理函数
   }
 
   if(Acc_Data>=0x000&&Acc_Data<=0x1E0)
-    Acc=(Acc_Data/300.00)*9.81*10;              //在加速度信号值>0时将接收到的值转化成物理值，加速度方向和g相同（向下为正）
+    Acc=(Acc_Data/300.00)*9.81;              //在加速度信号值>0时将接收到的值转化成物理值，加速度方向和g相同（向下为正）
   else if(Acc_Data>=0x220&&Acc_Data<=0x3FF)
   {
     Acc_temp=(~(Acc_Data)&0x01FF)+1;         //在加速度信号值<0时将接收到的补码转化成原码
-    Acc=0.00-(Acc_temp/300.00*9.81*10);         //转化成物理值，加速度方向和g相反（向上为负）
+    Acc=0.00-(Acc_temp/300.00*9.81);         //转化成物理值，加速度方向和g相反（向上为负）
   }
   else                                       //若PSI5信号值为非数字值，则视加速度为0
     Acc=0;
 
-  if(Acc<5&&Acc>-5)
-  Acc=0;
+//  if(Acc<5&&Acc>-5)
+//  Acc=0;
 
   return Acc;
 }

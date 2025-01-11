@@ -254,6 +254,8 @@ SpiIf_Status IfxQspi_SpiMaster_initChannel(IfxQspi_SpiMaster_Channel *chHandle, 
     else /* not loop back - pin must be configured */
     {
         chHandle->channelId = (IfxQspi_ChannelId)chConfig->sls.output.pin->slsoNr;
+//        chHandle->channelId = 3;
+
     }
 
     uint8 cs = chHandle->channelId % 8;
@@ -332,6 +334,7 @@ void IfxQspi_SpiMaster_initChannelConfig(IfxQspi_SpiMaster_ChannelConfig *chConf
     chConfig->sls.input.mode    = IfxPort_InputMode_noPullDevice;
     chConfig->channelBasedCs    = IfxQspi_SpiMaster_ChannelBasedCs_disabled;
     chConfig->mode              = IfxQspi_SpiMaster_Mode_shortContinuous;
+//    chConfig->mode              = IfxQspi_SpiMaster_Mode_longContinuous;
     chConfig->dummyTxValue      = (uint32)~0;
     chConfig->dummyRxValue      = (uint32)0;
 }
@@ -357,7 +360,7 @@ void IfxQspi_SpiMaster_initModule(IfxQspi_SpiMaster *handle, const IfxQspi_SpiMa
         globalcon.U        = 0;
         globalcon.B.TQ     = IfxQspi_calculateTimeQuantumLength(qspiSFR, config->base.maximumBaudrate);
         globalcon.B.EXPECT = IfxQspi_ExpectTimeout_2097152;  /* 2^(EXPECT+6) : timeout for expect phase in Tqspi */
-        //globalcon.B.LB      = 0 ;                             /* 0 : disable loop-back w*/
+        globalcon.B.LB      = 0 ;                             /* 0 : disable loop-back w*/
         //globalcon.B.DEL0    = 0;                             /* 0 : disable delayed mode for SLSO 0 */
         //globalcon.B.STROBE  = 0;                             /* (STROBE+1) : strobe delay for SLSO 0 in Tq */
         //globalcon.B.SRF     = 0;                             /* 0 : disable stop-on-RXFIFO full feature */
@@ -932,151 +935,151 @@ IFX_STATIC void IfxQspi_SpiMaster_write(IfxQspi_SpiMaster_Channel *chHandle)
     SpiIf_Job         *job    = &chHandle->base.tx;
     IfxQspi_SpiMaster *handle = chHandle->base.driver->driver;
 
-    if (handle->dma.useDma)
-    {
-        Ifx_DMA               *dmaSFR         = &MODULE_DMA;
-
-        Ifx_QSPI              *qspiSFR        = handle->qspi;
-        volatile Ifx_SRC_SRCR *src            = IfxQspi_getTransmitSrc(qspiSFR);
-
-        IfxDma_ChannelId       txDmaChannelId = handle->dma.txDmaChannelId;
-        IfxDma_ChannelId       rxDmaChannelId = handle->dma.rxDmaChannelId;
-
-        boolean                interruptState = IfxCpu_disableInterrupts();
-
-        if (job->remaining > 1)
-        {
-            IfxDma_setChannelTransferCount(dmaSFR, txDmaChannelId, job->remaining - 1);
-
-            if (chHandle->dataWidth <= 8)
-            {
-                IfxDma_setChannelMoveSize(dmaSFR, txDmaChannelId, IfxDma_ChannelMoveSize_8bit);
-            }
-            else if (chHandle->dataWidth <= 16)
-            {
-                IfxDma_setChannelMoveSize(dmaSFR, txDmaChannelId, IfxDma_ChannelMoveSize_16bit);
-            }
-            else
-            {
-                IfxDma_setChannelMoveSize(dmaSFR, txDmaChannelId, IfxDma_ChannelMoveSize_32bit);
-            }
-
-            if (job->data == NULL_PTR)
-            {
-                IfxDma_setChannelSourceAddress(dmaSFR, txDmaChannelId, (void *)IFXCPU_GLB_ADDR_DSPR(IfxCpu_getCoreId(), &(chHandle->dummyTxValue)));
-                IfxDma_setChannelSourceIncrementStep(dmaSFR, txDmaChannelId, IfxDma_ChannelIncrementStep_1,
-                    IfxDma_ChannelIncrementDirection_positive, IfxDma_ChannelIncrementCircular_4);
-                /* need to enable circular buffering to avoid increment higher than 4 bytes */
-                /* we must do this direct why we don't have function for this */
-                dmaSFR->CH[txDmaChannelId].ADICR.B.SCBE = TRUE;
-            }
-            else
-            {
-                IfxDma_setChannelSourceAddress(dmaSFR, txDmaChannelId, (void *)IFXCPU_GLB_ADDR_DSPR(IfxCpu_getCoreId(), job->data));
-                IfxDma_setChannelSourceIncrementStep(dmaSFR, txDmaChannelId, IfxDma_ChannelIncrementStep_1,
-                    IfxDma_ChannelIncrementDirection_positive, IfxDma_ChannelIncrementCircular_none);
-                /* maybe circular buffering was enabled by other call, we disable the circular buffering */
-                /* we must do this direct why we don't have function for this */
-                dmaSFR->CH[txDmaChannelId].ADICR.B.SCBE = FALSE;
-            }
-
-            IfxDma_setChannelDestinationAddress(dmaSFR, txDmaChannelId, (void *)&qspiSFR->DATAENTRY[0].U);
-            IfxDma_setChannelDestinationIncrementStep(dmaSFR, txDmaChannelId, IfxDma_ChannelIncrementStep_1,
-                IfxDma_ChannelIncrementDirection_positive, IfxDma_ChannelIncrementCircular_none);
-
-            IfxDma_clearChannelInterrupt(dmaSFR, txDmaChannelId);
-        }
-
-        /* Receive config */
-        IfxDma_setChannelTransferCount(dmaSFR, rxDmaChannelId, job->remaining);
-
-        if (chHandle->dataWidth <= 8)
-        {
-            IfxDma_setChannelMoveSize(dmaSFR, rxDmaChannelId, IfxDma_ChannelMoveSize_8bit);
-        }
-        else if (chHandle->dataWidth <= 16)
-        {
-            IfxDma_setChannelMoveSize(dmaSFR, rxDmaChannelId, IfxDma_ChannelMoveSize_16bit);
-        }
-        else
-        {
-            IfxDma_setChannelMoveSize(dmaSFR, rxDmaChannelId, IfxDma_ChannelMoveSize_32bit);
-        }
-
-        if (chHandle->base.rx.data == NULL_PTR)
-        {
-            IfxDma_setChannelDestinationAddress(dmaSFR, rxDmaChannelId, (void *)IFXCPU_GLB_ADDR_DSPR(IfxCpu_getCoreId(), &(chHandle->dummyRxValue)));
-            IfxDma_setChannelDestinationIncrementStep(dmaSFR, rxDmaChannelId, IfxDma_ChannelIncrementStep_1,
-                IfxDma_ChannelIncrementDirection_positive, IfxDma_ChannelIncrementCircular_4);
-            /* need to enable circular buffering to avoid increment higher than 4 bytes */
-            /* we must do this direct why we don't have function for this */
-            dmaSFR->CH[rxDmaChannelId].ADICR.B.DCBE = TRUE;
-        }
-        else
-        {
-            IfxDma_setChannelDestinationAddress(dmaSFR, rxDmaChannelId, (void *)IFXCPU_GLB_ADDR_DSPR(IfxCpu_getCoreId(), chHandle->base.rx.data));
-            IfxDma_setChannelDestinationIncrementStep(dmaSFR, rxDmaChannelId, IfxDma_ChannelIncrementStep_1,
-                IfxDma_ChannelIncrementDirection_positive, IfxDma_ChannelIncrementCircular_none);
-            /* maybe circular buffering was enabled by other call, we disable the circular buffering */
-            /* we must do this direct why we don't have function for this */
-            dmaSFR->CH[rxDmaChannelId].ADICR.B.DCBE = FALSE;
-        }
-
-        IfxDma_clearChannelInterrupt(dmaSFR, rxDmaChannelId);
-        IfxQspi_clearAllEventFlags(qspiSFR);
-        src = IfxQspi_getTransmitSrc(qspiSFR);
-        IfxSrc_clearRequest(src);
-        src = IfxQspi_getReceiveSrc(qspiSFR);
-        IfxSrc_clearRequest(src);
-        src = IfxQspi_getErrorSrc(qspiSFR);
-        IfxSrc_clearRequest(src);
-        IfxDma_clearChannelInterrupt(dmaSFR, rxDmaChannelId);
-        IfxDma_enableChannelTransaction(dmaSFR, rxDmaChannelId);
-
-        if (job->remaining > 1)
-        {
-            IfxDma_clearChannelInterrupt(dmaSFR, txDmaChannelId);
-            IfxDma_enableChannelTransaction(dmaSFR, txDmaChannelId);
-
-            if (chHandle->channelBasedCs == IfxQspi_SpiMaster_ChannelBasedCs_disabled)
-            {
-                IfxQspi_writeBasicConfigurationBeginStream(qspiSFR, chHandle->bacon.U);
-            }
-            else
-            {
-                IfxQspi_writeBasicConfigurationEndStream(qspiSFR, chHandle->bacon.U);
-            }
-        }
-        else
-        {
-            if (job->data == NULL_PTR)
-            {
-                IfxQspi_writeBasicConfigurationEndStream(qspiSFR, chHandle->bacon.U);
-                IfxQspi_writeTransmitFifo(qspiSFR, chHandle->dummyTxValue);
-            }
-            else
-            {
-                IfxQspi_writeBasicConfigurationEndStream(qspiSFR, chHandle->bacon.U);
-
-                if (chHandle->dataWidth <= 8)
-                {
-                    IfxQspi_writeTransmitFifo(qspiSFR, ((uint8 *)job->data)[job->remaining - 1]);
-                }
-                else if (chHandle->dataWidth <= 16)
-                {
-                    IfxQspi_writeTransmitFifo(qspiSFR, ((uint16 *)job->data)[job->remaining - 1]);
-                }
-                else
-                {
-                    IfxQspi_writeTransmitFifo(qspiSFR, ((uint32 *)job->data)[job->remaining - 1]);
-                }
-            }
-        }
-
-        IfxCpu_restoreInterrupts(interruptState);
-    }
-
-    else
+//    if (handle->dma.useDma)
+//    {
+//        Ifx_DMA               *dmaSFR         = &MODULE_DMA;
+//
+//        Ifx_QSPI              *qspiSFR        = handle->qspi;
+//        volatile Ifx_SRC_SRCR *src            = IfxQspi_getTransmitSrc(qspiSFR);
+//
+//        IfxDma_ChannelId       txDmaChannelId = handle->dma.txDmaChannelId;
+//        IfxDma_ChannelId       rxDmaChannelId = handle->dma.rxDmaChannelId;
+//
+//        boolean                interruptState = IfxCpu_disableInterrupts();
+//
+//        if (job->remaining > 1)
+//        {
+//            IfxDma_setChannelTransferCount(dmaSFR, txDmaChannelId, job->remaining - 1);
+//
+//            if (chHandle->dataWidth <= 8)
+//            {
+//                IfxDma_setChannelMoveSize(dmaSFR, txDmaChannelId, IfxDma_ChannelMoveSize_8bit);
+//            }
+//            else if (chHandle->dataWidth <= 16)
+//            {
+//                IfxDma_setChannelMoveSize(dmaSFR, txDmaChannelId, IfxDma_ChannelMoveSize_16bit);
+//            }
+//            else
+//            {
+//                IfxDma_setChannelMoveSize(dmaSFR, txDmaChannelId, IfxDma_ChannelMoveSize_32bit);
+//            }
+//
+//            if (job->data == NULL_PTR)
+//            {
+//                IfxDma_setChannelSourceAddress(dmaSFR, txDmaChannelId, (void *)IFXCPU_GLB_ADDR_DSPR(IfxCpu_getCoreId(), &(chHandle->dummyTxValue)));
+//                IfxDma_setChannelSourceIncrementStep(dmaSFR, txDmaChannelId, IfxDma_ChannelIncrementStep_1,
+//                    IfxDma_ChannelIncrementDirection_positive, IfxDma_ChannelIncrementCircular_4);
+//                /* need to enable circular buffering to avoid increment higher than 4 bytes */
+//                /* we must do this direct why we don't have function for this */
+//                dmaSFR->CH[txDmaChannelId].ADICR.B.SCBE = TRUE;
+//            }
+//            else
+//            {
+//                IfxDma_setChannelSourceAddress(dmaSFR, txDmaChannelId, (void *)IFXCPU_GLB_ADDR_DSPR(IfxCpu_getCoreId(), job->data));
+//                IfxDma_setChannelSourceIncrementStep(dmaSFR, txDmaChannelId, IfxDma_ChannelIncrementStep_1,
+//                    IfxDma_ChannelIncrementDirection_positive, IfxDma_ChannelIncrementCircular_none);
+//                /* maybe circular buffering was enabled by other call, we disable the circular buffering */
+//                /* we must do this direct why we don't have function for this */
+//                dmaSFR->CH[txDmaChannelId].ADICR.B.SCBE = FALSE;
+//            }
+//
+//            IfxDma_setChannelDestinationAddress(dmaSFR, txDmaChannelId, (void *)&qspiSFR->DATAENTRY[0].U);
+//            IfxDma_setChannelDestinationIncrementStep(dmaSFR, txDmaChannelId, IfxDma_ChannelIncrementStep_1,
+//                IfxDma_ChannelIncrementDirection_positive, IfxDma_ChannelIncrementCircular_none);
+//
+//            IfxDma_clearChannelInterrupt(dmaSFR, txDmaChannelId);
+//        }
+//
+//        /* Receive config */
+//        IfxDma_setChannelTransferCount(dmaSFR, rxDmaChannelId, job->remaining);
+//
+//        if (chHandle->dataWidth <= 8)
+//        {
+//            IfxDma_setChannelMoveSize(dmaSFR, rxDmaChannelId, IfxDma_ChannelMoveSize_8bit);
+//        }
+//        else if (chHandle->dataWidth <= 16)
+//        {
+//            IfxDma_setChannelMoveSize(dmaSFR, rxDmaChannelId, IfxDma_ChannelMoveSize_16bit);
+//        }
+//        else
+//        {
+//            IfxDma_setChannelMoveSize(dmaSFR, rxDmaChannelId, IfxDma_ChannelMoveSize_32bit);
+//        }
+//
+//        if (chHandle->base.rx.data == NULL_PTR)
+//        {
+//            IfxDma_setChannelDestinationAddress(dmaSFR, rxDmaChannelId, (void *)IFXCPU_GLB_ADDR_DSPR(IfxCpu_getCoreId(), &(chHandle->dummyRxValue)));
+//            IfxDma_setChannelDestinationIncrementStep(dmaSFR, rxDmaChannelId, IfxDma_ChannelIncrementStep_1,
+//                IfxDma_ChannelIncrementDirection_positive, IfxDma_ChannelIncrementCircular_4);
+//            /* need to enable circular buffering to avoid increment higher than 4 bytes */
+//            /* we must do this direct why we don't have function for this */
+//            dmaSFR->CH[rxDmaChannelId].ADICR.B.DCBE = TRUE;
+//        }
+//        else
+//        {
+//            IfxDma_setChannelDestinationAddress(dmaSFR, rxDmaChannelId, (void *)IFXCPU_GLB_ADDR_DSPR(IfxCpu_getCoreId(), chHandle->base.rx.data));
+//            IfxDma_setChannelDestinationIncrementStep(dmaSFR, rxDmaChannelId, IfxDma_ChannelIncrementStep_1,
+//                IfxDma_ChannelIncrementDirection_positive, IfxDma_ChannelIncrementCircular_none);
+//            /* maybe circular buffering was enabled by other call, we disable the circular buffering */
+//            /* we must do this direct why we don't have function for this */
+//            dmaSFR->CH[rxDmaChannelId].ADICR.B.DCBE = FALSE;
+//        }
+//
+//        IfxDma_clearChannelInterrupt(dmaSFR, rxDmaChannelId);
+//        IfxQspi_clearAllEventFlags(qspiSFR);
+//        src = IfxQspi_getTransmitSrc(qspiSFR);
+//        IfxSrc_clearRequest(src);
+//        src = IfxQspi_getReceiveSrc(qspiSFR);
+//        IfxSrc_clearRequest(src);
+//        src = IfxQspi_getErrorSrc(qspiSFR);
+//        IfxSrc_clearRequest(src);
+//        IfxDma_clearChannelInterrupt(dmaSFR, rxDmaChannelId);
+//        IfxDma_enableChannelTransaction(dmaSFR, rxDmaChannelId);
+//
+//        if (job->remaining > 1)
+//        {
+//            IfxDma_clearChannelInterrupt(dmaSFR, txDmaChannelId);
+//            IfxDma_enableChannelTransaction(dmaSFR, txDmaChannelId);
+//
+//            if (chHandle->channelBasedCs == IfxQspi_SpiMaster_ChannelBasedCs_disabled)
+//            {
+//                IfxQspi_writeBasicConfigurationBeginStream(qspiSFR, chHandle->bacon.U);
+//            }
+//            else
+//            {
+//                IfxQspi_writeBasicConfigurationEndStream(qspiSFR, chHandle->bacon.U);
+//            }
+//        }
+//        else
+//        {
+//            if (job->data == NULL_PTR)
+//            {
+//                IfxQspi_writeBasicConfigurationEndStream(qspiSFR, chHandle->bacon.U);
+//                IfxQspi_writeTransmitFifo(qspiSFR, chHandle->dummyTxValue);
+//            }
+//            else
+//            {
+//                IfxQspi_writeBasicConfigurationEndStream(qspiSFR, chHandle->bacon.U);
+//
+//                if (chHandle->dataWidth <= 8)
+//                {
+//                    IfxQspi_writeTransmitFifo(qspiSFR, ((uint8 *)job->data)[job->remaining - 1]);
+//                }
+//                else if (chHandle->dataWidth <= 16)
+//                {
+//                    IfxQspi_writeTransmitFifo(qspiSFR, ((uint16 *)job->data)[job->remaining - 1]);
+//                }
+//                else
+//                {
+//                    IfxQspi_writeTransmitFifo(qspiSFR, ((uint32 *)job->data)[job->remaining - 1]);
+//                }
+//            }
+//        }
+//
+//        IfxCpu_restoreInterrupts(interruptState);
+//    }
+//
+//    else
     {
         if (job->remaining > 0)
         {

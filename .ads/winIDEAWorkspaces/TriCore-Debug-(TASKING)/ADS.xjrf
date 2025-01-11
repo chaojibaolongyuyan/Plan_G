@@ -146,7 +146,7 @@
            <Area></Area>
            <Load>true</Load>
            <OverrideMemArea>false</OverrideMemArea>
-           <Path>..\..\..\TriCore Debug (TASKING)\G_001.elf</Path>
+           <Path>..\..\..\TriCore Debug (TASKING)\demo6_TC387TP.elf</Path>
            <UseDefaultMSID>true</UseDefaultMSID>
            <MSID>
             <App>0x0</App>
@@ -233,7 +233,7 @@
        <__.0>
         <Enabled>true</Enabled>
         <ProbeURL></ProbeURL>
-        <SFRName>TC389QP</SFRName>
+        <SFRName>TC387TP</SFRName>
         <UserName>MCU</UserName>
         <DLFs_Program>
          <DefaultFile>1</DefaultFile>
@@ -242,7 +242,7 @@
            <Area></Area>
            <Load>true</Load>
            <OverrideMemArea>false</OverrideMemArea>
-           <Path>..\..\..\TriCore Debug (TASKING)\G_001.elf</Path>
+           <Path>..\..\..\TriCore Debug (TASKING)\demo6_TC387TP.elf</Path>
            <UseDefaultMSID>true</UseDefaultMSID>
            <MSID>
             <App>0x0</App>
@@ -376,7 +376,7 @@
         <SMP>
          <Bindings>
           <__.0>
-           <Cores>CPU0,CPU1,CPU2,CPU3</Cores>
+           <Cores>CPU0,CPU1,CPU2</Cores>
            <Name>SMP</Name>
           </__.0>
          </Bindings>
@@ -563,7 +563,7 @@
         <CustomReturn></CustomReturn>
        </CallFrameNone>
        <CallFrameRange>
-        <CallFrameLocation>-1</CallFrameLocation>
+        <CallFrameLocation>Symbol</CallFrameLocation>
         <CallFrameLocationAddr>
          <ContentAddress></ContentAddress>
          <ContentSize></ContentSize>
@@ -576,7 +576,7 @@
       <PersistentVars>
        <PersistentVariables>Stack</PersistentVariables>
        <PersistentVariablesRange>
-        <PersistentVariablesLocation>-1</PersistentVariablesLocation>
+        <PersistentVariablesLocation>Symbol</PersistentVariablesLocation>
         <PersistentVariablesLocationAddr>
          <ContentAddress></ContentAddress>
          <ContentSize></ContentSize>
@@ -682,26 +682,6 @@
      </PluginInstance.2>
      <PluginInstance.3>
       <InstanceData>
-       <Configuration>
-        <CCTRLOnReset>
-         <AutoOnReset>false</AutoOnReset>
-         <InitialConfig>
-          <CountEnable>Enable</CountEnable>
-          <CounterMode>Task</CounterMode>
-          <M1CNT>IP_DISPATCH_STALL</M1CNT>
-          <M2CNT>LS_DISPATCH_STALL</M2CNT>
-          <M3CNT>LP_DISPATCH_STALL</M3CNT>
-         </InitialConfig>
-        </CCTRLOnReset>
-       </Configuration>
-      </InstanceData>
-      <InstanceInfo>
-       <Instance>{r:{BB:0,SoC:0,Core:3}}</Instance>
-       <Type>TriCore</Type>
-      </InstanceInfo>
-     </PluginInstance.3>
-     <PluginInstance.4>
-      <InstanceData>
        <Config>
         <AutoStart>false</AutoStart>
         <Port>5555</Port>
@@ -718,7 +698,7 @@
        <Instance></Instance>
        <Type>XCP</Type>
       </InstanceInfo>
-     </PluginInstance.4>
+     </PluginInstance.3>
     </PluginData>
     <Plugins>
      <_3BB2B9D2-577A-4597-90CE-7032BE77BD1F>
@@ -769,22 +749,6 @@
        </Configuration>
       </Plugin>
      </_3BB2B9D2-577A-4597-90CE-7032BE77BD1F2>
-     <_3BB2B9D2-577A-4597-90CE-7032BE77BD1F3>
-      <Plugin>
-       <Configuration>
-        <CCTRLOnReset>
-         <AutoOnReset>false</AutoOnReset>
-         <InitialConfig>
-          <CountEnable>Enable</CountEnable>
-          <CounterMode>Task</CounterMode>
-          <M1CNT>IP_DISPATCH_STALL</M1CNT>
-          <M2CNT>LS_DISPATCH_STALL</M2CNT>
-          <M3CNT>LP_DISPATCH_STALL</M3CNT>
-         </InitialConfig>
-        </CCTRLOnReset>
-       </Configuration>
-      </Plugin>
-     </_3BB2B9D2-577A-4597-90CE-7032BE77BD1F3>
      <B6DE5FA5-AE7D-4C0B-B4FF-02174A47912C>
       <Plugin>
        <Config>
@@ -2803,165 +2767,6 @@
           </HW>
          </BP>
         </CPU2>
-        <CPU3>
-         <BP>
-          <BP.0>
-           <Address></Address>
-           <EntireObject>false</EntireObject>
-          </BP.0>
-          <BP.1>
-           <Address></Address>
-           <EntireObject>false</EntireObject>
-          </BP.1>
-          <BP.2>
-           <Address></Address>
-           <EntireObject>false</EntireObject>
-          </BP.2>
-          <BP.3>
-           <Address></Address>
-           <EntireObject>false</EntireObject>
-          </BP.3>
-          <BP.4>
-           <Address></Address>
-           <EntireObject>false</EntireObject>
-          </BP.4>
-          <BP.5>
-           <Address></Address>
-           <EntireObject>false</EntireObject>
-          </BP.5>
-          <BP.6>
-           <Address></Address>
-           <EntireObject>false</EntireObject>
-          </BP.6>
-          <BP.7>
-           <Address></Address>
-           <EntireObject>false</EntireObject>
-          </BP.7>
-          <HW>
-           <Enabled>false</Enabled>
-           <BP.0>
-            <Access>RD</Access>
-            <Enabled>false</Enabled>
-            <Range>false</Range>
-            <Event>
-             <BBM>false</BBM>
-             <BOD>false</BOD>
-             <CNT>NoChange</CNT>
-             <CSP>false</CSP>
-             <CST>false</CST>
-             <Enable>false</Enable>
-             <EVTA>Disabled</EVTA>
-             <SUSP>false</SUSP>
-            </Event>
-           </BP.0>
-           <BP.1>
-            <Access>RD</Access>
-            <Enabled>false</Enabled>
-            <Range>false</Range>
-            <Event>
-             <BBM>false</BBM>
-             <BOD>false</BOD>
-             <CNT>NoChange</CNT>
-             <CSP>false</CSP>
-             <CST>false</CST>
-             <Enable>false</Enable>
-             <EVTA>Disabled</EVTA>
-             <SUSP>false</SUSP>
-            </Event>
-           </BP.1>
-           <BP.2>
-            <Access>RD</Access>
-            <Enabled>false</Enabled>
-            <Range>false</Range>
-            <Event>
-             <BBM>false</BBM>
-             <BOD>false</BOD>
-             <CNT>NoChange</CNT>
-             <CSP>false</CSP>
-             <CST>false</CST>
-             <Enable>false</Enable>
-             <EVTA>Disabled</EVTA>
-             <SUSP>false</SUSP>
-            </Event>
-           </BP.2>
-           <BP.3>
-            <Access>RD</Access>
-            <Enabled>false</Enabled>
-            <Range>false</Range>
-            <Event>
-             <BBM>false</BBM>
-             <BOD>false</BOD>
-             <CNT>NoChange</CNT>
-             <CSP>false</CSP>
-             <CST>false</CST>
-             <Enable>false</Enable>
-             <EVTA>Disabled</EVTA>
-             <SUSP>false</SUSP>
-            </Event>
-           </BP.3>
-           <BP.4>
-            <Access>RD</Access>
-            <Enabled>false</Enabled>
-            <Range>false</Range>
-            <Event>
-             <BBM>false</BBM>
-             <BOD>false</BOD>
-             <CNT>NoChange</CNT>
-             <CSP>false</CSP>
-             <CST>false</CST>
-             <Enable>false</Enable>
-             <EVTA>Disabled</EVTA>
-             <SUSP>false</SUSP>
-            </Event>
-           </BP.4>
-           <BP.5>
-            <Access>RD</Access>
-            <Enabled>false</Enabled>
-            <Range>false</Range>
-            <Event>
-             <BBM>false</BBM>
-             <BOD>false</BOD>
-             <CNT>NoChange</CNT>
-             <CSP>false</CSP>
-             <CST>false</CST>
-             <Enable>false</Enable>
-             <EVTA>Disabled</EVTA>
-             <SUSP>false</SUSP>
-            </Event>
-           </BP.5>
-           <BP.6>
-            <Access>RD</Access>
-            <Enabled>false</Enabled>
-            <Range>false</Range>
-            <Event>
-             <BBM>false</BBM>
-             <BOD>false</BOD>
-             <CNT>NoChange</CNT>
-             <CSP>false</CSP>
-             <CST>false</CST>
-             <Enable>false</Enable>
-             <EVTA>Disabled</EVTA>
-             <SUSP>false</SUSP>
-            </Event>
-           </BP.6>
-           <BP.7>
-            <Access>RD</Access>
-            <Enabled>false</Enabled>
-            <Range>false</Range>
-            <Event>
-             <BBM>false</BBM>
-             <BOD>false</BOD>
-             <CNT>NoChange</CNT>
-             <CSP>false</CSP>
-             <CST>false</CST>
-             <Enable>false</Enable>
-             <EVTA>Disabled</EVTA>
-             <SUSP>false</SUSP>
-            </Event>
-           </BP.7>
-          </HW>
-         </BP>
-        </CPU3>
         <HSM>
          <BP>
           <Comparator.0>
@@ -3420,7 +3225,7 @@
         </HSM>
         <SCR>
          <BP.0>
-          <CoverEntireObject>false</CoverEntireObject>
+          <CoverEntireObject>true</CoverEntireObject>
           <Enabled>false</Enabled>
           <End></End>
           <Start></Start>
@@ -3432,7 +3237,7 @@
           <Start></Start>
          </BP.1>
          <BP.2>
-          <CoverEntireObject>false</CoverEntireObject>
+          <CoverEntireObject>true</CoverEntireObject>
           <Enabled>false</Enabled>
           <End></End>
           <Start></Start>
@@ -3521,7 +3326,7 @@
           <FillLast>0x0</FillLast>
           <FillValue>0</FillValue>
           <Flags_0>0</Flags_0>
-          <Flags_1>5</Flags_1>
+          <Flags_1>6</Flags_1>
           <Flags_2>0</Flags_2>
           <Flags_3>0</Flags_3>
           <Manufacturer>Infineon</Manufacturer>
@@ -3766,7 +3571,7 @@
         <CPU1>0</CPU1>
         <Family>36</Family>
         <POD>0</POD>
-        <SubCPU>TC389QP</SubCPU>
+        <SubCPU>TC387TP</SubCPU>
         <Aurix>
          <AllowCacheMonExec>false</AllowCacheMonExec>
          <ApplicationLBIST>false</ApplicationLBIST>
@@ -4601,7 +4406,7 @@
            <ConnectDebug>true</ConnectDebug>
            <DCache_EnableWriteThrough>false</DCache_EnableWriteThrough>
            <DCache_FlushWhenStopped>false</DCache_FlushWhenStopped>
-           <Endian>LE</Endian>
+           <Endian>BE</Endian>
            <MCSync>true</MCSync>
            <StopCPUActivities>false</StopCPUActivities>
            <UseSWBPs>false</UseSWBPs>
@@ -4654,120 +4459,6 @@
           </Xtensa>
          </__.3>
          <__.4>
-          <ARMv7>
-           <Exceptions>
-            <MD>Leave</MD>
-            <MF>Leave</MF>
-            <MI>Leave</MI>
-            <MP>Leave</MP>
-            <MS>Leave</MS>
-            <NSD>Leave</NSD>
-            <NSF>Leave</NSF>
-            <NSHC>Leave</NSHC>
-            <NSHD>Leave</NSHD>
-            <NSHE>Leave</NSHE>
-            <NSHF>Leave</NSHF>
-            <NSHI>Leave</NSHI>
-            <NSHP>Leave</NSHP>
-            <NSHU>Leave</NSHU>
-            <NSI>Leave</NSI>
-            <NSP>Leave</NSP>
-            <NSS>Leave</NSS>
-            <NSU>Leave</NSU>
-            <R>Leave</R>
-            <SD>Leave</SD>
-            <SF>Leave</SF>
-            <SI>Leave</SI>
-            <SP>Leave</SP>
-            <SS>Leave</SS>
-            <SU>Leave</SU>
-           </Exceptions>
-          </ARMv7>
-          <ARMv8>
-           <CatchEvents>
-            <MD>false</MD>
-            <MF>false</MF>
-            <MI>false</MI>
-            <MP>false</MP>
-            <MS>false</MS>
-            <NSD>false</NSD>
-            <NSE1>false</NSE1>
-            <NSE2>false</NSE2>
-            <NSF>false</NSF>
-            <NSI>false</NSI>
-            <NSP>false</NSP>
-            <NSS>false</NSS>
-            <NSU>false</NSU>
-            <OSUCE>false</OSUCE>
-            <RCE>false</RCE>
-            <SD>false</SD>
-            <SE1>false</SE1>
-            <SE3>false</SE3>
-            <SF>false</SF>
-            <SI>false</SI>
-            <SP>false</SP>
-            <SS>false</SS>
-            <SU>false</SU>
-            <TDA>false</TDA>
-           </CatchEvents>
-          </ARMv8>
-          <Common>
-           <ConnectDebug>true</ConnectDebug>
-           <DCache_EnableWriteThrough>false</DCache_EnableWriteThrough>
-           <DCache_FlushWhenStopped>false</DCache_FlushWhenStopped>
-           <Endian>BE</Endian>
-           <MCSync>true</MCSync>
-           <StopCPUActivities>false</StopCPUActivities>
-           <UseSWBPs>false</UseSWBPs>
-           <DebugEntry>
-            <PresetAddr></PresetAddr>
-            <PresetPCAfterStoppedInInit>NoPreset</PresetPCAfterStoppedInInit>
-            <Type>NonIntrusive</Type>
-           </DebugEntry>
-          </Common>
-          <Cortex>
-           <Exceptions>
-            <BUSERR>false</BUSERR>
-            <CHKERR>false</CHKERR>
-            <CORERESET>false</CORERESET>
-            <HARDERR>false</HARDERR>
-            <INTERR>false</INTERR>
-            <MMERR>false</MMERR>
-            <NOCPERR>false</NOCPERR>
-            <STATERR>false</STATERR>
-           </Exceptions>
-          </Cortex>
-          <e200>
-           <DebugSelect>0x180</DebugSelect>
-           <EVTOOnlyOnBP>false</EVTOOnlyOnBP>
-           <NPIDRistransmittedwithinOTM>false</NPIDRistransmittedwithinOTM>
-           <StopTimerDuringStep>false</StopTimerDuringStep>
-           <StopWhenReleasedFromReset>false</StopWhenReleasedFromReset>
-           <UseBDMMemAccessWhenStopped>false</UseBDMMemAccessWhenStopped>
-           <UseTrapForSWBPsinPowerPCMode>false</UseTrapForSWBPsinPowerPCMode>
-          </e200>
-          <eTPU>
-           <CLKS>false</CLKS>
-           <HaltOnPrimaryCoreBP>false</HaltOnPrimaryCoreBP>
-           <HTWN>false</HTWN>
-           <PINS>false</PINS>
-           <RegAccessHelperLocation>0x0</RegAccessHelperLocation>
-          </eTPU>
-          <Tricore>
-           <ReserveBPPair_0>false</ReserveBPPair_0>
-           <ReserveBPPair_1>false</ReserveBPPair_1>
-           <ReserveBPPair_2>false</ReserveBPPair_2>
-           <ReserveBPPair_3>false</ReserveBPPair_3>
-          </Tricore>
-          <V850>
-           <MaskRESET>false</MaskRESET>
-          </V850>
-          <Xtensa>
-           <StopSoCWhenStopped>false</StopSoCWhenStopped>
-           <StopWhenSoCIsStopped>false</StopWhenSoCIsStopped>
-          </Xtensa>
-         </__.4>
-         <__.5>
           <ARMv7>
            <Exceptions>
             <MD>Leave</MD>
@@ -4880,7 +4571,7 @@
            <StopSoCWhenStopped>false</StopSoCWhenStopped>
            <StopWhenSoCIsStopped>false</StopWhenSoCIsStopped>
           </Xtensa>
-         </__.5>
+         </__.4>
         </Cores>
        </MC>
        <Module>
@@ -5501,7 +5192,7 @@
        </Communication>
        <IFX_DAS>
         <Config>
-         <Str>DAS JDS TriBoard TCXXX V3.5 TB4REX68</Str>
+         <Str>DAS JDS TriBoard TCXXX V3.5 TB8JW7ZA</Str>
         </Config>
        </IFX_DAS>
        <XCP>

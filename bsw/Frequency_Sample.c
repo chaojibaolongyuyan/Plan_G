@@ -38,7 +38,7 @@
 /*********************************************************************************************************************/
 /*-------------------------------------------------Global variables--------------------------------------------------*/
 /*********************************************************************************************************************/
-float32 g_measuredPwmDutyCycle[4];                   /* Global variable for duty cycle of generated PWM signal   */
+float32 g_measuredPwmDutyCycle[4]={101};                   /* Global variable for duty cycle of generated PWM signal   */
 float32 g_measuredPwmFreq_Hz[4];                     /* Global variable for frequency calculation of PWM signal  */
 float32 g_measuredPwmPeriod[4];                      /* Global variable for period calculation of PWM signal     */
 IfxGtm_Tim_In g_driverTIM[4];                              /* TIM driver structure                                     */

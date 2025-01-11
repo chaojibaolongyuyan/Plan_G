@@ -38,7 +38,7 @@
 /*********************************************************************************************************************/
 /*------------------------------------------------------Macros-------------------------------------------------------*/
 /*********************************************************************************************************************/
-#define SPI_BUFFER_SIZE     5                       /* Buffers size                  */
+#define SPI_BUFFER_SIZE     20                       /* Buffers size                  */
 
 /*********************************************************************************************************************/
 /*-------------------------------------------------Data Structures---------------------------------------------------*/
@@ -65,11 +65,19 @@ typedef struct
 void initPeripherals(void);
 void transferData(void);
 void PSI5_ACC_TASK(void);
-float PSI5_DataProvess(uint16 Data);
+float32 PSI5_DataProvess(uint16 Data);
 
 extern uint16 FL_Acc;
 extern uint16 FR_Acc;
 extern uint16 RL_Acc;
 extern uint16 RR_Acc;
+
+extern float32 f32_FL_Acc;
+extern float32 f32_FR_Acc;
+extern float32 f32_RL_Acc;
+extern float32 f32_RR_Acc;
+
+extern uint16 recdata1, recdata2, recdata3, recdata4;
+extern uint16 recdata5, recdata6, recdata7, recdata8;
 
 #endif /* QSPI_CPU_H_ */

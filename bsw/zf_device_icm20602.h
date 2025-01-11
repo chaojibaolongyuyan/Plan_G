@@ -78,7 +78,7 @@
 #endif
 
 //#define ICM20602_CS_PIN             (P20_13)                                    // CS 片选引脚
-#define ICM20602_CS_PIN             &MODULE_P23, 13
+#define ICM20602_CS_PIN             &MODULE_P20, 13
 //#define ICM20602_CS(x)              ((x) ? (gpio_high(ICM20602_CS_PIN)) : (gpio_low(ICM20602_CS_PIN)))
 #define ICM20602_CS(x)              ((x) ? (IfxPort_setPinHigh(ICM20602_CS_PIN)): (IfxPort_setPinLow(ICM20602_CS_PIN)))
 #define ICM20602_TIMEOUT_COUNT      (0x00FF)                                    // ICM20602 超时计数

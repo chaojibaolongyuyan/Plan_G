@@ -88,50 +88,63 @@ void gpio_init(void)
 
     // configure P33.6 as general output
     //PA0-PA7 P23.0-P23.7
-    IfxPort_setPinMode(&MODULE_P23, 0, IfxPort_Mode_outputPushPullGeneral);
-    IfxPort_setPinMode(&MODULE_P23, 1, IfxPort_Mode_outputPushPullGeneral);
-    IfxPort_setPinMode(&MODULE_P23, 2, IfxPort_Mode_outputPushPullGeneral);
-    IfxPort_setPinMode(&MODULE_P23, 3, IfxPort_Mode_outputPushPullGeneral);
-    IfxPort_setPinMode(&MODULE_P23, 4, IfxPort_Mode_outputPushPullGeneral);
-    IfxPort_setPinMode(&MODULE_P23, 5, IfxPort_Mode_outputPushPullGeneral);
-    IfxPort_setPinMode(&MODULE_P23, 6, IfxPort_Mode_outputPushPullGeneral);
-    IfxPort_setPinMode(&MODULE_P23, 7, IfxPort_Mode_outputPushPullGeneral);
+//    IfxPort_setPinMode(&MODULE_P23, 0, IfxPort_Mode_outputPushPullGeneral);
+//    IfxPort_setPinMode(&MODULE_P23, 1, IfxPort_Mode_outputPushPullGeneral);
+//    IfxPort_setPinMode(&MODULE_P23, 2, IfxPort_Mode_outputPushPullGeneral);
+//    IfxPort_setPinMode(&MODULE_P23, 3, IfxPort_Mode_outputPushPullGeneral);
+//    IfxPort_setPinMode(&MODULE_P23, 4, IfxPort_Mode_outputPushPullGeneral);
+//    IfxPort_setPinMode(&MODULE_P23, 5, IfxPort_Mode_outputPushPullGeneral);
+//    IfxPort_setPinMode(&MODULE_P23, 6, IfxPort_Mode_outputPushPullGeneral);
+//    IfxPort_setPinMode(&MODULE_P23, 7, IfxPort_Mode_outputPushPullGeneral);
 
     //PB2-PB7 P23.0-P23.7
-    IfxPort_setPinMode(&MODULE_P22, 2, IfxPort_Mode_outputPushPullGeneral);
-    IfxPort_setPinMode(&MODULE_P22, 3, IfxPort_Mode_outputPushPullGeneral);
-    IfxPort_setPinMode(&MODULE_P22, 4, IfxPort_Mode_outputPushPullGeneral);
-    IfxPort_setPinMode(&MODULE_P22, 5, IfxPort_Mode_outputPushPullGeneral);
-    IfxPort_setPinMode(&MODULE_P22, 6, IfxPort_Mode_outputPushPullGeneral);
-    IfxPort_setPinMode(&MODULE_P22, 7, IfxPort_Mode_outputPushPullGeneral);
+//    IfxPort_setPinMode(&MODULE_P22, 2, IfxPort_Mode_outputPushPullGeneral);
+//    IfxPort_setPinMode(&MODULE_P22, 3, IfxPort_Mode_outputPushPullGeneral);
+//    IfxPort_setPinMode(&MODULE_P22, 4, IfxPort_Mode_outputPushPullGeneral);
+//    IfxPort_setPinMode(&MODULE_P22, 5, IfxPort_Mode_outputPushPullGeneral);
+//    IfxPort_setPinMode(&MODULE_P22, 6, IfxPort_Mode_outputPushPullGeneral);
+//    IfxPort_setPinMode(&MODULE_P22, 7, IfxPort_Mode_outputPushPullGeneral);
+    IfxPort_setPinMode(&MODULE_P33, 4, IfxPort_Mode_outputPushPullGeneral);
+    IfxPort_setPinMode(&MODULE_P33, 5, IfxPort_Mode_outputPushPullGeneral);
+    IfxPort_setPinMode(&MODULE_P33, 6, IfxPort_Mode_outputPushPullGeneral);
+    IfxPort_setPinMode(&MODULE_P33, 7, IfxPort_Mode_outputPushPullGeneral);
+    IfxPort_setPinMode(&MODULE_P33, 8, IfxPort_Mode_outputPushPullGeneral);
+    IfxPort_setPinMode(&MODULE_P33, 9, IfxPort_Mode_outputPushPullGeneral);
 
     //set high, led off
-    IfxPort_setPinState(&MODULE_P23, 0, IfxPort_State_high);
-    IfxPort_setPinState(&MODULE_P23, 1, IfxPort_State_high);
-    IfxPort_setPinState(&MODULE_P23, 2, IfxPort_State_high);
-    IfxPort_setPinState(&MODULE_P23, 3, IfxPort_State_high);
-    IfxPort_setPinState(&MODULE_P23, 4, IfxPort_State_high);
-    IfxPort_setPinState(&MODULE_P23, 5, IfxPort_State_high);
-    IfxPort_setPinState(&MODULE_P23, 6, IfxPort_State_high);
-    IfxPort_setPinState(&MODULE_P23, 7, IfxPort_State_high);
+//    IfxPort_setPinState(&MODULE_P23, 0, IfxPort_State_high);
+//    IfxPort_setPinState(&MODULE_P23, 1, IfxPort_State_high);
+//    IfxPort_setPinState(&MODULE_P23, 2, IfxPort_State_high);
+//    IfxPort_setPinState(&MODULE_P23, 3, IfxPort_State_high);
+//    IfxPort_setPinState(&MODULE_P23, 4, IfxPort_State_high);
+//    IfxPort_setPinState(&MODULE_P23, 5, IfxPort_State_high);
+//    IfxPort_setPinState(&MODULE_P23, 6, IfxPort_State_high);
+//    IfxPort_setPinState(&MODULE_P23, 7, IfxPort_State_high);
     //set low, valves off
-    IfxPort_setPinState(&MODULE_P22, 2, IfxPort_State_low);
-    IfxPort_setPinState(&MODULE_P22, 3, IfxPort_State_low);
-    IfxPort_setPinState(&MODULE_P22, 4, IfxPort_State_low);
-    IfxPort_setPinState(&MODULE_P22, 5, IfxPort_State_low);
-    IfxPort_setPinState(&MODULE_P22, 6, IfxPort_State_low);
-    IfxPort_setPinState(&MODULE_P22, 7, IfxPort_State_low);
-
+//    IfxPort_setPinState(&MODULE_P22, 2, IfxPort_State_low);
+//    IfxPort_setPinState(&MODULE_P22, 3, IfxPort_State_low);
+//    IfxPort_setPinState(&MODULE_P22, 4, IfxPort_State_low);
+//    IfxPort_setPinState(&MODULE_P22, 5, IfxPort_State_low);
+//    IfxPort_setPinState(&MODULE_P22, 6, IfxPort_State_low);
+//    IfxPort_setPinState(&MODULE_P22, 7, IfxPort_State_low);
+    IfxPort_setPinState(&MODULE_P33, 4, IfxPort_State_high);
+    IfxPort_setPinState(&MODULE_P33, 5, IfxPort_State_high);
+    IfxPort_setPinState(&MODULE_P33, 6, IfxPort_State_high);
+    IfxPort_setPinState(&MODULE_P33, 7, IfxPort_State_low);
+    IfxPort_setPinState(&MODULE_P33, 8, IfxPort_State_low);
+    IfxPort_setPinState(&MODULE_P33, 9, IfxPort_State_low);
+    Set_PORT_Output(6, 1);
+    Set_PORT_Output(7, 1);
 }
 
 uint8 Set_PORT_Output(uint8 PortNum, uint8 Value)
 {
     if(Value){
-        IfxPort_setPinHigh(&MODULE_P00, PortNum);
+        IfxPort_setPinHigh(&MODULE_P33, PortNum);
     }else{
-        IfxPort_setPinLow(&MODULE_P00, PortNum);
+        IfxPort_setPinLow(&MODULE_P33, PortNum);
     }
-    if(IfxPort_getPinState(&MODULE_P00, PortNum) == Value){
+    if(IfxPort_getPinState(&MODULE_P33, PortNum) == Value){
         return 1;
     }else{
         return 0;

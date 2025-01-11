@@ -35,18 +35,20 @@
 //#include "Communicate.h"
 //#include "Schedule.h"
 
-//#include "zf_device_icm20602.h"
+#include "zf_device_icm20602.h"
 #include "zf_driver_uart.h"
 #include "stdio.h"
-//
+
 #include "Bsp.h"
 
 #include "App_Config.h"
 #include "FreeRTOS.h"
 #include "task.h"
-//#include "CANTASK.h"
-#include "Qspi_L9658.h"
 
+//#include "MCMCAN.h"
+//#include "CANTASK.h"
+
+#include "Qspi_L9658.h"
 
 IFX_ALIGN(4) IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
@@ -59,75 +61,92 @@ void core0_main(void)
      */
     IfxScuWdt_disableCpuWatchdog(IfxScuWdt_getCpuWatchdogPassword());
     IfxScuWdt_disableSafetyWatchdog(IfxScuWdt_getSafetyWatchdogPassword());
-
+    
     /* Wait for CPU sync event */
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
+    
+    /* Initialize a time variable */
+    Ifx_TickTime ticksFor100ms = IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 100);
+//    waitTime(ticksFor100ms);    /* Wait 100 ms */
 
-
-
-    //initMcmcan();
-    //initMcmcan1();
-//    initMcmcan2();
-
-
-    //gpio_init();
-    //GTM_Tom_init();
-    //init_TIM();
-    //initEVADC();
+//    gpio_init();
+//    GTM_Tom_init();
+//    init_TIM();
+//    initEVADC();
 
 //    initMcmcan();
+//    initMcmcan2();
 //    initLeds();
     //transmitCanMessage();
     
-//    initSTM();
-//    initLeds();
+    initPeripherals();
+//    transferData();
 
-    //icm20602_init();
+//    initSTM();
+    //initLED();
+
+//    icm20602_init();
 
 //    fifo_init(&uart_data_fifo, FIFO_DATA_8BIT, uart_get_data, 64);              // 初始化 fifo 挂载缓冲区
-//    uart_init(UART_0, 115200, UART0_TX_P14_0, UART0_RX_P14_1);             // 初始化串口
+      uart_init(UART_0, 115200, UART0_TX_P14_0, UART0_RX_P14_1);             // 初始化串口
 //    uart_rx_interrupt(UART_INDEX, 1);                                           // 开启 UART_INDEX 的接收中断
-//    uart_write_string(UART_0, "UART Text.");                                // 输出测试信息
-//    uart_write_byte(UART_0, '\r');                                          // 输出回车
-//    uart_write_byte(UART_0, '\n');                                          // 输出换行
-//    printf("start");
+    uart_write_string(UART_0, "UART Text.");                                // 输出测试信息
+    uart_write_byte(UART_0, '\r');                                          // 输出回车
+    uart_write_byte(UART_0, '\n');                                          // 输出换行
+//
+    printf("rec_data001 = 0x%x \r\n", recdata1);
+    printf("rec_data002 = 0x%x \r\n", recdata2);
+    printf("rec_data003 = 0x%x \r\n", recdata3);
+    printf("rec_data004 = 0x%x \r\n", recdata4);
+    printf("\r\n");
+    printf("rec_data0001 = 0x%x \r\n", recdata5);
+    printf("rec_data0002 = 0x%x \r\n", recdata6);
+    printf("rec_data0003 = 0x%x \r\n", recdata7);
+    printf("rec_data0004 = 0x%x \r\n", recdata8);
+    printf("\r\n");
 
-    /* Initialize a time variable */
-//    Ifx_TickTime ticksFor100ms = IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 100);
-//    waitTime(ticksFor100ms);    /* Wait 100 ms */
 
     /* Create LED1 app task */
-    //xTaskCreate(CAN0_Trans_5ms, "CAN0_MESSAGE", configMINIMAL_STACK_SIZE, NULL, 1, NULL);
+//    xTaskCreate(task_app_led1, "APP LED1", configMINIMAL_STACK_SIZE, NULL, 0, NULL);
 
     /* Create LED2 app task */
-    //xTaskCreate(CAN1_Trans_10ms, "CAN1_MESSAGE", configMINIMAL_STACK_SIZE, NULL, 2, NULL);
-
-    //xTaskCreate(PSI5_ACC_TASK,"Read_ACC_Sensor", configMINIMAL_STACK_SIZE, NULL, 2 ,NULL);
+//    xTaskCreate(task_app_led2, "APP LED2", configMINIMAL_STACK_SIZE, NULL, 0, NULL);
 
     /* Start the scheduler */
 //    vTaskStartScheduler();
 
+
+
     while(1)
     {
-
 //        run_schedule();
-//        for(int i=0;i<65534;i++)
-//        {
-//            transmitCanMessage1();
-//        }
 
-        //measure_PWM();
-        //readEVADC();
+//        measure_PWM();
+//        readEVADC();
 
         //transmitCanMessage();
 
 //        icm20602_get_acc();
-//        icm20602_get_gyro()
+//        icm20602_get_gyro();
+//        printf("acc_x = %f , acc_y = %f , acc_z = %f , gyro_x = %f , gyro_y = %f , gyro_z = %f\r\n",
+//                acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z);
+//        printf("duty_cycle_fl = %f\r\n", g_measuredPwmDutyCycle[0]);
+
+
+//        printf("vout/vref = %f\r\n", g_result_adc[4]);
+//        printf("111\r\n");
+
+//        CAN0Data_Send(1);
+//        CAN2Data_Send(2);
+
+        transferData();
 //        printf("FL_Acc = %d , FR_Acc = %d , RL_Acc = %d , RR_Acc = %d \r\n",
 //                FL_Acc, FR_Acc, RL_Acc, RR_Acc);
-//
-//        waitTime(ticksFor100ms);
+        printf("FL_Acc = %f , FR_Acc = %f , RL_Acc = %f , RR_Acc = %f \r\n",
+                        f32_FL_Acc, f32_FR_Acc, f32_RL_Acc, f32_RR_Acc);
+
+        waitTime(ticksFor100ms);
     }
 }
 

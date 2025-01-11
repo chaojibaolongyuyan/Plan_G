@@ -27,9 +27,6 @@
 #include "Ifx_Types.h"
 #include "IfxCpu.h"
 #include "IfxScuWdt.h"
-#include "MCMCAN.h"
-#include "CANTASK.h"
-#include "Schedule.h"
 
 extern IfxCpu_syncEvent g_cpuSyncEvent;
 
@@ -46,14 +43,7 @@ void core3_main(void)
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
 
-    initLeds();
-    initSTM();
-    initMcmcan2();
-
-    //IfxPort_setPinLow(g_led1.port, g_led1.pinIndex);
-//    CAN2_Trans_5ms();
     while(1)
     {
-        run_schedule();
     }
 }

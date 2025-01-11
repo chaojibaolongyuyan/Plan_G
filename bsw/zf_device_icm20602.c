@@ -63,7 +63,7 @@
 #include "IfxPort_Io.h"
 #include "IfxPort_PinMap.h"
 #include "Bsp.h"
-
+#include "stdio.h"
 
 
 sint16 icm20602_gyro_x = 0, icm20602_gyro_y = 0, icm20602_gyro_z = 0;                    // 三轴陀螺仪数据       gyro (陀螺仪)
@@ -289,10 +289,9 @@ uint8 icm20602_init (void)
 #else
 //    spi_init(ICM20602_SPI, SPI_MODE0, ICM20602_SPI_SPEED, ICM20602_SPC_PIN, ICM20602_SDI_PIN, ICM20602_SDO_PIN, SPI_CS_NULL);
 //    gpio_init(ICM20602_CS_PIN, GPO, GPIO_HIGH, GPO_PUSH_PULL);
-    spi_init(ICM20602_SPI, SPI_MODE0, ICM20602_SPI_SPEED, ICM20602_SPC_PIN, ICM20602_SDI_PIN, ICM20602_SDO_PIN, SPI0_CS2_P20_13);
+    spi_init(ICM20602_SPI, SPI_MODE1, ICM20602_SPI_SPEED, ICM20602_SPC_PIN, ICM20602_SDI_PIN, ICM20602_SDO_PIN, SPI0_CS2_P20_13);
 
 #endif
-
     do
     {
         if(icm20602_self_check())
@@ -301,7 +300,7 @@ uint8 icm20602_init (void)
             // 那么就是 ICM20602 自检出错并超时退出了
             // 检查一下接线有没有问题 如果没问题可能就是坏了
 //            zf_log(0, "icm20602 self check error.");
-            //printf(0, "icm20602 self check error.");
+//            printf("icm20602 self check error.");
 
             return_state = 1;
             break;
@@ -319,7 +318,7 @@ uint8 icm20602_init (void)
                 // 那么就是 ICM20602 自检出错并超时退出了
                 // 检查一下接线有没有问题 如果没问题可能就是坏了
 //                zf_log(0, "icm20602 reset error.");
-                //printf(0, "icm20602 reset error.");
+//                printf("icm20602 reset error.");
 
                 return_state = 1;
                 break;

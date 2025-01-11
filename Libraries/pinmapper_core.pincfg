@@ -1,0 +1,397 @@
+<v1:pinSettings xmlns:v1="http://www.tasking.com/schema/pinsettings/v1.1">
+  <v1:pinMappingsRef version="1.5" file="platform:/plugin/com.tasking.pinmapper.input.aurix/etc/TC38xA_pinmappings.xml"/>
+  <v1:deviceSetting id="tc38xpda" pattern="TC387* A">
+    <v1:packageSetting id="lfbga292"/>
+  </v1:deviceSetting>
+  <v1:configSetting configurationId="p14_5.in.bind" altId="p14_5.in.bind.in">
+    <v1:connectionSetting altId="evr33.en.bind.en"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p14_3.in.bind" altId="p14_3.in.bind.in">
+    <v1:connectionSetting altId="pms.hwcfg3.bind.hwcfg3"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p14_2.in.bind" altId="p14_2.in.bind.in">
+    <v1:connectionSetting altId="evrc.en.bind.en"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="pms.hwcfg5.bind" altId="pms.hwcfg5.bind.hwcfg5">
+    <v1:connectionSetting altId="p10_6.in.bind.in"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="pms.testmode.bind" altId="pms.testmode.bind.testmode">
+    <v1:connectionSetting altId="p20_2.in.bind.in"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p10_6.in.bind" altId="p10_6.in.bind.in">
+    <v1:connectionSetting altId="pms.hwcfg5.bind.hwcfg5"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p20_2.in.bind" altId="p20_2.in.bind.in">
+    <v1:connectionSetting altId="pms.testmode.bind.testmode"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p10_5.in.bind" altId="p10_5.in.bind.in">
+    <v1:connectionSetting altId="pms.hwcfg4.bind.hwcfg4"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="pms.porst.bind" altId="pms.porst.bind.porst">
+    <v1:connectionSetting altId="porst_n.in.bind.in"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="pms.hwcfg4.bind" altId="pms.hwcfg4.bind.hwcfg4">
+    <v1:connectionSetting altId="p10_5.in.bind.in"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="evr33.en.bind" altId="evr33.en.bind.en">
+    <v1:connectionSetting altId="p14_5.in.bind.in"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="porst_n.in.bind" altId="porst_n.in.bind.in">
+    <v1:connectionSetting altId="pms.porst.bind.porst"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="evrc.en.bind" altId="evrc.en.bind.en">
+    <v1:connectionSetting altId="p14_2.in.bind.in"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="pms.hwcfg3.bind" altId="pms.hwcfg3.bind.hwcfg3">
+    <v1:connectionSetting altId="p14_3.in.bind.in"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p14_4.in.bind" altId="p14_4.in.bind.in">
+    <v1:connectionSetting altId="pms.hwcfg6.bind.hwcfg6"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="pms.hwcfg6.bind" altId="pms.hwcfg6.bind.hwcfg6">
+    <v1:connectionSetting altId="p14_4.in.bind.in"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="tout0.out.bind" altId="tout0.out.bind.out">
+    <v1:connectionSetting altId="p02_0.out.bind.alt1"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="tout6.out.bind" altId="tout6.out.bind.out">
+    <v1:connectionSetting altId="p02_6.out.bind.alt1"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="gtm0_tim0_ch3.in.bind" altId="gtm0_tim0_ch3.in.bind.in1">
+    <v1:connectionSetting altId="p00_12.in.bind.in"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p10_2.dir" altId="p10_2.dir.out"/>
+  <v1:configSetting configurationId="i2c0.sdain.bind" altId="i2c0.sdain.bind.sdain1">
+    <v1:connectionSetting altId="p13_2.in.bind.in"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p14_7.in.bind" altId="p14_7.in.bind.in">
+    <v1:connectionSetting altId="eray0_ch1.rxd.bind.rxd0"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p02_7.dir" altId="p02_7.dir.out"/>
+  <v1:configSetting configurationId="gtm0_cdtm0_dtm0_0.out.bind" altId="gtm0_cdtm0_dtm0_0.out.bind.none"/>
+  <v1:configSetting configurationId="qspi1_m.sel9.bind" altId="qspi1_m.sel9.bind.none"/>
+  <v1:configSetting configurationId="p20_0.in.bind" altId="p20_0.in.bind.in">
+    <v1:connectionSetting altId="can2_node1.rxd.bind.rxd2"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p20_13.out.bind" altId="p20_13.out.bind.alt3">
+    <v1:connectionSetting altId="qspi0_m.sel2.bind.sel2"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p11_6.dir" altId="p11_6.dir.out"/>
+  <v1:configSetting configurationId="can2_node0.rxd.bind" altId="can2_node0.rxd.bind.none"/>
+  <v1:configSetting configurationId="p11_9.in.bind" altId="p11_9.in.bind.in">
+    <v1:connectionSetting altId="eray0_ch0.rxd.bind.rxd1"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="can2_node0.txd.bind" altId="can2_node0.txd.bind.none"/>
+  <v1:configSetting configurationId="p10_1.in.bind" altId="p10_1.in.bind.in">
+    <v1:connectionSetting altId="qspi1_m.rxdn.bind.rxd0"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="tout1.out.bind" altId="tout1.out.bind.out">
+    <v1:connectionSetting altId="p02_1.out.bind.alt1"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p11_3.out.bind" altId="p11_3.out.bind.alt4">
+    <v1:connectionSetting altId="eray0_ch0.txd.bind.out"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="qspi1_m.txd.bind" altId="qspi1_m.txd.bind.out">
+    <v1:connectionSetting altId="p10_3.out.bind.alt3"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="an4.an.bind" altId="an4.an.bind.anares">
+    <v1:connectionSetting altId="g0_qreq0.ch4.bind.ch4"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="eray0_ch0.txen.bind" altId="eray0_ch0.txen.bind.en">
+    <v1:connectionSetting altId="p11_6.out.bind.alt4"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="qspi0_m.txd.bind" altId="qspi0_m.txd.bind.out">
+    <v1:connectionSetting altId="p20_14.out.bind.alt3"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="g0_qreq0.ch0.bind" altId="g0_qreq0.ch0.bind.ch0">
+    <v1:connectionSetting altId="an0.an.bind.anares"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="gtm0_tim0_ch0.in.bind" altId="gtm0_tim0_ch0.in.bind.in6">
+    <v1:connectionSetting altId="p15_6.in.bind.in"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p15_7.in.bind" altId="p15_7.in.bind.in">
+    <v1:connectionSetting altId="gtm0_tim0_ch1.in.bind.in5"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p02_0.dir" altId="p02_0.dir.out"/>
+  <v1:configSetting configurationId="gtm0_tom0_ch0.out.bind" altId="gtm0_tom0_ch0.out.bind.none"/>
+  <v1:configSetting configurationId="tout7.out.bind" altId="tout7.out.bind.out">
+    <v1:connectionSetting altId="p02_7.out.bind.alt1"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="an0.an.bind" altId="an0.an.bind.anares">
+    <v1:connectionSetting altId="g0_qreq0.ch0.bind.ch0"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p13_2.dir" altId="p13_2.dir.inout"/>
+  <v1:configSetting configurationId="p20_12.in.bind" altId="p20_12.in.bind.in">
+    <v1:connectionSetting altId="qspi0_m.rxdn.bind.rxd0"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="i2c0.scl1.bind" altId="i2c0.scl1.bind.clk1">
+    <v1:connectionSetting altId="p13_1.out.bind.alt6"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="can0_node0.txd.bind" altId="can0_node0.txd.bind.out">
+    <v1:connectionSetting altId="p20_8.out.bind.alt5"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p14_5.dir" altId="p14_5.dir.out"/>
+  <v1:configSetting configurationId="p02_1.dir" altId="p02_1.dir.out"/>
+  <v1:configSetting configurationId="eray0_ch1.txd.bind" altId="eray0_ch1.txd.bind.out">
+    <v1:connectionSetting altId="p14_5.out.bind.alt6"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="g0_qreq0.ch1.bind" altId="g0_qreq0.ch1.bind.ch1">
+    <v1:connectionSetting altId="an1.an.bind.anares"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p00_12.in.bind" altId="p00_12.in.bind.in">
+    <v1:connectionSetting altId="gtm0_tim0_ch3.in.bind.in1"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p20_14.dir" altId="p20_14.dir.out"/>
+  <v1:configSetting configurationId="p02_5.out.bind" altId="p02_5.out.bind.alt1">
+    <v1:connectionSetting altId="tout5.out.bind.out"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p00_0.out.bind" altId="p00_0.out.bind.alt1">
+    <v1:connectionSetting altId="tout9.out.bind.out"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="can2_node1.txd.bind" altId="can2_node1.txd.bind.out">
+    <v1:connectionSetting altId="p20_3.out.bind.alt6"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="i2c0.sclin.bind" altId="i2c0.sclin.bind.sclin1">
+    <v1:connectionSetting altId="p13_1.in.bind.in"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p10_3.out.bind" altId="p10_3.out.bind.alt3">
+    <v1:connectionSetting altId="qspi1_m.txd.bind.out"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p02_2.out.bind" altId="p02_2.out.bind.alt1">
+    <v1:connectionSetting altId="tout2.out.bind.out"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="qspi1_m.sel0.bind" altId="qspi1_m.sel0.bind.none"/>
+  <v1:configSetting configurationId="p20_3.out.bind" altId="p20_3.out.bind.alt6">
+    <v1:connectionSetting altId="can2_node1.txd.bind.out"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p20_8.dir" altId="p20_8.dir.out"/>
+  <v1:configSetting configurationId="p13_0.out.bind" altId="p13_0.out.bind.alt7">
+    <v1:connectionSetting altId="can1_node0.txd.bind.out"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p13_0.dir" altId="p13_0.dir.out"/>
+  <v1:configSetting configurationId="p02_7.out.bind" altId="p02_7.out.bind.alt1">
+    <v1:connectionSetting altId="tout7.out.bind.out"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="tout10.out.bind" altId="tout10.out.bind.none"/>
+  <v1:configSetting configurationId="p13_2.out.bind" altId="p13_2.out.bind.alt6">
+    <v1:connectionSetting altId="i2c0.sda1.bind.out1"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p02_3.dir" altId="p02_3.dir.out"/>
+  <v1:configSetting configurationId="p00_0.dir" altId="p00_0.dir.out"/>
+  <v1:configSetting configurationId="i2c0.sda1.bind" altId="i2c0.sda1.bind.out1">
+    <v1:connectionSetting altId="p13_2.out.bind.alt6"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p15_6.in.bind" altId="p15_6.in.bind.in">
+    <v1:connectionSetting altId="gtm0_tim0_ch0.in.bind.in6"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="tout5.out.bind" altId="tout5.out.bind.out">
+    <v1:connectionSetting altId="p02_5.out.bind.alt1"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p20_7.in.bind" altId="p20_7.in.bind.in">
+    <v1:connectionSetting altId="can0_node0.rxd.bind.rxd1"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p02_0.out.bind" altId="p02_0.out.bind.alt1">
+    <v1:connectionSetting altId="tout0.out.bind.out"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="qspi1_m.clk.bind" altId="qspi1_m.clk.bind.clk">
+    <v1:connectionSetting altId="p10_2.out.bind.alt3"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="qspi0_m.rxdn.bind" altId="qspi0_m.rxdn.bind.rxd0">
+    <v1:connectionSetting altId="p20_12.in.bind.in"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="an1.an.bind" altId="an1.an.bind.anares">
+    <v1:connectionSetting altId="g0_qreq0.ch1.bind.ch1"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p02_5.dir" altId="p02_5.dir.out"/>
+  <v1:configSetting configurationId="p20_14.out.bind" altId="p20_14.out.bind.alt3">
+    <v1:connectionSetting altId="qspi0_m.txd.bind.out"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="qspi1_m.rxdn.bind" altId="qspi1_m.rxdn.bind.rxd0">
+    <v1:connectionSetting altId="p10_1.in.bind.in"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="g0_qreq0.ch4.bind" altId="g0_qreq0.ch4.bind.ch4">
+    <v1:connectionSetting altId="an4.an.bind.anares"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="tout3.out.bind" altId="tout3.out.bind.out">
+    <v1:connectionSetting altId="p02_3.out.bind.alt1"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p02_6.dir" altId="p02_6.dir.out"/>
+  <v1:configSetting configurationId="tout9.out.bind" altId="tout9.out.bind.out">
+    <v1:connectionSetting altId="p00_0.out.bind.alt1"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="qspi0_m.clk.bind" altId="qspi0_m.clk.bind.clk">
+    <v1:connectionSetting altId="p20_11.out.bind.alt3"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="qspi0_m.sel2.bind" altId="qspi0_m.sel2.bind.sel2">
+    <v1:connectionSetting altId="p20_13.out.bind.alt3"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="g0_qreq0.ch3.bind" altId="g0_qreq0.ch3.bind.ch3">
+    <v1:connectionSetting altId="an3.an.bind.anares"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="gtm0_tim0_ch1.in.bind" altId="gtm0_tim0_ch1.in.bind.in5">
+    <v1:connectionSetting altId="p15_7.in.bind.in"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p10_3.dir" altId="p10_3.dir.out"/>
+  <v1:configSetting configurationId="p20_3.dir" altId="p20_3.dir.out"/>
+  <v1:configSetting configurationId="eray0_ch0.rxd.bind" altId="eray0_ch0.rxd.bind.rxd1">
+    <v1:connectionSetting altId="p11_9.in.bind.in"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="eray0_ch0.txd.bind" altId="eray0_ch0.txd.bind.out">
+    <v1:connectionSetting altId="p11_3.out.bind.alt4"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p14_6.out.bind" altId="p14_6.out.bind.alt6">
+    <v1:connectionSetting altId="eray0_ch1.txen.bind.en"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p02_4.out.bind" altId="p02_4.out.bind.alt1">
+    <v1:connectionSetting altId="tout4.out.bind.out"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p02_8.dir" altId="p02_8.dir.out"/>
+  <v1:configSetting configurationId="g0_qreq0.ch2.bind" altId="g0_qreq0.ch2.bind.ch2">
+    <v1:connectionSetting altId="an2.an.bind.anares"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="an2.an.bind" altId="an2.an.bind.anares">
+    <v1:connectionSetting altId="g0_qreq0.ch2.bind.ch2"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p20_11.out.bind" altId="p20_11.out.bind.alt3">
+    <v1:connectionSetting altId="qspi0_m.clk.bind.clk"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p20_8.out.bind" altId="p20_8.out.bind.alt5">
+    <v1:connectionSetting altId="can0_node0.txd.bind.out"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="tout8.out.bind" altId="tout8.out.bind.out">
+    <v1:connectionSetting altId="p02_8.out.bind.alt1"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p13_1.dir" altId="p13_1.dir.inout"/>
+  <v1:configSetting configurationId="p13_1.in.bind" altId="p13_1.in.bind.in">
+    <v1:connectionSetting altId="i2c0.sclin.bind.sclin1"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="can1_node0.txd.bind" altId="can1_node0.txd.bind.out">
+    <v1:connectionSetting altId="p13_0.out.bind.alt7"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="can1_node0.rxd.bind" altId="can1_node0.rxd.bind.none"/>
+  <v1:configSetting configurationId="qspi1_m.sel4.bind" altId="qspi1_m.sel4.bind.none"/>
+  <v1:configSetting configurationId="p14_5.out.bind" altId="p14_5.out.bind.alt6">
+    <v1:connectionSetting altId="eray0_ch1.txd.bind.out"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p10_2.out.bind" altId="p10_2.out.bind.alt3">
+    <v1:connectionSetting altId="qspi1_m.clk.bind.clk"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="tout2.out.bind" altId="tout2.out.bind.out">
+    <v1:connectionSetting altId="p02_2.out.bind.alt1"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p02_3.out.bind" altId="p02_3.out.bind.alt1">
+    <v1:connectionSetting altId="tout3.out.bind.out"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="qspi1_m.sel1.bind" altId="qspi1_m.sel1.bind.sel1">
+    <v1:connectionSetting altId="p20_9.out.bind.alt4"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="qspi1_m.sel5.bind" altId="qspi1_m.sel5.bind.none"/>
+  <v1:configSetting configurationId="eray0_ch1.rxd.bind" altId="eray0_ch1.rxd.bind.rxd0">
+    <v1:connectionSetting altId="p14_7.in.bind.in"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="eray0_ch1.txen.bind" altId="eray0_ch1.txen.bind.en">
+    <v1:connectionSetting altId="p14_6.out.bind.alt6"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="gtm0_tim0_ch2.in.bind" altId="gtm0_tim0_ch2.in.bind.in5">
+    <v1:connectionSetting altId="p15_8.in.bind.in"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p02_8.out.bind" altId="p02_8.out.bind.alt1">
+    <v1:connectionSetting altId="tout8.out.bind.out"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="can0_node0.rxd.bind" altId="can0_node0.rxd.bind.rxd1">
+    <v1:connectionSetting altId="p20_7.in.bind.in"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="tout11.out.bind" altId="tout11.out.bind.none"/>
+  <v1:configSetting configurationId="p14_6.dir" altId="p14_6.dir.out"/>
+  <v1:configSetting configurationId="p20_9.out.bind" altId="p20_9.out.bind.alt4">
+    <v1:connectionSetting altId="qspi1_m.sel1.bind.sel1"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p02_2.dir" altId="p02_2.dir.out"/>
+  <v1:configSetting configurationId="p20_13.dir" altId="p20_13.dir.out"/>
+  <v1:configSetting configurationId="can2_node1.rxd.bind" altId="can2_node1.rxd.bind.rxd2">
+    <v1:connectionSetting altId="p20_0.in.bind.in"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="an3.an.bind" altId="an3.an.bind.anares">
+    <v1:connectionSetting altId="g0_qreq0.ch3.bind.ch3"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="tout4.out.bind" altId="tout4.out.bind.out">
+    <v1:connectionSetting altId="p02_4.out.bind.alt1"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p20_9.dir" altId="p20_9.dir.out"/>
+  <v1:configSetting configurationId="p13_2.in.bind" altId="p13_2.in.bind.in">
+    <v1:connectionSetting altId="i2c0.sdain.bind.sdain1"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p11_6.out.bind" altId="p11_6.out.bind.alt4">
+    <v1:connectionSetting altId="eray0_ch0.txen.bind.en"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p02_1.out.bind" altId="p02_1.out.bind.alt1">
+    <v1:connectionSetting altId="tout1.out.bind.out"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p15_8.in.bind" altId="p15_8.in.bind.in">
+    <v1:connectionSetting altId="gtm0_tim0_ch2.in.bind.in5"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p02_6.out.bind" altId="p02_6.out.bind.alt1">
+    <v1:connectionSetting altId="tout6.out.bind.out"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p02_4.dir" altId="p02_4.dir.out"/>
+  <v1:configSetting configurationId="p13_1.out.bind" altId="p13_1.out.bind.alt6">
+    <v1:connectionSetting altId="i2c0.scl1.bind.clk1"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p20_11.dir" altId="p20_11.dir.out"/>
+  <v1:configSetting configurationId="p11_3.dir" altId="p11_3.dir.out"/>
+  <v1:propertySetting propertyId="p02_2.symbolicname" value="TOUT2_OUT"/>
+  <v1:propertySetting propertyId="p02_3.symbolicname" value="TOUT3_OUT"/>
+  <v1:propertySetting propertyId="p02_0.symbolicname" value="TOUT0_OUT"/>
+  <v1:propertySetting propertyId="p02_5.symbolicname" value="TOUT5_OUT"/>
+  <v1:propertySetting propertyId="p10_3.symbolicname" value="QSPI1_M_TXD"/>
+  <v1:propertySetting propertyId="p15_7.symbolicname" value="GTM0_TIM0_CH1_IN"/>
+  <v1:propertySetting propertyId="p10_2.symbolicname" value="QSPI1_M_CLK"/>
+  <v1:propertySetting propertyId="p10_1.symbolicname" value="QSPI1_M_RXD(N)"/>
+  <v1:propertySetting propertyId="p02_4.symbolicname" value="TOUT4_OUT"/>
+  <v1:propertySetting propertyId="p15_8.symbolicname" value="GTM0_TIM0_CH2_IN"/>
+  <v1:propertySetting propertyId="p20_13.symbolicname" value="QSPI0_M_SEL2"/>
+  <v1:propertySetting propertyId="p14_7.symbolicname" value="ERAY0_CH1_RXD"/>
+  <v1:propertySetting propertyId="an0.symbolicname" value="G0_QREQ0_CH0"/>
+  <v1:propertySetting propertyId="p14_6.symbolicname" value="ERAY0_CH1_TXEN"/>
+  <v1:propertySetting propertyId="p20_11.symbolicname" value="QSPI0_M_CLK"/>
+  <v1:propertySetting propertyId="p14_5.symbolicname" value="ERAY0_CH1_TXD"/>
+  <v1:propertySetting propertyId="p20_12.symbolicname" value="QSPI0_M_RXD(N)"/>
+  <v1:propertySetting propertyId="p02_1.symbolicname" value="TOUT1_OUT"/>
+  <v1:propertySetting propertyId="p20_14.symbolicname" value="QSPI0_M_TXD"/>
+  <v1:propertySetting propertyId="p13_1.symbolicname" value="MULTI1"/>
+  <v1:propertySetting propertyId="p20_9.symbolicname" value="QSPI1_M_SEL1"/>
+  <v1:propertySetting propertyId="p13_2.symbolicname" value="I2C0_SDAIN"/>
+  <v1:propertySetting propertyId="p20_7.symbolicname" value="CAN0_NODE0_RXD"/>
+  <v1:propertySetting propertyId="p00_12.symbolicname" value="GTM0_TIM0_CH3_IN"/>
+  <v1:propertySetting propertyId="p20_8.symbolicname" value="CAN0_NODE0_TXD"/>
+  <v1:propertySetting propertyId="p00_0.symbolicname" value="TOUT9_OUT"/>
+  <v1:propertySetting propertyId="p11_9.symbolicname" value="ERAY0_CH0_RXD"/>
+  <v1:propertySetting propertyId="p13_0.symbolicname" value="CAN1_NODE0_TXD"/>
+  <v1:propertySetting propertyId="p11_6.symbolicname" value="ERAY0_CH0_TXEN"/>
+  <v1:propertySetting propertyId="p20_0.symbolicname" value="CAN2_NODE1_RXD"/>
+  <v1:propertySetting propertyId="an1.symbolicname" value="G0_QREQ0_CH1"/>
+  <v1:propertySetting propertyId="p02_8.symbolicname" value="TOUT8_OUT"/>
+  <v1:propertySetting propertyId="an2.symbolicname" value="G0_QREQ0_CH2"/>
+  <v1:propertySetting propertyId="p11_3.symbolicname" value="ERAY0_CH0_TXD"/>
+  <v1:propertySetting propertyId="p02_6.symbolicname" value="TOUT6_OUT"/>
+  <v1:propertySetting propertyId="an4.symbolicname" value="G0_QREQ0_CH4"/>
+  <v1:propertySetting propertyId="p15_6.symbolicname" value="GTM0_TIM0_CH0_IN"/>
+  <v1:propertySetting propertyId="p02_7.symbolicname" value="TOUT7_OUT"/>
+  <v1:propertySetting propertyId="p20_3.symbolicname" value="CAN2_NODE1_TXD"/>
+  <v1:propertySetting propertyId="an3.symbolicname" value="G0_QREQ0_CH3"/>
+  <v1:configSetting configurationId="aschs0.rxdn.bind" altId="aschs0.rxdn.bind.rxd0">
+    <v1:connectionSetting altId="p14_1.in.bind.in"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p14_0.dir" altId="p14_0.dir.out"/>
+  <v1:configSetting configurationId="p14_1.in.bind" altId="p14_1.in.bind.in">
+    <v1:connectionSetting altId="aschs0.rxdn.bind.rxd0"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p14_0.out.bind" altId="p14_0.out.bind.alt2.mutex2">
+    <v1:connectionSetting altId="aschs0.txd.bind.out"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="aschs0.txd.bind" altId="aschs0.txd.bind.out">
+    <v1:connectionSetting altId="p14_0.out.bind.alt2.mutex2"/>
+  </v1:configSetting>
+  <v1:propertySetting propertyId="p14_1.symbolicname" value="ASCHS0_RXD(N)"/>
+  <v1:propertySetting propertyId="p14_0.symbolicname" value="ASCHS0_TXD"/>
+</v1:pinSettings>

@@ -13,123 +13,123 @@
        <EditorPersist>
         <__.0>
          <BookmarkList></BookmarkList>
-         <CaretPos>12637</CaretPos>
+         <CaretPos>32169</CaretPos>
          <Encoding>6</Encoding>
-         <FileName>D:\Softinstall\Infineon\AURIX-v1.10.6-workspace\demo5\Libraries\Infra\Ssw\TC38A\Tricore\Ifx_Ssw_Tc0.c</FileName>
+         <FileName>D:\Softinstall\Infineon\AURIX-v1.10.6-workspace\demo6_TC387TP\Libraries\iLLD\TC38A\Tricore\Cpu\Std\IfxCpu.h</FileName>
          <FileType>1</FileType>
-         <ScrollPos>317</ScrollPos>
+         <ScrollPos>728</ScrollPos>
         </__.0>
         <__.10>
          <BookmarkList></BookmarkList>
-         <CaretPos>2790</CaretPos>
+         <CaretPos>10231</CaretPos>
          <Encoding>6</Encoding>
-         <FileName>H:\Plan_G\Cpu3_Main.c</FileName>
+         <FileName>D:\Softinstall\Infineon\AURIX-v1.10.6-workspace\demo6_TC387TP\Libraries\iLLD\TC38A\Tricore\Qspi\SpiMaster\IfxQspi_SpiMaster.c</FileName>
          <FileType>1</FileType>
-         <ScrollPos>5</ScrollPos>
+         <ScrollPos>253</ScrollPos>
         </__.10>
         <__.11>
          <BookmarkList></BookmarkList>
-         <CaretPos>2542</CaretPos>
+         <CaretPos>2523</CaretPos>
          <Encoding>6</Encoding>
-         <FileName>H:\Plan_G\Cpu1_Main.c</FileName>
+         <FileName>D:\Softinstall\Infineon\AURIX-v1.10.6-workspace\demo6_TC387TP\Cpu1_Main.c</FileName>
          <FileType>1</FileType>
-         <ScrollPos>0</ScrollPos>
+         <ScrollPos>20</ScrollPos>
         </__.11>
         <__.12>
          <BookmarkList></BookmarkList>
-         <CaretPos>90006</CaretPos>
+         <CaretPos>12658</CaretPos>
          <Encoding>6</Encoding>
-         <FileName>H:\Plan_G\Libraries\iLLD\TC38A\Tricore\Can\Std\IfxCan.h</FileName>
+         <FileName>D:\Softinstall\Infineon\AURIX-v1.10.6-workspace\demo6_TC387TP\Qspi_L9658.c</FileName>
          <FileType>1</FileType>
-         <ScrollPos>2004</ScrollPos>
+         <ScrollPos>244</ScrollPos>
         </__.12>
         <__.13>
          <BookmarkList></BookmarkList>
-         <CaretPos>608</CaretPos>
+         <CaretPos>26537</CaretPos>
          <Encoding>6</Encoding>
-         <FileName>H:\Plan_G\CANTask.c</FileName>
+         <FileName>D:\Softinstall\Infineon\AURIX-v1.10.6-workspace\demo6_TC387TP\Libraries\iLLD\TC38A\Tricore\Stm\Std\IfxStm.h</FileName>
          <FileType>1</FileType>
-         <ScrollPos>38</ScrollPos>
+         <ScrollPos>548</ScrollPos>
         </__.13>
         <__.14>
          <BookmarkList></BookmarkList>
-         <CaretPos>24652</CaretPos>
+         <CaretPos>2497</CaretPos>
          <Encoding>6</Encoding>
-         <FileName>H:\Plan_G\MCMCAN.c</FileName>
+         <FileName>D:\Softinstall\Infineon\AURIX-v1.10.6-workspace\demo6_TC387TP\Cpu2_Main.c</FileName>
          <FileType>1</FileType>
-         <ScrollPos>482</ScrollPos>
+         <ScrollPos>11</ScrollPos>
         </__.14>
         <__.1>
          <BookmarkList></BookmarkList>
-         <CaretPos>32169</CaretPos>
+         <CaretPos>12637</CaretPos>
          <Encoding>6</Encoding>
-         <FileName>D:\Softinstall\Infineon\AURIX-v1.10.6-workspace\demo5\Libraries\iLLD\TC38A\Tricore\Cpu\Std\IfxCpu.h</FileName>
+         <FileName>D:\Softinstall\Infineon\AURIX-v1.10.6-workspace\demo6_TC387TP\Libraries\Infra\Ssw\TC38A\Tricore\Ifx_Ssw_Tc0.c</FileName>
          <FileType>1</FileType>
-         <ScrollPos>728</ScrollPos>
+         <ScrollPos>317</ScrollPos>
         </__.1>
         <__.2>
          <BookmarkList></BookmarkList>
-         <CaretPos>32931</CaretPos>
+         <CaretPos>20782</CaretPos>
          <Encoding>6</Encoding>
-         <FileName>H:\Plan_G\Libraries\iLLD\TC38A\Tricore\Cpu\Std\IfxCpu.h</FileName>
+         <FileName>D:\Softinstall\Infineon\AURIX-v1.10.6-workspace\demo6_TC387TP\bsw\zf_driver_uart.c</FileName>
          <FileType>1</FileType>
-         <ScrollPos>714</ScrollPos>
+         <ScrollPos>429</ScrollPos>
         </__.2>
         <__.3>
          <BookmarkList></BookmarkList>
-         <CaretPos>12988</CaretPos>
+         <CaretPos>2528</CaretPos>
          <Encoding>6</Encoding>
-         <FileName>H:\Plan_G\Libraries\Infra\Ssw\TC38A\Tricore\Ifx_Ssw_Tc0.c</FileName>
+         <FileName>D:\Softinstall\Infineon\AURIX-v1.10.6-workspace\demo6_TC387TP\Cpu0_Main.c</FileName>
          <FileType>1</FileType>
-         <ScrollPos>302</ScrollPos>
+         <ScrollPos>52</ScrollPos>
         </__.3>
         <__.4>
          <BookmarkList></BookmarkList>
-         <CaretPos>4555</CaretPos>
+         <CaretPos>35720</CaretPos>
          <Encoding>6</Encoding>
-         <FileName>H:\Plan_G\Cpu0_Main.c</FileName>
+         <FileName>D:\Softinstall\Infineon\AURIX-v1.10.6-workspace\demo6_TC387TP\bsw\zf_driver_spi.c</FileName>
          <FileType>1</FileType>
-         <ScrollPos>61</ScrollPos>
+         <ScrollPos>715</ScrollPos>
         </__.4>
         <__.5>
          <BookmarkList></BookmarkList>
-         <CaretPos>152164</CaretPos>
+         <CaretPos>7481</CaretPos>
          <Encoding>6</Encoding>
-         <FileName>H:\Plan_G\OS\FreeRTOS\tasks.c</FileName>
+         <FileName>D:\Softinstall\Infineon\AURIX-v1.10.6-workspace\demo6_TC387TP\Libraries\iLLD\TC38A\Tricore\Cpu\Trap\IfxCpu_Trap.c</FileName>
          <FileType>1</FileType>
-         <ScrollPos>3650</ScrollPos>
+         <ScrollPos>140</ScrollPos>
         </__.5>
         <__.6>
          <BookmarkList></BookmarkList>
-         <CaretPos>7655</CaretPos>
+         <CaretPos>8221</CaretPos>
          <Encoding>6</Encoding>
-         <FileName>H:\Plan_G\Libraries\iLLD\TC38A\Tricore\Cpu\Trap\IfxCpu_Trap.c</FileName>
+         <FileName>D:\Softinstall\Infineon\AURIX-v1.10.6-workspace\demo6_TC387TP\bsw\zf_device_icm20602.c</FileName>
          <FileType>1</FileType>
-         <ScrollPos>125</ScrollPos>
+         <ScrollPos>180</ScrollPos>
         </__.6>
         <__.7>
          <BookmarkList></BookmarkList>
-         <CaretPos>6927</CaretPos>
+         <CaretPos>11025</CaretPos>
          <Encoding>6</Encoding>
-         <FileName>H:\Plan_G\OS\FreeRTOS\portable\Tasking\TC3\port.c</FileName>
+         <FileName>D:\Softinstall\Infineon\AURIX-v1.10.6-workspace\demo6_TC387TP\Libraries\Service\CpuGeneric\SysSe\Bsp\Bsp.h</FileName>
          <FileType>1</FileType>
-         <ScrollPos>136</ScrollPos>
+         <ScrollPos>349</ScrollPos>
         </__.7>
         <__.8>
          <BookmarkList></BookmarkList>
-         <CaretPos>7807</CaretPos>
+         <CaretPos>45401</CaretPos>
          <Encoding>6</Encoding>
-         <FileName>H:\Plan_G\bsw\Schedule.c</FileName>
+         <FileName>D:\Softinstall\Infineon\AURIX-v1.10.6-workspace\demo6_TC387TP\Libraries\iLLD\TC38A\Tricore\Qspi\Std\IfxQspi.h</FileName>
          <FileType>1</FileType>
-         <ScrollPos>111</ScrollPos>
+         <ScrollPos>1138</ScrollPos>
         </__.8>
         <__.9>
          <BookmarkList></BookmarkList>
-         <CaretPos>2510</CaretPos>
+         <CaretPos>72859</CaretPos>
          <Encoding>6</Encoding>
-         <FileName>H:\Plan_G\Libraries\iLLD\TC38A\Tricore\Can\Can\IfxCan_Can.c</FileName>
+         <FileName>D:\Softinstall\Infineon\AURIX-v1.10.6-workspace\demo6_TC387TP\Libraries\iLLD\TC38A\Tricore\Asclin\Std\IfxAsclin.h</FileName>
          <FileType>1</FileType>
-         <ScrollPos>50</ScrollPos>
+         <ScrollPos>2069</ScrollPos>
         </__.9>
        </EditorPersist>
       </EditorPersist>
@@ -181,23 +181,23 @@
      <ViewData>
       <AllViewBaseData>
        <__.0>
-        <ViewId>6</ViewId>
+        <ViewId>15</ViewId>
         <ViewType>Disassembly</ViewType>
        </__.0>
        <__.10>
-        <ViewId>12</ViewId>
+        <ViewId>11</ViewId>
         <ViewType>Document</ViewType>
        </__.10>
        <__.11>
-        <ViewId>13</ViewId>
+        <ViewId>12</ViewId>
         <ViewType>Document</ViewType>
        </__.11>
        <__.12>
-        <ViewId>14</ViewId>
+        <ViewId>13</ViewId>
         <ViewType>Document</ViewType>
        </__.12>
        <__.13>
-        <ViewId>15</ViewId>
+        <ViewId>14</ViewId>
         <ViewType>Document</ViewType>
        </__.13>
        <__.14>
@@ -209,13 +209,21 @@
         <ViewType>Document</ViewType>
        </__.15>
        <__.16>
-        <ViewId>1</ViewId>
-        <ViewType>Output_Progress</ViewType>
+        <ViewId>18</ViewId>
+        <ViewType>Document</ViewType>
        </__.16>
        <__.17>
+        <ViewId>19</ViewId>
+        <ViewType>Document</ViewType>
+       </__.17>
+       <__.18>
+        <ViewId>1</ViewId>
+        <ViewType>Output_Progress</ViewType>
+       </__.18>
+       <__.19>
         <ViewId>0</ViewId>
         <ViewType>Symbols</ViewType>
-       </__.17>
+       </__.19>
        <__.1>
         <ViewId>2</ViewId>
         <ViewType>Locals</ViewType>
@@ -233,29 +241,29 @@
         <ViewType>Document</ViewType>
        </__.4>
        <__.5>
-        <ViewId>7</ViewId>
+        <ViewId>6</ViewId>
         <ViewType>Document</ViewType>
        </__.5>
        <__.6>
-        <ViewId>8</ViewId>
+        <ViewId>7</ViewId>
         <ViewType>Document</ViewType>
        </__.6>
        <__.7>
-        <ViewId>9</ViewId>
+        <ViewId>8</ViewId>
         <ViewType>Document</ViewType>
        </__.7>
        <__.8>
-        <ViewId>10</ViewId>
+        <ViewId>9</ViewId>
         <ViewType>Document</ViewType>
        </__.8>
        <__.9>
-        <ViewId>11</ViewId>
+        <ViewId>10</ViewId>
         <ViewType>Document</ViewType>
        </__.9>
       </AllViewBaseData>
       <DissasemblyViews>
        <__.0>
-        <ViewId>6</ViewId>
+        <ViewId>15</ViewId>
         <ViewType>Disassembly</ViewType>
         <ColumnData>
          <__.0>
@@ -283,20 +291,30 @@
         <ViewType>Document</ViewType>
        </__.0>
        <__.10>
-        <RelativePath>..\..\..\Libraries\iLLD\TC38A\Tricore\Can\Std\IfxCan.h</RelativePath>
-        <ViewId>15</ViewId>
+        <RelativePath>..\..\..\Libraries\iLLD\TC38A\Tricore\Stm\Std\IfxStm.h</RelativePath>
+        <ViewId>14</ViewId>
         <ViewType>Document</ViewType>
        </__.10>
        <__.11>
-        <RelativePath>..\..\..\CANTask.c</RelativePath>
+        <RelativePath>..\..\..\bsw\zf_driver_uart.c</RelativePath>
         <ViewId>16</ViewId>
         <ViewType>Document</ViewType>
        </__.11>
        <__.12>
-        <RelativePath>..\..\..\MCMCAN.c</RelativePath>
+        <RelativePath>..\..\..\Cpu1_Main.c</RelativePath>
         <ViewId>17</ViewId>
         <ViewType>Document</ViewType>
        </__.12>
+       <__.13>
+        <RelativePath>..\..\..\Cpu2_Main.c</RelativePath>
+        <ViewId>18</ViewId>
+        <ViewType>Document</ViewType>
+       </__.13>
+       <__.14>
+        <RelativePath>..\..\..\Libraries\iLLD\TC38A\Tricore\Asclin\Std\IfxAsclin.h</RelativePath>
+        <ViewId>19</ViewId>
+        <ViewType>Document</ViewType>
+       </__.14>
        <__.1>
         <RelativePath>..\..\..\Libraries\iLLD\TC38A\Tricore\Cpu\Std\IfxCpu.h</RelativePath>
         <ViewId>5</ViewId>
@@ -304,42 +322,42 @@
        </__.1>
        <__.2>
         <RelativePath>..\..\..\Cpu0_Main.c</RelativePath>
-        <ViewId>7</ViewId>
+        <ViewId>6</ViewId>
         <ViewType>Document</ViewType>
        </__.2>
        <__.3>
-        <RelativePath>..\..\..\OS\FreeRTOS\tasks.c</RelativePath>
-        <ViewId>8</ViewId>
+        <RelativePath>..\..\..\bsw\zf_driver_spi.c</RelativePath>
+        <ViewId>7</ViewId>
         <ViewType>Document</ViewType>
        </__.3>
        <__.4>
-        <RelativePath>..\..\..\Libraries\iLLD\TC38A\Tricore\Cpu\Trap\IfxCpu_Trap.c</RelativePath>
-        <ViewId>9</ViewId>
+        <RelativePath>..\..\..\Libraries\Service\CpuGeneric\SysSe\Bsp\Bsp.h</RelativePath>
+        <ViewId>8</ViewId>
         <ViewType>Document</ViewType>
        </__.4>
        <__.5>
-        <RelativePath>..\..\..\OS\FreeRTOS\portable\Tasking\TC3\port.c</RelativePath>
-        <ViewId>10</ViewId>
+        <RelativePath>..\..\..\bsw\zf_device_icm20602.c</RelativePath>
+        <ViewId>9</ViewId>
         <ViewType>Document</ViewType>
        </__.5>
        <__.6>
-        <RelativePath>..\..\..\bsw\Schedule.c</RelativePath>
-        <ViewId>11</ViewId>
+        <RelativePath>..\..\..\Libraries\iLLD\TC38A\Tricore\Qspi\Std\IfxQspi.h</RelativePath>
+        <ViewId>10</ViewId>
         <ViewType>Document</ViewType>
        </__.6>
        <__.7>
-        <RelativePath>..\..\..\Libraries\iLLD\TC38A\Tricore\Can\Can\IfxCan_Can.c</RelativePath>
-        <ViewId>12</ViewId>
+        <RelativePath>..\..\..\Libraries\iLLD\TC38A\Tricore\Cpu\Trap\IfxCpu_Trap.c</RelativePath>
+        <ViewId>11</ViewId>
         <ViewType>Document</ViewType>
        </__.7>
        <__.8>
-        <RelativePath>..\..\..\Cpu3_Main.c</RelativePath>
-        <ViewId>13</ViewId>
+        <RelativePath>..\..\..\Libraries\iLLD\TC38A\Tricore\Qspi\SpiMaster\IfxQspi_SpiMaster.c</RelativePath>
+        <ViewId>12</ViewId>
         <ViewType>Document</ViewType>
        </__.8>
        <__.9>
-        <RelativePath>..\..\..\Cpu1_Main.c</RelativePath>
-        <ViewId>14</ViewId>
+        <RelativePath>..\..\..\Qspi_L9658.c</RelativePath>
+        <ViewId>13</ViewId>
         <ViewType>Document</ViewType>
        </__.9>
       </DocumentViews>
@@ -463,7 +481,7 @@
       <PrimaryDocumentPaneId>5</PrimaryDocumentPaneId>
       <Frames>
        <__.0>
-        <FocusedViewId>5</FocusedViewId>
+        <FocusedViewId>6</FocusedViewId>
         <FrameState>3</FrameState>
         <IsPrimary>true</IsPrimary>
         <Bounds>
@@ -519,7 +537,7 @@
                <IsPinned>false</IsPinned>
                <IsTabbed>true</IsTabbed>
                <Orientation>None</Orientation>
-               <TopTabViewId>5</TopTabViewId>
+               <TopTabViewId>6</TopTabViewId>
                <ViewId>-1</ViewId>
                <Children>
                 <__.0>
@@ -540,7 +558,7 @@
                  <IsTabbed>false</IsTabbed>
                  <Orientation>None</Orientation>
                  <TopTabViewId>-1</TopTabViewId>
-                 <ViewId>15</ViewId>
+                 <ViewId>14</ViewId>
                 </__.10>
                 <__.11>
                  <DockType>Document</DockType>
@@ -562,6 +580,26 @@
                  <TopTabViewId>-1</TopTabViewId>
                  <ViewId>17</ViewId>
                 </__.12>
+                <__.13>
+                 <DockType>Document</DockType>
+                 <Extent>1</Extent>
+                 <IsDocumentPane>false</IsDocumentPane>
+                 <IsPinned>false</IsPinned>
+                 <IsTabbed>false</IsTabbed>
+                 <Orientation>None</Orientation>
+                 <TopTabViewId>-1</TopTabViewId>
+                 <ViewId>18</ViewId>
+                </__.13>
+                <__.14>
+                 <DockType>Document</DockType>
+                 <Extent>1</Extent>
+                 <IsDocumentPane>false</IsDocumentPane>
+                 <IsPinned>false</IsPinned>
+                 <IsTabbed>false</IsTabbed>
+                 <Orientation>None</Orientation>
+                 <TopTabViewId>-1</TopTabViewId>
+                 <ViewId>19</ViewId>
+                </__.14>
                 <__.1>
                  <DockType>Document</DockType>
                  <Extent>1</Extent>
@@ -580,7 +618,7 @@
                  <IsTabbed>false</IsTabbed>
                  <Orientation>None</Orientation>
                  <TopTabViewId>-1</TopTabViewId>
-                 <ViewId>7</ViewId>
+                 <ViewId>6</ViewId>
                 </__.2>
                 <__.3>
                  <DockType>Document</DockType>
@@ -590,7 +628,7 @@
                  <IsTabbed>false</IsTabbed>
                  <Orientation>None</Orientation>
                  <TopTabViewId>-1</TopTabViewId>
-                 <ViewId>8</ViewId>
+                 <ViewId>7</ViewId>
                 </__.3>
                 <__.4>
                  <DockType>Document</DockType>
@@ -600,7 +638,7 @@
                  <IsTabbed>false</IsTabbed>
                  <Orientation>None</Orientation>
                  <TopTabViewId>-1</TopTabViewId>
-                 <ViewId>9</ViewId>
+                 <ViewId>8</ViewId>
                 </__.4>
                 <__.5>
                  <DockType>Document</DockType>
@@ -610,7 +648,7 @@
                  <IsTabbed>false</IsTabbed>
                  <Orientation>None</Orientation>
                  <TopTabViewId>-1</TopTabViewId>
-                 <ViewId>10</ViewId>
+                 <ViewId>9</ViewId>
                 </__.5>
                 <__.6>
                  <DockType>Document</DockType>
@@ -620,7 +658,7 @@
                  <IsTabbed>false</IsTabbed>
                  <Orientation>None</Orientation>
                  <TopTabViewId>-1</TopTabViewId>
-                 <ViewId>11</ViewId>
+                 <ViewId>10</ViewId>
                 </__.6>
                 <__.7>
                  <DockType>Document</DockType>
@@ -630,7 +668,7 @@
                  <IsTabbed>false</IsTabbed>
                  <Orientation>None</Orientation>
                  <TopTabViewId>-1</TopTabViewId>
-                 <ViewId>12</ViewId>
+                 <ViewId>11</ViewId>
                 </__.7>
                 <__.8>
                  <DockType>Document</DockType>
@@ -640,7 +678,7 @@
                  <IsTabbed>false</IsTabbed>
                  <Orientation>None</Orientation>
                  <TopTabViewId>-1</TopTabViewId>
-                 <ViewId>13</ViewId>
+                 <ViewId>12</ViewId>
                 </__.8>
                 <__.9>
                  <DockType>Document</DockType>
@@ -650,7 +688,7 @@
                  <IsTabbed>false</IsTabbed>
                  <Orientation>None</Orientation>
                  <TopTabViewId>-1</TopTabViewId>
-                 <ViewId>14</ViewId>
+                 <ViewId>13</ViewId>
                 </__.9>
                </Children>
               </__.1>
@@ -708,7 +746,7 @@
            <IsTabbed>false</IsTabbed>
            <Orientation>Vertical</Orientation>
            <TopTabViewId>-1</TopTabViewId>
-           <ViewId>6</ViewId>
+           <ViewId>15</ViewId>
           </__.1>
          </Children>
         </Dock>
